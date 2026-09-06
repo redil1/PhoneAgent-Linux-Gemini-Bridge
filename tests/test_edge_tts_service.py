@@ -295,3 +295,95 @@ async def test_reflex_pcm_is_persisted_and_reloaded_without_network(tmp_path) ->
     assert calls == 1
     assert first
     assert second == first
+
+
+@pytest.mark.asyncio
+async def test_speculative_edge_multi_phrase_assembled_without_second_network_call() -> None:
+    encoded = _test_mp3()
+    calls = 0
+
+    def factory(**kwargs):
+        nonlocal calls
+        calls += 1
+        chunks = [{"type": "audio", "data": encoded}]
+        return _FakeCommunicator(chunks, {}, kwargs)
+
+    service = EdgeTTSService(
+        communicator_factory=factory,
+        phrase_min_chars=12,
+        phrase_max_chars=40,
+    )
+    multi_phrase = "This is a useful phrase, followed by another short sentence."
+    await service.prefetch_text(multi_phrase)
+    initial_calls = calls
+    assert initial_calls == 2
+
+    # run_tts with the full unsplit multi-phrase string must hit cache with ZERO new network calls!
+    frames = [frame async for frame in service.run_tts(multi_phrase, "context")]
+    assert calls == initial_calls
+    assert any(isinstance(frame, TTSAudioRawFrame) for frame in frames)
+
+
+@pytest.mark.asyncio
+async def test_speculative_edge_reassembles_chunks_when_full_text_requested() -> None:
+    encoded = _test_mp3()
+    calls = 0
+
+    def factory(**kwargs):
+        nonlocal calls
+        calls += 1
+        chunks = [{"type": "audio", "data": encoded}]
+        return _FakeCommunicator(chunks, {}, kwargs)
+
+    service = EdgeTTSService(
+        communicator_factory=factory,
+        phrase_min_chars=12,
+        phrase_max_chars=40,
+    )
+    p1 = "This is a useful phrase,"
+    p2 = "followed by another short sentence."
+    full = f"{p1} {p2}"
+
+    await service.prefetch_text(p1)
+    await service.prefetch_text(p2)
+    service._prefetch_cache.pop(full, None)
+    initial_calls = calls
+
+    # run_tts on the full string must reassemble from chunks with ZERO new network calls!
+    frames = [frame async for frame in service.run_tts(full, "context")]
+    assert calls == initial_calls
+    assert any(isinstance(frame, TTSAudioRawFrame) for frame in frames)
+
+
+@pytest.mark.asyncio
+async def test_edge_tts_greeting_cache_persists_across_clear_prefetch() -> None:
+    encoded = _test_mp3()
+    calls = 0
+
+    def factory(**kwargs):
+        nonlocal calls
+        calls += 1
+        chunks = [{"type": "audio", "data": encoded}]
+        return _FakeCommunicator(chunks, {}, kwargs)
+
+    service = EdgeTTSService(
+        communicator_factory=factory,
+        phrase_min_chars=12,
+        phrase_max_chars=40,
+    )
+    greeting = "Hello Aziz, this is Adam with ADK Enterprise Solutions."
+
+    await service.prefetch_greeting(greeting)
+    initial_calls = calls
+    assert initial_calls > 0
+    assert greeting in service._greeting_cache
+
+    # Dynamic turn cancellation clears speculative cache but must NOT clear greeting cache
+    service.clear_prefetch()
+    assert greeting in service._greeting_cache
+
+    # Calling run_tts on greeting must hit greeting cache with ZERO new network calls
+    frames = [frame async for frame in service.run_tts(greeting, "greeting-ctx")]
+    assert calls == initial_calls
+    assert any(isinstance(frame, TTSAudioRawFrame) for frame in frames)
+

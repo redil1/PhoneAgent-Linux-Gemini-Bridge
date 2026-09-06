@@ -431,7 +431,11 @@ class AgentPolicyRuntime:
             "brief contextual clarification and do not advance task state. Do not repeat the "
             "last AI sentence, re-pitch a chosen plan, or use missing fields as a script. If "
             "latest_caller_intent is goodbye or permission_refused, close briefly with no sales "
-            "question."
+            "question.\n"
+            "CONVERSATIONAL CONTINUITY MANDATE: You are in an active, ongoing phone call. Read the full "
+            "conversation history above. Your reply MUST directly connect to what the caller just said "
+            "and what was previously established in earlier turns. Never restart the pitch, never repeat "
+            "a question or statement you already delivered, and never contradict agreed facts."
         )
 
     def _refresh_live_state(self) -> None:

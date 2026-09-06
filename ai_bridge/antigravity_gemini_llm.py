@@ -59,6 +59,9 @@ MODEL_MAP = {
     "gemini-2.5-pro": "MODEL_GOOGLE_GEMINI_2_5_PRO",
 }
 
+_DISCOVERED_BASE_URL: str | None = None
+_DISCOVERED_CSRF_TOKEN: str | None = None
+
 
 def _format_context_prompt(context: LLMContext, system_instruction: str = "") -> str:
     """Flatten LLMContext messages into a clean conversational prompt without duplication."""
@@ -69,6 +72,7 @@ def _format_context_prompt(context: LLMContext, system_instruction: str = "") ->
         parts.append(f"System instructions:\n{sys_inst}\n")
         has_system = True
 
+    history_started = False
     for msg in context.get_messages():
         if not isinstance(msg, dict):
             continue
@@ -87,11 +91,19 @@ def _format_context_prompt(context: LLMContext, system_instruction: str = "") ->
             if not has_system:
                 parts.append(f"System instructions:\n{content_str}\n")
                 has_system = True
+            elif content_str.startswith("Result of "):
+                parts.append(f"System (Tool Execution Result): {content_str}")
             elif content_str != sys_inst and content_str not in sys_inst:
-                parts.append(f"Additional instructions: {content_str}")
+                parts.append(f"System Context: {content_str}")
         elif role == "assistant":
+            if not history_started:
+                parts.append("### Conversation History:\nFollow the dialogue history below closely. Continue naturally in context:")
+                history_started = True
             parts.append(f"Assistant: {content_str}")
         else:
+            if not history_started:
+                parts.append("### Conversation History:\nFollow the dialogue history below closely. Continue naturally in context:")
+                history_started = True
             parts.append(f"User: {content_str}")
 
     return "\n\n".join(parts)
@@ -248,10 +260,17 @@ class AntigravityGeminiLLMService(LLMService):
         return ctx
 
     async def _discover_bridge(self) -> bool:
+        global _DISCOVERED_BASE_URL, _DISCOVERED_CSRF_TOKEN
         if self._base_url and self._csrf_token:
             return True
 
+        if _DISCOVERED_BASE_URL and _DISCOVERED_CSRF_TOKEN:
+            self._base_url = _DISCOVERED_BASE_URL
+            self._csrf_token = _DISCOVERED_CSRF_TOKEN
+            return True
+
         async def _scan() -> bool:
+            global _DISCOVERED_BASE_URL, _DISCOVERED_CSRF_TOKEN
             candidates: list[tuple[int, str]] = []
             candidate_ports: set[int] = set()
 
@@ -342,6 +361,8 @@ class AntigravityGeminiLLMService(LLMService):
                                 if data.get("response"):
                                     self._base_url = f"https://127.0.0.1:{port}"
                                     self._csrf_token = token
+                                    _DISCOVERED_BASE_URL = self._base_url
+                                    _DISCOVERED_CSRF_TOKEN = self._csrf_token
                                     logger.info(
                                         "Discovered and verified Antigravity Language Server on %s (model=%s)",
                                         self._base_url,
@@ -364,6 +385,8 @@ class AntigravityGeminiLLMService(LLMService):
                             if m and "antigravity" in html:
                                 self._base_url = f"https://127.0.0.1:{port}"
                                 self._csrf_token = m.group(1)
+                                _DISCOVERED_BASE_URL = self._base_url
+                                _DISCOVERED_CSRF_TOKEN = self._csrf_token
                                 logger.info(
                                     "Discovered Antigravity Language Server via scan on %s", self._base_url
                                 )
@@ -586,6 +609,9 @@ class AntigravityGeminiLLMService(LLMService):
                         response_status = resp.status
                         if resp.status == 401:
                             # Token may have rotated; rediscover and retry
+                            global _DISCOVERED_BASE_URL, _DISCOVERED_CSRF_TOKEN
+                            _DISCOVERED_BASE_URL = None
+                            _DISCOVERED_CSRF_TOKEN = None
                             self._base_url = None
                             self._csrf_token = None
                             if await self._discover_bridge():
@@ -615,8 +641,22 @@ class AntigravityGeminiLLMService(LLMService):
                     )
                     last_error = exc
                     if attempt == 0:
+                        if response_status == 503:
+                            # 503 Service Unavailable indicates upstream server overload.
+                            # Immediately fail over to backup model instead of repeating failed query.
+                            logger.warning("Model %s returned HTTP 503; failing over immediately", enum_m)
+                            break
                         await asyncio.sleep(0.2)
                         continue
                     break
 
         raise RuntimeError(f"Antigravity Gemini generation failed across models: {last_error}")
+
+
+async def prewarm_antigravity_bridge(model: str = "gemini-2.5-flash") -> bool:
+    """Discover and cache the Antigravity Language Server bridge ahead of live calls."""
+    global _DISCOVERED_BASE_URL, _DISCOVERED_CSRF_TOKEN
+    if _DISCOVERED_BASE_URL and _DISCOVERED_CSRF_TOKEN:
+        return True
+    service = AntigravityGeminiLLMService(model=model)
+    return await service._discover_bridge()

@@ -548,3 +548,25 @@ async def test_unusable_commands_never_take_the_host_down(
 
     await agent._handle_command({"command": "shutdown"})
     assert agent._stopping.is_set() is True
+
+
+@pytest.mark.asyncio
+async def test_dialing_prewarms_pipeline_ahead_of_active_call() -> None:
+    """Pre-warm the pipeline during DIALING so pickup delay is zero."""
+    config = SimpleNamespace(
+        link_authentication_key=b"x" * 32,
+        call_channel="gsm",
+        auto_answer=False,
+    )
+    agent = PhoneVoiceAgent(config, dial_number="+212600000000")  # type: ignore[arg-type]
+    prewarmed: list[str] = []
+
+    def fake_prewarm(runtime: Any, caller_id: str) -> None:
+        prewarmed.append(caller_id)
+
+    agent._prewarm_call_pipeline = fake_prewarm  # type: ignore[assignment]
+    runtime = SimpleNamespace(client=SimpleNamespace(), session=SimpleNamespace(call_id="call-123"))
+    agent._runtime = runtime  # type: ignore[assignment]
+
+    await agent._handle_status(CallStatus("ok", CallState.DIALING, 1, "+212600000000"))
+    assert prewarmed == ["+212600000000"]

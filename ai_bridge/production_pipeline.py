@@ -814,6 +814,21 @@ async def prewarm_gpu_resident_models(
     # fallback for one. Pinning an unrelated model holds VRAM the LLM server
     # needs for its KV cache and buys nothing.
     provider = (config.llm_provider if config else "") or ""
+    if provider in {"antigravity_gemini", ""}:
+        try:
+            from .antigravity_gemini_llm import prewarm_antigravity_bridge
+            bridge_started = time.perf_counter()
+            discovered = await prewarm_antigravity_bridge(
+                config.llm_model if config and config.llm_model else "gemini-2.5-flash"
+            )
+            timings["antigravity_bridge"] = {
+                "status": "ready" if discovered else "unverified",
+                "elapsed_ms": (time.perf_counter() - bridge_started) * 1000,
+            }
+        except Exception as exc:
+            timings["antigravity_bridge"] = {"status": "error", "error": str(exc)}
+            logger.debug("Antigravity bridge prewarm error: %s", exc)
+
     if preload_ollama_models is None:
         if provider == "ollama" and config and config.llm_model:
             models_to_warm = [config.llm_model]
@@ -1481,8 +1496,8 @@ class ProductionCallPipeline:
             # take down the call.
             logger.warning("LLM prompt prefix warm failed", exc_info=True)
 
-    async def greet(self) -> None:
-        """Start with a persona-conditioned opening greeting."""
+    async def greet(self, initial_silence_wait_secs: float = 0.35) -> None:
+        """Start with a persona-conditioned opening greeting guarded by an acoustic answer gate."""
         # Runs against the greeting's own synthesis and playback, which take
         # seconds, so the first caller turn finds the prefix already cached.
         warm_task = asyncio.create_task(self.warm_llm_prefix(), name="llm-prefix-warm")
@@ -1491,6 +1506,34 @@ class ProductionCallPipeline:
             if self._greeted:
                 return
             self._greeted = True
+
+            # If caller already spoke (e.g. said "Allo" during call connect) or floor is claimed:
+            initial_epoch = self.policy.turn_epoch
+            if self.policy.is_stale(initial_epoch) or getattr(self.policy, "recent_caller_turns", None):
+                logger.info("Caller spoke first before greeting ('Allo' / speech observed); floor ceded to Turn 1")
+                return
+
+            # Allow a brief acoustic detection window (350ms) to detect if caller says "Allo"
+            if initial_silence_wait_secs > 0:
+                elapsed = 0.0
+                step = 0.05
+                while elapsed < initial_silence_wait_secs:
+                    runner_task = getattr(self, "_runner_task", None)
+                    if runner_task is not None and runner_task.done():
+                        return
+                    if self.policy.is_stale(initial_epoch) or getattr(self.policy, "recent_caller_turns", None):
+                        logger.info(
+                            "Caller spoke first during acoustic gate (at %.2fs); canned greeting suppressed for Turn 1",
+                            elapsed,
+                        )
+                        return
+                    await asyncio.sleep(step)
+                    elapsed += step
+
+            if self.policy.is_stale(initial_epoch) or getattr(self.policy, "recent_caller_turns", None):
+                logger.info("Caller spoke first upon answer; greeting delegated to conversational turn")
+                return
+
             compiler = self.policy.persona_compiler
             identity = getattr(
                 compiler,
@@ -1515,11 +1558,17 @@ class ProductionCallPipeline:
                 greeting,
                 response_kind="greeting",
             )
-            if spoken and not self.policy.is_stale(epoch):
+            if spoken and not self.policy.is_stale(epoch) and not getattr(self.policy, "recent_caller_turns", None):
+                context = getattr(self, "context", None)
+                if context is not None and hasattr(context, "add_message"):
+                    context.add_message({"role": "assistant", "content": spoken})
                 frame = TTSSpeakFrame(spoken, append_to_context=True)
                 frame.metadata[SPEECH_TURN_EPOCH] = epoch
                 frame.metadata[SPEECH_RESPONSE_ID] = response_id
-                await self.worker.queue_frame(frame)
+                if getattr(self, "response_policy", None) is not None:
+                    await self.response_policy.queue_frame(frame, FrameDirection.DOWNSTREAM)
+                else:
+                    await self.worker.queue_frame(frame)
             else:
                 self.policy.discard_pending_playback(response_id)
 
@@ -1561,3 +1610,50 @@ class ProductionCallPipeline:
             await self.speculative_turn.close()
         await self.tools.close()
         await self.policy.close()
+
+
+async def compute_opening_greeting(
+    config: RuntimeConfig,
+    *,
+    call_direction: str = "outbound",
+    caller_id: str = "anonymous",
+) -> str:
+    """Compute the deterministic spoken opening greeting for a call configuration."""
+    from .agent_policy import AgentPolicyRuntime
+
+    policy = AgentPolicyRuntime(
+        caller_id=caller_id or "anonymous",
+        task_id=config.task_id,
+        language=config.providers.stt_language,
+        call_direction=call_direction,
+        additional_instructions=config.system_prompt,
+        memory_enabled=config.memory_enabled,
+    )
+    try:
+        compiler = policy.persona_compiler
+        identity = getattr(
+            compiler,
+            "effective_identity",
+            compiler.persona_data.get("identity", {}),
+        )
+        name = identity.get("name", "PhoneAgent")
+        role = str(identity.get("role", ""))
+        language = config.providers.stt_language.lower()
+        task_contract = getattr(policy, "task_contract", {})
+        openings = task_contract.get("opening_greeting", {})
+        opening_key = "fr" if language.startswith("fr") else "en"
+        configured_greeting = str(openings.get(opening_key, "")).strip()
+        greeting = policy.call_context.opening_greeting(
+            name=str(name),
+            role=role,
+            language=language,
+            configured_outbound=configured_greeting,
+        )
+        spoken, _evaluation, _response_id = await policy.finalize_response_with_identity(
+            greeting,
+            response_kind="greeting",
+        )
+        return spoken
+    finally:
+        await policy.close()
+

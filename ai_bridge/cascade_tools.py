@@ -709,8 +709,7 @@ def emitted_tool_instructions(runtime: CascadeToolRuntime) -> str:
     lines = [
         "# TOOL EXECUTION PROTOCOL (MANDATORY)",
         "You have live tools connected. Whenever the caller requests an action (such as sending a WhatsApp message, checking WhatsApp, searching the catalog, or scheduling a callback), you MUST execute the tool call in your response.",
-        "CRITICAL: Do NOT merely reply saying you will do it in words without emitting the tool block! Always emit the tool call block.",
-        "To invoke a tool, output ONLY the tool call block below (it is automatically processed by PhoneAgent and never spoken to the caller):",
+        "CRITICAL: When you invoke a tool, emit the tool call block FIRST at the very start of your response without any conversational text or commitments before it. Do NOT make action claims before the tool has executed. Once the tool executes, you will speak the final answer to the caller using the verified tool result:",
         f'{TOOL_OPEN}{{"name":"<tool_name>","arguments":{{...}}}}{TOOL_CLOSE}',
         # Restored from the pre-8906c78 block. The hardcoded WhatsApp example
         # that replaced these left every other tool -- catalog search, callback
@@ -965,9 +964,17 @@ class ToolCallProcessor(FrameProcessor):
                     execution.cancel()
                     await asyncio.gather(execution, return_exceptions=True)
 
+        pre_tool_spoken = self._buffer[:match.start()].strip()
         self.context.add_message({"role": "assistant", "content": match.group(0)})
+        system_content = f"Result of {name}: {output}"
+        if self._forwarded_chars > 0 and pre_tool_spoken:
+            system_content += (
+                f"\n[NOTE: You already said to the caller: '{pre_tool_spoken}'. "
+                "Do NOT repeat what was already said or ask the same question again. "
+                "Provide only the direct concise answer or next step based on the tool result.]"
+            )
         self.context.add_message(
-            {"role": "system", "content": f"Result of {name}: {output}"}
+            {"role": "system", "content": system_content}
         )
         self._iterations += 1
         self._buffer = ""

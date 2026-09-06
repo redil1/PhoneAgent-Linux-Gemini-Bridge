@@ -758,3 +758,40 @@ async def test_incomplete_phrase_uses_incomplete_endpoint_silence() -> None:
     service._stage_transcription("Hi, I wasn't really", is_final=False)
     assert service._required_silence() == pytest.approx(service._incomplete_endpoint_sec)
     await service._close_session()
+
+
+@pytest.mark.asyncio
+async def test_short_affirmative_uses_fast_endpoint() -> None:
+    service = AntigravityLiveSTTService(
+        silence_endpoint_ms=600,
+        speculative_fast_endpoint_ms=350,
+        base_url="https://127.0.0.1:53857",
+        csrf_token="test-csrf-token",
+    )
+    service._speech_epoch = 1
+    service._stage_transcription("Oui.", is_final=True)
+    service._smart_turn_decision_epoch = 1
+    service._smart_turn_decision_update_at = service._last_transcript_update_at
+    service._smart_turn_decision = True
+    assert service._required_silence() == pytest.approx(0.35)
+    await service._close_session()
+
+
+@pytest.mark.asyncio
+async def test_transcript_update_clears_stale_smart_turn_incomplete() -> None:
+    service = AntigravityLiveSTTService(
+        silence_endpoint_ms=600,
+        incomplete_endpoint_ms=1400,
+        base_url="https://127.0.0.1:53857",
+        csrf_token="test-csrf-token",
+    )
+    service._speech_epoch = 1
+    # First partial was marked incomplete
+    service._stage_transcription("It seems", is_final=False)
+    service._smart_turn_incomplete = True
+    assert service._required_silence() == pytest.approx(1.4)
+
+    # Next revision arrives with complete phrase
+    service._stage_transcription("It seems good.", is_final=True)
+    assert service._smart_turn_incomplete is False
+    await service._close_session()

@@ -185,7 +185,11 @@ def ground_tool_arguments(
                     bound = None if negated_or_reported(outside_literal) else (match[1].strip(), trusted)
                 elif cleaned.rstrip(".!? ").casefold() == proposed.casefold():
                     bound = (cleaned.rstrip(".!? "), trusted)
-                elif negated_or_reported(cleaned) and proposed.casefold() in cleaned.casefold():
+                elif (
+                    negated_or_reported(cleaned)
+                    and not any(re.search(m, cleaned, re.IGNORECASE) for m in markers.values())
+                    and proposed.casefold() in cleaned.casefold()
+                ):
                     bound = None
             if bound is None or not bound[1] or proposed.casefold() != bound[0].casefold():
                 blocked.append(field)

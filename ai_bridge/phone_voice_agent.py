@@ -26,6 +26,7 @@ from .pipecat_transport import PhoneAgentTransport, PhoneAgentTransportParams
 from .production_pipeline import (
     ProductionCallPipeline,
     ProviderServices,
+    compute_opening_greeting,
     create_provider_services,
     prewarm_primary_llm,
     prewarm_speech_models,
@@ -78,6 +79,7 @@ class PhoneVoiceAgent:
         self._greeting_attempted = False
         self._auto_answer_attempted = False
         self._active_caller_id = ""
+        self._pipeline_start_task: asyncio.Task[None] | None = None
 
     async def run(self) -> None:
         with VoiceHostLock(self.config.voice_lock_path):
@@ -87,6 +89,7 @@ class PhoneVoiceAgent:
             self._emit_voice_host_ready()
             await self._replace_runtime(retry=True)
             if self._dial_number:
+                self._trigger_greeting_prefetch()
                 logger.info("placing outbound call to %s", self._dial_number)
                 runtime = self._require_runtime()
                 dial_number = self._dial_number
@@ -201,6 +204,14 @@ class PhoneVoiceAgent:
             CallState.HOLDING,
         }:
             self._outbound_seen_live_state = True
+        if status.state in {CallState.DIALING, CallState.RINGING}:
+            self._trigger_greeting_prefetch()
+            caller_id = (
+                status.incoming_number
+                or self._outbound_number
+                or f"unknown:{runtime.session.call_id}"
+            )
+            self._prewarm_call_pipeline(runtime, caller_id)
         if status.state is CallState.RINGING:
             if self.config.auto_answer:
                 if self._auto_answer_attempted:
@@ -219,7 +230,10 @@ class PhoneVoiceAgent:
                     raise
                 return
 
-        should_start_active_call = runtime.pipeline is None
+        should_start_active_call = (
+            getattr(runtime, "pipeline", None) is None
+            or self._pipeline_start_task is not None
+        )
         if status.state is CallState.ACTIVE and should_start_active_call:
             await self._start_call(runtime, status)
             return
@@ -333,23 +347,70 @@ class PhoneVoiceAgent:
             f"Android did not start the Telephony TX route in {timeout_secs}s ({last_error_msg})"
         )
 
+    def _prewarm_call_pipeline(self, runtime: ActiveCallRuntime, caller_id: str) -> None:
+        """Pre-construct and start the pipeline while the phone is dialing or ringing."""
+        if not hasattr(runtime, "transport") or not hasattr(runtime, "session"):
+            return
+        if getattr(runtime, "pipeline", None) is not None or self._pipeline_start_task is not None:
+            return
+        services = self._prepared_services
+        self._prepared_services = None
+        self._active_caller_id = caller_id
+        try:
+            recording_config = RecordingConfig.from_env()
+            if recording_config.enabled and recording_config.consent_granted:
+                runtime.recorder = CallRecordingSession.create_if_authorized(
+                    call_id=str(runtime.session.call_id),
+                    caller_id=caller_id,
+                    channel=self.config.call_channel,
+                    sample_rate=self.config.sample_rate,
+                    config=recording_config,
+                )
+                if runtime.recorder is not None:
+                    runtime.transport.add_audio_listener(runtime.recorder.record_remote)
+                    runtime.transport.add_output_audio_listener(runtime.recorder.record_agent)
+                    self._emit_event(
+                        {
+                            "type": "recording_started",
+                            "recording_id": runtime.recorder.recording_id,
+                        }
+                    )
+        except Exception as exc:
+            logger.error("call recording could not start: %s", exc)
+
+        pipeline = ProductionCallPipeline(
+            runtime.transport,
+            self.config,
+            services=services,
+            caller_id=caller_id,
+            call_direction=self.call_direction,
+            event_sink=self._call_event_sink(runtime, caller_id),
+            call_completion_sink=self._call_completion_sink(runtime),
+        )
+        runtime.pipeline = pipeline
+        self._pipeline_start_task = asyncio.create_task(
+            pipeline.start(),
+            name=f"prewarm-pipeline-{runtime.session.call_id}",
+        )
+        logger.info("pre-started call pipeline during dialing/ringing call_id=%s", runtime.session.call_id)
+
     async def _start_call(self, runtime: ActiveCallRuntime, status: CallStatus) -> None:
+        caller_id = (
+            status.incoming_number
+            or self._outbound_number
+            or f"unknown:{getattr(runtime.session, 'call_id', 'unknown')}"
+            if hasattr(runtime, "session")
+            else "unknown"
+        )
+        self._active_caller_id = caller_id
+        if getattr(runtime, "pipeline", None) is None:
+            self._prewarm_call_pipeline(runtime, caller_id)
+
         logger.info("attaching authenticated full-duplex media")
-        # Allow 400ms for cellular baseband DSP routing to stabilize upon ACTIVE transition
-        await asyncio.sleep(0.4)
+        # Allow 50ms for cellular baseband DSP routing to stabilize before media attach
+        await asyncio.sleep(0.05)
 
         try:
-            # If previous call left an error or saturated mixer, trigger proactive audio reset
-            try:
-                status_rep = await asyncio.to_thread(runtime.client.get_audio_status)
-                audio_stat = status_rep.get("audio", status_rep)
-                if "Permission denied" in str(audio_stat.get("last_error", "")) or audio_stat.get("stale_uplink_frames", 0) > 20:
-                    logger.info("Triggering proactive audio reset before call attach...")
-                    await asyncio.to_thread(runtime.client.link.request, "audio.reset")
-                    await asyncio.sleep(0.5)
-            except Exception:
-                pass
-
             # One call gets one physical Telephony-TX route attempt.
             await asyncio.to_thread(runtime.client.connect_media)
             if self.config.call_channel != "whatsapp":
@@ -377,67 +438,34 @@ class PhoneVoiceAgent:
             else:
                 await self._replace_runtime()
             return
+
         runtime.media_attached = True
-        runtime.session.set_phase(SessionPhase.ACTIVE)
-        if self.config.call_channel != "whatsapp":
-            self._enforcer_task = asyncio.create_task(
-                self._hardware_silence_enforcer_loop(runtime.session),
-                name="hardware_silence_enforcer",
-            )
-        services = self._prepared_services
-        self._prepared_services = None
-        caller_id = (
-            status.incoming_number or self._outbound_number or f"unknown:{runtime.session.call_id}"
-        )
-        self._active_caller_id = caller_id
-        try:
-            recording_config = RecordingConfig.from_env()
-            if recording_config.enabled and recording_config.consent_granted:
-                await asyncio.to_thread(enforce_recording_retention, recording_config)
-            runtime.recorder = CallRecordingSession.create_if_authorized(
-                call_id=str(runtime.session.call_id),
-                caller_id=caller_id,
-                channel=self.config.call_channel,
-                sample_rate=self.config.sample_rate,
-                config=recording_config,
-            )
-            if runtime.recorder is not None:
-                runtime.transport.add_audio_listener(runtime.recorder.record_remote)
-                runtime.transport.add_output_audio_listener(runtime.recorder.record_agent)
-                self._emit_event(
-                    {
-                        "type": "recording_started",
-                        "recording_id": runtime.recorder.recording_id,
-                    }
+        if hasattr(runtime, "session"):
+            runtime.session.set_phase(SessionPhase.ACTIVE)
+            if self.config.call_channel != "whatsapp":
+                self._enforcer_task = asyncio.create_task(
+                    self._hardware_silence_enforcer_loop(runtime.session),
+                    name="hardware_silence_enforcer",
                 )
-        except Exception as exc:
-            # Recording is an observer. Its failure is visible but can never
-            # interrupt the live media path or alter either call provider.
-            logger.error("call recording could not start: %s", exc)
-            self._emit_event(
-                {"type": "recording_error", "message": "Call recording could not start"}
-            )
-        pipeline = ProductionCallPipeline(
-            runtime.transport,
-            self.config,
-            services=services,
-            caller_id=caller_id,
-            call_direction=self.call_direction,
-            event_sink=self._call_event_sink(runtime, caller_id),
-            call_completion_sink=self._call_completion_sink(runtime),
-        )
-        runtime.pipeline = pipeline
-        try:
-            await pipeline.start()
+
+        pipeline = getattr(runtime, "pipeline", None)
+        if self._pipeline_start_task is not None:
+            try:
+                await self._pipeline_start_task
+            except Exception as exc:
+                logger.exception("voice pipeline could not start: %s", exc)
+                self._emit_event(
+                    {"type": "call_error", "message": f"Voice pipeline failed to start: {exc}"}
+                )
+                if pipeline is not None:
+                    await pipeline.cancel("pipeline startup failed")
+                    runtime.pipeline = None
+                raise
+            finally:
+                self._pipeline_start_task = None
+
+        if pipeline is not None:
             await self._greet_pipeline_once(pipeline)
-        except Exception as exc:
-            logger.exception("voice pipeline could not start: %s", exc)
-            self._emit_event(
-                {"type": "call_error", "message": f"Voice pipeline failed to start: {exc}"}
-            )
-            await pipeline.cancel("pipeline startup failed")
-            runtime.pipeline = None
-            raise
 
     def _call_event_sink(self, runtime: ActiveCallRuntime, caller_id: str):
         """Keep late tool/playback events bound to the call that created them."""
@@ -562,6 +590,41 @@ class PhoneVoiceAgent:
             self.config.providers.tts_provider,
             (time.perf_counter() - started) * 1000,
         )
+        self._trigger_greeting_prefetch()
+
+    def _trigger_greeting_prefetch(self) -> None:
+        """Prefetch the opening greeting on the TTS service so first-turn speech is instant."""
+        services = self._prepared_services
+        if services is None and self._runtime is not None and getattr(self._runtime, "pipeline", None) is not None:
+            services = self._runtime.pipeline.services
+        if services is None or services.tts is None:
+            return
+        prefetch_greeting = getattr(services.tts, "prefetch_greeting", None)
+        prefetch = prefetch_greeting or getattr(services.tts, "prefetch_text", None)
+        if not callable(prefetch):
+            return
+
+        direction = self.call_direction
+        caller_id = self._outbound_number or self._active_caller_id
+
+        async def _do_prefetch() -> None:
+            try:
+                spoken = await compute_opening_greeting(
+                    self.config,
+                    call_direction=direction,
+                    caller_id=caller_id,
+                )
+                if spoken:
+                    logger.info("speculatively prefetching opening greeting: %r", spoken)
+                    if prefetch_greeting is not None:
+                        await prefetch_greeting(spoken)
+                    else:
+                        await prefetch(spoken)
+                    logger.info("speculative opening greeting prefetched and ready")
+            except Exception:
+                logger.warning("could not prewarm opening greeting ahead of call", exc_info=True)
+
+        asyncio.create_task(_do_prefetch(), name="proactive-greeting-prefetch")
 
     def _emit_voice_host_ready(self) -> None:
         """Publish the effective configuration after every selected pipeline is warm."""
@@ -697,6 +760,10 @@ class PhoneVoiceAgent:
         return ActiveCallRuntime(session=session, client=client, transport=transport)
 
     async def _close_runtime(self, *, hangup: bool) -> None:
+        if self._pipeline_start_task is not None:
+            if not self._pipeline_start_task.done():
+                self._pipeline_start_task.cancel()
+            self._pipeline_start_task = None
         runtime = self._runtime
         self._runtime = None
         if runtime is None:
@@ -859,6 +926,16 @@ class PhoneVoiceAgent:
         self._greeting_attempted = False
         self._auto_answer_attempted = False
         self._active_caller_id = ""
+        self._trigger_greeting_prefetch()
+        # Proactively ensure audio mixer is clean during dial setup (not on answer)
+        try:
+            status_rep = await asyncio.to_thread(runtime.client.get_audio_status)
+            audio_stat = status_rep.get("audio", status_rep)
+            if "Permission denied" in str(audio_stat.get("last_error", "")) or audio_stat.get("stale_uplink_frames", 0) > 20:
+                logger.info("Resetting audio mixer ahead of dial...")
+                await asyncio.to_thread(runtime.client.link.request, "audio.reset")
+        except Exception:
+            pass
         logger.info("placing outbound call to %s (recording_consent=%s)", number, recording_consent)
         try:
             response = await self._place_outbound_call(runtime, number)

@@ -244,7 +244,7 @@ class ProviderConfig:
     edge_tts_volume: str = "+0%"
     edge_tts_pitch: str = "+0Hz"
     edge_tts_ffmpeg_binary: str = "ffmpeg"
-    edge_tts_phrase_min_chars: int = 12
+    edge_tts_phrase_min_chars: int = 8
     edge_tts_phrase_max_chars: int = 60
     edge_tts_connect_timeout_secs: int = 5
     edge_tts_receive_timeout_secs: int = 20
@@ -448,7 +448,7 @@ class ProviderConfig:
             edge_tts_ffmpeg_binary=os.getenv(
                 "PHONE_AGENT_EDGE_TTS_FFMPEG_BINARY", "ffmpeg"
             ).strip(),
-            edge_tts_phrase_min_chars=_env_int("PHONE_AGENT_EDGE_TTS_PHRASE_MIN_CHARS", 12, 8, 120),
+            edge_tts_phrase_min_chars=_env_int("PHONE_AGENT_EDGE_TTS_PHRASE_MIN_CHARS", 8, 4, 120),
             edge_tts_phrase_max_chars=_env_int(
                 "PHONE_AGENT_EDGE_TTS_PHRASE_MAX_CHARS", 60, 16, 240
             ),

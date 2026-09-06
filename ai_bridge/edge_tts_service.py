@@ -292,7 +292,7 @@ class EdgeTTSService(TTSService):
         ffmpeg_binary: str = "ffmpeg",
         text_aggregation_mode: TextAggregationMode = TextAggregationMode.SENTENCE,
         phrase_aggregation: bool = True,
-        phrase_min_chars: int = 24,
+        phrase_min_chars: int = 8,
         phrase_max_chars: int = 72,
         reflex_cache_dir: Path | None = None,
         communicator_factory: CommunicatorFactory = edge_tts.Communicate,
@@ -334,6 +334,7 @@ class EdgeTTSService(TTSService):
         self._phrase_min_chars = phrase_min_chars
         self._phrase_max_chars = phrase_max_chars
         self._prefetch_cache: dict[str, bytes] = {}
+        self._greeting_cache: dict[str, bytes] = {}
         self._latency_sink: Any = None
         self._failed_synthesis_contexts: OrderedDict[str, None] = OrderedDict()
         self._synthesis_owners: OrderedDict[str, tuple[Any, Any]] = OrderedDict()
@@ -414,8 +415,16 @@ class EdgeTTSService(TTSService):
         self._prefetch_streams.clear()
         self._prefetch_cache.clear()
 
-    async def prefetch_text(self, text: str) -> None:
+    async def prefetch_greeting(self, text: str) -> None:
+        """Synthesize and preserve opening greeting audio in dedicated memory cache."""
+        await self.prefetch_text(text, is_greeting=True)
+
+    async def prefetch_text(self, text: str, *, is_greeting: bool = False) -> None:
         """Synthesize one speculative response without emitting audio."""
+
+        clean_text = text.strip()
+        if not clean_text or clean_text in self._greeting_cache or clean_text in self._prefetch_cache:
+            return
 
         phrases = (
             split_edge_phrases(
@@ -424,11 +433,16 @@ class EdgeTTSService(TTSService):
                 max_chars=self._phrase_max_chars,
             )
             if self._phrase_aggregation
-            else [text.strip()]
+            else [clean_text]
         )
         tasks: list[asyncio.Task[bytes]] = []
         for phrase in phrases:
-            if not phrase or not _SPEAKABLE_RE.search(phrase) or phrase in self._prefetch_cache:
+            if (
+                not phrase
+                or not _SPEAKABLE_RE.search(phrase)
+                or phrase in self._greeting_cache
+                or phrase in self._prefetch_cache
+            ):
                 continue
             task = self._prefetch_phrase_tasks.get(phrase)
             if task is None:
@@ -442,6 +456,20 @@ class EdgeTTSService(TTSService):
             tasks.append(task)
         if tasks:
             await asyncio.gather(*tasks)
+        if self._phrase_aggregation and len(phrases) > 1:
+            full_pcm = b"".join(
+                self._greeting_cache.get(p) or self._prefetch_cache.get(p, b"")
+                for p in phrases
+            )
+            if full_pcm:
+                self._prefetch_cache[clean_text] = full_pcm
+
+        if is_greeting:
+            if clean_text in self._prefetch_cache:
+                self._greeting_cache[clean_text] = self._prefetch_cache[clean_text]
+            for phrase in phrases:
+                if phrase in self._prefetch_cache:
+                    self._greeting_cache[phrase] = self._prefetch_cache[phrase]
 
     async def _synthesize_prefetch_pcm(
         self,
@@ -547,7 +575,7 @@ class EdgeTTSService(TTSService):
     def has_ready_speculative_audio(self) -> bool:
         """Return true only when substantive speculative PCM can start now."""
 
-        if any(self._prefetch_cache.values()):
+        if any(self._greeting_cache.values()) or any(self._prefetch_cache.values()):
             return True
         return any(stream.chunks and not stream.error for stream in self._prefetch_streams.values())
 
@@ -647,6 +675,7 @@ class EdgeTTSService(TTSService):
 
     async def cleanup(self) -> None:
         self.clear_prefetch()
+        self._greeting_cache.clear()
         tasks = tuple(self._reflex_tasks.values())
         for task in tasks:
             if not task.done():
@@ -721,12 +750,25 @@ class EdgeTTSService(TTSService):
         if not phrase or not _SPEAKABLE_RE.search(phrase):
             return
 
-        prefetched = self._prefetch_cache.get(phrase)
+        prefetched = self._greeting_cache.get(phrase) or self._prefetch_cache.get(phrase)
+        if not prefetched and self._phrase_aggregation:
+            chunks = split_edge_phrases(
+                phrase,
+                min_chars=self._phrase_min_chars,
+                max_chars=self._phrase_max_chars,
+            )
+            if len(chunks) > 1 and all((c in self._greeting_cache or c in self._prefetch_cache) for c in chunks):
+                prefetched = b"".join(
+                    self._greeting_cache.get(c) or self._prefetch_cache.get(c, b"")
+                    for c in chunks
+                )
+                self._greeting_cache[phrase] = prefetched
+
         prefetched_stream = self._prefetch_streams.get(phrase)
         if prefetched:
             await self.start_tts_usage_metrics(phrase)
             await self.stop_ttfb_metrics()
-            logger.info("speculative Edge TTS cache hit chars=%d", len(phrase))
+            logger.info("speculative Edge TTS cache hit chars=%d (greeting_cache=%s)", len(phrase), phrase in self._greeting_cache)
             for offset in range(0, len(prefetched), 4096):
                 yield TTSAudioRawFrame(
                     audio=prefetched[offset : offset + 4096],

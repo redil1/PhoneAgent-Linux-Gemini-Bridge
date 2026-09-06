@@ -256,7 +256,7 @@ class AntigravityLiveSTTService(STTService):
         silence_endpoint_ms: int = 600,
         incomplete_endpoint_ms: int = 3000,
         transcript_stability_ms: int = 100,
-        partial_transcript_stability_ms: int = 200,
+        partial_transcript_stability_ms: int = 650,
         fallback_endpoint_ms: int = 900,
         barge_in_min_ms: int = 220,
         energy_threshold_dbfs: float = -42.0,
@@ -801,23 +801,10 @@ class AntigravityLiveSTTService(STTService):
         ))
 
     def _partial_is_confirmed(self) -> bool:
-        if not self._partial_needs_confirmation:
-            return True
-        if (
+        return not self._partial_needs_confirmation or (
             self._partial_confirmations >= 2
             and self._partial_confirmation_signature == (self._speech_epoch, self._last_speech_at)
-        ):
-            return True
-        # A partial transcript that has remained stable through the stability window
-        # while the caller is silent is stable and confirmed.
-        now = time.monotonic()
-        if (
-            self._last_transcript_update_at > 0.0
-            and now - self._last_transcript_update_at >= self._partial_transcript_stability_sec
-            and self._silence_elapsed() >= self._silence_endpoint_sec
-        ):
-            return True
-        return False
+        )
 
     async def _handle_provider_transcription(self, text: str, *, is_final: bool) -> str:
         """Accept provider text only for an open, acoustically detected turn."""
@@ -836,7 +823,17 @@ class AntigravityLiveSTTService(STTService):
                     self._partial_confirmation_signature = signature
                 negation = self._contains_negation(candidate)
                 self._heard_negation = self._heard_negation or negation
-                self._negation_revision_uncertain = self._heard_negation and not negation
+                # A true negation retraction occurs on short decisions/refusals (e.g. "I can't accept" -> "I can accept",
+                # "No, not the plan" -> "The plan"). An articulate multi-word inquiry (e.g. "I need more information on what
+                # this can add value to me and to my project") where a transient phoneme jitter occurred during interim streaming
+                # is not a negation reversal.
+                is_substantive_inquiry = len(candidate.split()) >= 8 or candidate.casefold().startswith(
+                    ("can you", "could you", "i need more", "how does", "what is", "tell me", "pourriez-vous", "pouvez-vous", "j'ai besoin")
+                )
+                if is_substantive_inquiry:
+                    self._negation_revision_uncertain = False
+                else:
+                    self._negation_revision_uncertain = self._heard_negation and not negation
             transport_revision = self._transport_revision
         if candidate:
             self._reconnect_attempts = 0  # A working recognition cycle replenishes the retry budget.
@@ -1032,11 +1029,23 @@ class AntigravityLiveSTTService(STTService):
         self._floor_claimed = True
         if candidate != previous or is_final:
             self._last_transcript_update_at = now
+            if candidate != previous:
+                self._smart_turn_incomplete = False
         return candidate
 
     @staticmethod
     def _looks_incomplete(text: str) -> bool:
         return looks_semantically_incomplete(text)
+
+    @staticmethod
+    def _is_short_affirmative_or_negative(text: str) -> bool:
+        normalized = " ".join(text.strip().casefold().strip(".!?,").split())
+        return normalized in {
+            "oui", "non", "ouais", "nan", "d'accord", "d accord", "c'est bon", "c est bon",
+            "parfait", "merci", "non merci", "oui merci", "bien sur", "bien sûr",
+            "yes", "no", "yeah", "yep", "nope", "sure", "okay", "ok", "alright",
+            "yes please", "no thanks", "thank you", "thanks", "go ahead",
+        }
 
     def _run_smart_turn_inference(self, pcm_bytes: bytes) -> dict[str, Any]:
         if not self._smart_turn or not pcm_bytes:
@@ -1098,6 +1107,11 @@ class AntigravityLiveSTTService(STTService):
             and self._smart_turn_decision_update_at == self._last_transcript_update_at
         )
         if current_verdict and self._smart_turn_decision is True:
+            if (
+                self._is_short_affirmative_or_negative(text)
+                and 0 < self._speculative_fast_endpoint_sec < self._silence_endpoint_sec
+            ):
+                return self._speculative_fast_endpoint_sec
             return self._silence_endpoint_sec
         # With no acoustic verdict, final ASR text is still just a segment.
         # Unknown inference and unsupported audio use bounded conservative patience.
@@ -1169,6 +1183,18 @@ class AntigravityLiveSTTService(STTService):
             if not text:
                 return
             provider_final_seen = self._provider_final_seen
+            if not provider_final_seen and not self._partial_is_confirmed():
+                # If this was isolated non-language noise during silence, drop it
+                tokens = re.findall(r"[a-zà-ÿ']+", text.casefold())
+                english = sum(token in _ENGLISH_LANGUAGE_MARKERS for token in tokens)
+                french = sum(token in _FRENCH_LANGUAGE_MARKERS for token in tokens)
+                if len(tokens) <= 3 and english == 0 and french == 0:
+                    logger.info("Discarded unconfirmed acoustic noise fragment: %r", text)
+                    self._reset_recognition_evidence()
+                    self._last_transcript = ""
+                    self._floor_claimed = False
+                    self._speaking = False
+                    return
             commit_timing = {
                 **self._recognition_metadata(),
                 "speech_epoch": self._speech_epoch,
