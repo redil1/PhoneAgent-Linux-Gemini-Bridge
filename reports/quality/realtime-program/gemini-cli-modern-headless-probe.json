@@ -1,0 +1,9 @@
+{
+  "version": "0.39.1",
+  "mode": "stream_json",
+  "first_assistant_ms": null,
+  "error_type": "GeminiCliError",
+  "error_summary": "The system configuration contains deprecated settings: [general.disableAutoUpdate]. These could not be migrated automatically as system settings are read-only. Please update the system configuration manually.Error authenticating: IneligibleTierError: This client is no longer supported for Gemini Code Assist for individuals. To continue using Gemini, please migrate to the Antigravity suite of products: https://antigravity.google | ineligibleTiers: [ | { | reasonCode: 'UNSUPPORTED_CLIENT', | reasonMessage: 'This client is no longer supported for Gemini Code Assist for individuals. To continue using Gemini, please migrate to the Antigravity suite of products: https://antigravity.google', | tierId: 'free-tier',",
+  "response": "",
+  "total_ms": 2448.184624998248
+}

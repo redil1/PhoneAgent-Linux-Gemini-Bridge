@@ -1,0 +1,32 @@
+{
+  "scope": "Assembled system/tool prompt with synthetic dialogue; live advisory block excluded; real LLM, text only",
+  "rows": [
+    {
+      "additional_exchanges": 0,
+      "n": 3,
+      "prompt_chars": 34585,
+      "median_ms": 2015.5,
+      "min_ms": 1916.5,
+      "max_ms": 2403.6,
+      "recall_all_correct": true
+    },
+    {
+      "additional_exchanges": 20,
+      "n": 3,
+      "prompt_chars": 37329,
+      "median_ms": 2397.9,
+      "min_ms": 2256.0,
+      "max_ms": 2832.4,
+      "recall_all_correct": true
+    },
+    {
+      "additional_exchanges": 60,
+      "n": 3,
+      "prompt_chars": 42845,
+      "median_ms": 2099.8,
+      "min_ms": 2095.0,
+      "max_ms": 2161.2,
+      "recall_all_correct": true
+    }
+  ]
+}

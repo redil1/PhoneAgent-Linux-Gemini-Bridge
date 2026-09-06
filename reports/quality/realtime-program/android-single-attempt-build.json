@@ -1,0 +1,8 @@
+{
+  "apk": "/Users/aziz/Desktop/phone-agent-linux/android_service_apk/PhoneAgentGateway.apk",
+  "sha256": "2e60770fb03e807de925095c70960d8b84a842b64617fd93cfd4852090089e18",
+  "installed": false,
+  "build_only": true,
+  "protocol_golden_vectors_passed": true,
+  "remote_link_loopback_passed": true
+}

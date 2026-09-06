@@ -1,0 +1,277 @@
+# Action references were resolved to immutable commits from their official repositories.
+name: PhoneAgent validation
+'on':
+  push: null
+  pull_request: null
+  workflow_dispatch:
+    inputs:
+      run_device:
+        description: Run the device readiness stage on an explicitly prepared self-hosted
+          runner
+        type: boolean
+        required: false
+        default: false
+      full_container_build:
+        description: Build the full CUDA container after Dockerfile validation
+        type: boolean
+        required: false
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: validation-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  quality:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e
+      with:
+        version: 0.11.6
+        python-version: '3.11'
+        enable-cache: true
+    - name: Install locked test dependencies
+      run: uv sync --locked --dev --extra cloud --extra local-stt
+    - name: Run quality
+      run: ./ci/run-stage.sh quality
+    - name: Preserve stage evidence
+      if: ${{ always() }}
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: quality-evidence
+        path: artifacts/ci/quality
+        if-no-files-found: warn
+        retention-days: 14
+  fast-unit:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e
+      with:
+        version: 0.11.6
+        python-version: '3.11'
+        enable-cache: true
+    - name: Install locked test dependencies
+      run: uv sync --locked --dev --extra cloud --extra local-stt
+    - name: Install audio test utilities
+      run: 'sudo apt-get update
+
+        sudo apt-get install -y --no-install-recommends ffmpeg espeak-ng'
+    - name: Run fast-unit
+      run: ./ci/run-stage.sh fast-unit
+    - name: Preserve stage evidence
+      if: ${{ always() }}
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: fast-unit-evidence
+        path: artifacts/ci/fast-unit
+        if-no-files-found: warn
+        retention-days: 14
+  integration:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e
+      with:
+        version: 0.11.6
+        python-version: '3.11'
+        enable-cache: true
+    - name: Install locked test dependencies
+      run: uv sync --locked --dev --extra cloud --extra local-stt
+    - name: Install audio test utilities
+      run: 'sudo apt-get update
+
+        sudo apt-get install -y --no-install-recommends ffmpeg espeak-ng'
+    - name: Run integration
+      run: ./ci/run-stage.sh integration
+    - name: Preserve stage evidence
+      if: ${{ always() }}
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: integration-evidence
+        path: artifacts/ci/integration
+        if-no-files-found: warn
+        retention-days: 14
+  package:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e
+      with:
+        version: 0.11.6
+        python-version: '3.11'
+        enable-cache: true
+    - name: Install locked test dependencies
+      run: uv sync --locked --dev --extra cloud --extra local-stt
+    - name: Run package
+      run: ./ci/run-stage.sh package
+    - name: Preserve stage evidence
+      if: ${{ always() }}
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: package-evidence
+        path: artifacts/ci/package
+        if-no-files-found: warn
+        retention-days: 14
+  android-protocol:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3
+      with:
+        distribution: temurin
+        java-version: '17'
+    - name: Install Android build platform
+      run: '"$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platforms;android-34"
+        "build-tools;34.0.0"'
+    - name: Run android-protocol
+      run: ./ci/run-stage.sh android-protocol
+    - name: Preserve stage evidence
+      if: ${{ always() }}
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: android-protocol-evidence
+        path: artifacts/ci/android-protocol
+        if-no-files-found: warn
+        retention-days: 14
+  security:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e
+      with:
+        version: 0.11.6
+        python-version: '3.11'
+        enable-cache: true
+    - name: Run security
+      run: ./ci/run-stage.sh security
+    - name: Preserve stage evidence
+      if: ${{ always() }}
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: security-evidence
+        path: artifacts/ci/security
+        if-no-files-found: warn
+        retention-days: 14
+  licence-sbom:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e
+      with:
+        version: 0.11.6
+        python-version: '3.11'
+        enable-cache: true
+    - name: Install locked production metadata
+      run: uv sync --locked --all-extras --no-dev
+    - name: Run licence-sbom
+      run: ./ci/run-stage.sh licence-sbom
+    - name: Preserve stage evidence
+      if: ${{ always() }}
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: licence-sbom-evidence
+        path: artifacts/ci/licence-sbom
+        if-no-files-found: warn
+        retention-days: 14
+  container:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f
+    - name: Run container
+      run: ./ci/run-stage.sh container
+    - name: Preserve stage evidence
+      if: ${{ always() }}
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: container-evidence
+        path: artifacts/ci/container
+        if-no-files-found: warn
+        retention-days: 14
+    env:
+      PHONE_AGENT_FULL_CONTAINER_BUILD: ${{ github.event_name == 'workflow_dispatch'
+        && inputs.full_container_build && '1' || '0' }}
+  eval:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e
+      with:
+        version: 0.11.6
+        python-version: '3.11'
+        enable-cache: true
+    - name: Install locked test dependencies
+      run: uv sync --locked --dev --extra cloud --extra local-stt
+    - name: Install audio test utilities
+      run: 'sudo apt-get update
+
+        sudo apt-get install -y --no-install-recommends ffmpeg espeak-ng'
+    - name: Run eval
+      run: ./ci/run-stage.sh eval
+    - name: Preserve stage evidence
+      if: ${{ always() }}
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: eval-evidence
+        path: artifacts/ci/eval
+        if-no-files-found: warn
+        retention-days: 14
+  device-qualification:
+    runs-on:
+    - self-hosted
+    - phoneagent-device
+    timeout-minutes: 30
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e
+      with:
+        version: 0.11.6
+        python-version: '3.11'
+        enable-cache: true
+    - name: Install locked runtime
+      run: uv sync --locked --extra cloud --no-dev
+    - name: Run device-qualification
+      run: ./ci/run-stage.sh device-qualification
+    - name: Preserve stage evidence
+      if: ${{ always() }}
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: device-qualification-evidence
+        path: artifacts/ci/device-qualification
+        if-no-files-found: warn
+        retention-days: 14
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_device }}
+    environment: device-qualification
+    env:
+      PHONE_AGENT_DEVICE_CI: '1'

@@ -1,0 +1,11 @@
+{
+  "scope": "Controlled EOF with a pending partial; no external effects",
+  "before": {
+    "committed_after_transport_loss": [
+      "Send the"
+    ]
+  },
+  "after": {
+    "committed_after_transport_loss": []
+  }
+}

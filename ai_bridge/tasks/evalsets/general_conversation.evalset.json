@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "scenarios": [
+    {
+      "name": "clear_request_en",
+      "task_id": "general_conversation",
+      "language": "en-US",
+      "turns": [
+        {"caller": "I need help with an order.", "quality": "actionable", "agent_says": "What order detail would you like help with?"}
+      ]
+    },
+    {
+      "name": "clear_request_fr",
+      "task_id": "general_conversation",
+      "language": "fr-FR",
+      "turns": [
+        {"caller": "J'ai besoin d'aide avec une commande.", "quality": "actionable", "agent_says": "Quel détail de la commande souhaitez-vous vérifier ?"}
+      ]
+    },
+    {
+      "name": "unfinished_preference_en",
+      "task_id": "general_conversation",
+      "language": "en-US",
+      "turns": [
+        {"caller": "I would prefer", "quality": "fragment"}
+      ]
+    },
+    {
+      "name": "unfinished_preference_fr",
+      "task_id": "general_conversation",
+      "language": "fr-FR",
+      "turns": [
+        {"caller": "Je préfère", "quality": "fragment"}
+      ]
+    },
+    {
+      "name": "repeat_request_en",
+      "task_id": "general_conversation",
+      "language": "en-US",
+      "turns": [
+        {"caller": "Could you repeat that?", "quality": "actionable", "agent_says": "Of course, let me say that more simply."}
+      ]
+    },
+    {
+      "name": "repeat_request_fr",
+      "task_id": "general_conversation",
+      "language": "fr-FR",
+      "turns": [
+        {"caller": "Vous pouvez répéter ?", "quality": "actionable", "agent_says": "Bien sûr, je reformule simplement."}
+      ]
+    }
+  ]
+}

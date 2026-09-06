@@ -1,0 +1,232 @@
+{
+  "scope": "Real providers with simulated phone clock; all tool side effects disabled",
+  "pipeline_start_ms": 3964.8484160134103,
+  "error": "TimeoutError",
+  "events": [
+    {
+      "at_ms": 232.01929099741392,
+      "type": "managed_tools_reloaded",
+      "active_tools": [],
+      "pipeline": "cascade"
+    },
+    {
+      "at_ms": 245.43662500218488,
+      "type": "provider_latency",
+      "provider": "openwa",
+      "operation": "session_status",
+      "elapsed_ms": 12.672,
+      "monotonic_ns": 136894626879791,
+      "outcome": "ok"
+    },
+    {
+      "at_ms": 245.52945801406167,
+      "type": "openwa_runtime_status",
+      "state": "ready",
+      "tools": [
+        "whatsapp_last_delivery_status",
+        "whatsapp_read_current_customer_chat",
+        "whatsapp_reply_current_customer",
+        "whatsapp_send_text_current_customer"
+      ],
+      "self_chat": false
+    },
+    {
+      "at_ms": 245.5452910216991,
+      "type": "openwa_tools_reloaded",
+      "active_tools": [
+        "whatsapp_last_delivery_status",
+        "whatsapp_read_current_customer_chat",
+        "whatsapp_reply_current_customer",
+        "whatsapp_send_text_current_customer"
+      ],
+      "pipeline": "cascade"
+    },
+    {
+      "at_ms": 246.0542080225423,
+      "type": "web_research_runtime_status",
+      "state": "ready",
+      "tools": [
+        "web_research"
+      ]
+    },
+    {
+      "at_ms": 246.0668749990873,
+      "type": "web_research_tools_reloaded",
+      "active_tools": [
+        "web_research"
+      ],
+      "pipeline": "cascade"
+    },
+    {
+      "at_ms": 255.137875006767,
+      "type": "frappe_runtime_status",
+      "state": "ready",
+      "tools": [
+        "business_create_opportunity",
+        "business_create_quotation_draft",
+        "business_create_support_ticket",
+        "business_get_customer_context",
+        "business_get_invoice_status",
+        "business_get_order_status",
+        "business_get_support_status",
+        "business_mark_do_not_call",
+        "business_record_call_outcome",
+        "business_schedule_follow_up",
+        "business_search_catalog",
+        "business_update_support_ticket",
+        "business_upsert_current_lead"
+      ],
+      "site": "phoneagent.localhost"
+    },
+    {
+      "at_ms": 255.16054101171903,
+      "type": "frappe_tools_reloaded",
+      "active_tools": [
+        "business_create_opportunity",
+        "business_create_quotation_draft",
+        "business_create_support_ticket",
+        "business_get_customer_context",
+        "business_get_invoice_status",
+        "business_get_order_status",
+        "business_get_support_status",
+        "business_mark_do_not_call",
+        "business_record_call_outcome",
+        "business_schedule_follow_up",
+        "business_search_catalog",
+        "business_update_support_ticket",
+        "business_upsert_current_lead"
+      ],
+      "pipeline": "cascade"
+    },
+    {
+      "at_ms": 20864.34412500239,
+      "type": "provider_latency",
+      "provider": "local_stt",
+      "operation": "decode",
+      "elapsed_ms": 13467.265,
+      "monotonic_ns": 136915245787583,
+      "outcome": "ready",
+      "audio_ms": 3020.0,
+      "model": "large-v3-turbo"
+    },
+    {
+      "at_ms": 20970.10395801044,
+      "type": "task_state",
+      "task_id": "iptv_shopping_prod_v3_3",
+      "outcome": "in_progress",
+      "stage": "OPEN",
+      "turns": 1,
+      "collected": {
+        "caller_situation": "plan",
+        "plan_duration": "6 month"
+      },
+      "missing": [
+        "permission_to_continue",
+        "problem_or_desired_outcome",
+        "explicit_interest",
+        "next_step_consent"
+      ]
+    },
+    {
+      "at_ms": 20970.142500009388,
+      "type": "transcript",
+      "role": "user",
+      "text": "I would like the 6 month plan for $39",
+      "detected_language": "en",
+      "transcription_confidence": 0.756
+    },
+    {
+      "at_ms": 21773.048958013533,
+      "type": "provider_latency",
+      "provider": "antigravity_gemini",
+      "operation": "response_complete",
+      "elapsed_ms": 803.994,
+      "monotonic_ns": 136916154494500,
+      "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH",
+      "attempt": 1,
+      "prompt_chars": 41069,
+      "response_chars": 191,
+      "streaming": false
+    },
+    {
+      "at_ms": 23506.304208014626,
+      "type": "speculation",
+      "state": "ready",
+      "candidate_chars": 37,
+      "elapsed_ms": 2537.8,
+      "llm_ms": 808.1,
+      "tts_ms": 1729.6
+    },
+    {
+      "at_ms": 27120.2860409976,
+      "type": "provider_latency",
+      "provider": "antigravity_gemini",
+      "operation": "prefetch_hit",
+      "elapsed_ms": 0.609,
+      "monotonic_ns": 136921501721333,
+      "hits": 1,
+      "misses": 0
+    },
+    {
+      "at_ms": 27129.2489580228,
+      "type": "transcript",
+      "role": "assistant",
+      "text": "Perfect, the Professional Package for six months is a great choice. I'll get that set up for you—could you please confirm the best mobile number to send the secure checkout link via WhatsApp?",
+      "metrics": {
+        "turn_latency_ms": 6157.8,
+        "fidelity": 100.0,
+        "task_score": 100.0
+      },
+      "response_id": "response-1",
+      "response_kind": "turn",
+      "delivery_status": "generated"
+    },
+    {
+      "at_ms": 27129.261958005372,
+      "type": "evaluation",
+      "score": 100.0,
+      "task_score": 100.0,
+      "passed": true,
+      "feedback": [],
+      "task_id": "iptv_shopping_prod_v3_3"
+    },
+    {
+      "at_ms": 27188.35283300723,
+      "type": "provider_latency",
+      "provider": "edge_tts",
+      "operation": "synthesis_complete",
+      "elapsed_ms": 34.207,
+      "monotonic_ns": 136921569796750,
+      "context_id": "e34763c9-2fbd-4f85-b605-215a97b3f1b6",
+      "text_chars": 67,
+      "first_pcm_ms": null,
+      "pcm_bytes": 0,
+      "outcome": "cancelled"
+    },
+    {
+      "at_ms": 27192.754290997982,
+      "type": "playback_status",
+      "response_id": "response-1",
+      "status": "interrupted",
+      "message": ""
+    },
+    {
+      "at_ms": 27192.80829100171,
+      "type": "call_outcome",
+      "task_id": "iptv_shopping_prod_v3_3",
+      "outcome": "abandoned",
+      "stage": "OPEN",
+      "turns": 1,
+      "collected": {
+        "caller_situation": "plan",
+        "plan_duration": "6 month"
+      },
+      "missing": [
+        "permission_to_continue",
+        "problem_or_desired_outcome",
+        "explicit_interest",
+        "next_step_consent"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "mlx_whisper_version": "0.4.3",
+  "device": "Device(gpu, 0)",
+  "model": "/Users/aziz/.cache/huggingface/hub/models--mlx-community--whisper-large-v3-turbo-q4/snapshots/660c343bbf4e52ac257f0b7d952e5388e6f93bef",
+  "cold_load_and_first_inference_ms": 1468.103291990701,
+  "rows": [
+    {
+      "trial": 0,
+      "case": "en_offer",
+      "audio_sha256": "150a5ba74038b2b85179a7ae20e5698070bcf25d097242cfafab0d0cc5c2298c",
+      "elapsed_ms": 367.82004199631047,
+      "text": " I would like the 6 month plan for $39",
+      "segments": [
+        {
+          "avg_logprob": -0.28766210262592024,
+          "no_speech_prob": 5.234766613237962e-13,
+          "compression_ratio": 0.8222222222222222
+        }
+      ]
+    },
+    {
+      "trial": 0,
+      "case": "en_short",
+      "audio_sha256": "f371edfdeb1e4588ba53cd9b48ec0afb652f27bbfea81468cf2415ade99abfee",
+      "elapsed_ms": 749.1874580009608,
+      "text": " Yes, please.",
+      "segments": [
+        {
+          "avg_logprob": -0.2228020259312221,
+          "no_speech_prob": 1.4499684005547797e-12,
+          "compression_ratio": 0.6
+        }
+      ]
+    },
+    {
+      "trial": 0,
+      "case": "fr_offer",
+      "audio_sha256": "e9a034a8e3e2c88386dce9737d241af92679f915d88433456c86cfaa586ac97e",
+      "elapsed_ms": 574.7331250022398,
+      "text": " Je voudrais le forfait de 6 mois à 39 dollars.",
+      "segments": [
+        {
+          "avg_logprob": -0.09536053152645335,
+          "no_speech_prob": 3.0160420601971216e-12,
+          "compression_ratio": 0.8703703703703703
+        }
+      ]
+    },
+    {
+      "trial": 0,
+      "case": "fr_short",
+      "audio_sha256": "9d6af4d960f2e5bbfb241f20e77bf3cc97edb8f3a9e67ba1c9acdb179eb4106c",
+      "elapsed_ms": 613.1623749970458,
+      "text": " Oui, s'il vous plaît.",
+      "segments": [
+        {
+          "avg_logprob": -0.1119231383005778,
+          "no_speech_prob": 5.011086597755954e-12,
+          "compression_ratio": 0.7333333333333333
+        }
+      ]
+    },
+    {
+      "trial": 1,
+      "case": "en_offer",
+      "audio_sha256": "150a5ba74038b2b85179a7ae20e5698070bcf25d097242cfafab0d0cc5c2298c",
+      "elapsed_ms": 604.3946659920039,
+      "text": " I would like the 6 month plan for $39",
+      "segments": [
+        {
+          "avg_logprob": -0.28766210262592024,
+          "no_speech_prob": 5.234766613237962e-13,
+          "compression_ratio": 0.8222222222222222
+        }
+      ]
+    },
+    {
+      "trial": 1,
+      "case": "en_short",
+      "audio_sha256": "f371edfdeb1e4588ba53cd9b48ec0afb652f27bbfea81468cf2415ade99abfee",
+      "elapsed_ms": 590.1330839988077,
+      "text": " Yes, please.",
+      "segments": [
+        {
+          "avg_logprob": -0.2228020259312221,
+          "no_speech_prob": 1.4499684005547797e-12,
+          "compression_ratio": 0.6
+        }
+      ]
+    },
+    {
+      "trial": 1,
+      "case": "fr_offer",
+      "audio_sha256": "e9a034a8e3e2c88386dce9737d241af92679f915d88433456c86cfaa586ac97e",
+      "elapsed_ms": 608.8493750139605,
+      "text": " Je voudrais le forfait de 6 mois à 39 dollars.",
+      "segments": [
+        {
+          "avg_logprob": -0.09536053152645335,
+          "no_speech_prob": 3.0160420601971216e-12,
+          "compression_ratio": 0.8703703703703703
+        }
+      ]
+    },
+    {
+      "trial": 1,
+      "case": "fr_short",
+      "audio_sha256": "9d6af4d960f2e5bbfb241f20e77bf3cc97edb8f3a9e67ba1c9acdb179eb4106c",
+      "elapsed_ms": 609.1185830009636,
+      "text": " Oui, s'il vous plaît.",
+      "segments": [
+        {
+          "avg_logprob": -0.1119231383005778,
+          "no_speech_prob": 5.011086597755954e-12,
+          "compression_ratio": 0.7333333333333333
+        }
+      ]
+    },
+    {
+      "trial": 2,
+      "case": "en_offer",
+      "audio_sha256": "150a5ba74038b2b85179a7ae20e5698070bcf25d097242cfafab0d0cc5c2298c",
+      "elapsed_ms": 615.2366249880288,
+      "text": " I would like the 6 month plan for $39",
+      "segments": [
+        {
+          "avg_logprob": -0.28766210262592024,
+          "no_speech_prob": 5.234766613237962e-13,
+          "compression_ratio": 0.8222222222222222
+        }
+      ]
+    },
+    {
+      "trial": 2,
+      "case": "en_short",
+      "audio_sha256": "f371edfdeb1e4588ba53cd9b48ec0afb652f27bbfea81468cf2415ade99abfee",
+      "elapsed_ms": 619.7492499923101,
+      "text": " Yes, please.",
+      "segments": [
+        {
+          "avg_logprob": -0.2228020259312221,
+          "no_speech_prob": 1.4499684005547797e-12,
+          "compression_ratio": 0.6
+        }
+      ]
+    },
+    {
+      "trial": 2,
+      "case": "fr_offer",
+      "audio_sha256": "e9a034a8e3e2c88386dce9737d241af92679f915d88433456c86cfaa586ac97e",
+      "elapsed_ms": 608.3300000027521,
+      "text": " Je voudrais le forfait de 6 mois à 39 dollars.",
+      "segments": [
+        {
+          "avg_logprob": -0.09536053152645335,
+          "no_speech_prob": 3.0160420601971216e-12,
+          "compression_ratio": 0.8703703703703703
+        }
+      ]
+    },
+    {
+      "trial": 2,
+      "case": "fr_short",
+      "audio_sha256": "9d6af4d960f2e5bbfb241f20e77bf3cc97edb8f3a9e67ba1c9acdb179eb4106c",
+      "elapsed_ms": 604.9804169888375,
+      "text": " Oui, s'il vous plaît.",
+      "segments": [
+        {
+          "avg_logprob": -0.1119231383005778,
+          "no_speech_prob": 5.011086597755954e-12,
+          "compression_ratio": 0.7333333333333333
+        }
+      ]
+    }
+  ]
+}

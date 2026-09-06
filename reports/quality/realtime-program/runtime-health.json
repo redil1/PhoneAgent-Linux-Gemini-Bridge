@@ -1,0 +1,26 @@
+{
+  "status": {
+    "status": "ok",
+    "call_state": "IDLE"
+  },
+  "config": {
+    "stt_provider": "antigravity_live",
+    "llm_provider": "antigravity_gemini",
+    "tts_provider": "edge_tts",
+    "smart_turn_enabled": true
+  },
+  "openwa_container": {
+    "name": "phoneagent-openwa",
+    "running": true,
+    "controls": [
+      "SEND_PACING_ENABLED=true",
+      "SIMULATE_TYPING=false"
+    ]
+  },
+  "openwa": {
+    "enabled": true,
+    "delivery_confirmation_timeout_ms": 0,
+    "reachable": true,
+    "session_ready": true
+  }
+}

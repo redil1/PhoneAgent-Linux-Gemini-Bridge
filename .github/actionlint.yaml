@@ -1,0 +1,4 @@
+# Hardware readiness runs only on a deliberately labelled self-hosted runner.
+self-hosted-runner:
+  labels:
+    - phoneagent-device

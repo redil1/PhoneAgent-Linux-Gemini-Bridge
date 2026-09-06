@@ -1,0 +1,31 @@
+{
+  "task_id": "iptv_shopping_prod_v3_3",
+  "tool_names": [
+    "business_create_opportunity",
+    "business_create_quotation_draft",
+    "business_create_support_ticket",
+    "business_get_customer_context",
+    "business_get_invoice_status",
+    "business_get_order_status",
+    "business_get_support_status",
+    "business_mark_do_not_call",
+    "business_record_call_outcome",
+    "business_schedule_follow_up",
+    "business_search_catalog",
+    "business_update_support_ticket",
+    "business_upsert_current_lead",
+    "end_call",
+    "load_agent_skill",
+    "web_research",
+    "whatsapp_last_delivery_status",
+    "whatsapp_read_current_customer_chat",
+    "whatsapp_reply_current_customer",
+    "whatsapp_send_text_current_customer"
+  ],
+  "count": 20,
+  "whatsapp_send_available": true,
+  "business_tools_available": 13,
+  "messaging_available_in_policy": true,
+  "send_guidance_in_prompt": true,
+  "messages_sent": 0
+}

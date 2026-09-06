@@ -1,0 +1,11 @@
+{
+  "scope": "Controlled decoder failure after streamed PCM prefix; no network or phone output",
+  "before": {
+    "audio_chunks": 1,
+    "reported_errors": 0
+  },
+  "after": {
+    "audio_chunks": 1,
+    "reported_errors": 1
+  }
+}

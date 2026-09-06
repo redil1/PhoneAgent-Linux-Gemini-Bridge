@@ -1,0 +1,505 @@
+{
+  "scope": "Offline integration smoke checks using local synthetic speech; no accuracy claim",
+  "input_format": "16000 Hz mono signed 16-bit PCM, 20 ms frames, paced in real time",
+  "source_sha256": "c26db1f088911ba7a61621ff2e8b3be0f56908267b5ef5d8ade5daaea1f19d0c",
+  "results": [
+    {
+      "id": "en_complete",
+      "language": "en-US",
+      "voice": "Samantha",
+      "pause_ms": null,
+      "segments": [
+        {
+          "text": "I need help changing my address.",
+          "duration_ms": 1960,
+          "sha256": "b977066ac34badecd253d10d09e019ece39db1e4ccf7d83785073e566cffaa95"
+        }
+      ],
+      "final_segment_end_ms": 2160,
+      "final_commit_count": 1,
+      "expected_text": "I need help changing my address.",
+      "final_text_matches": true,
+      "commit_delay_after_fixture_segment_ms": 620,
+      "events": [
+        {
+          "audio_ms": 20,
+          "event": "vad",
+          "state": "QUIET"
+        },
+        {
+          "audio_ms": 200,
+          "event": "segment_start",
+          "index": 0
+        },
+        {
+          "audio_ms": 300,
+          "event": "vad",
+          "state": "STARTING"
+        },
+        {
+          "audio_ms": 400,
+          "event": "vad",
+          "state": "SPEAKING"
+        },
+        {
+          "audio_ms": 400,
+          "event": "interruption"
+        },
+        {
+          "audio_ms": 400,
+          "event": "UserStartedSpeakingFrame"
+        },
+        {
+          "audio_ms": 2160,
+          "event": "segment_end",
+          "index": 0
+        },
+        {
+          "audio_ms": 2180,
+          "event": "vad",
+          "state": "STOPPING"
+        },
+        {
+          "audio_ms": 2340,
+          "event": "vad",
+          "state": "QUIET"
+        },
+        {
+          "audio_ms": 2780,
+          "event": "TranscriptionFrame",
+          "text": "I need help changing my address."
+        },
+        {
+          "audio_ms": 2780,
+          "event": "UserStoppedSpeakingFrame"
+        }
+      ],
+      "smart_turn_inferences": [
+        {
+          "started_audio_ms": 220,
+          "duration_ms": 67.91,
+          "probability_complete": 0.975929319858551,
+          "input_audio_ms": 220
+        },
+        {
+          "started_audio_ms": 2380,
+          "duration_ms": 72.01,
+          "probability_complete": 0.9870367050170898,
+          "input_audio_ms": 2380
+        },
+        {
+          "started_audio_ms": 2980,
+          "duration_ms": 70.74,
+          "probability_complete": 0.9870367050170898,
+          "input_audio_ms": 200
+        }
+      ],
+      "wall_duration_ms": 6161,
+      "passed": true
+    },
+    {
+      "id": "fr_complete",
+      "language": "fr-FR",
+      "voice": "Thomas",
+      "pause_ms": null,
+      "segments": [
+        {
+          "text": "Je voudrais modifier mon adresse.",
+          "duration_ms": 1980,
+          "sha256": "1a47b655d90396bb2b157f2bebd83c820d9114e21f00b5ce29ee9dd774dad3be"
+        }
+      ],
+      "final_segment_end_ms": 2180,
+      "final_commit_count": 1,
+      "expected_text": "Je voudrais modifier mon adresse.",
+      "final_text_matches": true,
+      "commit_delay_after_fixture_segment_ms": 600,
+      "events": [
+        {
+          "audio_ms": 20,
+          "event": "vad",
+          "state": "QUIET"
+        },
+        {
+          "audio_ms": 200,
+          "event": "segment_start",
+          "index": 0
+        },
+        {
+          "audio_ms": 300,
+          "event": "vad",
+          "state": "STARTING"
+        },
+        {
+          "audio_ms": 400,
+          "event": "vad",
+          "state": "SPEAKING"
+        },
+        {
+          "audio_ms": 400,
+          "event": "interruption"
+        },
+        {
+          "audio_ms": 400,
+          "event": "UserStartedSpeakingFrame"
+        },
+        {
+          "audio_ms": 2180,
+          "event": "vad",
+          "state": "STOPPING"
+        },
+        {
+          "audio_ms": 2180,
+          "event": "segment_end",
+          "index": 0
+        },
+        {
+          "audio_ms": 2340,
+          "event": "vad",
+          "state": "QUIET"
+        },
+        {
+          "audio_ms": 2780,
+          "event": "TranscriptionFrame",
+          "text": "Je voudrais modifier mon adresse."
+        },
+        {
+          "audio_ms": 2780,
+          "event": "UserStoppedSpeakingFrame"
+        }
+      ],
+      "smart_turn_inferences": [
+        {
+          "started_audio_ms": 220,
+          "duration_ms": 81.21,
+          "probability_complete": 0.9823201894760132,
+          "input_audio_ms": 220
+        },
+        {
+          "started_audio_ms": 2380,
+          "duration_ms": 80.34,
+          "probability_complete": 0.9808988571166992,
+          "input_audio_ms": 2380
+        },
+        {
+          "started_audio_ms": 2980,
+          "duration_ms": 83.29,
+          "probability_complete": 0.9870367050170898,
+          "input_audio_ms": 200
+        }
+      ],
+      "wall_duration_ms": 6181,
+      "passed": true
+    },
+    {
+      "id": "en_mid_thought",
+      "language": "en-US",
+      "voice": "Samantha",
+      "pause_ms": 1200,
+      "segments": [
+        {
+          "text": "I would like to change my subscription because",
+          "duration_ms": 2540,
+          "sha256": "fb9f4979c1ade8318721d7fb5fcfeb71cb9f1f6d3d495f0f2a1b5b1cb92026b0"
+        },
+        {
+          "text": "I am moving to a different city next month.",
+          "duration_ms": 2360,
+          "sha256": "cead95be57248d10a413cf3a425223110c452287689e87424c8f3b0a731b2c74"
+        }
+      ],
+      "commits_before_continuation": 0,
+      "final_segment_end_ms": 6300,
+      "final_commit_count": 1,
+      "expected_text": "I would like to change my subscription because I am moving to a different city next month.",
+      "final_text_matches": true,
+      "commit_delay_after_fixture_segment_ms": 2900,
+      "events": [
+        {
+          "audio_ms": 20,
+          "event": "vad",
+          "state": "QUIET"
+        },
+        {
+          "audio_ms": 200,
+          "event": "segment_start",
+          "index": 0
+        },
+        {
+          "audio_ms": 300,
+          "event": "vad",
+          "state": "STARTING"
+        },
+        {
+          "audio_ms": 400,
+          "event": "vad",
+          "state": "SPEAKING"
+        },
+        {
+          "audio_ms": 400,
+          "event": "interruption"
+        },
+        {
+          "audio_ms": 400,
+          "event": "UserStartedSpeakingFrame"
+        },
+        {
+          "audio_ms": 740,
+          "event": "vad",
+          "state": "STOPPING"
+        },
+        {
+          "audio_ms": 780,
+          "event": "vad",
+          "state": "SPEAKING"
+        },
+        {
+          "audio_ms": 2740,
+          "event": "segment_end",
+          "index": 0
+        },
+        {
+          "audio_ms": 2760,
+          "event": "vad",
+          "state": "STOPPING"
+        },
+        {
+          "audio_ms": 2920,
+          "event": "vad",
+          "state": "QUIET"
+        },
+        {
+          "audio_ms": 3940,
+          "event": "segment_start",
+          "index": 1
+        },
+        {
+          "audio_ms": 4000,
+          "event": "vad",
+          "state": "STARTING"
+        },
+        {
+          "audio_ms": 4100,
+          "event": "vad",
+          "state": "SPEAKING"
+        },
+        {
+          "audio_ms": 4100,
+          "event": "interruption"
+        },
+        {
+          "audio_ms": 6220,
+          "event": "vad",
+          "state": "STOPPING"
+        },
+        {
+          "audio_ms": 6300,
+          "event": "segment_end",
+          "index": 1
+        },
+        {
+          "audio_ms": 6380,
+          "event": "vad",
+          "state": "QUIET"
+        },
+        {
+          "audio_ms": 9200,
+          "event": "TranscriptionFrame",
+          "text": "I would like to change my subscription because I am moving to a different city next month."
+        },
+        {
+          "audio_ms": 9200,
+          "event": "UserStoppedSpeakingFrame"
+        }
+      ],
+      "smart_turn_inferences": [
+        {
+          "started_audio_ms": 220,
+          "duration_ms": 77.67,
+          "probability_complete": 0.9777120351791382,
+          "input_audio_ms": 220
+        },
+        {
+          "started_audio_ms": 2960,
+          "duration_ms": 77.84,
+          "probability_complete": 0.059686750173568726,
+          "input_audio_ms": 2960
+        },
+        {
+          "started_audio_ms": 6440,
+          "duration_ms": 77.48,
+          "probability_complete": 0.4122953414916992,
+          "input_audio_ms": 6440
+        },
+        {
+          "started_audio_ms": 9400,
+          "duration_ms": 73.19,
+          "probability_complete": 0.9870367050170898,
+          "input_audio_ms": 200
+        }
+      ],
+      "wall_duration_ms": 10301,
+      "passed": true
+    },
+    {
+      "id": "fr_mid_thought",
+      "language": "fr-FR",
+      "voice": "Thomas",
+      "pause_ms": 1200,
+      "segments": [
+        {
+          "text": "Je voudrais changer mon abonnement parce que",
+          "duration_ms": 2400,
+          "sha256": "4ff5e09d7153322d180b033e41d10848463bbeaaa68b14ba5dc7bb70f48fe872"
+        },
+        {
+          "text": "je déménage dans une autre ville le mois prochain.",
+          "duration_ms": 2560,
+          "sha256": "09cd969c16e938420f3c9de56d85bd9e33f098ca891c690a910b956be6553659"
+        }
+      ],
+      "commits_before_continuation": 0,
+      "final_segment_end_ms": 6360,
+      "final_commit_count": 1,
+      "expected_text": "Je voudrais changer mon abonnement parce que je déménage dans une autre ville le mois prochain.",
+      "final_text_matches": true,
+      "commit_delay_after_fixture_segment_ms": 620,
+      "events": [
+        {
+          "audio_ms": 20,
+          "event": "vad",
+          "state": "QUIET"
+        },
+        {
+          "audio_ms": 200,
+          "event": "segment_start",
+          "index": 0
+        },
+        {
+          "audio_ms": 300,
+          "event": "vad",
+          "state": "STARTING"
+        },
+        {
+          "audio_ms": 400,
+          "event": "vad",
+          "state": "SPEAKING"
+        },
+        {
+          "audio_ms": 400,
+          "event": "interruption"
+        },
+        {
+          "audio_ms": 400,
+          "event": "UserStartedSpeakingFrame"
+        },
+        {
+          "audio_ms": 1960,
+          "event": "vad",
+          "state": "STOPPING"
+        },
+        {
+          "audio_ms": 2000,
+          "event": "vad",
+          "state": "SPEAKING"
+        },
+        {
+          "audio_ms": 2600,
+          "event": "segment_end",
+          "index": 0
+        },
+        {
+          "audio_ms": 2640,
+          "event": "vad",
+          "state": "STOPPING"
+        },
+        {
+          "audio_ms": 2800,
+          "event": "vad",
+          "state": "QUIET"
+        },
+        {
+          "audio_ms": 3800,
+          "event": "segment_start",
+          "index": 1
+        },
+        {
+          "audio_ms": 3840,
+          "event": "vad",
+          "state": "STARTING"
+        },
+        {
+          "audio_ms": 3940,
+          "event": "vad",
+          "state": "SPEAKING"
+        },
+        {
+          "audio_ms": 3940,
+          "event": "interruption"
+        },
+        {
+          "audio_ms": 5060,
+          "event": "vad",
+          "state": "STOPPING"
+        },
+        {
+          "audio_ms": 5120,
+          "event": "vad",
+          "state": "SPEAKING"
+        },
+        {
+          "audio_ms": 6360,
+          "event": "segment_end",
+          "index": 1
+        },
+        {
+          "audio_ms": 6380,
+          "event": "vad",
+          "state": "STOPPING"
+        },
+        {
+          "audio_ms": 6540,
+          "event": "vad",
+          "state": "QUIET"
+        },
+        {
+          "audio_ms": 6980,
+          "event": "TranscriptionFrame",
+          "text": "Je voudrais changer mon abonnement parce que je déménage dans une autre ville le mois prochain."
+        },
+        {
+          "audio_ms": 6980,
+          "event": "UserStoppedSpeakingFrame"
+        }
+      ],
+      "smart_turn_inferences": [
+        {
+          "started_audio_ms": 220,
+          "duration_ms": 74.29,
+          "probability_complete": 0.9816229343414307,
+          "input_audio_ms": 220
+        },
+        {
+          "started_audio_ms": 2840,
+          "duration_ms": 74.04,
+          "probability_complete": 0.008779913187026978,
+          "input_audio_ms": 2840
+        },
+        {
+          "started_audio_ms": 6580,
+          "duration_ms": 71.53,
+          "probability_complete": 0.7857974767684937,
+          "input_audio_ms": 6580
+        },
+        {
+          "started_audio_ms": 7180,
+          "duration_ms": 79.36,
+          "probability_complete": 0.9870367050170898,
+          "input_audio_ms": 200
+        }
+      ],
+      "wall_duration_ms": 10361,
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,496 @@
+{
+  "scope": "Natural-voice synthetic positive controls with the production200ms chunk setting",
+  "rows": [
+    {
+      "case": "natural_tts_en_offer",
+      "language": "en-US",
+      "injected_provider_fault": false,
+      "audio_ms": 2900.0,
+      "hypotheses": [
+        {
+          "text": "I would",
+          "final": false,
+          "speech_epoch": 1
+        },
+        {
+          "text": "I would like the",
+          "final": false,
+          "speech_epoch": 1
+        },
+        {
+          "text": "I would like the six month",
+          "final": false,
+          "speech_epoch": 1
+        },
+        {
+          "text": "I would like the six month plan for",
+          "final": false,
+          "speech_epoch": 1
+        },
+        {
+          "text": "I would like the six month plan for 39",
+          "final": false,
+          "speech_epoch": 1
+        },
+        {
+          "text": "I would like the six month plan for $39.",
+          "final": false,
+          "speech_epoch": 1
+        },
+        {
+          "text": "I would like the six month plan for $39.",
+          "final": false,
+          "speech_epoch": 1
+        },
+        {
+          "text": "I would like the six-month plan for $39.",
+          "final": true,
+          "speech_epoch": 1
+        }
+      ],
+      "frames": [
+        {
+          "kind": "start",
+          "at": 131717.831247375,
+          "after_eof_ms": -2757.500790990889
+        },
+        {
+          "kind": "commit",
+          "text": "I would like the six month plan for $39.",
+          "at": 131721.793644791,
+          "after_eof_ms": 1204.8966250149533
+        }
+      ],
+      "interruptions": 1,
+      "acoustic_epochs": 1,
+      "chunk_ms": 200,
+      "send_queue_peak": 1,
+      "send_queue_remaining": 0,
+      "sends": [
+        {
+          "sequence": 0,
+          "bytes": 6400,
+          "elapsed_ms": 9.426500007975847
+        },
+        {
+          "sequence": 1,
+          "bytes": 6400,
+          "elapsed_ms": 9.207374998368323
+        },
+        {
+          "sequence": 2,
+          "bytes": 6400,
+          "elapsed_ms": 8.098041987977922
+        },
+        {
+          "sequence": 3,
+          "bytes": 6400,
+          "elapsed_ms": 6.159207987366244
+        },
+        {
+          "sequence": 4,
+          "bytes": 6400,
+          "elapsed_ms": 8.575541985919699
+        },
+        {
+          "sequence": 5,
+          "bytes": 6400,
+          "elapsed_ms": 7.801750005455688
+        },
+        {
+          "sequence": 6,
+          "bytes": 6400,
+          "elapsed_ms": 9.610666980734095
+        },
+        {
+          "sequence": 7,
+          "bytes": 6400,
+          "elapsed_ms": 6.4573340059723705
+        },
+        {
+          "sequence": 8,
+          "bytes": 6400,
+          "elapsed_ms": 8.328958007041365
+        },
+        {
+          "sequence": 9,
+          "bytes": 6400,
+          "elapsed_ms": 6.757124996511266
+        },
+        {
+          "sequence": 10,
+          "bytes": 6400,
+          "elapsed_ms": 8.810375002212822
+        },
+        {
+          "sequence": 11,
+          "bytes": 6400,
+          "elapsed_ms": 9.050500026205555
+        },
+        {
+          "sequence": 12,
+          "bytes": 6400,
+          "elapsed_ms": 6.6437500063329935
+        },
+        {
+          "sequence": 13,
+          "bytes": 6400,
+          "elapsed_ms": 7.166249997681007
+        },
+        {
+          "sequence": 14,
+          "bytes": 6400,
+          "elapsed_ms": 5.271291011013091
+        },
+        {
+          "sequence": 15,
+          "bytes": 6400,
+          "elapsed_ms": 7.372332998784259
+        },
+        {
+          "sequence": 16,
+          "bytes": 6400,
+          "elapsed_ms": 6.159207987366244
+        },
+        {
+          "sequence": 17,
+          "bytes": 6400,
+          "elapsed_ms": 25.69904099800624
+        },
+        {
+          "sequence": 18,
+          "bytes": 6400,
+          "elapsed_ms": 6.292459001997486
+        },
+        {
+          "sequence": 19,
+          "bytes": 6400,
+          "elapsed_ms": 6.412499991711229
+        },
+        {
+          "sequence": 20,
+          "bytes": 6400,
+          "elapsed_ms": 8.99050000589341
+        },
+        {
+          "sequence": 21,
+          "bytes": 6400,
+          "elapsed_ms": 7.139166002161801
+        },
+        {
+          "sequence": 22,
+          "bytes": 6400,
+          "elapsed_ms": 5.3682080178987235
+        },
+        {
+          "sequence": 23,
+          "bytes": 6400,
+          "elapsed_ms": 7.630124979186803
+        },
+        {
+          "sequence": 24,
+          "bytes": 6400,
+          "elapsed_ms": 6.33566701435484
+        },
+        {
+          "sequence": 25,
+          "bytes": 6400,
+          "elapsed_ms": 9.219208994181827
+        },
+        {
+          "sequence": 26,
+          "bytes": 6400,
+          "elapsed_ms": 9.122874995227903
+        },
+        {
+          "sequence": 27,
+          "bytes": 6400,
+          "elapsed_ms": 6.850375008070841
+        },
+        {
+          "sequence": 28,
+          "bytes": 6400,
+          "elapsed_ms": 6.596209015697241
+        },
+        {
+          "sequence": 29,
+          "bytes": 6400,
+          "elapsed_ms": 6.0167920019011945
+        },
+        {
+          "sequence": 30,
+          "bytes": 6400,
+          "elapsed_ms": 10.96320801298134
+        },
+        {
+          "sequence": 31,
+          "bytes": 6400,
+          "elapsed_ms": 7.035499991616234
+        },
+        {
+          "sequence": 32,
+          "bytes": 6400,
+          "elapsed_ms": 7.046042010188103
+        },
+        {
+          "sequence": 33,
+          "bytes": 6400,
+          "elapsed_ms": 6.244874995900318
+        }
+      ]
+    },
+    {
+      "case": "natural_tts_fr_offer",
+      "language": "fr-FR",
+      "injected_provider_fault": false,
+      "audio_ms": 3240.0,
+      "hypotheses": [
+        {
+          "text": "Je vous",
+          "final": false,
+          "speech_epoch": 1
+        },
+        {
+          "text": "Je voudrais le",
+          "final": false,
+          "speech_epoch": 1
+        },
+        {
+          "text": "Je voudrais le forfait de",
+          "final": false,
+          "speech_epoch": 1
+        },
+        {
+          "text": "Je voudrais le forfait de 6",
+          "final": false,
+          "speech_epoch": 1
+        },
+        {
+          "text": "Je voudrais le forfait de 6 mois à",
+          "final": false,
+          "speech_epoch": 1
+        },
+        {
+          "text": "Je voudrais le forfait de 6 mois à 39",
+          "final": false,
+          "speech_epoch": 1
+        },
+        {
+          "text": "Je voudrais le forfait de 6 mois à 39 dollars.",
+          "final": false,
+          "speech_epoch": 1
+        },
+        {
+          "text": "Je voudrais le forfait de 6 mois à 39 dollars.",
+          "final": false,
+          "speech_epoch": 1
+        },
+        {
+          "text": "Je voudrais le forfait de 6 mois à 39 dollars.",
+          "final": true,
+          "speech_epoch": 1
+        }
+      ],
+      "frames": [
+        {
+          "kind": "start",
+          "at": 131726.254323833,
+          "after_eof_ms": -3055.9419579803944
+        },
+        {
+          "kind": "commit",
+          "text": "Je voudrais le forfait de 6 mois à 39 dollars.",
+          "at": 131732.286658375,
+          "after_eof_ms": 2976.392584008863
+        }
+      ],
+      "interruptions": 1,
+      "acoustic_epochs": 1,
+      "chunk_ms": 200,
+      "send_queue_peak": 1,
+      "send_queue_remaining": 0,
+      "sends": [
+        {
+          "sequence": 0,
+          "bytes": 6400,
+          "elapsed_ms": 7.464207999873906
+        },
+        {
+          "sequence": 1,
+          "bytes": 6400,
+          "elapsed_ms": 7.0064169995021075
+        },
+        {
+          "sequence": 2,
+          "bytes": 6400,
+          "elapsed_ms": 7.110457983799279
+        },
+        {
+          "sequence": 3,
+          "bytes": 6400,
+          "elapsed_ms": 6.618709012400359
+        },
+        {
+          "sequence": 4,
+          "bytes": 6400,
+          "elapsed_ms": 10.539750015595928
+        },
+        {
+          "sequence": 5,
+          "bytes": 6400,
+          "elapsed_ms": 7.867291016736999
+        },
+        {
+          "sequence": 6,
+          "bytes": 6400,
+          "elapsed_ms": 9.307416999945417
+        },
+        {
+          "sequence": 7,
+          "bytes": 6400,
+          "elapsed_ms": 7.631749991560355
+        },
+        {
+          "sequence": 8,
+          "bytes": 6400,
+          "elapsed_ms": 6.1724589904770255
+        },
+        {
+          "sequence": 9,
+          "bytes": 6400,
+          "elapsed_ms": 7.3347080033272505
+        },
+        {
+          "sequence": 10,
+          "bytes": 6400,
+          "elapsed_ms": 7.900875003542751
+        },
+        {
+          "sequence": 11,
+          "bytes": 6400,
+          "elapsed_ms": 6.872833997476846
+        },
+        {
+          "sequence": 12,
+          "bytes": 6400,
+          "elapsed_ms": 7.248083013109863
+        },
+        {
+          "sequence": 13,
+          "bytes": 6400,
+          "elapsed_ms": 7.02933399588801
+        },
+        {
+          "sequence": 14,
+          "bytes": 6400,
+          "elapsed_ms": 10.064000001875684
+        },
+        {
+          "sequence": 15,
+          "bytes": 6400,
+          "elapsed_ms": 8.474624977679923
+        },
+        {
+          "sequence": 16,
+          "bytes": 6400,
+          "elapsed_ms": 8.086000016191974
+        },
+        {
+          "sequence": 17,
+          "bytes": 6400,
+          "elapsed_ms": 20.07720898836851
+        },
+        {
+          "sequence": 18,
+          "bytes": 6400,
+          "elapsed_ms": 5.124083021655679
+        },
+        {
+          "sequence": 19,
+          "bytes": 6400,
+          "elapsed_ms": 5.979917012155056
+        },
+        {
+          "sequence": 20,
+          "bytes": 6400,
+          "elapsed_ms": 4.910709016257897
+        },
+        {
+          "sequence": 21,
+          "bytes": 6400,
+          "elapsed_ms": 6.826833996456116
+        },
+        {
+          "sequence": 22,
+          "bytes": 6400,
+          "elapsed_ms": 9.187332994770259
+        },
+        {
+          "sequence": 23,
+          "bytes": 6400,
+          "elapsed_ms": 7.5055409979540855
+        },
+        {
+          "sequence": 24,
+          "bytes": 6400,
+          "elapsed_ms": 13.66533400141634
+        },
+        {
+          "sequence": 25,
+          "bytes": 6400,
+          "elapsed_ms": 5.978583998512477
+        },
+        {
+          "sequence": 26,
+          "bytes": 6400,
+          "elapsed_ms": 6.373582989908755
+        },
+        {
+          "sequence": 27,
+          "bytes": 6400,
+          "elapsed_ms": 7.651207997696474
+        },
+        {
+          "sequence": 28,
+          "bytes": 6400,
+          "elapsed_ms": 7.625208992976695
+        },
+        {
+          "sequence": 29,
+          "bytes": 6400,
+          "elapsed_ms": 7.41620798362419
+        },
+        {
+          "sequence": 30,
+          "bytes": 6400,
+          "elapsed_ms": 8.894250000594184
+        },
+        {
+          "sequence": 31,
+          "bytes": 6400,
+          "elapsed_ms": 6.970374990487471
+        },
+        {
+          "sequence": 32,
+          "bytes": 6400,
+          "elapsed_ms": 6.297541985986754
+        },
+        {
+          "sequence": 33,
+          "bytes": 6400,
+          "elapsed_ms": 6.564499984961003
+        },
+        {
+          "sequence": 34,
+          "bytes": 6400,
+          "elapsed_ms": 8.830958016915247
+        },
+        {
+          "sequence": 35,
+          "bytes": 6400,
+          "elapsed_ms": 6.2723750015720725
+        }
+      ]
+    }
+  ]
+}

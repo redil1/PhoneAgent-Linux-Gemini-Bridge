@@ -1,0 +1,660 @@
+{
+  "scope": "Paced continuous EN/FR endpoint matrix, real cloud ASR; no call or tool effects.\n\nNoise is deterministic stationary 300-3400 Hz noise, not recorded café/echo audio.\nSource EOF is used for measurement only and never passed to the turn controller.\n",
+  "initial_language": "en-US",
+  "local_corroboration": true,
+  "rows": [
+    {
+      "case": "en_negative",
+      "language": "en-US",
+      "expected": "No, not the yearly plan.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "8bef835fb3fcda69ca47c8dc74ebde19c67214c661cad580f926abd41415a1c7",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 1800.0,
+      "start_ms": 2613.739958003862,
+      "commits": [
+        {
+          "at_ms": 6408.7719160015695,
+          "text": "No, not the yearly plan.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.8964348992818575,
+                "language": "en",
+                "decode_ms": 1197.2417500219308
+              },
+              "speech_epoch": 2,
+              "provider_final": true,
+              "partial_confirmations": 1,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 149944298018083,
+              "committed_monotonic_ns": 149946331296000,
+              "endpoint_wait_ms": 2020.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 5457.507041021017,
+          "text": "No.",
+          "final": false,
+          "accepted": "No.",
+          "speech_epoch": 2
+        },
+        {
+          "at_ms": 6206.646583013935,
+          "text": "No, not the yearly plan.",
+          "final": true,
+          "accepted": "No, not the yearly plan.",
+          "speech_epoch": 2
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 2756.401749997167,
+          "speech_epoch": 1
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 4668.3015410089865,
+          "elapsed_ms": 64.24245800008066,
+          "prediction": 1,
+          "probability": 0.9884648323059082
+        },
+        {
+          "at_ms": 5650.432750000618,
+          "elapsed_ms": 81.34012500522658,
+          "prediction": 1,
+          "probability": 0.9697068929672241
+        },
+        {
+          "at_ms": 6394.02995799901,
+          "elapsed_ms": 75.8280830050353,
+          "prediction": 1,
+          "probability": 0.6701734066009521
+        }
+      ],
+      "actual": "No, not the yearly plan.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1995.0319579977077
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_negative",
+      "language": "fr-FR",
+      "expected": "Non, pas l'abonnement annuel.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "5b88cbfa62a9f3f678d201cf906d2293c3d4d9b6e1a839e14b7a6193a6c703d5",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 1860.0,
+      "start_ms": 7177.959374996135,
+      "commits": [
+        {
+          "at_ms": 10881.013333011651,
+          "text": "Non, pas l'abonnement annuel.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.8550453403096622,
+                "language": "fr",
+                "decode_ms": 1209.2300000076648
+              },
+              "speech_epoch": 3,
+              "provider_final": true,
+              "partial_confirmations": 0,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 149948940928375,
+              "committed_monotonic_ns": 149950803536875,
+              "endpoint_wait_ms": 1860.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 10644.138958014082,
+          "text": "Non, pas l'abonnement annuel.",
+          "final": true,
+          "accepted": "Non, pas l'abonnement annuel.",
+          "speech_epoch": 3
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 8022.18804100994,
+          "speech_epoch": 3
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 9425.940875022206,
+          "elapsed_ms": 84.42825000383891,
+          "prediction": 1,
+          "probability": 0.9729918241500854
+        },
+        {
+          "at_ms": 10844.017458002781,
+          "elapsed_ms": 80.61916698352434,
+          "prediction": 1,
+          "probability": 0.9308329224586487
+        }
+      ],
+      "actual": "Non, pas l'abonnement annuel.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1843.0539580155164
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_yes_1",
+      "language": "en-US",
+      "expected": "Yes, please.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "f371edfdeb1e4588ba53cd9b48ec0afb652f27bbfea81468cf2415ade99abfee",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 1160.0,
+      "start_ms": 11641.151250019902,
+      "commits": [
+        {
+          "at_ms": 14576.342291024048,
+          "text": "Yes, please.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6335418136933648,
+                "language": "en",
+                "decode_ms": 589.7404169954825
+              },
+              "speech_epoch": 5,
+              "provider_final": true,
+              "partial_confirmations": 0,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 149952584933125,
+              "committed_monotonic_ns": 149954498826875,
+              "endpoint_wait_ms": 1900.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 14404.098375001922,
+          "text": "Yes, please.",
+          "final": true,
+          "accepted": "Yes, please.",
+          "speech_epoch": 5
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 11804.583791003097,
+          "speech_epoch": 4
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 12454.745916009415,
+          "elapsed_ms": 94.9221659975592,
+          "prediction": 0,
+          "probability": 0.4122953414916992
+        },
+        {
+          "at_ms": 12965.131041011773,
+          "elapsed_ms": 70.30266601941548,
+          "prediction": 1,
+          "probability": 0.6701734066009521
+        },
+        {
+          "at_ms": 14573.464625020279,
+          "elapsed_ms": 67.76266699307598,
+          "prediction": 1,
+          "probability": 0.9829913973808289
+        }
+      ],
+      "actual": "Yes, please.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1775.1910410041455
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_yes_1",
+      "language": "fr-FR",
+      "expected": "Oui, s'il vous plaît.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "9d6af4d960f2e5bbfb241f20e77bf3cc97edb8f3a9e67ba1c9acdb179eb4106c",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 1380.0,
+      "start_ms": 15343.098750017816,
+      "commits": [
+        {
+          "at_ms": 18714.536665997002,
+          "text": "Oui, s'il vous plaît.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6967339496105233,
+                "language": "fr",
+                "decode_ms": 985.7047080004122
+              },
+              "speech_epoch": 7,
+              "provider_final": true,
+              "partial_confirmations": 0,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 149956627354666,
+              "committed_monotonic_ns": 149958637043250,
+              "endpoint_wait_ms": 2000.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 18517.024708009558,
+          "text": "Oui, s'il vous plaît.",
+          "final": true,
+          "accepted": "Oui, s'il vous plaît.",
+          "speech_epoch": 7
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 15606.885415996658,
+          "speech_epoch": 6
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 15990.310624998529,
+          "elapsed_ms": 67.7182080107741,
+          "prediction": 0,
+          "probability": 0.23476183414459229
+        },
+        {
+          "at_ms": 17011.847250018036,
+          "elapsed_ms": 68.16129098297097,
+          "prediction": 1,
+          "probability": 0.9485659599304199
+        },
+        {
+          "at_ms": 18692.83566600643,
+          "elapsed_ms": 70.12699998449534,
+          "prediction": 1,
+          "probability": 0.963354766368866
+        }
+      ],
+      "actual": "Oui, s'il vous plaît.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1991.437915979186
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_negative",
+      "language": "en-US",
+      "expected": "No, not the yearly plan.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "8bef835fb3fcda69ca47c8dc74ebde19c67214c661cad580f926abd41415a1c7",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 1800.0,
+      "start_ms": 19498.734125023475,
+      "commits": [
+        {
+          "at_ms": 23017.211750004208,
+          "text": "No, not the yearly plan.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6116307957695633,
+                "language": "en",
+                "decode_ms": 1196.472999989055
+              },
+              "speech_epoch": 8,
+              "provider_final": true,
+              "partial_confirmations": 0,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 149961185510333,
+              "committed_monotonic_ns": 149962939695750,
+              "endpoint_wait_ms": 1740.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 22844.564208004158,
+          "text": "No, not the yearly plan.",
+          "final": true,
+          "accepted": "No, not the yearly plan.",
+          "speech_epoch": 8
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 20221.173666010145,
+          "speech_epoch": 8
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 21573.598415998276,
+          "elapsed_ms": 83.82666698889807,
+          "prediction": 1,
+          "probability": 0.970842719078064
+        },
+        {
+          "at_ms": 23011.081750009907,
+          "elapsed_ms": 64.78750001406297,
+          "prediction": 1,
+          "probability": 0.9380639791488647
+        }
+      ],
+      "actual": "No, not the yearly plan.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1718.4776249807328
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_negative",
+      "language": "fr-FR",
+      "expected": "Non, pas l'abonnement annuel.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "5b88cbfa62a9f3f678d201cf906d2293c3d4d9b6e1a839e14b7a6193a6c703d5",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 1860.0,
+      "start_ms": 23791.551625006832,
+      "commits": [
+        {
+          "at_ms": 28674.778625019826,
+          "text": "à l'abonnement annuel",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": false,
+              "corroboration": {
+                "reason": "transcript_disagreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.8070952327910377,
+                "language": "fr",
+                "decode_ms": 1095.0774579832796
+              },
+              "speech_epoch": 10,
+              "provider_final": true,
+              "partial_confirmations": 0,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 149965555098291,
+              "committed_monotonic_ns": 149968597284875,
+              "endpoint_wait_ms": 3040.0,
+              "completion_reason": "bounded_incomplete"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 27119.78141599684,
+          "text": "à l'abonnement annuel",
+          "final": true,
+          "accepted": "à l'abonnement annuel",
+          "speech_epoch": 10
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 23914.742458000546,
+          "speech_epoch": 9
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 24474.315375002334,
+          "elapsed_ms": 61.04716699337587,
+          "prediction": 1,
+          "probability": 0.8547587990760803
+        },
+        {
+          "at_ms": 25929.010666004615,
+          "elapsed_ms": 73.64520800183527,
+          "prediction": 1,
+          "probability": 0.8170837163925171
+        },
+        {
+          "at_ms": 27317.179291014327,
+          "elapsed_ms": 80.05779201630503,
+          "prediction": 0,
+          "probability": 0.5
+        }
+      ],
+      "actual": "à l'abonnement annuel",
+      "words_match": false,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        3023.227000012994
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_yes_1",
+      "language": "en-US",
+      "expected": "Yes, please.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "f371edfdeb1e4588ba53cd9b48ec0afb652f27bbfea81468cf2415ade99abfee",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 1160.0,
+      "start_ms": 29450.488000002224,
+      "commits": [
+        {
+          "at_ms": 32267.61108302162,
+          "text": "Yes, please.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6445561200990192,
+                "language": "en",
+                "decode_ms": 1175.0873330165632
+              },
+              "speech_epoch": 12,
+              "provider_final": true,
+              "partial_confirmations": 0,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 149970473634041,
+              "committed_monotonic_ns": 149972190156500,
+              "endpoint_wait_ms": 1700.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 32085.059708013432,
+          "text": "Yes, please.",
+          "final": true,
+          "accepted": "Yes, please.",
+          "speech_epoch": 12
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 29574.48883302277,
+          "speech_epoch": 11
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 30167.129375011427,
+          "elapsed_ms": 70.58720901841298,
+          "prediction": 1,
+          "probability": 0.9875311851501465
+        },
+        {
+          "at_ms": 30843.109250010457,
+          "elapsed_ms": 67.31654101167805,
+          "prediction": 0,
+          "probability": 0.08601978421211243
+        },
+        {
+          "at_ms": 32266.13241599989,
+          "elapsed_ms": 69.90362500073388,
+          "prediction": 1,
+          "probability": 0.9836374521255493
+        }
+      ],
+      "actual": "Yes, please.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1657.1230830193963
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_yes_1",
+      "language": "fr-FR",
+      "expected": "Oui, s'il vous plaît.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "9d6af4d960f2e5bbfb241f20e77bf3cc97edb8f3a9e67ba1c9acdb179eb4106c",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 1380.0,
+      "start_ms": 33046.91583302338,
+      "commits": [
+        {
+          "at_ms": 36090.34366600099,
+          "text": "Oui, s'il vous plaît.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.7321506582623227,
+                "language": "fr",
+                "decode_ms": 1202.9540420044214
+              },
+              "speech_epoch": 14,
+              "provider_final": true,
+              "partial_confirmations": 0,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 149974351752500,
+              "committed_monotonic_ns": 149976012859291,
+              "endpoint_wait_ms": 1660.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 35902.20045801834,
+          "text": "Oui, s'il vous plaît.",
+          "final": true,
+          "accepted": "Oui, s'il vous plaît.",
+          "speech_epoch": 14
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 33169.81408299762,
+          "speech_epoch": 13
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 33689.826583024114,
+          "elapsed_ms": 83.68683300795965,
+          "prediction": 1,
+          "probability": 0.87754225730896
+        },
+        {
+          "at_ms": 34738.51929101511,
+          "elapsed_ms": 83.42154198908247,
+          "prediction": 1,
+          "probability": 0.9647200703620911
+        },
+        {
+          "at_ms": 36085.17075001146,
+          "elapsed_ms": 67.51354099833407,
+          "prediction": 1,
+          "probability": 0.9719371795654297
+        }
+      ],
+      "actual": "Oui, s'il vous plaît.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1663.4278329776134
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    }
+  ],
+  "errors": [],
+  "elapsed_seconds": 36.86117533300421
+}

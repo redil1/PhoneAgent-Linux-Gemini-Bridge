@@ -1,0 +1,1231 @@
+......FFF.......F...F........F.....FF..........................F..F..... [  7%]
+....FF............FF.FF.............F................................... [ 15%]
+....F.........F....................................FF................... [ 23%]
+.............................FFF........................................ [ 31%]
+.........................F.F............................................ [ 39%]
+.......................FFFFF...........................................F [ 47%]
+FF.....F.F......................................F....FFF................ [ 55%]
+........................................................................ [ 63%]
+...................................FFFFF..FF.F...F..FFFFFF.............. [ 71%]
+..........................F.........F...........EEE..................... [ 79%]
+......................................................................FF [ 87%]
+FFFFFFF.....FF.FFFF...FFFFFF............................ssssssssssssssss [ 95%]
+sssssssssssssssssssssss.....................                             [100%]
+==================================== ERRORS ====================================
+__________________ ERROR at setup of test_dtmf_digit_dispatch __________________
+tests/test_telephony.py:73: in gateway
+    server = _RecordingGateway(("127.0.0.1", 0), _Handler)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socketserver.py:456: in __init__
+    self.server_bind()
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/server.py:135: in server_bind
+    socketserver.TCPServer.server_bind(self)
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socketserver.py:472: in server_bind
+    self.socket.bind(self.server_address)
+E   PermissionError: [Errno 1] Operation not permitted
+____________________ ERROR at setup of test_hangup_command _____________________
+tests/test_telephony.py:73: in gateway
+    server = _RecordingGateway(("127.0.0.1", 0), _Handler)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socketserver.py:456: in __init__
+    self.server_bind()
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/server.py:135: in server_bind
+    socketserver.TCPServer.server_bind(self)
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socketserver.py:472: in server_bind
+    self.socket.bind(self.server_address)
+E   PermissionError: [Errno 1] Operation not permitted
+__________________ ERROR at setup of test_call_state_listener __________________
+tests/test_telephony.py:73: in gateway
+    server = _RecordingGateway(("127.0.0.1", 0), _Handler)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socketserver.py:456: in __init__
+    self.server_bind()
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/server.py:135: in server_bind
+    socketserver.TCPServer.server_bind(self)
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socketserver.py:472: in server_bind
+    self.socket.bind(self.server_address)
+E   PermissionError: [Errno 1] Operation not permitted
+=================================== FAILURES ===================================
+_________ test_complete_agent_package_stages_and_activates_atomically __________
+tests/production/test_control_plane.py:58: in test_complete_agent_package_stages_and_activates_atomically
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+____________ test_stale_package_and_in_call_activation_fail_closed _____________
+tests/production/test_control_plane.py:117: in test_stale_package_and_in_call_activation_fail_closed
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+_________ test_control_events_are_bounded_cursor_readable_and_redacted _________
+tests/production/test_control_plane.py:150: in test_control_events_are_bounded_cursor_readable_and_redacted
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+______ test_live_business_tools_are_bound_to_authenticated_current_caller ______
+tests/production/test_frappe_integration.py:90: in test_live_business_tools_are_bound_to_authenticated_current_caller
+    async with TestServer(app) as upstream:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:216: in __aenter__
+    await self.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+____________ test_qualified_whatsapp_files_are_byte_for_byte_frozen ____________
+tests/production/test_frozen_whatsapp.py:7: in test_qualified_whatsapp_files_are_byte_for_byte_frozen
+    assert verify() == []
+E   AssertionError: assert ['frozen What...ne_client.py'] == []
+E     
+E     Left contains 2 more items, first extra item: 'frozen WhatsApp file changed: ai_bridge/whatsapp_client.py'
+E     Use -v to get more diff
+___________ test_graphiti_http_mirror_uses_bounded_off_path_contract ___________
+tests/production/test_identity_kernel.py:370: in test_graphiti_http_mirror_uses_bounded_off_path_contract
+    server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socketserver.py:456: in __init__
+    self.server_bind()
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/server.py:135: in server_bind
+    socketserver.TCPServer.server_bind(self)
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socketserver.py:472: in server_bind
+    self.socket.bind(self.server_address)
+E   PermissionError: [Errno 1] Operation not permitted
+____ test_mcp_dial_executes_autonomously_and_still_redacts_the_destination _____
+tests/production/test_local_mcp_control.py:84: in test_mcp_dial_executes_autonomously_and_still_redacts_the_destination
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+____________ test_stdio_mcp_server_negotiates_and_reads_live_status ____________
+tests/production/test_local_mcp_control.py:119: in test_stdio_mcp_server_negotiates_and_reads_live_status
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+__ test_current_customer_tools_resolve_recipient_and_never_accept_a_model_jid __
+tests/production/test_openwa_integration.py:120: in test_current_customer_tools_resolve_recipient_and_never_accept_a_model_jid
+    async with TestServer(app) as upstream:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:216: in __aenter__
+    await self.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+___________ test_per_use_approval_blocks_send_before_openwa_request ____________
+tests/production/test_openwa_integration.py:213: in test_per_use_approval_blocks_send_before_openwa_request
+    async with TestServer(app) as upstream:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:216: in __aenter__
+    await self.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+____________ test_web_api_tests_lists_and_provisions_dedicated_key _____________
+tests/production/test_openwa_integration.py:546: in test_web_api_tests_lists_and_provisions_dedicated_key
+    async with TestServer(upstream_app) as upstream:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:216: in __aenter__
+    await self.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+__________ test_web_api_does_not_report_qr_ready_session_as_connected __________
+tests/production/test_openwa_integration.py:600: in test_web_api_does_not_report_qr_ready_session_as_connected
+    async with TestServer(upstream_app) as upstream:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:216: in __aenter__
+    await self.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+_______________ test_http_tool_executes_bounded_sanitized_search _______________
+tests/production/test_tool_control.py:126: in test_http_tool_executes_bounded_sanitized_search
+    async with TestServer(app) as server:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:216: in __aenter__
+    await self.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+__________ test_per_use_approval_blocks_until_exact_operator_decision __________
+tests/production/test_tool_control.py:161: in test_per_use_approval_blocks_until_exact_operator_decision
+    async with TestServer(app) as server:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:216: in __aenter__
+    await self.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+_______ test_streamable_http_mcp_discovery_execution_and_clean_shutdown ________
+tests/production/test_tool_control.py:248: in test_streamable_http_mcp_discovery_execution_and_clean_shutdown
+    sock.bind(("127.0.0.1", 0))
+E   PermissionError: [Errno 1] Operation not permitted
+____________ test_studio_api_saves_tests_and_decides_managed_tools _____________
+tests/production/test_tool_control.py:297: in test_studio_api_saves_tests_and_decides_managed_tools
+    async with TestServer(app) as search_server:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:216: in __aenter__
+    await self.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+______________ test_studio_can_save_and_visibly_test_web_research ______________
+tests/production/test_web_research.py:407: in test_studio_can_save_and_visibly_test_web_research
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+_________ test_android_never_retries_physical_telephony_track_creation _________
+tests/test_android_telephony_track_lifecycle.py:18: in test_android_never_retries_physical_telephony_track_creation
+    assert "private static final int TRACK_START_ATTEMPTS = 1;" in source
+E   AssertionError: assert 'private static final int TRACK_START_ATTEMPTS = 1;' in 'package com.phoneagent.gateway;\n\nimport android.Manifest;\nimport android.content.Context;\nimport android.content....        if (server != null) {\n            try { server.close(); } catch (Exception ignored) {}\n        }\n    }\n}\n'
+_________________ test_runtime_config_accepts_antigravity_live _________________
+tests/test_antigravity_live_stt.py:34: in test_runtime_config_accepts_antigravity_live
+    assert config.antigravity_live_endpoint_ms == 260
+E   AssertionError: assert 600 == 260
+E    +  where 600 = ProviderConfig(stt_provider='antigravity_live', stt_model='gemini-3.1-flash-live-preview', stt_language='en-US', flux_...prefix_ms=300, chatgpt_realtime_vad_silence_ms=700, chatgpt_realtime_idle_timeout_ms=8000, chatgpt_realtime_speed=1.05).antigravity_live_endpoint_ms
+_______ test_protected_baseline_corpus_is_complete_and_integrity_checked _______
+tests/test_baseline_corpus.py:55: in test_protected_baseline_corpus_is_complete_and_integrity_checked
+    assert path.is_file(), f"missing {artifact_name} for {scenario['id']}"
+E   AssertionError: missing audio for clear_en
+E   assert False
+E    +  where False = is_file()
+E    +    where is_file = PosixPath('/Users/aziz/Desktop/phone-agent-linux/qualification/corpus/v1/audio/clear_en.wav').is_file
+_________ test_baseline_corpus_manifest_contains_no_unlisted_artifacts _________
+tests/test_baseline_corpus.py:87: in test_baseline_corpus_manifest_contains_no_unlisted_artifacts
+    assert actual == listed
+E   AssertionError: assert {'events/call...rn.json', ...} == {'audio/call_...urn.wav', ...}
+E     
+E     Extra items in the right set:
+E     'audio/silence.wav'
+E     'audio/clear_en.wav'
+E     'audio/interruption.wav'
+E     'audio/call_teardown.wav'
+E     'audio/clear_fr.wav'...
+E     
+E     ...Full output truncated (5 lines hidden), use '-vv' to show
+_________ test_ci_exposes_every_required_stage_with_immutable_actions __________
+tests/test_ci_contract.py:35: in test_ci_exposes_every_required_stage_with_immutable_actions
+    payload = _workflow()
+              ^^^^^^^^^^^
+tests/test_ci_contract.py:29: in _workflow
+    payload = yaml.load(WORKFLOW.read_text(encoding="utf-8"), Loader=yaml.BaseLoader)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1044: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/aziz/Desktop/phone-agent-linux/.github/workflows/ci.yml'
+_________________ test_ci_jobs_share_the_local_stage_contract __________________
+tests/test_ci_contract.py:48: in test_ci_jobs_share_the_local_stage_contract
+    payload = _workflow()
+              ^^^^^^^^^^^
+tests/test_ci_contract.py:29: in _workflow
+    payload = yaml.load(WORKFLOW.read_text(encoding="utf-8"), Loader=yaml.BaseLoader)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1044: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/aziz/Desktop/phone-agent-linux/.github/workflows/ci.yml'
+_______ test_device_qualification_is_manual_self_hosted_and_fail_closed ________
+tests/test_ci_contract.py:91: in test_device_qualification_is_manual_self_hosted_and_fail_closed
+    payload = _workflow()
+              ^^^^^^^^^^^
+tests/test_ci_contract.py:29: in _workflow
+    payload = yaml.load(WORKFLOW.read_text(encoding="utf-8"), Loader=yaml.BaseLoader)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1044: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/aziz/Desktop/phone-agent-linux/.github/workflows/ci.yml'
+______ test_exhausted_model_repeat_recovery_never_leaves_the_phone_silent ______
+tests/test_conversation_repair.py:765: in test_exhausted_model_repeat_recovery_never_leaves_the_phone_silent
+    assert len(spoken) == 1
+E   assert 2 == 1
+E    +  where 2 = len(['Excuse me, I missed that. What were you saying?', "Sorry, I didn't quite catch that."])
+------------------------------ Captured log call -------------------------------
+WARNING  PhoneAgentPolicy:agent_policy.py:926 Blocked model text repeated previously: "Sorry, I didn't quite catch that."
+WARNING  PhoneAgentPolicy:agent_policy.py:926 Blocked model text repeated previously: 'Could you say it again?'
+WARNING  PhoneAgentPolicy:agent_policy.py:1380 Used policy repair after model repetition recovery was exhausted epoch=0
+______ test_pipeline_retry_decontaminates_context_and_targets_latest_turn ______
+tests/test_conversation_repair.py:891: in test_pipeline_retry_decontaminates_context_and_targets_latest_turn
+    assert correction not in context.messages
+E   assert {'content': '# INTERNAL RESPONSE QUALITY RETRY — never mention this block aloud\nThe previous draft was blocked before...good, tell me a rough time window.\'. Blocked draft: "No problem, I\'ve caught you at a bad time.".', 'role': 'system'} not in [{'content': 'Answer the caller naturally.', 'role': 'system'}, {'content': '# INTERNAL RESPONSE QUALITY RETRY — never...me.".', 'role': 'system'}, {'content': 'No worries, if now is not good, tell me a rough time window.', 'role': 'user'}]
+E    +  where [{'content': 'Answer the caller naturally.', 'role': 'system'}, {'content': '# INTERNAL RESPONSE QUALITY RETRY — never...me.".', 'role': 'system'}, {'content': 'No worries, if now is not good, tell me a rough time window.', 'role': 'user'}] = <pipecat.processors.aggregators.llm_context.LLMContext object at 0x16a33dbd0>.messages
+------------------------------ Captured log call -------------------------------
+WARNING  PhoneAgentPipeline:production_pipeline.py:1210 Regenerating blocked repeated response attempt=1 epoch=1
+__________ test_control_request_discards_a_stale_late_acknowledgement __________
+tests/test_framed_link.py:95: in test_control_request_discards_a_stale_late_acknowledgement
+    gateway = FakeFramedGateway()
+              ^^^^^^^^^^^^^^^^^^^
+tests/test_framed_link.py:117: in __init__
+    self.listeners = {name: self._listener() for name in ("control", "uplink", "downlink")}
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_framed_link.py:117: in <dictcomp>
+    self.listeners = {name: self._listener() for name in ("control", "uplink", "downlink")}
+                            ^^^^^^^^^^^^^^^^
+tests/test_framed_link.py:143: in _listener
+    listener.bind(("127.0.0.1", 0))
+E   PermissionError: [Errno 1] Operation not permitted
+_________ test_authenticated_link_routes_media_and_idempotent_control __________
+tests/test_framed_link.py:361: in test_authenticated_link_routes_media_and_idempotent_control
+    gateway = FakeFramedGateway()
+              ^^^^^^^^^^^^^^^^^^^
+tests/test_framed_link.py:117: in __init__
+    self.listeners = {name: self._listener() for name in ("control", "uplink", "downlink")}
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_framed_link.py:117: in <dictcomp>
+    self.listeners = {name: self._listener() for name in ("control", "uplink", "downlink")}
+                            ^^^^^^^^^^^^^^^^
+tests/test_framed_link.py:143: in _listener
+    listener.bind(("127.0.0.1", 0))
+E   PermissionError: [Errno 1] Operation not permitted
+__________ test_reconnect_uses_new_epoch_without_reducing_generation ___________
+tests/test_framed_link.py:399: in test_reconnect_uses_new_epoch_without_reducing_generation
+    gateway = FakeFramedGateway()
+              ^^^^^^^^^^^^^^^^^^^
+tests/test_framed_link.py:117: in __init__
+    self.listeners = {name: self._listener() for name in ("control", "uplink", "downlink")}
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_framed_link.py:117: in <dictcomp>
+    self.listeners = {name: self._listener() for name in ("control", "uplink", "downlink")}
+                            ^^^^^^^^^^^^^^^^
+tests/test_framed_link.py:143: in _listener
+    listener.bind(("127.0.0.1", 0))
+E   PermissionError: [Errno 1] Operation not permitted
+______ test_uplink_never_exceeds_phone_playout_window_without_render_acks ______
+tests/test_framed_link.py:429: in test_uplink_never_exceeds_phone_playout_window_without_render_acks
+    gateway = FakeFramedGateway()
+              ^^^^^^^^^^^^^^^^^^^
+tests/test_framed_link.py:117: in __init__
+    self.listeners = {name: self._listener() for name in ("control", "uplink", "downlink")}
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_framed_link.py:117: in <dictcomp>
+    self.listeners = {name: self._listener() for name in ("control", "uplink", "downlink")}
+                            ^^^^^^^^^^^^^^^^
+tests/test_framed_link.py:143: in _listener
+    listener.bind(("127.0.0.1", 0))
+E   PermissionError: [Errno 1] Operation not permitted
+_____ test_authenticated_client_uses_framed_control_and_normalizes_number ______
+tests/test_framed_link.py:469: in test_authenticated_client_uses_framed_control_and_normalizes_number
+    gateway = FakeFramedGateway()
+              ^^^^^^^^^^^^^^^^^^^
+tests/test_framed_link.py:117: in __init__
+    self.listeners = {name: self._listener() for name in ("control", "uplink", "downlink")}
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_framed_link.py:117: in <dictcomp>
+    self.listeners = {name: self._listener() for name in ("control", "uplink", "downlink")}
+                            ^^^^^^^^^^^^^^^^
+tests/test_framed_link.py:143: in _listener
+    listener.bind(("127.0.0.1", 0))
+E   PermissionError: [Errno 1] Operation not permitted
+________ test_prewarm_loads_without_generation_and_keeps_model_resident ________
+tests/test_ollama_native.py:63: in test_prewarm_loads_without_generation_and_keeps_model_resident
+    runner, base_url = await start_server(handler)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_ollama_native.py:37: in start_server
+    await site.start()
+.venv/lib/python3.11/site-packages/aiohttp/web_runner.py:138: in start
+    self._server = await loop.create_server(
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:1511: in create_server
+    raise OSError(err.errno, 'error while attempting '
+E   PermissionError: [Errno 1] error while attempting to bind on address ('127.0.0.1', 0): operation not permitted
+______ test_stream_chat_uses_native_no_thinking_ndjson_and_reports_usage _______
+tests/test_ollama_native.py:107: in test_stream_chat_uses_native_no_thinking_ndjson_and_reports_usage
+    runner, base_url = await start_server(handler)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_ollama_native.py:37: in start_server
+    await site.start()
+.venv/lib/python3.11/site-packages/aiohttp/web_runner.py:138: in start
+    self._server = await loop.create_server(
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:1511: in create_server
+    raise OSError(err.errno, 'error while attempting '
+E   PermissionError: [Errno 1] error while attempting to bind on address ('127.0.0.1', 0): operation not permitted
+_________ test_stream_chat_releases_request_immediately_when_cancelled _________
+tests/test_ollama_native.py:161: in test_stream_chat_releases_request_immediately_when_cancelled
+    runner, base_url = await start_server(handler)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_ollama_native.py:37: in start_server
+    await site.start()
+.venv/lib/python3.11/site-packages/aiohttp/web_runner.py:138: in start
+    self._server = await loop.create_server(
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:1511: in create_server
+    raise OSError(err.errno, 'error while attempting '
+E   PermissionError: [Errno 1] error while attempting to bind on address ('127.0.0.1', 0): operation not permitted
+_______________ test_prewarm_with_messages_forces_a_single_token _______________
+tests/test_ollama_native.py:414: in test_prewarm_with_messages_forces_a_single_token
+    runner, base_url = await start_server(handler)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_ollama_native.py:37: in start_server
+    await site.start()
+.venv/lib/python3.11/site-packages/aiohttp/web_runner.py:138: in start
+    self._server = await loop.create_server(
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:1511: in create_server
+    raise OSError(err.errno, 'error while attempting '
+E   PermissionError: [Errno 1] error while attempting to bind on address ('127.0.0.1', 0): operation not permitted
+______ test_residency_cleanup_unloads_every_model_except_the_selected_one ______
+tests/test_ollama_native.py:496: in test_residency_cleanup_unloads_every_model_except_the_selected_one
+    await site.start()
+.venv/lib/python3.11/site-packages/aiohttp/web_runner.py:138: in start
+    self._server = await loop.create_server(
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:1511: in create_server
+    raise OSError(err.errno, 'error while attempting '
+E   PermissionError: [Errno 1] error while attempting to bind on address ('127.0.0.1', 0): operation not permitted
+_______________ test_fixture_is_hash_verified_phone_ready_audio ________________
+tests/test_performance_harness.py:35: in test_fixture_is_hash_verified_phone_ready_audio
+    pcm, expected, language, audio_hash = read_fixture(DEFAULT_CORPUS)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+qualification/performance_harness.py:144: in read_fixture
+    if _sha256(audio_path) != _string(audio.get("sha256"), "audio.sha256"):
+       ^^^^^^^^^^^^^^^^^^^
+qualification/performance_harness.py:69: in _sha256
+    with path.open("rb") as stream:
+         ^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1044: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/aziz/Desktop/phone-agent-linux/qualification/corpus/v1/audio/clear_en.wav'
+________ test_contract_profile_measures_all_stages_and_sixty_turn_drift ________
+tests/test_performance_harness.py:63: in test_contract_profile_measures_all_stages_and_sixty_turn_drift
+    report = await run_benchmark(profile, corpus=DEFAULT_CORPUS)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+qualification/performance_harness.py:478: in run_benchmark
+    pcm, expected, language, audio_hash = read_fixture(corpus)
+                                          ^^^^^^^^^^^^^^^^^^^^
+qualification/performance_harness.py:144: in read_fixture
+    if _sha256(audio_path) != _string(audio.get("sha256"), "audio.sha256"):
+       ^^^^^^^^^^^^^^^^^^^
+qualification/performance_harness.py:69: in _sha256
+    with path.open("rb") as stream:
+         ^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1044: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/aziz/Desktop/phone-agent-linux/qualification/corpus/v1/audio/clear_en.wav'
+_________________ test_threshold_regression_is_machine_visible _________________
+tests/test_performance_harness.py:96: in test_threshold_regression_is_machine_visible
+    report = await run_benchmark(
+qualification/performance_harness.py:478: in run_benchmark
+    pcm, expected, language, audio_hash = read_fixture(corpus)
+                                          ^^^^^^^^^^^^^^^^^^^^
+qualification/performance_harness.py:144: in read_fixture
+    if _sha256(audio_path) != _string(audio.get("sha256"), "audio.sha256"):
+       ^^^^^^^^^^^^^^^^^^^
+qualification/performance_harness.py:69: in _sha256
+    with path.open("rb") as stream:
+         ^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1044: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/aziz/Desktop/phone-agent-linux/qualification/corpus/v1/audio/clear_en.wav'
+_____________ test_tampered_corpus_and_unknown_profile_fail_closed _____________
+tests/test_performance_harness.py:117: in test_tampered_corpus_and_unknown_profile_fail_closed
+    read_fixture(tmp_path)
+qualification/performance_harness.py:144: in read_fixture
+    if _sha256(audio_path) != _string(audio.get("sha256"), "audio.sha256"):
+       ^^^^^^^^^^^^^^^^^^^
+qualification/performance_harness.py:69: in _sha256
+    with path.open("rb") as stream:
+         ^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py:1044: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/aziz/Desktop/phone-agent-linux/qualification/corpus/v1/audio/clear_en.wav'
+______________ test_the_relay_carries_a_real_request_to_the_phone ______________
+tests/test_remote_link.py:188: in test_the_relay_carries_a_real_request_to_the_phone
+    phone_service = await asyncio.start_server(echo, "127.0.0.1", 0)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/streams.py:85: in start_server
+    return await loop.create_server(factory, host, port, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:1511: in create_server
+    raise OSError(err.errno, 'error while attempting '
+E   PermissionError: [Errno 1] error while attempting to bind on address ('127.0.0.1', 0): operation not permitted
+_______________ test_media_sized_frames_cross_the_tunnel_intact ________________
+tests/test_remote_link.py:234: in test_media_sized_frames_cross_the_tunnel_intact
+    phone_service = await asyncio.start_server(echo, "127.0.0.1", 0)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/streams.py:85: in start_server
+    return await loop.create_server(factory, host, port, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:1511: in create_server
+    raise OSError(err.errno, 'error while attempting '
+E   PermissionError: [Errno 1] error while attempting to bind on address ('127.0.0.1', 0): operation not permitted
+___________ test_a_local_client_is_refused_when_no_phone_is_attached ___________
+tests/test_remote_link.py:270: in test_a_local_client_is_refused_when_no_phone_is_attached
+    presented = _free_port()
+                ^^^^^^^^^^^^
+tests/test_remote_link.py:27: in _free_port
+    probe.bind(("127.0.0.1", 0))
+E   PermissionError: [Errno 1] Operation not permitted
+______________ test_a_second_phone_cannot_take_over_a_live_tunnel ______________
+tests/test_remote_link.py:299: in test_a_second_phone_cannot_take_over_a_live_tunnel
+    KEY, listen_host="127.0.0.1", listen_port=_free_port(), ports=(_free_port(),)
+                                              ^^^^^^^^^^^^
+tests/test_remote_link.py:27: in _free_port
+    probe.bind(("127.0.0.1", 0))
+E   PermissionError: [Errno 1] Operation not permitted
+________________ test_a_tunnel_that_never_says_hello_is_dropped ________________
+tests/test_remote_link.py:323: in test_a_tunnel_that_never_says_hello_is_dropped
+    KEY, listen_host="127.0.0.1", listen_port=_free_port(), ports=(_free_port(),)
+                                              ^^^^^^^^^^^^
+tests/test_remote_link.py:27: in _free_port
+    probe.bind(("127.0.0.1", 0))
+E   PermissionError: [Errno 1] Operation not permitted
+____________ test_the_real_gateway_client_dials_through_the_tunnel _____________
+tests/test_remote_link.py:398: in test_the_real_gateway_client_dials_through_the_tunnel
+    phone_service = await asyncio.start_server(gateway, "127.0.0.1", 0)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/streams.py:85: in start_server
+    return await loop.create_server(factory, host, port, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:1511: in create_server
+    raise OSError(err.errno, 'error while attempting '
+E   PermissionError: [Errno 1] error while attempting to bind on address ('127.0.0.1', 0): operation not permitted
+__________ test_studio_can_turn_the_link_on_and_off_without_a_restart __________
+tests/test_remote_link.py:447: in test_studio_can_turn_the_link_on_and_off_without_a_restart
+    (_free_port(), _free_port(), _free_port(), _free_port()),
+     ^^^^^^^^^^^^
+tests/test_remote_link.py:27: in _free_port
+    probe.bind(("127.0.0.1", 0))
+E   PermissionError: [Errno 1] Operation not permitted
+__________________ test_a_port_held_by_an_adb_forward_says_so __________________
+tests/test_remote_link.py:505: in test_a_port_held_by_an_adb_forward_says_so
+    taken = _free_port()
+            ^^^^^^^^^^^^
+tests/test_remote_link.py:27: in _free_port
+    probe.bind(("127.0.0.1", 0))
+E   PermissionError: [Errno 1] Operation not permitted
+____________ test_an_already_served_port_is_used_instead_of_failing ____________
+tests/test_remote_link.py:591: in test_an_already_served_port_is_used_instead_of_failing
+    listener.bind(("127.0.0.1", 0))
+E   PermissionError: [Errno 1] Operation not permitted
+_____ test_v2_accepts_a_data_tunnel_that_arrives_within_its_attach_budget ______
+tests/test_remote_link_v2.py:184: in test_v2_accepts_a_data_tunnel_that_arrives_within_its_attach_budget
+    presented = _free_port()
+                ^^^^^^^^^^^^
+tests/test_remote_link_v2.py:32: in _free_port
+    probe.bind(("127.0.0.1", 0))
+E   PermissionError: [Errno 1] Operation not permitted
+______ test_v2_uses_a_coordinator_and_one_authenticated_tunnel_per_stream ______
+tests/test_remote_link_v2.py:232: in test_v2_uses_a_coordinator_and_one_authenticated_tunnel_per_stream
+    presented = _free_port()
+                ^^^^^^^^^^^^
+tests/test_remote_link_v2.py:32: in _free_port
+    probe.bind(("127.0.0.1", 0))
+E   PermissionError: [Errno 1] Operation not permitted
+_________ test_v2_wrong_challenge_cannot_bind_or_drop_the_coordinator __________
+tests/test_remote_link_v2.py:280: in test_v2_wrong_challenge_cannot_bind_or_drop_the_coordinator
+    presented = _free_port()
+                ^^^^^^^^^^^^
+tests/test_remote_link_v2.py:32: in _free_port
+    probe.bind(("127.0.0.1", 0))
+E   PermissionError: [Errno 1] Operation not permitted
+______ test_v2_rejects_cross_stream_frames_without_dropping_other_streams ______
+tests/test_remote_link_v2.py:320: in test_v2_rejects_cross_stream_frames_without_dropping_other_streams
+    ports = (_free_port(), _free_port())
+             ^^^^^^^^^^^^
+tests/test_remote_link_v2.py:32: in _free_port
+    probe.bind(("127.0.0.1", 0))
+E   PermissionError: [Errno 1] Operation not permitted
+______ test_blocked_capture_carrier_does_not_block_ack_or_control_stream _______
+tests/test_remote_link_v2.py:376: in test_blocked_capture_carrier_does_not_block_ack_or_control_stream
+    capture_port, control_port = _free_port(), _free_port()
+                                 ^^^^^^^^^^^^
+tests/test_remote_link_v2.py:32: in _free_port
+    probe.bind(("127.0.0.1", 0))
+E   PermissionError: [Errno 1] Operation not permitted
+_________ test_v1_phone_still_multiplexes_data_on_its_original_tunnel __________
+tests/test_remote_link_v2.py:442: in test_v1_phone_still_multiplexes_data_on_its_original_tunnel
+    presented = _free_port()
+                ^^^^^^^^^^^^
+tests/test_remote_link_v2.py:32: in _free_port
+    probe.bind(("127.0.0.1", 0))
+E   PermissionError: [Errno 1] Operation not permitted
+____ test_upgrade_s2s_installation_migrates_to_cascade_and_preserves_state _____
+tests/test_runtime_migration_rollback.py:57: in test_upgrade_s2s_installation_migrates_to_cascade_and_preserves_state
+    assert server.system_prompt == "Custom studio prompt for testing upgrade."
+E   AssertionError: assert '' == 'Custom studi...ting upgrade.'
+E     
+E     - Custom studio prompt for testing upgrade.
+------------------------------ Captured log call -------------------------------
+WARNING  phone_agent_gateway.ai_bridge.web_server:web_server.py:1616 Ignoring invalid saved Studio settings: PHONE_AGENT_TTS_AGGREGATION=phrase is currently supported only by edge_tts
+_________ test_s2s_surface_is_complete_classified_and_migration_owned __________
+tests/test_s2s_inventory.py:11: in test_s2s_surface_is_complete_classified_and_migration_owned
+    result = validate_inventory(ROOT)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+ci/validate_s2s_inventory.py:238: in validate_inventory
+    raise InventoryError(
+E   phone_agent_gateway.ci.validate_s2s_inventory.InventoryError: S2S surface inventory drifted: unclassified=['Speechto Speech Google/SPEECH_TO_SPEECH_GUIDE.md', 'Speechto Speech Google/requirements.txt', 'Speechto Speech Google/speech_to_speech.py', 'Speechto Speech Google/test_voice.py', 'ai_bridge/antigravity_gemini_llm.py', 'ai_bridge/antigravity_live_stt.py', 'reports/quality/2026-09-04-end-to-end-review.md', 'reports/quality/turn-taking-fix/before/.env.example', 'reports/quality/turn-taking-fix/before/ai_bridge/agent_policy.py', 'reports/quality/turn-taking-fix/before/ai_bridge/antigravity_live_stt.py', 'reports/quality/turn-taking-fix/before/ai_bridge/feature_flags.json', 'reports/quality/turn-taking-fix/before/ai_bridge/runtime_config.py', 'reports/quality/turn-taking-fix/before/ai_bridge/web_server.py'] stale=[]
+__________________________ test_get_index_serves_html __________________________
+tests/test_web_server.py:63: in test_get_index_serves_html
+    asyncio.run(_test())
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:650: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests/test_web_server.py:35: in _test
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+_________________________ test_get_status_returns_idle _________________________
+tests/test_web_server.py:83: in test_get_status_returns_idle
+    asyncio.run(_test())
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:650: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests/test_web_server.py:76: in _test
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+_______ test_disabled_warm_voice_host_does_not_prewarm_models_in_studio ________
+tests/test_web_server.py:111: in test_disabled_warm_voice_host_does_not_prewarm_models_in_studio
+    asyncio.run(_test())
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:650: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests/test_web_server.py:103: in _test
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+______ test_studio_rejects_remote_binding_dns_rebinding_and_cross_origin _______
+tests/test_web_server.py:132: in test_studio_rejects_remote_binding_dns_rebinding_and_cross_origin
+    asyncio.run(_test())
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:650: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests/test_web_server.py:121: in _test
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+___________________________ test_get_and_post_config ___________________________
+tests/test_web_server.py:196: in test_get_and_post_config
+    asyncio.run(_test())
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:650: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests/test_web_server.py:145: in _test
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+________________________ test_websocket_sync_on_connect ________________________
+tests/test_web_server.py:217: in test_websocket_sync_on_connect
+    asyncio.run(_test())
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:650: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests/test_web_server.py:209: in _test
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+__________ test_persona_task_and_child_configuration_apply_end_to_end __________
+tests/test_web_server.py:277: in test_persona_task_and_child_configuration_apply_end_to_end
+    asyncio.run(_test())
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:650: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests/test_web_server.py:232: in _test
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+________ test_identity_revision_evaluation_approval_and_activation_api _________
+tests/test_web_server.py:372: in test_identity_revision_evaluation_approval_and_activation_api
+    asyncio.run(_test())
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:650: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests/test_web_server.py:293: in _test
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+_____ test_admin_can_approve_after_contract_check_without_live_evaluation ______
+tests/test_web_server.py:439: in test_admin_can_approve_after_contract_check_without_live_evaluation
+    asyncio.run(_test())
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:650: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests/test_web_server.py:389: in _test
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+________________ test_edge_voice_endpoint_returns_live_catalog _________________
+tests/test_web_server.py:549: in test_edge_voice_endpoint_returns_live_catalog
+    asyncio.run(_test())
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:650: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests/test_web_server.py:541: in _test
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+____________ test_edge_voice_endpoint_has_network_failure_fallback _____________
+tests/test_web_server.py:570: in test_edge_voice_endpoint_has_network_failure_fallback
+    asyncio.run(_test())
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:650: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests/test_web_server.py:562: in _test
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+____________________ test_hangup_cancels_a_wedged_dial_task ____________________
+tests/test_web_server.py:636: in test_hangup_cancels_a_wedged_dial_task
+    asyncio.run(_test())
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:650: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests/test_web_server.py:629: in _test
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+_______ test_hangup_terminates_the_owned_voice_process_and_returns_idle ________
+tests/test_web_server.py:675: in test_hangup_terminates_the_owned_voice_process_and_returns_idle
+    asyncio.run(_test())
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:650: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests/test_web_server.py:664: in _test
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+___________ test_dial_fails_fast_when_android_gateway_is_unavailable ___________
+tests/test_web_server.py:700: in test_dial_fails_fast_when_android_gateway_is_unavailable
+    asyncio.run(_test())
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:650: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests/test_web_server.py:687: in _test
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+_______ test_dial_requires_explicit_operator_approval_and_redacts_audit ________
+tests/test_web_server.py:718: in test_dial_requires_explicit_operator_approval_and_redacts_audit
+    asyncio.run(_test())
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:650: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests/test_web_server.py:708: in _test
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+____________ test_auto_answer_setting_starts_and_stops_receptionist ____________
+tests/test_web_server.py:792: in test_auto_answer_setting_starts_and_stops_receptionist
+    asyncio.run(_test())
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:650: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests/test_web_server.py:773: in _test
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+____________ test_provider_change_restarts_idle_resident_voice_host ____________
+tests/test_web_server.py:822: in test_provider_change_restarts_idle_resident_voice_host
+    asyncio.run(_test())
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:650: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests/test_web_server.py:809: in _test
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+____________ test_studio_provider_selection_sets_matching_stt_model ____________
+tests/test_web_server.py:847: in test_studio_provider_selection_sets_matching_stt_model
+    asyncio.run(_test())
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:650: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests/test_web_server.py:835: in _test
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+_______ test_ollama_model_switch_releases_stale_runners_before_rewarming _______
+tests/test_web_server.py:900: in test_ollama_model_switch_releases_stale_runners_before_rewarming
+    asyncio.run(_test())
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:650: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests/test_web_server.py:879: in _test
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+_______ test_switching_from_cloud_to_ollama_reloads_a_preexisting_runner _______
+tests/test_web_server.py:947: in test_switching_from_cloud_to_ollama_reloads_a_preexisting_runner
+    asyncio.run(_test())
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:650: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests/test_web_server.py:929: in _test
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+__________ test_provider_change_during_call_defers_voice_host_restart __________
+tests/test_web_server.py:981: in test_provider_change_during_call_defers_voice_host_restart
+    asyncio.run(_test())
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py:650: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests/test_web_server.py:966: in _test
+    async with TestClient(TestServer(server.app)) as client:
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:533: in __aenter__
+    await self.start_server()
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/aiohttp/test_utils.py:85: in get_port_socket
+    s.bind((host, port))
+E   PermissionError: [Errno 1] Operation not permitted
+=============================== warnings summary ===============================
+.venv/lib/python3.11/site-packages/pipecat/audio/utils.py:14
+  /Users/aziz/Desktop/phone-agent-linux/.venv/lib/python3.11/site-packages/pipecat/audio/utils.py:14: DeprecationWarning: 'audioop' is deprecated and slated for removal in Python 3.13
+    import audioop
+
+<frozen abc>:106
+  <frozen abc>:106: DeprecationWarning: `SpeechTimeoutUserTurnStopStrategy` overrides `reset`, which is deprecated since 1.6.0 and will be removed in 2.0.0. Override `handle_user_turn_started` and `handle_user_turn_stopped` instead.
+
+<frozen abc>:106
+  <frozen abc>:106: DeprecationWarning: `AudioContextTTSService` is deprecated since 0.0.105 and will be removed in 2.0.0. Use `WebsocketTTSService` instead.
+
+tests/test_antigravity_live_stt.py: 22 warnings
+  /Users/aziz/Desktop/phone-agent-linux/.venv/lib/python3.11/site-packages/pipecat/audio/turn/smart_turn/local_smart_turn_v3.py:61: DeprecationWarning: path is deprecated. Use files() instead. Refer to https://importlib-resources.readthedocs.io/en/latest/using.html#migrating-from-legacy for migration advice.
+    with impresources.path(package_path, model_name) as f:
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/production/test_control_plane.py::test_complete_agent_package_stages_and_activates_atomically
+FAILED tests/production/test_control_plane.py::test_stale_package_and_in_call_activation_fail_closed
+FAILED tests/production/test_control_plane.py::test_control_events_are_bounded_cursor_readable_and_redacted
+FAILED tests/production/test_frappe_integration.py::test_live_business_tools_are_bound_to_authenticated_current_caller
+Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x30009dcd0>
+FAILED tests/production/test_frozen_whatsapp.py::test_qualified_whatsapp_files_are_byte_for_byte_frozen
+FAILED tests/production/test_identity_kernel.py::test_graphiti_http_mirror_uses_bounded_off_path_contract
+FAILED tests/production/test_local_mcp_control.py::test_mcp_dial_executes_autonomously_and_still_redacts_the_destination
+FAILED tests/production/test_local_mcp_control.py::test_stdio_mcp_server_negotiates_and_reads_live_status
+FAILED tests/production/test_openwa_integration.py::test_current_customer_tools_resolve_recipient_and_never_accept_a_model_jid
+FAILED tests/production/test_openwa_integration.py::test_per_use_approval_blocks_send_before_openwa_request
+FAILED tests/production/test_openwa_integration.py::test_web_api_tests_lists_and_provisions_dedicated_key
+FAILED tests/production/test_openwa_integration.py::test_web_api_does_not_report_qr_ready_session_as_connected
+FAILED tests/production/test_tool_control.py::test_http_tool_executes_bounded_sanitized_search
+FAILED tests/production/test_tool_control.py::test_per_use_approval_blocks_until_exact_operator_decision
+FAILED tests/production/test_tool_control.py::test_streamable_http_mcp_discovery_execution_and_clean_shutdown
+FAILED tests/production/test_tool_control.py::test_studio_api_saves_tests_and_decides_managed_tools
+FAILED tests/production/test_web_research.py::test_studio_can_save_and_visibly_test_web_research
+FAILED tests/test_android_telephony_track_lifecycle.py::test_android_never_retries_physical_telephony_track_creation
+FAILED tests/test_antigravity_live_stt.py::test_runtime_config_accepts_antigravity_live
+FAILED tests/test_baseline_corpus.py::test_protected_baseline_corpus_is_complete_and_integrity_checked
+FAILED tests/test_baseline_corpus.py::test_baseline_corpus_manifest_contains_no_unlisted_artifacts
+FAILED tests/test_ci_contract.py::test_ci_exposes_every_required_stage_with_immutable_actions
+FAILED tests/test_ci_contract.py::test_ci_jobs_share_the_local_stage_contract
+FAILED tests/test_ci_contract.py::test_device_qualification_is_manual_self_hosted_and_fail_closed
+FAILED tests/test_conversation_repair.py::test_exhausted_model_repeat_recovery_never_leaves_the_phone_silent
+FAILED tests/test_conversation_repair.py::test_pipeline_retry_decontaminates_context_and_targets_latest_turn
+FAILED tests/test_framed_link.py::test_control_request_discards_a_stale_late_acknowledgement
+FAILED tests/test_framed_link.py::test_authenticated_link_routes_media_and_idempotent_control
+FAILED tests/test_framed_link.py::test_reconnect_uses_new_epoch_without_reducing_generation
+FAILED tests/test_framed_link.py::test_uplink_never_exceeds_phone_playout_window_without_render_acks
+FAILED tests/test_framed_link.py::test_authenticated_client_uses_framed_control_and_normalizes_number
+FAILED tests/test_ollama_native.py::test_prewarm_loads_without_generation_and_keeps_model_resident
+FAILED tests/test_ollama_native.py::test_stream_chat_uses_native_no_thinking_ndjson_and_reports_usage
+FAILED tests/test_ollama_native.py::test_stream_chat_releases_request_immediately_when_cancelled
+FAILED tests/test_ollama_native.py::test_prewarm_with_messages_forces_a_single_token
+FAILED tests/test_ollama_native.py::test_residency_cleanup_unloads_every_model_except_the_selected_one
+FAILED tests/test_performance_harness.py::test_fixture_is_hash_verified_phone_ready_audio
+FAILED tests/test_performance_harness.py::test_contract_profile_measures_all_stages_and_sixty_turn_drift
+FAILED tests/test_performance_harness.py::test_threshold_regression_is_machine_visible
+FAILED tests/test_performance_harness.py::test_tampered_corpus_and_unknown_profile_fail_closed
+FAILED tests/test_remote_link.py::test_the_relay_carries_a_real_request_to_the_phone
+FAILED tests/test_remote_link.py::test_media_sized_frames_cross_the_tunnel_intact
+FAILED tests/test_remote_link.py::test_a_local_client_is_refused_when_no_phone_is_attached
+FAILED tests/test_remote_link.py::test_a_second_phone_cannot_take_over_a_live_tunnel
+FAILED tests/test_remote_link.py::test_a_tunnel_that_never_says_hello_is_dropped
+FAILED tests/test_remote_link.py::test_the_real_gateway_client_dials_through_the_tunnel
+FAILED tests/test_remote_link.py::test_studio_can_turn_the_link_on_and_off_without_a_restart
+FAILED tests/test_remote_link.py::test_a_port_held_by_an_adb_forward_says_so
+FAILED tests/test_remote_link.py::test_an_already_served_port_is_used_instead_of_failing
+FAILED tests/test_remote_link_v2.py::test_v2_accepts_a_data_tunnel_that_arrives_within_its_attach_budget
+FAILED tests/test_remote_link_v2.py::test_v2_uses_a_coordinator_and_one_authenticated_tunnel_per_stream
+FAILED tests/test_remote_link_v2.py::test_v2_wrong_challenge_cannot_bind_or_drop_the_coordinator
+FAILED tests/test_remote_link_v2.py::test_v2_rejects_cross_stream_frames_without_dropping_other_streams
+FAILED tests/test_remote_link_v2.py::test_blocked_capture_carrier_does_not_block_ack_or_control_stream
+FAILED tests/test_remote_link_v2.py::test_v1_phone_still_multiplexes_data_on_its_original_tunnel
+FAILED tests/test_runtime_migration_rollback.py::test_upgrade_s2s_installation_migrates_to_cascade_and_preserves_state
+FAILED tests/test_s2s_inventory.py::test_s2s_surface_is_complete_classified_and_migration_owned
+FAILED tests/test_web_server.py::test_get_index_serves_html - PermissionError...
+FAILED tests/test_web_server.py::test_get_status_returns_idle - PermissionErr...
+FAILED tests/test_web_server.py::test_disabled_warm_voice_host_does_not_prewarm_models_in_studio
+FAILED tests/test_web_server.py::test_studio_rejects_remote_binding_dns_rebinding_and_cross_origin
+FAILED tests/test_web_server.py::test_get_and_post_config - PermissionError: ...
+FAILED tests/test_web_server.py::test_websocket_sync_on_connect - PermissionE...
+FAILED tests/test_web_server.py::test_persona_task_and_child_configuration_apply_end_to_end
+FAILED tests/test_web_server.py::test_identity_revision_evaluation_approval_and_activation_api
+FAILED tests/test_web_server.py::test_admin_can_approve_after_contract_check_without_live_evaluation
+FAILED tests/test_web_server.py::test_edge_voice_endpoint_returns_live_catalog
+FAILED tests/test_web_server.py::test_edge_voice_endpoint_has_network_failure_fallback
+FAILED tests/test_web_server.py::test_hangup_cancels_a_wedged_dial_task - Per...
+FAILED tests/test_web_server.py::test_hangup_terminates_the_owned_voice_process_and_returns_idle
+FAILED tests/test_web_server.py::test_dial_fails_fast_when_android_gateway_is_unavailable
+FAILED tests/test_web_server.py::test_dial_requires_explicit_operator_approval_and_redacts_audit
+FAILED tests/test_web_server.py::test_auto_answer_setting_starts_and_stops_receptionist
+FAILED tests/test_web_server.py::test_provider_change_restarts_idle_resident_voice_host
+FAILED tests/test_web_server.py::test_studio_provider_selection_sets_matching_stt_model
+FAILED tests/test_web_server.py::test_ollama_model_switch_releases_stale_runners_before_rewarming
+FAILED tests/test_web_server.py::test_switching_from_cloud_to_ollama_reloads_a_preexisting_runner
+FAILED tests/test_web_server.py::test_provider_change_during_call_defers_voice_host_restart
+ERROR tests/test_telephony.py::test_dtmf_digit_dispatch - PermissionError: [E...
+ERROR tests/test_telephony.py::test_hangup_command - PermissionError: [Errno ...
+ERROR tests/test_telephony.py::test_call_state_listener - PermissionError: [E...
+78 failed, 788 passed, 39 skipped, 1 deselected, 25 warnings, 3 errors in 41.39s

@@ -1,0 +1,674 @@
+{
+  "scope": "Synthetic continuous ASR/endpointing only; real selected ASR/Silero/Smart Turn; no calls/messages/microphone/speaker",
+  "provider": "whisper_mlx",
+  "rows": [
+    {
+      "case": "en_short",
+      "expected": "Yes, please.",
+      "audio_ms": 1160.0,
+      "start_ms": 1249.2645829916,
+      "eof_ms": 2409.2645829916,
+      "commits": [
+        {
+          "at_ms": 4499.291542000719,
+          "text": "Yes, please.",
+          "metadata": {
+            "phone_agent": {
+              "engine": "mlx-whisper",
+              "model": "mlx-community/whisper-large-v3-turbo-q4",
+              "decoder": "greedy",
+              "quality_retry": false,
+              "vad": "external_turn_controller",
+              "avg_logprob": -0.2148,
+              "no_speech_prob": 0.0,
+              "compression_ratio": 0.6,
+              "segments": 1,
+              "language": "en",
+              "confidence": 0.8066797260353563,
+              "trusted_for_task": true,
+              "speech_epoch": 2,
+              "provider_final": true,
+              "speech_end_monotonic_ns": 121410182064666,
+              "committed_monotonic_ns": 121412269691166,
+              "endpoint_wait_ms": 2080.0,
+              "completion_reason": "smart_turn"
+            }
+          },
+          "after_eof_ms": 2090.0269590091193
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 4279.92383298988,
+          "text": "Yes, please.",
+          "final": true
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 4495.483332997537,
+          "elapsed_ms": 96.24587500002235,
+          "prediction": 1,
+          "probability": 0.9816229343414307
+        },
+        {
+          "at_ms": 4759.918750001816,
+          "elapsed_ms": 61.01699999999255,
+          "prediction": 1,
+          "probability": 0.9870367050170898
+        }
+      ],
+      "decoder_events": [
+        {
+          "at_ms": 2987.813916988671,
+          "type": "provider_latency",
+          "provider": "local_stt",
+          "operation": "decode",
+          "elapsed_ms": 1097.188,
+          "monotonic_ns": 121410758268125,
+          "outcome": "discarded",
+          "audio_ms": 620.0,
+          "model": "mlx-community/whisper-large-v3-turbo-q4"
+        },
+        {
+          "at_ms": 4280.30499999295,
+          "type": "provider_latency",
+          "provider": "local_stt",
+          "operation": "decode",
+          "elapsed_ms": 1289.821,
+          "monotonic_ns": 121412050759583,
+          "outcome": "ready",
+          "audio_ms": 1300.0,
+          "model": "mlx-community/whisper-large-v3-turbo-q4"
+        }
+      ],
+      "premature_commit": false,
+      "final_commit_after_eof_ms": 2090.0269590091193
+    },
+    {
+      "case": "en_auxiliary",
+      "expected": "Yes, I can.",
+      "audio_ms": 1300.0,
+      "start_ms": 5110.737916998914,
+      "eof_ms": 6410.737916998914,
+      "commits": [
+        {
+          "at_ms": 8133.443166996585,
+          "text": "Yes, I can.",
+          "metadata": {
+            "phone_agent": {
+              "engine": "mlx-whisper",
+              "model": "mlx-community/whisper-large-v3-turbo-q4",
+              "decoder": "greedy",
+              "quality_retry": false,
+              "vad": "external_turn_controller",
+              "avg_logprob": -0.19,
+              "no_speech_prob": 0.0,
+              "compression_ratio": 0.5789,
+              "segments": 1,
+              "language": "en",
+              "confidence": 0.8269431659129977,
+              "trusted_for_task": true,
+              "speech_epoch": 4,
+              "provider_final": true,
+              "speech_end_monotonic_ns": 121414142097916,
+              "committed_monotonic_ns": 121415903872791,
+              "endpoint_wait_ms": 1760.0,
+              "completion_reason": "smart_turn"
+            }
+          },
+          "after_eof_ms": 1722.7052499976708
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 7930.761666997569,
+          "text": "Yes, I can.",
+          "final": true
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 8132.399707988952,
+          "elapsed_ms": 95.37354100029916,
+          "prediction": 1,
+          "probability": 0.6344650983810425
+        },
+        {
+          "at_ms": 8406.026957993163,
+          "elapsed_ms": 66.26645800133701,
+          "prediction": 1,
+          "probability": 0.9870367050170898
+        }
+      ],
+      "decoder_events": [
+        {
+          "at_ms": 6472.996582990163,
+          "type": "provider_latency",
+          "provider": "local_stt",
+          "operation": "decode",
+          "elapsed_ms": 699.741,
+          "monotonic_ns": 121414243450500,
+          "outcome": "discarded",
+          "audio_ms": 850.0,
+          "model": "mlx-community/whisper-large-v3-turbo-q4"
+        },
+        {
+          "at_ms": 7930.815250001615,
+          "type": "provider_latency",
+          "provider": "local_stt",
+          "operation": "decode",
+          "elapsed_ms": 1437.062,
+          "monotonic_ns": 121415701270166,
+          "outcome": "ready",
+          "audio_ms": 1610.0,
+          "model": "mlx-community/whisper-large-v3-turbo-q4"
+        }
+      ],
+      "premature_commit": false,
+      "final_commit_after_eof_ms": 1722.7052499976708
+    },
+    {
+      "case": "fr_negative",
+      "expected": "Je ne sais pas.",
+      "audio_ms": 780.0,
+      "start_ms": 8751.954791994649,
+      "eof_ms": 9531.954791994649,
+      "commits": [
+        {
+          "at_ms": 10529.350957993302,
+          "text": "Je ne sais pas.",
+          "metadata": {
+            "phone_agent": {
+              "engine": "mlx-whisper",
+              "model": "mlx-community/whisper-large-v3-turbo-q4",
+              "decoder": "greedy",
+              "quality_retry": false,
+              "vad": "external_turn_controller",
+              "avg_logprob": -0.2048,
+              "no_speech_prob": 0.0,
+              "compression_ratio": 0.6522,
+              "segments": 1,
+              "language": "fr",
+              "confidence": 0.8147761612899661,
+              "trusted_for_task": true,
+              "speech_epoch": 5,
+              "provider_final": true,
+              "speech_end_monotonic_ns": 121417283883958,
+              "committed_monotonic_ns": 121418299777000,
+              "endpoint_wait_ms": 1000.0,
+              "completion_reason": "smart_turn"
+            }
+          },
+          "after_eof_ms": 997.3961659986526
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 10308.963249990484,
+          "text": "Je ne sais pas.",
+          "final": true
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 10511.389207997127,
+          "elapsed_ms": 85.46820799529087,
+          "prediction": 1,
+          "probability": 0.9880069494247437
+        },
+        {
+          "at_ms": 10788.195666988031,
+          "elapsed_ms": 70.63787500374019,
+          "prediction": 1,
+          "probability": 0.9870367050170898
+        }
+      ],
+      "decoder_events": [
+        {
+          "at_ms": 10309.019791995524,
+          "type": "provider_latency",
+          "provider": "local_stt",
+          "operation": "decode",
+          "elapsed_ms": 668.986,
+          "monotonic_ns": 121418079474375,
+          "outcome": "ready",
+          "audio_ms": 1010.0,
+          "model": "mlx-community/whisper-large-v3-turbo-q4"
+        }
+      ],
+      "premature_commit": false,
+      "final_commit_after_eof_ms": 997.3961659986526
+    },
+    {
+      "case": "en_stranded_question",
+      "expected": "Where are you calling from?",
+      "audio_ms": 1420.0,
+      "start_ms": 11133.829250000417,
+      "eof_ms": 12553.829250000417,
+      "commits": [
+        {
+          "at_ms": 13461.56733299722,
+          "text": "Where are you calling from?",
+          "metadata": {
+            "phone_agent": {
+              "engine": "mlx-whisper",
+              "model": "mlx-community/whisper-large-v3-turbo-q4",
+              "decoder": "greedy",
+              "quality_retry": false,
+              "vad": "external_turn_controller",
+              "avg_logprob": -0.2336,
+              "no_speech_prob": 0.0,
+              "compression_ratio": 0.8182,
+              "segments": 1,
+              "language": "en",
+              "confidence": 0.7916781456283547,
+              "trusted_for_task": true,
+              "speech_epoch": 6,
+              "provider_final": true,
+              "speech_end_monotonic_ns": 121420287465083,
+              "committed_monotonic_ns": 121421231919250,
+              "endpoint_wait_ms": 940.0,
+              "completion_reason": "smart_turn"
+            }
+          },
+          "after_eof_ms": 907.7380829968024
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 13248.357207994559,
+          "text": "Where are you calling from?",
+          "final": true
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 13441.205916999024,
+          "elapsed_ms": 73.46391600731295,
+          "prediction": 1,
+          "probability": 0.9823201894760132
+        },
+        {
+          "at_ms": 13730.191208000178,
+          "elapsed_ms": 59.634499993990175,
+          "prediction": 1,
+          "probability": 0.9870367050170898
+        }
+      ],
+      "decoder_events": [
+        {
+          "at_ms": 13248.416417001863,
+          "type": "provider_latency",
+          "provider": "local_stt",
+          "operation": "decode",
+          "elapsed_ms": 607.072,
+          "monotonic_ns": 121421018871041,
+          "outcome": "ready",
+          "audio_ms": 1710.0,
+          "model": "mlx-community/whisper-large-v3-turbo-q4"
+        }
+      ],
+      "premature_commit": false,
+      "final_commit_after_eof_ms": 907.7380829968024
+    },
+    {
+      "case": "en_preference_pause",
+      "expected": "I prefer movies and series.",
+      "pause_ms": 900,
+      "continuation_at_ms": 1640.0,
+      "audio_ms": 2840.0,
+      "start_ms": 14074.83129198954,
+      "eof_ms": 16914.83129198954,
+      "commits": [
+        {
+          "at_ms": 18065.71387499571,
+          "text": "I prefer movies and series.",
+          "metadata": {
+            "phone_agent": {
+              "engine": "mlx-whisper",
+              "model": "mlx-community/whisper-large-v3-turbo-q4",
+              "decoder": "greedy",
+              "quality_retry": false,
+              "vad": "external_turn_controller",
+              "avg_logprob": -0.3531,
+              "no_speech_prob": 0.0,
+              "compression_ratio": 0.8182,
+              "segments": 1,
+              "language": "en",
+              "confidence": 0.702538105817996,
+              "trusted_for_task": true,
+              "speech_epoch": 8,
+              "provider_final": true,
+              "speech_end_monotonic_ns": 121424667642250,
+              "committed_monotonic_ns": 121425836023708,
+              "endpoint_wait_ms": 1160.0,
+              "completion_reason": "smart_turn"
+            }
+          },
+          "after_eof_ms": 1150.8825830061687
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 15586.790624991409,
+          "text": "I prefer",
+          "final": true
+        },
+        {
+          "at_ms": 17871.257582999533,
+          "text": "I prefer movies and series.",
+          "final": true
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 15770.765499997651,
+          "elapsed_ms": 63.17729198781308,
+          "prediction": 1,
+          "probability": 0.9816229343414307
+        },
+        {
+          "at_ms": 18049.899332996574,
+          "elapsed_ms": 75.46062499750406,
+          "prediction": 1,
+          "probability": 0.9870367050170898
+        },
+        {
+          "at_ms": 18320.321124992915,
+          "elapsed_ms": 63.72345799172763,
+          "prediction": 1,
+          "probability": 0.9870367050170898
+        }
+      ],
+      "decoder_events": [
+        {
+          "at_ms": 15586.844999997993,
+          "type": "provider_latency",
+          "provider": "local_stt",
+          "operation": "decode",
+          "elapsed_ms": 667.627,
+          "monotonic_ns": 121423357299291,
+          "outcome": "ready",
+          "audio_ms": 1050.0,
+          "model": "mlx-community/whisper-large-v3-turbo-q4"
+        },
+        {
+          "at_ms": 17871.32845800079,
+          "type": "provider_latency",
+          "provider": "local_stt",
+          "operation": "decode",
+          "elapsed_ms": 851.459,
+          "monotonic_ns": 121425641781791,
+          "outcome": "ready",
+          "audio_ms": 3150.0,
+          "model": "mlx-community/whisper-large-v3-turbo-q4"
+        }
+      ],
+      "premature_commit": false,
+      "final_commit_after_eof_ms": 1150.8825830061687
+    },
+    {
+      "case": "fr_preference_pause",
+      "expected": "Je préfère les films et les séries.",
+      "pause_ms": 1200,
+      "continuation_at_ms": 2180.0,
+      "audio_ms": 3340.0,
+      "start_ms": 18677.13354199077,
+      "eof_ms": 22017.13354199077,
+      "commits": [
+        {
+          "at_ms": 22988.34183299914,
+          "text": "Je préfère les films et les séries.",
+          "metadata": {
+            "phone_agent": {
+              "engine": "mlx-whisper",
+              "model": "mlx-community/whisper-large-v3-turbo-q4",
+              "decoder": "greedy",
+              "quality_retry": false,
+              "vad": "external_turn_controller",
+              "avg_logprob": -0.1407,
+              "no_speech_prob": 0.0,
+              "compression_ratio": 0.8837,
+              "segments": 1,
+              "language": "fr",
+              "confidence": 0.8687609780409854,
+              "trusted_for_task": true,
+              "speech_epoch": 10,
+              "provider_final": true,
+              "speech_end_monotonic_ns": 121429768493250,
+              "committed_monotonic_ns": 121430758621208,
+              "endpoint_wait_ms": 980.0,
+              "completion_reason": "smart_turn"
+            }
+          },
+          "after_eof_ms": 971.20829100837
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 20376.47904199548,
+          "text": "Je préfère...",
+          "final": true
+        },
+        {
+          "at_ms": 22786.477374989772,
+          "text": "Je préfère les films et les séries.",
+          "final": true
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 20571.547457991983,
+          "elapsed_ms": 75.47241699649021,
+          "prediction": 0,
+          "probability": 0.47049394249916077
+        },
+        {
+          "at_ms": 22981.51520799729,
+          "elapsed_ms": 87.51316599955317,
+          "prediction": 1,
+          "probability": 0.9697068929672241
+        },
+        {
+          "at_ms": 23242.129791993648,
+          "elapsed_ms": 56.14654198870994,
+          "prediction": 1,
+          "probability": 0.9870367050170898
+        }
+      ],
+      "decoder_events": [
+        {
+          "at_ms": 20376.53091699758,
+          "type": "provider_latency",
+          "provider": "local_stt",
+          "operation": "decode",
+          "elapsed_ms": 647.149,
+          "monotonic_ns": 121428146985875,
+          "outcome": "ready",
+          "audio_ms": 1210.0,
+          "model": "mlx-community/whisper-large-v3-turbo-q4"
+        },
+        {
+          "at_ms": 22786.539249995258,
+          "type": "provider_latency",
+          "provider": "local_stt",
+          "operation": "decode",
+          "elapsed_ms": 663.523,
+          "monotonic_ns": 121430556994291,
+          "outcome": "ready",
+          "audio_ms": 3610.0,
+          "model": "mlx-community/whisper-large-v3-turbo-q4"
+        }
+      ],
+      "premature_commit": false,
+      "final_commit_after_eof_ms": 971.20829100837
+    },
+    {
+      "case": "fr_repeated_yes_0",
+      "expected": "Oui, s'il vous plaît.",
+      "audio_ms": 1380.0,
+      "start_ms": 23599.0757499967,
+      "eof_ms": 24979.0757499967,
+      "commits": [
+        {
+          "at_ms": 26548.845874989638,
+          "text": "Oui, s'il vous plaît.",
+          "metadata": {
+            "phone_agent": {
+              "engine": "mlx-whisper",
+              "model": "mlx-community/whisper-large-v3-turbo-q4",
+              "decoder": "greedy",
+              "quality_retry": false,
+              "vad": "external_turn_controller",
+              "avg_logprob": -0.208,
+              "no_speech_prob": 0.0,
+              "compression_ratio": 0.7333,
+              "segments": 1,
+              "language": "fr",
+              "confidence": 0.8121876850692054,
+              "trusted_for_task": true,
+              "speech_epoch": 12,
+              "provider_final": true,
+              "speech_end_monotonic_ns": 121432750872125,
+              "committed_monotonic_ns": 121434319256041,
+              "endpoint_wait_ms": 1560.0,
+              "completion_reason": "smart_turn"
+            }
+          },
+          "after_eof_ms": 1569.7701249929378
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 26341.251124991686,
+          "text": "Oui, s'il vous plaît.",
+          "final": true
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 26527.94937499857,
+          "elapsed_ms": 77.81999999133404,
+          "prediction": 1,
+          "probability": 0.9801466464996338
+        },
+        {
+          "at_ms": 26815.823500000988,
+          "elapsed_ms": 68.92687499930616,
+          "prediction": 1,
+          "probability": 0.9870367050170898
+        }
+      ],
+      "decoder_events": [
+        {
+          "at_ms": 25087.507624994032,
+          "type": "provider_latency",
+          "provider": "local_stt",
+          "operation": "decode",
+          "elapsed_ms": 1012.802,
+          "monotonic_ns": 121432857962500,
+          "outcome": "discarded",
+          "audio_ms": 590.0,
+          "model": "mlx-community/whisper-large-v3-turbo-q4"
+        },
+        {
+          "at_ms": 26341.2929999904,
+          "type": "provider_latency",
+          "provider": "local_stt",
+          "operation": "decode",
+          "elapsed_ms": 1225.583,
+          "monotonic_ns": 121434111747958,
+          "outcome": "ready",
+          "audio_ms": 1630.0,
+          "model": "mlx-community/whisper-large-v3-turbo-q4"
+        }
+      ],
+      "premature_commit": false,
+      "final_commit_after_eof_ms": 1569.7701249929378
+    },
+    {
+      "case": "fr_repeated_yes_1",
+      "expected": "Oui, s'il vous plaît.",
+      "audio_ms": 1380.0,
+      "start_ms": 27160.474042000715,
+      "eof_ms": 28540.474042000715,
+      "commits": [
+        {
+          "at_ms": 30176.11412498809,
+          "text": "Oui, s'il vous plaît.",
+          "metadata": {
+            "phone_agent": {
+              "engine": "mlx-whisper",
+              "model": "mlx-community/whisper-large-v3-turbo-q4",
+              "decoder": "greedy",
+              "quality_retry": false,
+              "vad": "external_turn_controller",
+              "avg_logprob": -0.182,
+              "no_speech_prob": 0.0,
+              "compression_ratio": 0.7333,
+              "segments": 1,
+              "language": "fr",
+              "confidence": 0.8335880566007835,
+              "trusted_for_task": true,
+              "speech_epoch": 14,
+              "provider_final": true,
+              "speech_end_monotonic_ns": 121436294002125,
+              "committed_monotonic_ns": 121437946402208,
+              "endpoint_wait_ms": 1640.0,
+              "completion_reason": "smart_turn"
+            }
+          },
+          "after_eof_ms": 1635.6400829873746
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 29981.09816700162,
+          "text": "Oui, s'il vous plaît.",
+          "final": true
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 30162.460416991962,
+          "elapsed_ms": 59.88620799325872,
+          "prediction": 1,
+          "probability": 0.9522762298583984
+        },
+        {
+          "at_ms": 30447.383833001368,
+          "elapsed_ms": 70.10654099576641,
+          "prediction": 1,
+          "probability": 0.9870367050170898
+        }
+      ],
+      "decoder_events": [
+        {
+          "at_ms": 28645.676832995377,
+          "type": "provider_latency",
+          "provider": "local_stt",
+          "operation": "decode",
+          "elapsed_ms": 1012.773,
+          "monotonic_ns": 121436416131291,
+          "outcome": "discarded",
+          "audio_ms": 570.0,
+          "model": "mlx-community/whisper-large-v3-turbo-q4"
+        },
+        {
+          "at_ms": 29981.147624988807,
+          "type": "provider_latency",
+          "provider": "local_stt",
+          "operation": "decode",
+          "elapsed_ms": 1315.723,
+          "monotonic_ns": 121437751602625,
+          "outcome": "ready",
+          "audio_ms": 1590.0,
+          "model": "mlx-community/whisper-large-v3-turbo-q4"
+        }
+      ],
+      "premature_commit": false,
+      "final_commit_after_eof_ms": 1635.6400829873746
+    }
+  ]
+}

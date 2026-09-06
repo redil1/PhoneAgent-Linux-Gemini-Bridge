@@ -1,0 +1,50 @@
+{
+  "phase": "tts",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "repeats": 3,
+  "methodology": "Synthetic telephone-bandlimited 16kHz PCM, real providers; no calls/messages/microphone/speaker. Reference EOF simulates manual PTT. Metrics are observable arrival points, not perceived audio.",
+  "rows": [
+    {
+      "mode": "reference_mp3_arrival",
+      "trial": 0,
+      "first_output_ms": 606.5488750027725,
+      "complete_ms": 929.3981250084471,
+      "bytes": 25920
+    },
+    {
+      "mode": "runtime_16khz_pcm",
+      "trial": 0,
+      "first_output_ms": 596.3294160028454,
+      "complete_ms": 800.1906660065288,
+      "bytes": 138240
+    },
+    {
+      "mode": "reference_mp3_arrival",
+      "trial": 1,
+      "first_output_ms": 621.5105839946773,
+      "complete_ms": 881.2539170030504,
+      "bytes": 25920
+    },
+    {
+      "mode": "runtime_16khz_pcm",
+      "trial": 1,
+      "first_output_ms": 401.7969159904169,
+      "complete_ms": 476.0394579934655,
+      "bytes": 138240
+    },
+    {
+      "mode": "reference_mp3_arrival",
+      "trial": 2,
+      "first_output_ms": 411.0055830096826,
+      "complete_ms": 569.8597080045147,
+      "bytes": 25920
+    },
+    {
+      "mode": "runtime_16khz_pcm",
+      "trial": 2,
+      "first_output_ms": 411.6557920060586,
+      "complete_ms": 482.88749999483116,
+      "bytes": 138240
+    }
+  ]
+}

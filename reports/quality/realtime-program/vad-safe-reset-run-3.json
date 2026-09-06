@@ -1,0 +1,6494 @@
+{
+  "input_case": "fr_refusal_noise",
+  "local_corroboration": true,
+  "injected_llm_failure": false,
+  "injected_tts_failure": false,
+  "tts_failure_mode": null,
+  "injected_stt_disconnect": false,
+  "scope": "Real providers with simulated phone clock; all tool side effects disabled",
+  "correction_observation_timeout_secs": 30,
+  "pipeline_start_ms": 3484.896292007761,
+  "first_simulated_playout_after_eof_ms": 2347.870875004446,
+  "correction_input_offset": 158080,
+  "correction_source_sha256": "cc7a3a8bbc8e9563fe8650a003dab2206bd8bc6ed35f9a63ed661a89cfb325b0",
+  "correction_start_ms": 8627.715124981478,
+  "correction_queued_bytes_before": 0,
+  "barge_in_to_flush_ms": 219.55462501500733,
+  "correction_transcribed": true,
+  "correction_answered": true,
+  "playback_accounting_resolved": true,
+  "events": [
+    {
+      "at_ms": 219.14545897743665,
+      "type": "managed_tools_reloaded",
+      "active_tools": [],
+      "pipeline": "cascade"
+    },
+    {
+      "at_ms": 225.39108397904783,
+      "type": "provider_latency",
+      "provider": "openwa",
+      "operation": "session_status",
+      "elapsed_ms": 5.567,
+      "monotonic_ns": 162623050867375,
+      "outcome": "ok"
+    },
+    {
+      "at_ms": 225.4851250036154,
+      "type": "openwa_runtime_status",
+      "state": "ready",
+      "tools": [
+        "whatsapp_last_delivery_status",
+        "whatsapp_read_current_customer_chat",
+        "whatsapp_reply_current_customer",
+        "whatsapp_send_text_current_customer"
+      ],
+      "self_chat": false
+    },
+    {
+      "at_ms": 225.5012919777073,
+      "type": "openwa_tools_reloaded",
+      "active_tools": [
+        "whatsapp_last_delivery_status",
+        "whatsapp_read_current_customer_chat",
+        "whatsapp_reply_current_customer",
+        "whatsapp_send_text_current_customer"
+      ],
+      "pipeline": "cascade"
+    },
+    {
+      "at_ms": 226.16166700026952,
+      "type": "web_research_runtime_status",
+      "state": "ready",
+      "tools": [
+        "web_research"
+      ]
+    },
+    {
+      "at_ms": 226.17662500124425,
+      "type": "web_research_tools_reloaded",
+      "active_tools": [
+        "web_research"
+      ],
+      "pipeline": "cascade"
+    },
+    {
+      "at_ms": 236.03474997798912,
+      "type": "frappe_runtime_status",
+      "state": "ready",
+      "tools": [
+        "business_create_opportunity",
+        "business_create_quotation_draft",
+        "business_create_support_ticket",
+        "business_get_customer_context",
+        "business_get_invoice_status",
+        "business_get_order_status",
+        "business_get_support_status",
+        "business_mark_do_not_call",
+        "business_record_call_outcome",
+        "business_schedule_follow_up",
+        "business_search_catalog",
+        "business_update_support_ticket",
+        "business_upsert_current_lead"
+      ],
+      "site": "phoneagent.localhost"
+    },
+    {
+      "at_ms": 236.0595419886522,
+      "type": "frappe_tools_reloaded",
+      "active_tools": [
+        "business_create_opportunity",
+        "business_create_quotation_draft",
+        "business_create_support_ticket",
+        "business_get_customer_context",
+        "business_get_invoice_status",
+        "business_get_order_status",
+        "business_get_support_status",
+        "business_mark_do_not_call",
+        "business_record_call_outcome",
+        "business_schedule_follow_up",
+        "business_search_catalog",
+        "business_update_support_ticket",
+        "business_upsert_current_lead"
+      ],
+      "pipeline": "cascade"
+    },
+    {
+      "at_ms": 7381.483083998319,
+      "type": "transcript",
+      "role": "user",
+      "text": "à l'abonnement annuel",
+      "detected_language": "fr",
+      "transcription_low_confidence": true
+    },
+    {
+      "at_ms": 7395.13654197799,
+      "type": "transcript",
+      "role": "assistant",
+      "text": "Pardon, pouvez vous répéter ?",
+      "metrics": {
+        "turn_latency_ms": 12.1,
+        "fidelity": 100.0,
+        "task_score": 100.0
+      },
+      "response_id": "response-1",
+      "response_kind": "repair",
+      "delivery_status": "generated"
+    },
+    {
+      "at_ms": 7395.144541980699,
+      "type": "evaluation",
+      "score": 100.0,
+      "task_score": 100.0,
+      "passed": true,
+      "feedback": [],
+      "task_id": "iptv_shopping_prod_v3_3"
+    },
+    {
+      "at_ms": 7395.186583977193,
+      "type": "uncertain_transcription_repair",
+      "turn_epoch": 2,
+      "response_id": "response-1"
+    },
+    {
+      "at_ms": 7903.9310419757385,
+      "type": "provider_latency",
+      "provider": "edge_tts",
+      "operation": "first_pcm",
+      "elapsed_ms": 507.658,
+      "monotonic_ns": 162630729403291,
+      "context_id": "f8be3cd5-555f-4f74-bc0c-1a1746f9e40e",
+      "text_chars": 29
+    },
+    {
+      "at_ms": 7906.384458998218,
+      "type": "playback_status",
+      "response_id": "response-1",
+      "status": "playing",
+      "message": ""
+    },
+    {
+      "at_ms": 7985.825708979974,
+      "type": "provider_latency",
+      "provider": "edge_tts",
+      "operation": "synthesis_complete",
+      "elapsed_ms": 589.565,
+      "monotonic_ns": 162630811304916,
+      "context_id": "f8be3cd5-555f-4f74-bc0c-1a1746f9e40e",
+      "text_chars": 29,
+      "first_pcm_ms": 507.636750000529,
+      "pcm_bytes": 63744,
+      "outcome": "complete"
+    },
+    {
+      "at_ms": 9849.06629199395,
+      "type": "playback_status",
+      "response_id": "response-1",
+      "status": "interrupted",
+      "message": "Caller heard approximately 0.78s"
+    },
+    {
+      "at_ms": 12705.89137499337,
+      "type": "transcript",
+      "role": "user",
+      "text": "Non, je ne veux pas l'abonnement annuel.",
+      "detected_language": "fr"
+    },
+    {
+      "at_ms": 13031.543999997666,
+      "type": "provider_latency",
+      "provider": "antigravity_gemini",
+      "operation": "response_complete",
+      "elapsed_ms": 904.335,
+      "monotonic_ns": 162635857019833,
+      "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH",
+      "attempt": 1,
+      "prompt_chars": 41166,
+      "response_chars": 235,
+      "streaming": false
+    },
+    {
+      "at_ms": 13033.689292002236,
+      "type": "provider_latency",
+      "provider": "antigravity_gemini",
+      "operation": "prefetch_hit",
+      "elapsed_ms": 325.72,
+      "monotonic_ns": 162635859167166,
+      "hits": 1,
+      "misses": 0
+    },
+    {
+      "at_ms": 13061.46466700011,
+      "type": "transcript",
+      "role": "assistant",
+      "text": "Je comprends tout à fait. Dans ce cas, nous avons des options plus courtes, comme notre forfait de trois mois à vingt cinq dollars ou celui de six mois à trente neuf dollars. Est ce que l'une de ces durées vous conviendrait davantage ?",
+      "metrics": {
+        "turn_latency_ms": 355.3,
+        "fidelity": 90.0,
+        "task_score": 100.0
+      },
+      "response_id": "response-2",
+      "response_kind": "turn",
+      "delivery_status": "generated"
+    },
+    {
+      "at_ms": 13061.476874980144,
+      "type": "evaluation",
+      "score": 90.0,
+      "task_score": 100.0,
+      "passed": true,
+      "feedback": [
+        "Response too long for telephony (44 words)"
+      ],
+      "task_id": "iptv_shopping_prod_v3_3"
+    },
+    {
+      "at_ms": 13669.93145897868,
+      "type": "provider_latency",
+      "provider": "edge_tts",
+      "operation": "first_pcm",
+      "elapsed_ms": 586.211,
+      "monotonic_ns": 162636495406041,
+      "context_id": "d94ffc0f-74bc-45ec-8abf-694c6e718712",
+      "text_chars": 25
+    },
+    {
+      "at_ms": 13674.098249990493,
+      "type": "playback_status",
+      "response_id": "response-2",
+      "status": "playing",
+      "message": ""
+    },
+    {
+      "at_ms": 13735.003624984529,
+      "type": "provider_latency",
+      "provider": "edge_tts",
+      "operation": "synthesis_complete",
+      "elapsed_ms": 651.287,
+      "monotonic_ns": 162636560481916,
+      "context_id": "d94ffc0f-74bc-45ec-8abf-694c6e718712",
+      "text_chars": 25,
+      "first_pcm_ms": 586.1995000159368,
+      "pcm_bytes": 68352,
+      "outcome": "complete"
+    },
+    {
+      "at_ms": 15206.785499991383,
+      "type": "provider_latency",
+      "provider": "edge_tts",
+      "operation": "first_pcm",
+      "elapsed_ms": 1470.933,
+      "monotonic_ns": 162638032257208,
+      "context_id": "d94ffc0f-74bc-45ec-8abf-694c6e718712",
+      "text_chars": 148
+    },
+    {
+      "at_ms": 15467.361416987842,
+      "type": "provider_latency",
+      "provider": "edge_tts",
+      "operation": "synthesis_complete",
+      "elapsed_ms": 1731.513,
+      "monotonic_ns": 162638292838125,
+      "context_id": "d94ffc0f-74bc-45ec-8abf-694c6e718712",
+      "text_chars": 148,
+      "first_pcm_ms": 1470.9207919950131,
+      "pcm_bytes": 332544,
+      "outcome": "complete"
+    },
+    {
+      "at_ms": 15622.993583994685,
+      "type": "speculation",
+      "state": "ready",
+      "candidate_chars": 40,
+      "elapsed_ms": 3496.8,
+      "llm_ms": 907.4,
+      "tts_ms": 2589.4
+    },
+    {
+      "at_ms": 16099.488249979913,
+      "type": "provider_latency",
+      "provider": "edge_tts",
+      "operation": "first_pcm",
+      "elapsed_ms": 631.415,
+      "monotonic_ns": 162638924958916,
+      "context_id": "d94ffc0f-74bc-45ec-8abf-694c6e718712",
+      "text_chars": 60
+    },
+    {
+      "at_ms": 16157.505791983567,
+      "type": "provider_latency",
+      "provider": "edge_tts",
+      "operation": "synthesis_complete",
+      "elapsed_ms": 689.445,
+      "monotonic_ns": 162638982983625,
+      "context_id": "d94ffc0f-74bc-45ec-8abf-694c6e718712",
+      "text_chars": 60,
+      "first_pcm_ms": 631.38874998549,
+      "pcm_bytes": 142848,
+      "outcome": "complete"
+    },
+    {
+      "at_ms": 31687.87524997606,
+      "type": "playback_status",
+      "response_id": "response-2",
+      "status": "completed",
+      "message": ""
+    },
+    {
+      "at_ms": 31741.918124986114,
+      "type": "call_outcome",
+      "task_id": "iptv_shopping_prod_v3_3",
+      "outcome": "abandoned",
+      "stage": "OPEN",
+      "turns": 1,
+      "collected": {},
+      "missing": [
+        "permission_to_continue",
+        "caller_situation",
+        "problem_or_desired_outcome",
+        "explicit_interest",
+        "plan_duration",
+        "next_step_consent"
+      ]
+    }
+  ],
+  "flushes": [
+    {
+      "at_ms": 4568.238666979596,
+      "generation": 2
+    },
+    {
+      "at_ms": 8847.269749996485,
+      "generation": 3
+    },
+    {
+      "at_ms": 9344.416874984745,
+      "generation": 4
+    }
+  ],
+  "write_count": 889,
+  "disabled_tool_calls": [],
+  "vad_trace": [
+    {
+      "at_ms": 3722.0183750032447,
+      "input_bytes": 1280,
+      "confidence": 0.19592958688735962,
+      "state_before": "QUIET",
+      "model_reset": true
+    },
+    {
+      "at_ms": 3761.215916980291,
+      "input_bytes": 2560,
+      "confidence": 0.1341855227947235,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 3781.540916999802,
+      "input_bytes": 3200,
+      "confidence": 0.040910303592681885,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 3822.7690419880673,
+      "input_bytes": 4480,
+      "confidence": 0.13861683011054993,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 3840.2788339881226,
+      "input_bytes": 5120,
+      "confidence": 0.10548245906829834,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 3880.9859589964617,
+      "input_bytes": 6400,
+      "confidence": 0.07617121934890747,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 3922.152624989394,
+      "input_bytes": 7680,
+      "confidence": 0.05362921953201294,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 3940.720041980967,
+      "input_bytes": 8320,
+      "confidence": 0.04724976420402527,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 3981.07979199267,
+      "input_bytes": 9600,
+      "confidence": 0.01600700616836548,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4000.8169589855243,
+      "input_bytes": 10240,
+      "confidence": 0.007786154747009277,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4041.795083991019,
+      "input_bytes": 11520,
+      "confidence": 0.014494597911834717,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4081.559041980654,
+      "input_bytes": 12800,
+      "confidence": 0.00799703598022461,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4100.470499979565,
+      "input_bytes": 13440,
+      "confidence": 0.006136387586593628,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4142.173874977743,
+      "input_bytes": 14720,
+      "confidence": 0.002954423427581787,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4161.080041987589,
+      "input_bytes": 15360,
+      "confidence": 0.002601534128189087,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4200.311333988793,
+      "input_bytes": 16640,
+      "confidence": 0.0031288564205169678,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4241.9498749950435,
+      "input_bytes": 17920,
+      "confidence": 0.0024968385696411133,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4260.478916985448,
+      "input_bytes": 18560,
+      "confidence": 0.002937495708465576,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4301.555499987444,
+      "input_bytes": 19840,
+      "confidence": 0.002338111400604248,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4322.229541983688,
+      "input_bytes": 20480,
+      "confidence": 0.002910405397415161,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4361.2518750014715,
+      "input_bytes": 21760,
+      "confidence": 0.0029332637786865234,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4401.001249992987,
+      "input_bytes": 23040,
+      "confidence": 0.0031191110610961914,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4422.235999983968,
+      "input_bytes": 23680,
+      "confidence": 0.5265113115310669,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4460.545499983709,
+      "input_bytes": 24960,
+      "confidence": 0.8696424961090088,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4480.285208992427,
+      "input_bytes": 25600,
+      "confidence": 0.9145853519439697,
+      "state_before": "STARTING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4520.102791982936,
+      "input_bytes": 26880,
+      "confidence": 0.9421637058258057,
+      "state_before": "STARTING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4560.707625001669,
+      "input_bytes": 28160,
+      "confidence": 0.9416776895523071,
+      "state_before": "STARTING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4581.052249995992,
+      "input_bytes": 28800,
+      "confidence": 0.9593566656112671,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4622.552916989662,
+      "input_bytes": 30080,
+      "confidence": 0.9715080261230469,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4642.0922499964945,
+      "input_bytes": 30720,
+      "confidence": 0.96802818775177,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4681.295708985999,
+      "input_bytes": 32000,
+      "confidence": 0.9549493789672852,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4722.750666987849,
+      "input_bytes": 33280,
+      "confidence": 0.9708203077316284,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4741.1939589947,
+      "input_bytes": 33920,
+      "confidence": 0.9582152366638184,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4781.503042002441,
+      "input_bytes": 35200,
+      "confidence": 0.9573109149932861,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4800.498541997513,
+      "input_bytes": 35840,
+      "confidence": 0.9490008354187012,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4841.578583989758,
+      "input_bytes": 37120,
+      "confidence": 0.9438209533691406,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4881.238333997317,
+      "input_bytes": 38400,
+      "confidence": 0.9341201782226562,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4901.277375000063,
+      "input_bytes": 39040,
+      "confidence": 0.9255428314208984,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4941.103999997722,
+      "input_bytes": 40320,
+      "confidence": 0.9416634440422058,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 4961.300583992852,
+      "input_bytes": 40960,
+      "confidence": 0.9389283061027527,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5000.380791985663,
+      "input_bytes": 42240,
+      "confidence": 0.940093994140625,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5041.156458988553,
+      "input_bytes": 43520,
+      "confidence": 0.9347995519638062,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5060.429083998315,
+      "input_bytes": 44160,
+      "confidence": 0.9272234439849854,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5100.158208981156,
+      "input_bytes": 45440,
+      "confidence": 0.9426708817481995,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5120.672458986519,
+      "input_bytes": 46080,
+      "confidence": 0.9398605823516846,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5160.029749997193,
+      "input_bytes": 47360,
+      "confidence": 0.946265459060669,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5201.421916979598,
+      "input_bytes": 48640,
+      "confidence": 0.9381226301193237,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5221.738874999573,
+      "input_bytes": 49280,
+      "confidence": 0.9209483861923218,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5259.97429198469,
+      "input_bytes": 50560,
+      "confidence": 0.9315415024757385,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5281.357500003651,
+      "input_bytes": 51200,
+      "confidence": 0.9431458711624146,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5321.94024999626,
+      "input_bytes": 52480,
+      "confidence": 0.9367142915725708,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5361.254708986962,
+      "input_bytes": 53760,
+      "confidence": 0.9395430684089661,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5381.472249981016,
+      "input_bytes": 54400,
+      "confidence": 0.9252321720123291,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5421.523875003913,
+      "input_bytes": 55680,
+      "confidence": 0.925315797328949,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5441.758250002749,
+      "input_bytes": 56320,
+      "confidence": 0.9402953386306763,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5481.225625000661,
+      "input_bytes": 57600,
+      "confidence": 0.927586555480957,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5520.857041992713,
+      "input_bytes": 58880,
+      "confidence": 0.8747655749320984,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5541.226250003092,
+      "input_bytes": 59520,
+      "confidence": 0.5665113925933838,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5581.648833991494,
+      "input_bytes": 60800,
+      "confidence": 0.24498596787452698,
+      "state_before": "STOPPING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5600.569959002314,
+      "input_bytes": 61440,
+      "confidence": 0.18368467688560486,
+      "state_before": "STOPPING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5640.647874999559,
+      "input_bytes": 62720,
+      "confidence": 0.11530756950378418,
+      "state_before": "STOPPING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5680.968333996134,
+      "input_bytes": 64000,
+      "confidence": 0.08194848895072937,
+      "state_before": "STOPPING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5700.428541982546,
+      "input_bytes": 64640,
+      "confidence": 0.009970217943191528,
+      "state_before": "STOPPING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5741.7520839953795,
+      "input_bytes": 65920,
+      "confidence": 0.033567607402801514,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5763.741167000262,
+      "input_bytes": 66560,
+      "confidence": 0.025299519300460815,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5822.828167001717,
+      "input_bytes": 67840,
+      "confidence": 0.019955962896347046,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5843.752416985808,
+      "input_bytes": 69120,
+      "confidence": 0.016670703887939453,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5879.997416981496,
+      "input_bytes": 69760,
+      "confidence": 0.01379626989364624,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5914.2346669978,
+      "input_bytes": 71040,
+      "confidence": 0.011602431535720825,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5920.046666986309,
+      "input_bytes": 71680,
+      "confidence": 0.009954452514648438,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5960.907708999002,
+      "input_bytes": 72960,
+      "confidence": 0.00882139801979065,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 5999.888499994995,
+      "input_bytes": 74240,
+      "confidence": 0.007940828800201416,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6188.876999978675,
+      "input_bytes": 74880,
+      "confidence": 0.007171571254730225,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6213.8807919982355,
+      "input_bytes": 76160,
+      "confidence": 0.006528019905090332,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6219.044500001473,
+      "input_bytes": 76800,
+      "confidence": 0.005936384201049805,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6230.358000000706,
+      "input_bytes": 78080,
+      "confidence": 0.005430340766906738,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6265.481791982893,
+      "input_bytes": 79360,
+      "confidence": 0.005004703998565674,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6308.564334001858,
+      "input_bytes": 80000,
+      "confidence": 0.004643887281417847,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6326.579958986258,
+      "input_bytes": 81280,
+      "confidence": 0.00433725118637085,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6356.087874999503,
+      "input_bytes": 81920,
+      "confidence": 0.004076570272445679,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6368.107999995118,
+      "input_bytes": 83200,
+      "confidence": 0.0038553476333618164,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6381.106833985541,
+      "input_bytes": 84480,
+      "confidence": 0.003625422716140747,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6384.8034589900635,
+      "input_bytes": 85120,
+      "confidence": 0.0033646821975708008,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6392.618666985072,
+      "input_bytes": 86400,
+      "confidence": 0.003141343593597412,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6413.711417000741,
+      "input_bytes": 87040,
+      "confidence": 0.002946138381958008,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6469.097374996636,
+      "input_bytes": 88320,
+      "confidence": 0.002770721912384033,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6494.670791988028,
+      "input_bytes": 89600,
+      "confidence": 0.0026091337203979492,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6529.131874995073,
+      "input_bytes": 90240,
+      "confidence": 0.0024577677249908447,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6542.803749995073,
+      "input_bytes": 91520,
+      "confidence": 0.0023097991943359375,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6560.428791999584,
+      "input_bytes": 92160,
+      "confidence": 0.002131938934326172,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6600.065291975625,
+      "input_bytes": 93440,
+      "confidence": 0.0019658803939819336,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6640.767333999975,
+      "input_bytes": 94720,
+      "confidence": 0.0018155574798583984,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6660.976583982119,
+      "input_bytes": 95360,
+      "confidence": 0.0016801655292510986,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6701.954541989835,
+      "input_bytes": 96640,
+      "confidence": 0.0015586316585540771,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6720.06287498516,
+      "input_bytes": 97280,
+      "confidence": 0.0014497339725494385,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6759.894208982587,
+      "input_bytes": 98560,
+      "confidence": 0.0013515353202819824,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6799.650959001156,
+      "input_bytes": 99840,
+      "confidence": 0.0012630820274353027,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6820.430541993119,
+      "input_bytes": 100480,
+      "confidence": 0.0011838972568511963,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6860.526333999587,
+      "input_bytes": 101760,
+      "confidence": 0.0011127889156341553,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6880.42587498785,
+      "input_bytes": 102400,
+      "confidence": 0.0010488331317901611,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6920.898124983069,
+      "input_bytes": 103680,
+      "confidence": 0.0009911656379699707,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6961.220291996142,
+      "input_bytes": 104960,
+      "confidence": 0.0009390115737915039,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 6980.909958976554,
+      "input_bytes": 105600,
+      "confidence": 0.0008918046951293945,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7022.089874983067,
+      "input_bytes": 106880,
+      "confidence": 0.0008488297462463379,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7042.143500002567,
+      "input_bytes": 107520,
+      "confidence": 0.0008097589015960693,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7081.507875001989,
+      "input_bytes": 108800,
+      "confidence": 0.0007741451263427734,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7120.902208989719,
+      "input_bytes": 110080,
+      "confidence": 0.0007416903972625732,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7140.569624985801,
+      "input_bytes": 110720,
+      "confidence": 0.0007121562957763672,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7180.064458982088,
+      "input_bytes": 112000,
+      "confidence": 0.0006850063800811768,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7200.493666983675,
+      "input_bytes": 112640,
+      "confidence": 0.0006601214408874512,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7241.3869589800015,
+      "input_bytes": 113920,
+      "confidence": 0.0006371736526489258,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7281.952791992808,
+      "input_bytes": 115200,
+      "confidence": 0.0006160736083984375,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7306.573916983325,
+      "input_bytes": 115840,
+      "confidence": 0.0005965232849121094,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7361.419875000138,
+      "input_bytes": 117120,
+      "confidence": 0.000578463077545166,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7364.001958980225,
+      "input_bytes": 117760,
+      "confidence": 0.0005618035793304443,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7409.683249978116,
+      "input_bytes": 119040,
+      "confidence": 0.0005463957786560059,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7440.542750002351,
+      "input_bytes": 120320,
+      "confidence": 0.0005322396755218506,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7460.403916978976,
+      "input_bytes": 120960,
+      "confidence": 0.0005191564559936523,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7499.720958992839,
+      "input_bytes": 122240,
+      "confidence": 0.000507056713104248,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7520.432874996914,
+      "input_bytes": 122880,
+      "confidence": 0.0004958510398864746,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7560.1519999909215,
+      "input_bytes": 124160,
+      "confidence": 0.00048547983169555664,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7599.731666996377,
+      "input_bytes": 125440,
+      "confidence": 0.0004760324954986572,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7620.010333979735,
+      "input_bytes": 126080,
+      "confidence": 0.0004671812057495117,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7659.957541996846,
+      "input_bytes": 127360,
+      "confidence": 0.0004590153694152832,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7681.030416977592,
+      "input_bytes": 128000,
+      "confidence": 0.00045165419578552246,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7722.161041980144,
+      "input_bytes": 129280,
+      "confidence": 0.00044479966163635254,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7763.06712499354,
+      "input_bytes": 130560,
+      "confidence": 0.00043848156929016113,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7782.197333988734,
+      "input_bytes": 131200,
+      "confidence": 0.00043269991874694824,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7820.667291991413,
+      "input_bytes": 132480,
+      "confidence": 0.0004273653030395508,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7841.450291976798,
+      "input_bytes": 133120,
+      "confidence": 0.00042244791984558105,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7882.020291988738,
+      "input_bytes": 134400,
+      "confidence": 0.00041803717613220215,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 7940.598333982052,
+      "input_bytes": 136320,
+      "confidence": 0.023828625679016113,
+      "state_before": "QUIET",
+      "model_reset": true
+    },
+    {
+      "at_ms": 7980.969374999404,
+      "input_bytes": 137600,
+      "confidence": 0.01160210371017456,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8000.5199589941185,
+      "input_bytes": 138240,
+      "confidence": 0.006769001483917236,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8041.246249980759,
+      "input_bytes": 139520,
+      "confidence": 0.0030172765254974365,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8062.027958978433,
+      "input_bytes": 140160,
+      "confidence": 0.0020678043365478516,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8101.496374991257,
+      "input_bytes": 141440,
+      "confidence": 0.0016246438026428223,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8140.925374988001,
+      "input_bytes": 142720,
+      "confidence": 0.0014384686946868896,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8160.946333984612,
+      "input_bytes": 143360,
+      "confidence": 0.001336514949798584,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8199.759458977496,
+      "input_bytes": 144640,
+      "confidence": 0.001284182071685791,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8221.653833985329,
+      "input_bytes": 145280,
+      "confidence": 0.001257866621017456,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8261.936333990889,
+      "input_bytes": 146560,
+      "confidence": 0.0012418627738952637,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8301.807499985443,
+      "input_bytes": 147840,
+      "confidence": 0.001229017972946167,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8322.478291986044,
+      "input_bytes": 148480,
+      "confidence": 0.0012191236019134521,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8363.36137499893,
+      "input_bytes": 149760,
+      "confidence": 0.0012150406837463379,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8382.169291988248,
+      "input_bytes": 150400,
+      "confidence": 0.001216799020767212,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8424.60066700005,
+      "input_bytes": 151680,
+      "confidence": 0.0012241005897521973,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8461.076624982525,
+      "input_bytes": 152960,
+      "confidence": 0.0012351572513580322,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8481.231208977988,
+      "input_bytes": 153600,
+      "confidence": 0.0012488961219787598,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8520.150374999503,
+      "input_bytes": 154880,
+      "confidence": 0.0012658536434173584,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8539.704291993985,
+      "input_bytes": 155520,
+      "confidence": 0.0012856125831604004,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8583.003042003838,
+      "input_bytes": 156800,
+      "confidence": 0.0013071894645690918,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8622.628124983748,
+      "input_bytes": 158080,
+      "confidence": 0.0013303756713867188,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8642.287499998929,
+      "input_bytes": 158720,
+      "confidence": 0.10674604773521423,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8681.687749980483,
+      "input_bytes": 160000,
+      "confidence": 0.6628954410552979,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8700.178541999776,
+      "input_bytes": 160640,
+      "confidence": 0.6752837896347046,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8742.068833991652,
+      "input_bytes": 161920,
+      "confidence": 0.7131595611572266,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8781.474749994231,
+      "input_bytes": 163200,
+      "confidence": 0.7337542772293091,
+      "state_before": "STARTING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8801.065416977508,
+      "input_bytes": 163840,
+      "confidence": 0.7990483045578003,
+      "state_before": "STARTING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8841.1777089932,
+      "input_bytes": 165120,
+      "confidence": 0.8089898824691772,
+      "state_before": "STARTING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8860.311958997045,
+      "input_bytes": 165760,
+      "confidence": 0.8307612538337708,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8900.147249980364,
+      "input_bytes": 167040,
+      "confidence": 0.7973784804344177,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8940.281208982924,
+      "input_bytes": 168320,
+      "confidence": 0.7643547058105469,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 8960.38520897855,
+      "input_bytes": 168960,
+      "confidence": 0.695193886756897,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9001.72008399386,
+      "input_bytes": 170240,
+      "confidence": 0.618109405040741,
+      "state_before": "STOPPING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9021.230291982647,
+      "input_bytes": 170880,
+      "confidence": 0.29473745822906494,
+      "state_before": "STOPPING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9063.043125002878,
+      "input_bytes": 172160,
+      "confidence": 0.13480234146118164,
+      "state_before": "STOPPING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9101.430166978389,
+      "input_bytes": 173440,
+      "confidence": 0.08642902970314026,
+      "state_before": "STOPPING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9122.21029200009,
+      "input_bytes": 174080,
+      "confidence": 0.060597628355026245,
+      "state_before": "STOPPING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9160.540708980989,
+      "input_bytes": 175360,
+      "confidence": 0.044614940881729126,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9209.591083985288,
+      "input_bytes": 176000,
+      "confidence": 0.03639891743659973,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9240.095791989006,
+      "input_bytes": 177280,
+      "confidence": 0.3250401020050049,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9274.166583985789,
+      "input_bytes": 178560,
+      "confidence": 0.8379850387573242,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9280.204084003344,
+      "input_bytes": 179200,
+      "confidence": 0.8057732582092285,
+      "state_before": "STARTING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9321.014124987414,
+      "input_bytes": 180480,
+      "confidence": 0.8159255981445312,
+      "state_before": "STARTING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9340.292041975772,
+      "input_bytes": 181120,
+      "confidence": 0.9403610229492188,
+      "state_before": "STARTING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9380.946666991804,
+      "input_bytes": 182400,
+      "confidence": 0.9424149990081787,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9427.15787497582,
+      "input_bytes": 183680,
+      "confidence": 0.937508225440979,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9444.08062499133,
+      "input_bytes": 184320,
+      "confidence": 0.9465961456298828,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9480.559624993475,
+      "input_bytes": 185600,
+      "confidence": 0.937919020652771,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9500.617541983956,
+      "input_bytes": 186240,
+      "confidence": 0.9367109537124634,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9540.638584003318,
+      "input_bytes": 187520,
+      "confidence": 0.928762674331665,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9580.777541996213,
+      "input_bytes": 188800,
+      "confidence": 0.9307022094726562,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9600.712291983655,
+      "input_bytes": 189440,
+      "confidence": 0.9528060555458069,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9640.608541987604,
+      "input_bytes": 190720,
+      "confidence": 0.9576025009155273,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9660.370541998418,
+      "input_bytes": 191360,
+      "confidence": 0.9558417201042175,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9700.142916990444,
+      "input_bytes": 192640,
+      "confidence": 0.9592928290367126,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9739.896874991246,
+      "input_bytes": 193920,
+      "confidence": 0.9263869524002075,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9759.642874996644,
+      "input_bytes": 194560,
+      "confidence": 0.9080663919448853,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9800.584291981068,
+      "input_bytes": 195840,
+      "confidence": 0.9725766777992249,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9819.708166993223,
+      "input_bytes": 196480,
+      "confidence": 0.9804390072822571,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9860.58804197819,
+      "input_bytes": 197760,
+      "confidence": 0.9812560677528381,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9900.374958990142,
+      "input_bytes": 199040,
+      "confidence": 0.9826651811599731,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9920.610333996592,
+      "input_bytes": 199680,
+      "confidence": 0.9820903539657593,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9960.581999999704,
+      "input_bytes": 200960,
+      "confidence": 0.9831526279449463,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 9980.57037498802,
+      "input_bytes": 201600,
+      "confidence": 0.9823188781738281,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10020.182999985991,
+      "input_bytes": 202880,
+      "confidence": 0.9829506278038025,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10060.314959002426,
+      "input_bytes": 204160,
+      "confidence": 0.9821186065673828,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10081.404208991444,
+      "input_bytes": 204800,
+      "confidence": 0.980949342250824,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10122.483708983054,
+      "input_bytes": 206080,
+      "confidence": 0.9809848070144653,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10140.652333997423,
+      "input_bytes": 206720,
+      "confidence": 0.9809038043022156,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10180.643375002546,
+      "input_bytes": 208000,
+      "confidence": 0.9806390404701233,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10222.682166990126,
+      "input_bytes": 209280,
+      "confidence": 0.9765166640281677,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10242.025666986592,
+      "input_bytes": 209920,
+      "confidence": 0.9722065329551697,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10281.114083976718,
+      "input_bytes": 211200,
+      "confidence": 0.979882001876831,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10301.535416976549,
+      "input_bytes": 211840,
+      "confidence": 0.9837688207626343,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10342.918874986935,
+      "input_bytes": 213120,
+      "confidence": 0.9828433394432068,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10381.8119999778,
+      "input_bytes": 214400,
+      "confidence": 0.9823137521743774,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10402.08991698455,
+      "input_bytes": 215040,
+      "confidence": 0.9831752777099609,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10441.578917001607,
+      "input_bytes": 216320,
+      "confidence": 0.985625147819519,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10460.827041999437,
+      "input_bytes": 216960,
+      "confidence": 0.9865655899047852,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10501.284833997488,
+      "input_bytes": 218240,
+      "confidence": 0.9877301454544067,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10540.955333999591,
+      "input_bytes": 219520,
+      "confidence": 0.9873230457305908,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10561.81029198342,
+      "input_bytes": 220160,
+      "confidence": 0.9845250844955444,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10601.19187500095,
+      "input_bytes": 221440,
+      "confidence": 0.9834684133529663,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10623.078541975701,
+      "input_bytes": 222080,
+      "confidence": 0.9849096536636353,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10661.866291979095,
+      "input_bytes": 223360,
+      "confidence": 0.9810686707496643,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10702.051792002749,
+      "input_bytes": 224640,
+      "confidence": 0.9819574952125549,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10723.384874989279,
+      "input_bytes": 225280,
+      "confidence": 0.9779980182647705,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10762.196625000797,
+      "input_bytes": 226560,
+      "confidence": 0.981559693813324,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10781.826999998884,
+      "input_bytes": 227200,
+      "confidence": 0.9771348834037781,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10822.993874986423,
+      "input_bytes": 228480,
+      "confidence": 0.9750407934188843,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10860.703333979473,
+      "input_bytes": 229760,
+      "confidence": 0.9602890014648438,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10882.045416976325,
+      "input_bytes": 230400,
+      "confidence": 0.7864216566085815,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10922.352208988741,
+      "input_bytes": 231680,
+      "confidence": 0.21422427892684937,
+      "state_before": "SPEAKING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10941.016458993545,
+      "input_bytes": 232320,
+      "confidence": 0.12404805421829224,
+      "state_before": "STOPPING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 10981.693499983521,
+      "input_bytes": 233600,
+      "confidence": 0.08159011602401733,
+      "state_before": "STOPPING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11021.703291975427,
+      "input_bytes": 234880,
+      "confidence": 0.05414080619812012,
+      "state_before": "STOPPING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11041.13470899756,
+      "input_bytes": 235520,
+      "confidence": 0.041287392377853394,
+      "state_before": "STOPPING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11081.50166698033,
+      "input_bytes": 236800,
+      "confidence": 0.03380736708641052,
+      "state_before": "STOPPING",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11100.0685839972,
+      "input_bytes": 237440,
+      "confidence": 0.02913603186607361,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11141.72137499554,
+      "input_bytes": 238720,
+      "confidence": 0.025753706693649292,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11197.287499991944,
+      "input_bytes": 240000,
+      "confidence": 0.023038774728775024,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11211.255083995638,
+      "input_bytes": 240640,
+      "confidence": 0.021107077598571777,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11243.92008400173,
+      "input_bytes": 241920,
+      "confidence": 0.01963445544242859,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11265.511709003476,
+      "input_bytes": 242560,
+      "confidence": 0.018468201160430908,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11303.214708983433,
+      "input_bytes": 243840,
+      "confidence": 0.017510414123535156,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11340.806666994467,
+      "input_bytes": 245120,
+      "confidence": 0.01669532060623169,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11360.887999995612,
+      "input_bytes": 245760,
+      "confidence": 0.01598706841468811,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11411.599083978217,
+      "input_bytes": 247040,
+      "confidence": 0.01536223292350769,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11422.748416982358,
+      "input_bytes": 247680,
+      "confidence": 0.014804929494857788,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11460.556709003868,
+      "input_bytes": 248960,
+      "confidence": 0.014303326606750488,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11499.60545898648,
+      "input_bytes": 250240,
+      "confidence": 0.013848215341567993,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11521.100999991177,
+      "input_bytes": 250880,
+      "confidence": 0.013432085514068604,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11612.63124999823,
+      "input_bytes": 252160,
+      "confidence": 0.01304885745048523,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11619.262958993204,
+      "input_bytes": 252800,
+      "confidence": 0.012693166732788086,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11621.768249984598,
+      "input_bytes": 254080,
+      "confidence": 0.01236039400100708,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11660.844333993737,
+      "input_bytes": 255360,
+      "confidence": 0.012046605348587036,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11680.83412499982,
+      "input_bytes": 256000,
+      "confidence": 0.011748135089874268,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11721.044833975611,
+      "input_bytes": 257280,
+      "confidence": 0.011461883783340454,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11741.19741699542,
+      "input_bytes": 257920,
+      "confidence": 0.01118519902229309,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11804.11687499145,
+      "input_bytes": 259200,
+      "confidence": 0.010915517807006836,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11844.30345898727,
+      "input_bytes": 260480,
+      "confidence": 0.010656923055648804,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11845.747499988647,
+      "input_bytes": 261120,
+      "confidence": 0.010405629873275757,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11880.400083988206,
+      "input_bytes": 262400,
+      "confidence": 0.010154932737350464,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11900.36341699306,
+      "input_bytes": 263040,
+      "confidence": 0.009824931621551514,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11940.57866698131,
+      "input_bytes": 264320,
+      "confidence": 0.009298115968704224,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 11980.480375001207,
+      "input_bytes": 265600,
+      "confidence": 0.008807748556137085,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12000.55391699425,
+      "input_bytes": 266240,
+      "confidence": 0.008350402116775513,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12040.690333989915,
+      "input_bytes": 267520,
+      "confidence": 0.007923036813735962,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12060.700417001499,
+      "input_bytes": 268160,
+      "confidence": 0.00752335786819458,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12101.706249988638,
+      "input_bytes": 269440,
+      "confidence": 0.007150441408157349,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12140.704749996075,
+      "input_bytes": 270720,
+      "confidence": 0.006801009178161621,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12175.906249991385,
+      "input_bytes": 271360,
+      "confidence": 0.006472498178482056,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12220.560708985431,
+      "input_bytes": 272640,
+      "confidence": 0.0061636269092559814,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12221.665791992564,
+      "input_bytes": 273280,
+      "confidence": 0.005873501300811768,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12260.570124984952,
+      "input_bytes": 274560,
+      "confidence": 0.005601286888122559,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12304.43504199502,
+      "input_bytes": 275840,
+      "confidence": 0.005346357822418213,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12321.352792001562,
+      "input_bytes": 276480,
+      "confidence": 0.005107402801513672,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12360.525666998,
+      "input_bytes": 277760,
+      "confidence": 0.004883706569671631,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12387.283374991966,
+      "input_bytes": 278400,
+      "confidence": 0.00467488169670105,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12421.675374993356,
+      "input_bytes": 279680,
+      "confidence": 0.004480212926864624,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12459.70245898934,
+      "input_bytes": 280960,
+      "confidence": 0.004298955202102661,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12480.447874986567,
+      "input_bytes": 281600,
+      "confidence": 0.004130631685256958,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12520.714249985758,
+      "input_bytes": 282880,
+      "confidence": 0.003974944353103638,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12540.515667002182,
+      "input_bytes": 283520,
+      "confidence": 0.0038298368453979492,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12580.084041983355,
+      "input_bytes": 284800,
+      "confidence": 0.003694981336593628,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12621.102833974874,
+      "input_bytes": 286080,
+      "confidence": 0.003569483757019043,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12640.308458998334,
+      "input_bytes": 286720,
+      "confidence": 0.0034464895725250244,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12681.407500000205,
+      "input_bytes": 288000,
+      "confidence": 0.003309190273284912,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12701.53974997811,
+      "input_bytes": 288640,
+      "confidence": 0.0031657516956329346,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12742.068458988797,
+      "input_bytes": 289920,
+      "confidence": 0.003033667802810669,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12782.424208999146,
+      "input_bytes": 291200,
+      "confidence": 0.0029119551181793213,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12801.176458975533,
+      "input_bytes": 291840,
+      "confidence": 0.0027995705604553223,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12842.430749995401,
+      "input_bytes": 293120,
+      "confidence": 0.0026950836181640625,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12862.685208994662,
+      "input_bytes": 293760,
+      "confidence": 0.0025979578495025635,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12900.931708980352,
+      "input_bytes": 295040,
+      "confidence": 0.002507150173187256,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12940.664624999044,
+      "input_bytes": 296320,
+      "confidence": 0.002422630786895752,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 12960.05637498456,
+      "input_bytes": 296960,
+      "confidence": 0.0023436546325683594,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13001.210999995237,
+      "input_bytes": 298240,
+      "confidence": 0.0022695064544677734,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13021.291916986229,
+      "input_bytes": 298880,
+      "confidence": 0.0021999478340148926,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13096.74720899784,
+      "input_bytes": 300160,
+      "confidence": 0.00213468074798584,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13099.445708998246,
+      "input_bytes": 301440,
+      "confidence": 0.0020734071731567383,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13119.997791975038,
+      "input_bytes": 302080,
+      "confidence": 0.002015918493270874,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13161.652999988291,
+      "input_bytes": 303360,
+      "confidence": 0.0019621551036834717,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13179.728708986659,
+      "input_bytes": 304000,
+      "confidence": 0.0019036829471588135,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13219.993958977284,
+      "input_bytes": 305280,
+      "confidence": 0.0018386542797088623,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13260.617666994222,
+      "input_bytes": 306560,
+      "confidence": 0.001777946949005127,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13280.251083982876,
+      "input_bytes": 307200,
+      "confidence": 0.0017214417457580566,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13321.028874983313,
+      "input_bytes": 308480,
+      "confidence": 0.0016689002513885498,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13342.14570900076,
+      "input_bytes": 309120,
+      "confidence": 0.0016199946403503418,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13382.485333975637,
+      "input_bytes": 310400,
+      "confidence": 0.0015745460987091064,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13422.880874975817,
+      "input_bytes": 311680,
+      "confidence": 0.0015322566032409668,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13442.050249985186,
+      "input_bytes": 312320,
+      "confidence": 0.0014913976192474365,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13482.077166991076,
+      "input_bytes": 313600,
+      "confidence": 0.0014504790306091309,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13501.221708982484,
+      "input_bytes": 314240,
+      "confidence": 0.0014123022556304932,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13542.48049997841,
+      "input_bytes": 315520,
+      "confidence": 0.0013768672943115234,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13582.013374980306,
+      "input_bytes": 316800,
+      "confidence": 0.0013439059257507324,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13601.44779199618,
+      "input_bytes": 317440,
+      "confidence": 0.001313239336013794,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13642.477541987319,
+      "input_bytes": 318720,
+      "confidence": 0.0012848079204559326,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13668.461041990668,
+      "input_bytes": 319360,
+      "confidence": 0.0012584030628204346,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13699.963541992474,
+      "input_bytes": 320640,
+      "confidence": 0.023828625679016113,
+      "state_before": "QUIET",
+      "model_reset": true
+    },
+    {
+      "at_ms": 13756.85745899682,
+      "input_bytes": 321920,
+      "confidence": 0.01160210371017456,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13759.547583991662,
+      "input_bytes": 322560,
+      "confidence": 0.006769001483917236,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13799.697166978149,
+      "input_bytes": 323840,
+      "confidence": 0.0030172765254974365,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13819.59258398274,
+      "input_bytes": 324480,
+      "confidence": 0.0020678043365478516,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13859.725041984348,
+      "input_bytes": 325760,
+      "confidence": 0.0016246438026428223,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13900.896334002027,
+      "input_bytes": 327040,
+      "confidence": 0.0014384686946868896,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13920.97524998826,
+      "input_bytes": 327680,
+      "confidence": 0.001336514949798584,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13961.01641698624,
+      "input_bytes": 328960,
+      "confidence": 0.001284182071685791,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 13980.918166984338,
+      "input_bytes": 329600,
+      "confidence": 0.001257866621017456,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14023.116416996345,
+      "input_bytes": 330880,
+      "confidence": 0.0012418627738952637,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14062.68191698473,
+      "input_bytes": 332160,
+      "confidence": 0.001229017972946167,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14081.864541978575,
+      "input_bytes": 332800,
+      "confidence": 0.0012191236019134521,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14123.507916985545,
+      "input_bytes": 334080,
+      "confidence": 0.0012150406837463379,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14141.674874990713,
+      "input_bytes": 334720,
+      "confidence": 0.001216799020767212,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14181.38587498106,
+      "input_bytes": 336000,
+      "confidence": 0.0012241005897521973,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14222.026041999925,
+      "input_bytes": 337280,
+      "confidence": 0.0012351572513580322,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14241.214166977443,
+      "input_bytes": 337920,
+      "confidence": 0.0012488961219787598,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14281.500333978329,
+      "input_bytes": 339200,
+      "confidence": 0.0012658536434173584,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14299.948416999541,
+      "input_bytes": 339840,
+      "confidence": 0.0012856125831604004,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14341.415333998157,
+      "input_bytes": 341120,
+      "confidence": 0.0013071894645690918,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14381.978374993196,
+      "input_bytes": 342400,
+      "confidence": 0.0013303756713867188,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14402.386791975005,
+      "input_bytes": 343040,
+      "confidence": 0.0013547241687774658,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14441.432124993298,
+      "input_bytes": 344320,
+      "confidence": 0.0013796091079711914,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14461.497041978873,
+      "input_bytes": 344960,
+      "confidence": 0.001404881477355957,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14500.17654200201,
+      "input_bytes": 346240,
+      "confidence": 0.0014301836490631104,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14540.063541993732,
+      "input_bytes": 347520,
+      "confidence": 0.0014552772045135498,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14561.891583987745,
+      "input_bytes": 348160,
+      "confidence": 0.0014799833297729492,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14601.641208981164,
+      "input_bytes": 349440,
+      "confidence": 0.0015041828155517578,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14620.85241699242,
+      "input_bytes": 350080,
+      "confidence": 0.0015277862548828125,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14660.031958977925,
+      "input_bytes": 351360,
+      "confidence": 0.0015506744384765625,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14699.754291999852,
+      "input_bytes": 352640,
+      "confidence": 0.0015728771686553955,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14719.652542000404,
+      "input_bytes": 353280,
+      "confidence": 0.0015943050384521484,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14760.092583979713,
+      "input_bytes": 354560,
+      "confidence": 0.0016149580478668213,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14779.804708989104,
+      "input_bytes": 355200,
+      "confidence": 0.0016348958015441895,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14820.953541988274,
+      "input_bytes": 356480,
+      "confidence": 0.0016541779041290283,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14860.975124989636,
+      "input_bytes": 357760,
+      "confidence": 0.0016727447509765625,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14880.050499981735,
+      "input_bytes": 358400,
+      "confidence": 0.0016891956329345703,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14921.595874999184,
+      "input_bytes": 359680,
+      "confidence": 0.0017040669918060303,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14941.047999978764,
+      "input_bytes": 360320,
+      "confidence": 0.0017185211181640625,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 14982.146708993241,
+      "input_bytes": 361600,
+      "confidence": 0.0017325282096862793,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15022.059416980483,
+      "input_bytes": 362880,
+      "confidence": 0.001746147871017456,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15042.481958982535,
+      "input_bytes": 363520,
+      "confidence": 0.0017594993114471436,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15081.682749994798,
+      "input_bytes": 364800,
+      "confidence": 0.0017726123332977295,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15101.62499998114,
+      "input_bytes": 365440,
+      "confidence": 0.0017853975296020508,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15141.158958984306,
+      "input_bytes": 366720,
+      "confidence": 0.0017978847026824951,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15181.623208976816,
+      "input_bytes": 368000,
+      "confidence": 0.0018103420734405518,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15202.441499975976,
+      "input_bytes": 368640,
+      "confidence": 0.0018225908279418945,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15241.367499984335,
+      "input_bytes": 369920,
+      "confidence": 0.0018351376056671143,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15260.297041997546,
+      "input_bytes": 370560,
+      "confidence": 0.001847684383392334,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15300.732042000163,
+      "input_bytes": 371840,
+      "confidence": 0.0018600821495056152,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15342.586291983025,
+      "input_bytes": 373120,
+      "confidence": 0.0018723905086517334,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15359.933708998142,
+      "input_bytes": 373760,
+      "confidence": 0.0018845796585083008,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15400.957083998946,
+      "input_bytes": 375040,
+      "confidence": 0.001896679401397705,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15420.291666989215,
+      "input_bytes": 375680,
+      "confidence": 0.0019085705280303955,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15461.633625003742,
+      "input_bytes": 376960,
+      "confidence": 0.001920461654663086,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15500.315458979458,
+      "input_bytes": 378240,
+      "confidence": 0.001932293176651001,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15520.903333992464,
+      "input_bytes": 378880,
+      "confidence": 0.0019439756870269775,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15560.570166999241,
+      "input_bytes": 380160,
+      "confidence": 0.001955658197402954,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15580.12866700301,
+      "input_bytes": 380800,
+      "confidence": 0.001967191696166992,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15619.834416982485,
+      "input_bytes": 382080,
+      "confidence": 0.001978665590286255,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15660.597124980995,
+      "input_bytes": 383360,
+      "confidence": 0.001990079879760742,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15680.364667001413,
+      "input_bytes": 384000,
+      "confidence": 0.002001345157623291,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15721.499249979388,
+      "input_bytes": 385280,
+      "confidence": 0.0020125508308410645,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15741.028749995166,
+      "input_bytes": 385920,
+      "confidence": 0.002023756504058838,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15781.885791977402,
+      "input_bytes": 387200,
+      "confidence": 0.0020349621772766113,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15822.49208400026,
+      "input_bytes": 388480,
+      "confidence": 0.002046048641204834,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15841.658916993765,
+      "input_bytes": 389120,
+      "confidence": 0.0020571351051330566,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15882.301416975679,
+      "input_bytes": 390400,
+      "confidence": 0.002068072557449341,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15900.986416992964,
+      "input_bytes": 391040,
+      "confidence": 0.0020789802074432373,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15941.211208992172,
+      "input_bytes": 392320,
+      "confidence": 0.002089858055114746,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 15981.246083974838,
+      "input_bytes": 393600,
+      "confidence": 0.0021005868911743164,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16000.637708988506,
+      "input_bytes": 394240,
+      "confidence": 0.002111285924911499,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16040.295666985912,
+      "input_bytes": 395520,
+      "confidence": 0.0021219253540039062,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16060.799458995461,
+      "input_bytes": 396160,
+      "confidence": 0.0021323561668395996,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16101.494834001642,
+      "input_bytes": 397440,
+      "confidence": 0.0021429061889648438,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16140.767124976264,
+      "input_bytes": 398720,
+      "confidence": 0.0021533071994781494,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16159.797917003743,
+      "input_bytes": 399360,
+      "confidence": 0.0021636486053466797,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16200.469709001482,
+      "input_bytes": 400640,
+      "confidence": 0.002173781394958496,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16222.469792002812,
+      "input_bytes": 401280,
+      "confidence": 0.0021840333938598633,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16262.604833988007,
+      "input_bytes": 402560,
+      "confidence": 0.0021940767765045166,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16301.19904197636,
+      "input_bytes": 403840,
+      "confidence": 0.0022041499614715576,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16321.93466697936,
+      "input_bytes": 404480,
+      "confidence": 0.002214103937149048,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16361.448583978927,
+      "input_bytes": 405760,
+      "confidence": 0.002223968505859375,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16381.367249996401,
+      "input_bytes": 406400,
+      "confidence": 0.002233743667602539,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16422.576291981386,
+      "input_bytes": 407680,
+      "confidence": 0.0022434592247009277,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16461.415375000797,
+      "input_bytes": 408960,
+      "confidence": 0.0022530853748321533,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16481.905166991055,
+      "input_bytes": 409600,
+      "confidence": 0.0022626519203186035,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16520.381999987876,
+      "input_bytes": 410880,
+      "confidence": 0.002272099256515503,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16541.095708991634,
+      "input_bytes": 411520,
+      "confidence": 0.002281486988067627,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16582.12341699982,
+      "input_bytes": 412800,
+      "confidence": 0.0022907555103302,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16620.874416985316,
+      "input_bytes": 414080,
+      "confidence": 0.002299964427947998,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16641.72545899055,
+      "input_bytes": 414720,
+      "confidence": 0.002309083938598633,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16681.692541984376,
+      "input_bytes": 416000,
+      "confidence": 0.002318143844604492,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16700.531874987064,
+      "input_bytes": 416640,
+      "confidence": 0.002327054738998413,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16740.14504198567,
+      "input_bytes": 417920,
+      "confidence": 0.0023359358310699463,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16782.59791698656,
+      "input_bytes": 419200,
+      "confidence": 0.0023447275161743164,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16802.205499989213,
+      "input_bytes": 419840,
+      "confidence": 0.0023533999919891357,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16842.368458979763,
+      "input_bytes": 421120,
+      "confidence": 0.0023620426654815674,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16862.910583993653,
+      "input_bytes": 421760,
+      "confidence": 0.0023704469203948975,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16901.95958397817,
+      "input_bytes": 423040,
+      "confidence": 0.0023788511753082275,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16941.30262499675,
+      "input_bytes": 424320,
+      "confidence": 0.0023871660232543945,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 16961.938249995,
+      "input_bytes": 424960,
+      "confidence": 0.0023953616619110107,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17000.9676249756,
+      "input_bytes": 426240,
+      "confidence": 0.0024034976959228516,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17021.17449999787,
+      "input_bytes": 426880,
+      "confidence": 0.0024114251136779785,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17062.268041976495,
+      "input_bytes": 428160,
+      "confidence": 0.0024193525314331055,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17101.966749993153,
+      "input_bytes": 429440,
+      "confidence": 0.0024271905422210693,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17121.90204198123,
+      "input_bytes": 430080,
+      "confidence": 0.00243493914604187,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17161.3163749862,
+      "input_bytes": 431360,
+      "confidence": 0.00244256854057312,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17181.36670900276,
+      "input_bytes": 432000,
+      "confidence": 0.002450108528137207,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17222.245333978208,
+      "input_bytes": 433280,
+      "confidence": 0.002457529306411743,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17261.576416989556,
+      "input_bytes": 434560,
+      "confidence": 0.0024656355381011963,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17282.44608399109,
+      "input_bytes": 435200,
+      "confidence": 0.0024739205837249756,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17321.801333979238,
+      "input_bytes": 436480,
+      "confidence": 0.002482175827026367,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17341.703833983047,
+      "input_bytes": 437120,
+      "confidence": 0.002490311861038208,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17381.80379199912,
+      "input_bytes": 438400,
+      "confidence": 0.0024983882904052734,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17422.35958398669,
+      "input_bytes": 439680,
+      "confidence": 0.0025064051151275635,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17440.540999989025,
+      "input_bytes": 440320,
+      "confidence": 0.002514392137527466,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17482.792124996195,
+      "input_bytes": 441600,
+      "confidence": 0.0025221705436706543,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17501.776083983714,
+      "input_bytes": 442240,
+      "confidence": 0.002530008554458618,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17541.9365419948,
+      "input_bytes": 443520,
+      "confidence": 0.0025376975536346436,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17581.715499982238,
+      "input_bytes": 444800,
+      "confidence": 0.0025453269481658936,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17601.86366699054,
+      "input_bytes": 445440,
+      "confidence": 0.002552807331085205,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17642.494416999398,
+      "input_bytes": 446720,
+      "confidence": 0.002560168504714966,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17661.461583978962,
+      "input_bytes": 447360,
+      "confidence": 0.002567589282989502,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17701.1276249832,
+      "input_bytes": 448640,
+      "confidence": 0.0025748610496520996,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17742.5398749765,
+      "input_bytes": 449920,
+      "confidence": 0.0025820136070251465,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17763.342083984753,
+      "input_bytes": 450560,
+      "confidence": 0.002589106559753418,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17802.12137498893,
+      "input_bytes": 451840,
+      "confidence": 0.0025960803031921387,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17823.003375000553,
+      "input_bytes": 452480,
+      "confidence": 0.002602994441986084,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17862.528625002597,
+      "input_bytes": 453760,
+      "confidence": 0.0026099085807800293,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17900.76487499755,
+      "input_bytes": 455040,
+      "confidence": 0.002616584300994873,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17922.33208398102,
+      "input_bytes": 455680,
+      "confidence": 0.0026232898235321045,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17961.44629199989,
+      "input_bytes": 456960,
+      "confidence": 0.002629876136779785,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 17982.348749996163,
+      "input_bytes": 457600,
+      "confidence": 0.002636343240737915,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18021.055291988887,
+      "input_bytes": 458880,
+      "confidence": 0.0026427805423736572,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18060.291000001598,
+      "input_bytes": 460160,
+      "confidence": 0.0026491284370422363,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18080.57804199052,
+      "input_bytes": 460800,
+      "confidence": 0.0026553869247436523,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18120.76537500252,
+      "input_bytes": 462080,
+      "confidence": 0.002661585807800293,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18141.120458982186,
+      "input_bytes": 462720,
+      "confidence": 0.002667665481567383,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18181.67279197951,
+      "input_bytes": 464000,
+      "confidence": 0.0026736557483673096,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18220.12737498153,
+      "input_bytes": 465280,
+      "confidence": 0.0026796460151672363,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18240.85862498032,
+      "input_bytes": 465920,
+      "confidence": 0.0026855170726776123,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18280.63308398123,
+      "input_bytes": 467200,
+      "confidence": 0.002691298723220825,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18300.208999979077,
+      "input_bytes": 467840,
+      "confidence": 0.0026969611644744873,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18340.26516697486,
+      "input_bytes": 469120,
+      "confidence": 0.002702653408050537,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18382.416041975375,
+      "input_bytes": 470400,
+      "confidence": 0.002708256244659424,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18402.510374988196,
+      "input_bytes": 471040,
+      "confidence": 0.0027136802673339844,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18441.774541977793,
+      "input_bytes": 472320,
+      "confidence": 0.0027191638946533203,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18461.57187499921,
+      "input_bytes": 472960,
+      "confidence": 0.00272446870803833,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18501.81399998837,
+      "input_bytes": 474240,
+      "confidence": 0.0027297139167785645,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18540.558999986388,
+      "input_bytes": 475520,
+      "confidence": 0.002734959125518799,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18561.608708987478,
+      "input_bytes": 476160,
+      "confidence": 0.00274011492729187,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18602.300250000553,
+      "input_bytes": 477440,
+      "confidence": 0.0027452707290649414,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18621.898958983365,
+      "input_bytes": 478080,
+      "confidence": 0.0027503371238708496,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18661.260541994125,
+      "input_bytes": 479360,
+      "confidence": 0.0027553141117095947,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18700.906249985565,
+      "input_bytes": 480640,
+      "confidence": 0.0027603209018707275,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18725.889124994865,
+      "input_bytes": 481280,
+      "confidence": 0.002765148878097534,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18761.887375003425,
+      "input_bytes": 482560,
+      "confidence": 0.0027699172496795654,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18781.982791988412,
+      "input_bytes": 483200,
+      "confidence": 0.0027746856212615967,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18823.493124975357,
+      "input_bytes": 484480,
+      "confidence": 0.002779453992843628,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18863.251083996147,
+      "input_bytes": 485760,
+      "confidence": 0.002784162759780884,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18882.108708989108,
+      "input_bytes": 486400,
+      "confidence": 0.002788722515106201,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18925.769708992448,
+      "input_bytes": 487680,
+      "confidence": 0.002793341875076294,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18940.051416982897,
+      "input_bytes": 488320,
+      "confidence": 0.002797842025756836,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 18982.57449999801,
+      "input_bytes": 489600,
+      "confidence": 0.002802252769470215,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19022.618583985604,
+      "input_bytes": 490880,
+      "confidence": 0.0028066933155059814,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19042.33162497985,
+      "input_bytes": 491520,
+      "confidence": 0.0028112828731536865,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19082.465874991613,
+      "input_bytes": 492800,
+      "confidence": 0.0028159916400909424,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19101.74424998695,
+      "input_bytes": 493440,
+      "confidence": 0.0028205513954162598,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19142.19591699657,
+      "input_bytes": 494720,
+      "confidence": 0.0028252005577087402,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19181.565958977444,
+      "input_bytes": 496000,
+      "confidence": 0.0028297007083892822,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19201.51391698164,
+      "input_bytes": 496640,
+      "confidence": 0.0028342008590698242,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19240.618249983527,
+      "input_bytes": 497920,
+      "confidence": 0.0028386712074279785,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19261.17670899839,
+      "input_bytes": 498560,
+      "confidence": 0.002843022346496582,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19300.529041996924,
+      "input_bytes": 499840,
+      "confidence": 0.0028474032878875732,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19341.688708984293,
+      "input_bytes": 501120,
+      "confidence": 0.0028517544269561768,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19363.906624988886,
+      "input_bytes": 501760,
+      "confidence": 0.002856045961380005,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19402.473249996547,
+      "input_bytes": 503040,
+      "confidence": 0.0028602778911590576,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19422.93662499287,
+      "input_bytes": 503680,
+      "confidence": 0.002864539623260498,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19463.701874978142,
+      "input_bytes": 504960,
+      "confidence": 0.0028686821460723877,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19501.887833990622,
+      "input_bytes": 506240,
+      "confidence": 0.0028728842735290527,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19521.18874998996,
+      "input_bytes": 506880,
+      "confidence": 0.0028770267963409424,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19561.322791996645,
+      "input_bytes": 508160,
+      "confidence": 0.0028811097145080566,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19581.310041976394,
+      "input_bytes": 508800,
+      "confidence": 0.0028851330280303955,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19621.54612498125,
+      "input_bytes": 510080,
+      "confidence": 0.002889186143875122,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19663.713458983693,
+      "input_bytes": 511360,
+      "confidence": 0.002893209457397461,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19681.795541982865,
+      "input_bytes": 512000,
+      "confidence": 0.0028971731662750244,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19723.01662497921,
+      "input_bytes": 513280,
+      "confidence": 0.0029011964797973633,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19742.004416999407,
+      "input_bytes": 513920,
+      "confidence": 0.0029051601886749268,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19782.16795899789,
+      "input_bytes": 515200,
+      "confidence": 0.0029090046882629395,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19822.935417003464,
+      "input_bytes": 516480,
+      "confidence": 0.0029129981994628906,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19842.103916977067,
+      "input_bytes": 517120,
+      "confidence": 0.0029168128967285156,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19881.532792001963,
+      "input_bytes": 518400,
+      "confidence": 0.0029207170009613037,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19900.601792003727,
+      "input_bytes": 519040,
+      "confidence": 0.002924591302871704,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19940.544499986572,
+      "input_bytes": 520320,
+      "confidence": 0.002928435802459717,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 19980.95554197789,
+      "input_bytes": 521600,
+      "confidence": 0.002932250499725342,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20001.632749976125,
+      "input_bytes": 522240,
+      "confidence": 0.002936065196990967,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20040.888166986406,
+      "input_bytes": 523520,
+      "confidence": 0.002939879894256592,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20061.31879199529,
+      "input_bytes": 524160,
+      "confidence": 0.002943664789199829,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20100.99312500097,
+      "input_bytes": 525440,
+      "confidence": 0.0029474198818206787,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20140.013291995274,
+      "input_bytes": 526720,
+      "confidence": 0.0029512643814086914,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20160.279042000184,
+      "input_bytes": 527360,
+      "confidence": 0.0029550492763519287,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20202.23837500089,
+      "input_bytes": 528640,
+      "confidence": 0.002958744764328003,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20222.033208992798,
+      "input_bytes": 529280,
+      "confidence": 0.0029624998569488525,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20260.580959002255,
+      "input_bytes": 530560,
+      "confidence": 0.0029663145542144775,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20300.152083975263,
+      "input_bytes": 531840,
+      "confidence": 0.0029700398445129395,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20321.099083987065,
+      "input_bytes": 532480,
+      "confidence": 0.002973794937133789,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20360.33137497725,
+      "input_bytes": 533760,
+      "confidence": 0.0029775798320770264,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20381.152916990686,
+      "input_bytes": 534400,
+      "confidence": 0.0029813051223754883,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20421.592541999416,
+      "input_bytes": 535680,
+      "confidence": 0.0029851198196411133,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20462.298583996017,
+      "input_bytes": 536960,
+      "confidence": 0.002988845109939575,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20482.251249981346,
+      "input_bytes": 537600,
+      "confidence": 0.0029926300048828125,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20521.18920898647,
+      "input_bytes": 538880,
+      "confidence": 0.00299641489982605,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20541.162209003232,
+      "input_bytes": 539520,
+      "confidence": 0.0030001401901245117,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20581.700249982532,
+      "input_bytes": 540800,
+      "confidence": 0.0030039548873901367,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20624.418458988657,
+      "input_bytes": 542080,
+      "confidence": 0.0030077695846557617,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20640.83395898342,
+      "input_bytes": 542720,
+      "confidence": 0.003011554479598999,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20681.507000001147,
+      "input_bytes": 544000,
+      "confidence": 0.003015667200088501,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20700.984916999005,
+      "input_bytes": 544640,
+      "confidence": 0.003019779920578003,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20741.001291986322,
+      "input_bytes": 545920,
+      "confidence": 0.003023862838745117,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20782.057042000815,
+      "input_bytes": 547200,
+      "confidence": 0.003028005361557007,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20802.06074999296,
+      "input_bytes": 547840,
+      "confidence": 0.003032207489013672,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20842.41916699102,
+      "input_bytes": 549120,
+      "confidence": 0.0030363500118255615,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20861.910749983508,
+      "input_bytes": 549760,
+      "confidence": 0.0030405521392822266,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20901.91058398341,
+      "input_bytes": 551040,
+      "confidence": 0.003044694662094116,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20940.982749976683,
+      "input_bytes": 552320,
+      "confidence": 0.0030488669872283936,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 20960.122791992035,
+      "input_bytes": 552960,
+      "confidence": 0.003053128719329834,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21000.639709003735,
+      "input_bytes": 554240,
+      "confidence": 0.003057330846786499,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21021.527416975005,
+      "input_bytes": 554880,
+      "confidence": 0.003061622381210327,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21063.068249990465,
+      "input_bytes": 556160,
+      "confidence": 0.0030658841133117676,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21101.841208990663,
+      "input_bytes": 557440,
+      "confidence": 0.003070145845413208,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21122.67987499945,
+      "input_bytes": 558080,
+      "confidence": 0.0030744969844818115,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21163.610291987425,
+      "input_bytes": 559360,
+      "confidence": 0.0030787885189056396,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21181.814624986146,
+      "input_bytes": 560000,
+      "confidence": 0.00308305025100708,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21222.383374988567,
+      "input_bytes": 561280,
+      "confidence": 0.0030874311923980713,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21262.322458991548,
+      "input_bytes": 562560,
+      "confidence": 0.003091782331466675,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21281.08020898071,
+      "input_bytes": 563200,
+      "confidence": 0.0030961334705352783,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21323.84104200173,
+      "input_bytes": 564480,
+      "confidence": 0.0031005144119262695,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21342.55524998298,
+      "input_bytes": 565120,
+      "confidence": 0.0031048953533172607,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21381.377208977938,
+      "input_bytes": 566400,
+      "confidence": 0.003109365701675415,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21423.633375001373,
+      "input_bytes": 567680,
+      "confidence": 0.0031137466430664062,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21441.913041984662,
+      "input_bytes": 568320,
+      "confidence": 0.003118157386779785,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21481.81666698656,
+      "input_bytes": 569600,
+      "confidence": 0.003122657537460327,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21501.877874979982,
+      "input_bytes": 570240,
+      "confidence": 0.0031270980834960938,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21541.046041995287,
+      "input_bytes": 571520,
+      "confidence": 0.0031316280364990234,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21581.07587500126,
+      "input_bytes": 572800,
+      "confidence": 0.003136247396469116,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21601.8219999969,
+      "input_bytes": 573440,
+      "confidence": 0.0031408071517944336,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21640.69937498425,
+      "input_bytes": 574720,
+      "confidence": 0.0031454861164093018,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21661.35245899204,
+      "input_bytes": 575360,
+      "confidence": 0.0031501054763793945,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21700.471624993952,
+      "input_bytes": 576640,
+      "confidence": 0.0031547844409942627,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21740.99662498338,
+      "input_bytes": 577920,
+      "confidence": 0.003159433603286743,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21762.96837499831,
+      "input_bytes": 578560,
+      "confidence": 0.0031640231609344482,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21801.81733399513,
+      "input_bytes": 579840,
+      "confidence": 0.003168731927871704,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21822.387333988445,
+      "input_bytes": 580480,
+      "confidence": 0.003173351287841797,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21862.858166976366,
+      "input_bytes": 581760,
+      "confidence": 0.003178030252456665,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21902.033374994062,
+      "input_bytes": 583040,
+      "confidence": 0.003182649612426758,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21922.383291996084,
+      "input_bytes": 583680,
+      "confidence": 0.003187328577041626,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21960.691416985355,
+      "input_bytes": 584960,
+      "confidence": 0.0031919479370117188,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 21980.356374988332,
+      "input_bytes": 585600,
+      "confidence": 0.0031965970993041992,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22019.960292003816,
+      "input_bytes": 586880,
+      "confidence": 0.0032012760639190674,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22063.52162497933,
+      "input_bytes": 588160,
+      "confidence": 0.0032058656215667725,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22081.69474999886,
+      "input_bytes": 588800,
+      "confidence": 0.003210514783859253,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22123.32937499741,
+      "input_bytes": 590080,
+      "confidence": 0.0032151341438293457,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22141.850958985742,
+      "input_bytes": 590720,
+      "confidence": 0.003219783306121826,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22181.784083979437,
+      "input_bytes": 592000,
+      "confidence": 0.003224402666091919,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22221.829874994,
+      "input_bytes": 593280,
+      "confidence": 0.003228902816772461,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22241.85412499355,
+      "input_bytes": 593920,
+      "confidence": 0.003233492374420166,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22281.164374988293,
+      "input_bytes": 595200,
+      "confidence": 0.0032380521297454834,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22300.979749998078,
+      "input_bytes": 595840,
+      "confidence": 0.0032426118850708008,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22340.757958998438,
+      "input_bytes": 597120,
+      "confidence": 0.0032471418380737305,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22381.59733399516,
+      "input_bytes": 598400,
+      "confidence": 0.003251701593399048,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22402.562666975427,
+      "input_bytes": 599040,
+      "confidence": 0.003256171941757202,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22441.488416981883,
+      "input_bytes": 600320,
+      "confidence": 0.0032606422901153564,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22461.213000002317,
+      "input_bytes": 600960,
+      "confidence": 0.0032651424407958984,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22500.747916987166,
+      "input_bytes": 602240,
+      "confidence": 0.0032696425914764404,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22541.221708990633,
+      "input_bytes": 603520,
+      "confidence": 0.0032740235328674316,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22560.743458976503,
+      "input_bytes": 604160,
+      "confidence": 0.0032784342765808105,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22601.858708978398,
+      "input_bytes": 605440,
+      "confidence": 0.0032828450202941895,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22621.3621670031,
+      "input_bytes": 606080,
+      "confidence": 0.0032871663570404053,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22661.588416987797,
+      "input_bytes": 607360,
+      "confidence": 0.0032915472984313965,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22700.05216699792,
+      "input_bytes": 608640,
+      "confidence": 0.0032958686351776123,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22721.477166982368,
+      "input_bytes": 609280,
+      "confidence": 0.0033001601696014404,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22764.438249985687,
+      "input_bytes": 610560,
+      "confidence": 0.0033043622970581055,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22781.94733397686,
+      "input_bytes": 611200,
+      "confidence": 0.003308624029159546,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22822.19766700291,
+      "input_bytes": 612480,
+      "confidence": 0.003312826156616211,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22861.90037499182,
+      "input_bytes": 613760,
+      "confidence": 0.0033169686794281006,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22882.055249996483,
+      "input_bytes": 614400,
+      "confidence": 0.003321021795272827,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22922.257124999305,
+      "input_bytes": 615680,
+      "confidence": 0.003325164318084717,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22940.2219170006,
+      "input_bytes": 616320,
+      "confidence": 0.003329247236251831,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 22980.490916990675,
+      "input_bytes": 617600,
+      "confidence": 0.0033332407474517822,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23019.719374977285,
+      "input_bytes": 618880,
+      "confidence": 0.003337264060974121,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23040.658916987013,
+      "input_bytes": 619520,
+      "confidence": 0.0033412277698516846,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23080.70549997501,
+      "input_bytes": 620800,
+      "confidence": 0.003345102071762085,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23099.730958987493,
+      "input_bytes": 621440,
+      "confidence": 0.0033489465713500977,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23140.93054199475,
+      "input_bytes": 622720,
+      "confidence": 0.003352820873260498,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23180.75574998511,
+      "input_bytes": 624000,
+      "confidence": 0.0033565759658813477,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23200.509166985285,
+      "input_bytes": 624640,
+      "confidence": 0.003360360860824585,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23240.9272090008,
+      "input_bytes": 625920,
+      "confidence": 0.003364056348800659,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23260.57291700272,
+      "input_bytes": 626560,
+      "confidence": 0.0033677220344543457,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23301.88499999349,
+      "input_bytes": 627840,
+      "confidence": 0.003371298313140869,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23342.25562500069,
+      "input_bytes": 629120,
+      "confidence": 0.0033749639987945557,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23361.490124982083,
+      "input_bytes": 629760,
+      "confidence": 0.0033785104751586914,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23402.22258400172,
+      "input_bytes": 631040,
+      "confidence": 0.0033819377422332764,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23423.419083992485,
+      "input_bytes": 631680,
+      "confidence": 0.0033853650093078613,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23461.416749982163,
+      "input_bytes": 632960,
+      "confidence": 0.0033887624740600586,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23501.23475000146,
+      "input_bytes": 634240,
+      "confidence": 0.003392130136489868,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23520.427374984138,
+      "input_bytes": 634880,
+      "confidence": 0.0033954381942749023,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23561.454041977413,
+      "input_bytes": 636160,
+      "confidence": 0.003398686647415161,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23581.616208975902,
+      "input_bytes": 636800,
+      "confidence": 0.0034018754959106445,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23621.834124991437,
+      "input_bytes": 638080,
+      "confidence": 0.0034050345420837402,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23662.74970897939,
+      "input_bytes": 639360,
+      "confidence": 0.0034081339836120605,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23681.001041986747,
+      "input_bytes": 640000,
+      "confidence": 0.003411203622817993,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23721.583958977135,
+      "input_bytes": 641280,
+      "confidence": 0.0034141838550567627,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23742.393833992537,
+      "input_bytes": 641920,
+      "confidence": 0.003417074680328369,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23781.59141697688,
+      "input_bytes": 643200,
+      "confidence": 0.0034199953079223633,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23823.015083995415,
+      "input_bytes": 644480,
+      "confidence": 0.0034227967262268066,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23841.60879199044,
+      "input_bytes": 645120,
+      "confidence": 0.0034255683422088623,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23881.392708979547,
+      "input_bytes": 646400,
+      "confidence": 0.003428250551223755,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23900.473208981566,
+      "input_bytes": 647040,
+      "confidence": 0.003430962562561035,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23941.145458986284,
+      "input_bytes": 648320,
+      "confidence": 0.0034335851669311523,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 23982.076458982192,
+      "input_bytes": 649600,
+      "confidence": 0.003436058759689331,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24002.501833980205,
+      "input_bytes": 650240,
+      "confidence": 0.003438502550125122,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24042.09354199702,
+      "input_bytes": 651520,
+      "confidence": 0.003440946340560913,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24060.696499975165,
+      "input_bytes": 652160,
+      "confidence": 0.0034432709217071533,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24101.580624992494,
+      "input_bytes": 653440,
+      "confidence": 0.003445565700531006,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24141.70108397957,
+      "input_bytes": 654720,
+      "confidence": 0.0034478306770324707,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24161.589041992556,
+      "input_bytes": 655360,
+      "confidence": 0.003449946641921997,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24201.080541999545,
+      "input_bytes": 656640,
+      "confidence": 0.0034519433975219727,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24221.452583995415,
+      "input_bytes": 657280,
+      "confidence": 0.003453969955444336,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24260.73824998457,
+      "input_bytes": 658560,
+      "confidence": 0.0034558773040771484,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24301.882500003558,
+      "input_bytes": 659840,
+      "confidence": 0.0034577250480651855,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24322.9306669964,
+      "input_bytes": 660480,
+      "confidence": 0.0034594833850860596,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24363.122791983187,
+      "input_bytes": 661760,
+      "confidence": 0.003461211919784546,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24382.07695898018,
+      "input_bytes": 662400,
+      "confidence": 0.0034628212451934814,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24423.314708983526,
+      "input_bytes": 663680,
+      "confidence": 0.003464430570602417,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24461.25654198113,
+      "input_bytes": 664960,
+      "confidence": 0.0034658610820770264,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24481.26620898256,
+      "input_bytes": 665600,
+      "confidence": 0.0034672915935516357,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24520.050166989677,
+      "input_bytes": 666880,
+      "confidence": 0.003468632698059082,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24540.5747499899,
+      "input_bytes": 667520,
+      "confidence": 0.00346982479095459,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24581.02883398533,
+      "input_bytes": 668800,
+      "confidence": 0.003470897674560547,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24621.81329197483,
+      "input_bytes": 670080,
+      "confidence": 0.0034719109535217285,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24642.10599998478,
+      "input_bytes": 670720,
+      "confidence": 0.0034728050231933594,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24682.085124979494,
+      "input_bytes": 672000,
+      "confidence": 0.0034736692905426025,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24701.086041983217,
+      "input_bytes": 672640,
+      "confidence": 0.0034743547439575195,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24742.6967920037,
+      "input_bytes": 673920,
+      "confidence": 0.0034749507904052734,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24781.919166998705,
+      "input_bytes": 675200,
+      "confidence": 0.003475368022918701,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24801.385291997576,
+      "input_bytes": 675840,
+      "confidence": 0.003475666046142578,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24841.507042001467,
+      "input_bytes": 677120,
+      "confidence": 0.0034758150577545166,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24861.28945898963,
+      "input_bytes": 677760,
+      "confidence": 0.0034758448600769043,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24901.98108399636,
+      "input_bytes": 679040,
+      "confidence": 0.0034757256507873535,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24941.34291697992,
+      "input_bytes": 680320,
+      "confidence": 0.0034755170345306396,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 24963.06408397504,
+      "input_bytes": 680960,
+      "confidence": 0.003475099802017212,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25001.760083978297,
+      "input_bytes": 682240,
+      "confidence": 0.003474503755569458,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25020.97074998892,
+      "input_bytes": 682880,
+      "confidence": 0.0034737884998321533,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25061.78383398219,
+      "input_bytes": 684160,
+      "confidence": 0.00347292423248291,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25101.381708984263,
+      "input_bytes": 685440,
+      "confidence": 0.003471881151199341,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25121.72433399246,
+      "input_bytes": 686080,
+      "confidence": 0.0034706294536590576,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25161.197499983246,
+      "input_bytes": 687360,
+      "confidence": 0.0034691989421844482,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25181.24533398077,
+      "input_bytes": 688000,
+      "confidence": 0.003467649221420288,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25223.754083999665,
+      "input_bytes": 689280,
+      "confidence": 0.0034658312797546387,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25263.122417003615,
+      "input_bytes": 690560,
+      "confidence": 0.0034638941287994385,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25281.91066699219,
+      "input_bytes": 691200,
+      "confidence": 0.0034616291522979736,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25322.696874995017,
+      "input_bytes": 692480,
+      "confidence": 0.003459334373474121,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25342.500958999153,
+      "input_bytes": 693120,
+      "confidence": 0.003456681966781616,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25381.773208995583,
+      "input_bytes": 694400,
+      "confidence": 0.003453969955444336,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25422.30712500168,
+      "input_bytes": 695680,
+      "confidence": 0.0034509599208831787,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25441.463583993027,
+      "input_bytes": 696320,
+      "confidence": 0.0034477710723876953,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25480.8392089908,
+      "input_bytes": 697600,
+      "confidence": 0.0034443438053131104,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25501.12462497782,
+      "input_bytes": 698240,
+      "confidence": 0.0034407079219818115,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25539.94899999816,
+      "input_bytes": 699520,
+      "confidence": 0.0034369230270385742,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25582.23645898397,
+      "input_bytes": 700800,
+      "confidence": 0.0034328699111938477,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25602.572959003737,
+      "input_bytes": 701440,
+      "confidence": 0.0034285783767700195,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25642.182124982355,
+      "input_bytes": 702720,
+      "confidence": 0.0034241676330566406,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25663.38666700176,
+      "input_bytes": 703360,
+      "confidence": 0.0034194886684417725,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25703.08620898868,
+      "input_bytes": 704640,
+      "confidence": 0.003414660692214966,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25741.517916991143,
+      "input_bytes": 705920,
+      "confidence": 0.0034095346927642822,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25762.395708996337,
+      "input_bytes": 706560,
+      "confidence": 0.00340425968170166,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25802.340541995363,
+      "input_bytes": 707840,
+      "confidence": 0.003398805856704712,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25822.251874982612,
+      "input_bytes": 708480,
+      "confidence": 0.00339314341545105,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25861.59904199303,
+      "input_bytes": 709760,
+      "confidence": 0.0033873021602630615,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25901.19604198844,
+      "input_bytes": 711040,
+      "confidence": 0.0033812224864959717,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25922.178583976347,
+      "input_bytes": 711680,
+      "confidence": 0.0033749938011169434,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25960.47141699819,
+      "input_bytes": 712960,
+      "confidence": 0.003368586301803589,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 25980.525791994296,
+      "input_bytes": 713600,
+      "confidence": 0.0033620595932006836,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26021.10724998056,
+      "input_bytes": 714880,
+      "confidence": 0.003355264663696289,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26062.91408400284,
+      "input_bytes": 716160,
+      "confidence": 0.003348410129547119,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26081.2716249784,
+      "input_bytes": 716800,
+      "confidence": 0.0033413469791412354,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26122.290624974994,
+      "input_bytes": 718080,
+      "confidence": 0.0033341944217681885,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26141.416541999206,
+      "input_bytes": 718720,
+      "confidence": 0.0033268332481384277,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26181.544124992797,
+      "input_bytes": 720000,
+      "confidence": 0.003319352865219116,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26223.045999999158,
+      "input_bytes": 721280,
+      "confidence": 0.003311723470687866,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26240.976874978514,
+      "input_bytes": 721920,
+      "confidence": 0.0033039450645446777,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26281.505499995546,
+      "input_bytes": 723200,
+      "confidence": 0.0032961368560791016,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26301.753374980763,
+      "input_bytes": 723840,
+      "confidence": 0.003288090229034424,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26341.819791996386,
+      "input_bytes": 725120,
+      "confidence": 0.0032800137996673584,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26380.829708999954,
+      "input_bytes": 726400,
+      "confidence": 0.003271758556365967,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26400.75924998382,
+      "input_bytes": 727040,
+      "confidence": 0.003263503313064575,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26441.877208999358,
+      "input_bytes": 728320,
+      "confidence": 0.003255099058151245,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26462.675249989843,
+      "input_bytes": 728960,
+      "confidence": 0.0032465755939483643,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26501.882541982923,
+      "input_bytes": 730240,
+      "confidence": 0.003238081932067871,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26541.12283399445,
+      "input_bytes": 731520,
+      "confidence": 0.0032293498516082764,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26563.17791697802,
+      "input_bytes": 732160,
+      "confidence": 0.003220677375793457,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26601.692291995278,
+      "input_bytes": 733440,
+      "confidence": 0.003211796283721924,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26623.32366697956,
+      "input_bytes": 734080,
+      "confidence": 0.0032029151916503906,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26661.550999997417,
+      "input_bytes": 735360,
+      "confidence": 0.0031940042972564697,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26700.950667000143,
+      "input_bytes": 736640,
+      "confidence": 0.0031850337982177734,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26721.381416980876,
+      "input_bytes": 737280,
+      "confidence": 0.0031759440898895264,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26761.1257499957,
+      "input_bytes": 738560,
+      "confidence": 0.003166794776916504,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26782.68458400271,
+      "input_bytes": 739200,
+      "confidence": 0.003157705068588257,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26820.745292003267,
+      "input_bytes": 740480,
+      "confidence": 0.0031484663486480713,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26860.636375000468,
+      "input_bytes": 741760,
+      "confidence": 0.003139197826385498,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26879.98341699131,
+      "input_bytes": 742400,
+      "confidence": 0.003129899501800537,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26920.673666987568,
+      "input_bytes": 743680,
+      "confidence": 0.0031205713748931885,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26940.070083976025,
+      "input_bytes": 744320,
+      "confidence": 0.003111213445663452,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 26980.02095898846,
+      "input_bytes": 745600,
+      "confidence": 0.0031017959117889404,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27020.846375002293,
+      "input_bytes": 746880,
+      "confidence": 0.0030923783779144287,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27040.82704198663,
+      "input_bytes": 747520,
+      "confidence": 0.0030829012393951416,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27080.284750001738,
+      "input_bytes": 748800,
+      "confidence": 0.003073364496231079,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27100.72937500081,
+      "input_bytes": 749440,
+      "confidence": 0.003063887357711792,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27140.43870900059,
+      "input_bytes": 750720,
+      "confidence": 0.0030543506145477295,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27181.483249994926,
+      "input_bytes": 752000,
+      "confidence": 0.0030447840690612793,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27200.048625003546,
+      "input_bytes": 752640,
+      "confidence": 0.0030351579189300537,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27241.904041991802,
+      "input_bytes": 753920,
+      "confidence": 0.003025621175765991,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27261.539291997906,
+      "input_bytes": 754560,
+      "confidence": 0.0030160248279571533,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27300.95787497703,
+      "input_bytes": 755840,
+      "confidence": 0.0030063390731811523,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27341.61404200131,
+      "input_bytes": 757120,
+      "confidence": 0.002996772527694702,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27361.418416985543,
+      "input_bytes": 757760,
+      "confidence": 0.002987116575241089,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27401.444499992067,
+      "input_bytes": 759040,
+      "confidence": 0.0029774904251098633,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27422.630333981942,
+      "input_bytes": 759680,
+      "confidence": 0.002967745065689087,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27461.621583992383,
+      "input_bytes": 760960,
+      "confidence": 0.002958148717880249,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27501.004749996355,
+      "input_bytes": 762240,
+      "confidence": 0.0029484927654266357,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27521.026000002166,
+      "input_bytes": 762880,
+      "confidence": 0.0029387474060058594,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27561.02649998502,
+      "input_bytes": 764160,
+      "confidence": 0.002929121255874634,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27582.454124989454,
+      "input_bytes": 764800,
+      "confidence": 0.002919435501098633,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27622.84958397504,
+      "input_bytes": 766080,
+      "confidence": 0.002909749746322632,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27661.90112498589,
+      "input_bytes": 767360,
+      "confidence": 0.002900063991546631,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27682.26879197755,
+      "input_bytes": 768000,
+      "confidence": 0.002890467643737793,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27724.073916993802,
+      "input_bytes": 769280,
+      "confidence": 0.0028807520866394043,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27741.648249997525,
+      "input_bytes": 769920,
+      "confidence": 0.002871096134185791,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27781.886374985334,
+      "input_bytes": 771200,
+      "confidence": 0.0028613805770874023,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27822.266374976607,
+      "input_bytes": 772480,
+      "confidence": 0.002851724624633789,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27841.53824998066,
+      "input_bytes": 773120,
+      "confidence": 0.002842128276824951,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27881.671374983853,
+      "input_bytes": 774400,
+      "confidence": 0.00283244252204895,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27900.98449998186,
+      "input_bytes": 775040,
+      "confidence": 0.0028228163719177246,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27940.19379199017,
+      "input_bytes": 776320,
+      "confidence": 0.0028132200241088867,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 27981.389458989725,
+      "input_bytes": 777600,
+      "confidence": 0.002803593873977661,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28002.052166993963,
+      "input_bytes": 778240,
+      "confidence": 0.0027939677238464355,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28042.81462499057,
+      "input_bytes": 779520,
+      "confidence": 0.002784430980682373,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28062.54679200356,
+      "input_bytes": 780160,
+      "confidence": 0.002774864435195923,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28101.93774997606,
+      "input_bytes": 781440,
+      "confidence": 0.0027652382850646973,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28142.095416988013,
+      "input_bytes": 782720,
+      "confidence": 0.0027556419372558594,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28161.44091699971,
+      "input_bytes": 783360,
+      "confidence": 0.0027461349964141846,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28202.260833990294,
+      "input_bytes": 784640,
+      "confidence": 0.0027366280555725098,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28222.01991698239,
+      "input_bytes": 785280,
+      "confidence": 0.0027270615100860596,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28261.297083983663,
+      "input_bytes": 786560,
+      "confidence": 0.002717524766921997,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28300.748249981552,
+      "input_bytes": 787840,
+      "confidence": 0.0027081072330474854,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28321.809208980994,
+      "input_bytes": 788480,
+      "confidence": 0.0026986300945281982,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28363.563499995507,
+      "input_bytes": 789760,
+      "confidence": 0.002689182758331299,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28381.45416698535,
+      "input_bytes": 790400,
+      "confidence": 0.0026797056198120117,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28422.460709000006,
+      "input_bytes": 791680,
+      "confidence": 0.0026702582836151123,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28463.475166994613,
+      "input_bytes": 792960,
+      "confidence": 0.0026608407497406006,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28480.32979198615,
+      "input_bytes": 793600,
+      "confidence": 0.0026514530181884766,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28520.80637498875,
+      "input_bytes": 794880,
+      "confidence": 0.0026420652866363525,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28540.69245897699,
+      "input_bytes": 795520,
+      "confidence": 0.002632737159729004,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28582.248583988985,
+      "input_bytes": 796800,
+      "confidence": 0.0026233792304992676,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28621.909041976323,
+      "input_bytes": 798080,
+      "confidence": 0.0026140809059143066,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28640.95212498796,
+      "input_bytes": 798720,
+      "confidence": 0.002604752779006958,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28682.707792002475,
+      "input_bytes": 800000,
+      "confidence": 0.002595454454421997,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28700.656542001525,
+      "input_bytes": 800640,
+      "confidence": 0.0025862157344818115,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28740.776958991773,
+      "input_bytes": 801920,
+      "confidence": 0.0025770068168640137,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28781.883333984297,
+      "input_bytes": 803200,
+      "confidence": 0.002567797899246216,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28801.45270898356,
+      "input_bytes": 803840,
+      "confidence": 0.002558588981628418,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28842.54020897788,
+      "input_bytes": 805120,
+      "confidence": 0.002549409866333008,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28864.010958990548,
+      "input_bytes": 805760,
+      "confidence": 0.00254020094871521,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28902.075083984528,
+      "input_bytes": 807040,
+      "confidence": 0.002531081438064575,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28940.355458995327,
+      "input_bytes": 808320,
+      "confidence": 0.0025219619274139404,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28960.707499994896,
+      "input_bytes": 808960,
+      "confidence": 0.002512902021408081,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 28999.91054198472,
+      "input_bytes": 810240,
+      "confidence": 0.002503812313079834,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29021.945583983324,
+      "input_bytes": 810880,
+      "confidence": 0.0024946928024291992,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29062.82337498851,
+      "input_bytes": 812160,
+      "confidence": 0.002485722303390503,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29101.602708979044,
+      "input_bytes": 813440,
+      "confidence": 0.002476722002029419,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29121.821041975636,
+      "input_bytes": 814080,
+      "confidence": 0.0024677515029907227,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29161.134666996077,
+      "input_bytes": 815360,
+      "confidence": 0.0024587810039520264,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29181.20099999942,
+      "input_bytes": 816000,
+      "confidence": 0.0024498701095581055,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29223.28445900348,
+      "input_bytes": 817280,
+      "confidence": 0.0024409592151641846,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29261.23791700229,
+      "input_bytes": 818560,
+      "confidence": 0.002432018518447876,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29281.193791975966,
+      "input_bytes": 819200,
+      "confidence": 0.0024231374263763428,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29322.69995898241,
+      "input_bytes": 820480,
+      "confidence": 0.0024143457412719727,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29341.0144590016,
+      "input_bytes": 821120,
+      "confidence": 0.002405524253845215,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29382.14808399789,
+      "input_bytes": 822400,
+      "confidence": 0.0023967623710632324,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29421.894625003915,
+      "input_bytes": 823680,
+      "confidence": 0.0023879706859588623,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29442.304708994925,
+      "input_bytes": 824320,
+      "confidence": 0.00237920880317688,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29481.84795898851,
+      "input_bytes": 825600,
+      "confidence": 0.002370476722717285,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29501.564584003063,
+      "input_bytes": 826240,
+      "confidence": 0.002361774444580078,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29541.773083998123,
+      "input_bytes": 827520,
+      "confidence": 0.002353161573410034,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29581.447834003484,
+      "input_bytes": 828800,
+      "confidence": 0.0023445487022399902,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29601.07337500085,
+      "input_bytes": 829440,
+      "confidence": 0.002335876226425171,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29641.86962498934,
+      "input_bytes": 830720,
+      "confidence": 0.002327263355255127,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29661.331666982733,
+      "input_bytes": 831360,
+      "confidence": 0.002318739891052246,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29700.825499981875,
+      "input_bytes": 832640,
+      "confidence": 0.0023101866245269775,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29741.648708994035,
+      "input_bytes": 833920,
+      "confidence": 0.0023016631603240967,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29761.538999999175,
+      "input_bytes": 834560,
+      "confidence": 0.002293229103088379,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29802.13187498157,
+      "input_bytes": 835840,
+      "confidence": 0.0022847354412078857,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29823.396708990913,
+      "input_bytes": 836480,
+      "confidence": 0.0022762715816497803,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29861.753167002462,
+      "input_bytes": 837760,
+      "confidence": 0.002267897129058838,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29901.72695898218,
+      "input_bytes": 839040,
+      "confidence": 0.0022595226764678955,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29923.066958988784,
+      "input_bytes": 839680,
+      "confidence": 0.0022512078285217285,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29961.018374975538,
+      "input_bytes": 840960,
+      "confidence": 0.002242863178253174,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 29981.99304199079,
+      "input_bytes": 841600,
+      "confidence": 0.002234548330307007,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30022.919833980268,
+      "input_bytes": 842880,
+      "confidence": 0.0022262930870056152,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30062.61429199367,
+      "input_bytes": 844160,
+      "confidence": 0.002218097448348999,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30081.771708995802,
+      "input_bytes": 844800,
+      "confidence": 0.002209901809692383,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30122.51066698809,
+      "input_bytes": 846080,
+      "confidence": 0.002201765775680542,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30140.79700000002,
+      "input_bytes": 846720,
+      "confidence": 0.002193629741668701,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30181.120166991604,
+      "input_bytes": 848000,
+      "confidence": 0.002185523509979248,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30223.80962499301,
+      "input_bytes": 849280,
+      "confidence": 0.0021774470806121826,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30241.31108398433,
+      "input_bytes": 849920,
+      "confidence": 0.0021694600582122803,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30281.184999999823,
+      "input_bytes": 851200,
+      "confidence": 0.0021614134311676025,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30301.4167919755,
+      "input_bytes": 851840,
+      "confidence": 0.0021534860134124756,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30341.880833992036,
+      "input_bytes": 853120,
+      "confidence": 0.0021454989910125732,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30380.893708992517,
+      "input_bytes": 854400,
+      "confidence": 0.0021375715732574463,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30401.187666982878,
+      "input_bytes": 855040,
+      "confidence": 0.0021296441555023193,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30441.07449997682,
+      "input_bytes": 856320,
+      "confidence": 0.0021217763423919678,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30461.32208398194,
+      "input_bytes": 856960,
+      "confidence": 0.0021138787269592285,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30500.657416996546,
+      "input_bytes": 858240,
+      "confidence": 0.00210610032081604,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30541.070666979067,
+      "input_bytes": 859520,
+      "confidence": 0.0020983219146728516,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30561.85374999768,
+      "input_bytes": 860160,
+      "confidence": 0.0020904242992401123,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30601.08674998628,
+      "input_bytes": 861440,
+      "confidence": 0.002082228660583496,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30622.851916996296,
+      "input_bytes": 862080,
+      "confidence": 0.0020740628242492676,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30662.900750001427,
+      "input_bytes": 863360,
+      "confidence": 0.0020658373832702637,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30701.569208991714,
+      "input_bytes": 864640,
+      "confidence": 0.002057790756225586,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30722.33645900269,
+      "input_bytes": 865280,
+      "confidence": 0.0020497143268585205,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30763.82324998849,
+      "input_bytes": 866560,
+      "confidence": 0.0020416676998138428,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30782.681333977962,
+      "input_bytes": 867200,
+      "confidence": 0.002033621072769165,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30822.895208984846,
+      "input_bytes": 868480,
+      "confidence": 0.0020256638526916504,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30862.084666994633,
+      "input_bytes": 869760,
+      "confidence": 0.0020177364349365234,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30881.773333996534,
+      "input_bytes": 870400,
+      "confidence": 0.0020098090171813965,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30922.073374997126,
+      "input_bytes": 871680,
+      "confidence": 0.002001941204071045,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30941.406291996827,
+      "input_bytes": 872320,
+      "confidence": 0.0019940435886383057,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 30981.047958979616,
+      "input_bytes": 873600,
+      "confidence": 0.001986265182495117,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 31023.2947919867,
+      "input_bytes": 874880,
+      "confidence": 0.001978546380996704,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 31042.013458994916,
+      "input_bytes": 875520,
+      "confidence": 0.001970738172531128,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 31082.39912497811,
+      "input_bytes": 876800,
+      "confidence": 0.001963019371032715,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 31101.613374979934,
+      "input_bytes": 877440,
+      "confidence": 0.001955360174179077,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 31141.846041980898,
+      "input_bytes": 878720,
+      "confidence": 0.0019476711750030518,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 31181.494041986298,
+      "input_bytes": 880000,
+      "confidence": 0.0019400715827941895,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 31202.25804200163,
+      "input_bytes": 880640,
+      "confidence": 0.0019324123859405518,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 31240.81970899715,
+      "input_bytes": 881920,
+      "confidence": 0.0019249022006988525,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 31261.552833981114,
+      "input_bytes": 882560,
+      "confidence": 0.001917421817779541,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 31302.257208997617,
+      "input_bytes": 883840,
+      "confidence": 0.0019099414348602295,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 31341.643458988983,
+      "input_bytes": 885120,
+      "confidence": 0.0019024908542633057,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 31361.076624976704,
+      "input_bytes": 885760,
+      "confidence": 0.0018950104713439941,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 31401.806209003553,
+      "input_bytes": 887040,
+      "confidence": 0.0018876492977142334,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 31422.485499992035,
+      "input_bytes": 887680,
+      "confidence": 0.0018803179264068604,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 31462.505333998706,
+      "input_bytes": 888960,
+      "confidence": 0.0018729567527770996,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 31500.67537499126,
+      "input_bytes": 890240,
+      "confidence": 0.0018657147884368896,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 31521.09987498261,
+      "input_bytes": 890880,
+      "confidence": 0.001858443021774292,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 31561.353917000815,
+      "input_bytes": 892160,
+      "confidence": 0.001851201057434082,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 31581.46395898075,
+      "input_bytes": 892800,
+      "confidence": 0.001843959093093872,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 31622.066333977273,
+      "input_bytes": 894080,
+      "confidence": 0.0018368661403656006,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 31663.196499983314,
+      "input_bytes": 895360,
+      "confidence": 0.001829683780670166,
+      "state_before": "QUIET",
+      "model_reset": false
+    },
+    {
+      "at_ms": 31682.391666981857,
+      "input_bytes": 896000,
+      "confidence": 0.0018225610256195068,
+      "state_before": "QUIET",
+      "model_reset": false
+    }
+  ],
+  "captured_input_bytes": 896640,
+  "fed_input_bytes": 896640,
+  "input_matches_feed_prefix": true
+}

@@ -1,0 +1,168 @@
+{
+  "scope": "Synthetic continuous ASR/endpointing only; real cloud/Silero/Smart Turn; no calls/messages/microphone/speaker",
+  "turns": 8,
+  "before": [
+    {
+      "case": "en_short",
+      "expected": "Yes, please.",
+      "actual": [
+        "Yes, please."
+      ],
+      "commit_after_eof_ms": 989.1,
+      "premature_acoustic_commit": false
+    },
+    {
+      "case": "en_auxiliary",
+      "expected": "Yes, I can.",
+      "actual": [
+        "Yes, please. Yes, I can."
+      ],
+      "commit_after_eof_ms": 3008.7,
+      "premature_acoustic_commit": false
+    },
+    {
+      "case": "fr_negative",
+      "expected": "Je ne sais pas.",
+      "actual": [
+        "Je ne sais"
+      ],
+      "commit_after_eof_ms": 716.9,
+      "premature_acoustic_commit": false
+    },
+    {
+      "case": "en_stranded_question",
+      "expected": "Where are you calling from?",
+      "actual": [
+        "pas Where are you calling"
+      ],
+      "commit_after_eof_ms": 564.7,
+      "premature_acoustic_commit": false
+    },
+    {
+      "case": "en_preference_pause",
+      "expected": "I prefer movies and series.",
+      "actual": [
+        "Where are you calling from?I prefer movies and series."
+      ],
+      "commit_after_eof_ms": 1073.7,
+      "premature_acoustic_commit": false
+    },
+    {
+      "case": "fr_preference_pause",
+      "expected": "Je préfère les films et les séries.",
+      "actual": [
+        "Je préfère.les films et les séries"
+      ],
+      "commit_after_eof_ms": 910.2,
+      "premature_acoustic_commit": false
+    },
+    {
+      "case": "fr_repeated_yes_0",
+      "expected": "Oui, s'il vous plaît.",
+      "actual": [
+        "Oui, s'il vous"
+      ],
+      "commit_after_eof_ms": 606.9,
+      "premature_acoustic_commit": false
+    },
+    {
+      "case": "fr_repeated_yes_1",
+      "expected": "Oui, s'il vous plaît.",
+      "actual": [
+        "plaît Oui, s'il vous"
+      ],
+      "commit_after_eof_ms": 620.2,
+      "premature_acoustic_commit": false
+    }
+  ],
+  "after": [
+    {
+      "case": "en_short",
+      "expected": "Yes, please.",
+      "actual": [
+        "Yes, please."
+      ],
+      "commit_after_eof_ms": 1416.6,
+      "premature_acoustic_commit": false
+    },
+    {
+      "case": "en_auxiliary",
+      "expected": "Yes, I can.",
+      "actual": [
+        "Yes, I can."
+      ],
+      "commit_after_eof_ms": 1791.1,
+      "premature_acoustic_commit": false
+    },
+    {
+      "case": "fr_negative",
+      "expected": "Je ne sais pas.",
+      "actual": [
+        "Je ne sais pas."
+      ],
+      "commit_after_eof_ms": 1642.8,
+      "premature_acoustic_commit": false
+    },
+    {
+      "case": "en_stranded_question",
+      "expected": "Where are you calling from?",
+      "actual": [
+        "Where are you calling from?"
+      ],
+      "commit_after_eof_ms": 1723.4,
+      "premature_acoustic_commit": false
+    },
+    {
+      "case": "en_preference_pause",
+      "expected": "I prefer movies and series.",
+      "actual": [
+        "I prefer movies and series."
+      ],
+      "commit_after_eof_ms": 1663.1,
+      "premature_acoustic_commit": false
+    },
+    {
+      "case": "fr_preference_pause",
+      "expected": "Je préfère les films et les séries.",
+      "actual": [
+        "Je préfère. les films et les séries"
+      ],
+      "commit_after_eof_ms": 1822.0,
+      "premature_acoustic_commit": false
+    },
+    {
+      "case": "fr_repeated_yes_0",
+      "expected": "Oui, s'il vous plaît.",
+      "actual": [
+        "Oui, s'il vous plaît."
+      ],
+      "commit_after_eof_ms": 1817.8,
+      "premature_acoustic_commit": false
+    },
+    {
+      "case": "fr_repeated_yes_1",
+      "expected": "Oui, s'il vous plaît.",
+      "actual": [
+        "Oui, s'il vous plaît."
+      ],
+      "commit_after_eof_ms": 1702.5,
+      "premature_acoustic_commit": false
+    }
+  ],
+  "full_suite": {
+    "passed": 942,
+    "failed_preexisting": 13,
+    "skipped": 39
+  },
+  "goal_status": "active",
+  "before_smart_turn_cpu_ms": {
+    "median": 68.5,
+    "min": 54.5,
+    "max": 88.4
+  },
+  "after_smart_turn_cpu_ms": {
+    "median": 70.6,
+    "min": 52.0,
+    "max": 83.1
+  }
+}

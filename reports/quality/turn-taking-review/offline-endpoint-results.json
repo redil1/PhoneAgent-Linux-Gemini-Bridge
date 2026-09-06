@@ -1,0 +1,45 @@
+{
+  "scope": "checkout offline behavior probes",
+  "results": [
+    {
+      "probe": "speech_resume_during_candidate_callback",
+      "commits": [
+        {
+          "text": "I want movies.",
+          "ms_since_resumed_speech": 0.07,
+          "speech_epoch": 2
+        }
+      ]
+    },
+    {
+      "probe": "cumulative_extension_without_new_speech",
+      "new_candidate": "to London",
+      "speech_epoch": 1,
+      "committed_speech_epoch": 1
+    },
+    {
+      "probe": "artificial_silence_precedes_buffered_audio",
+      "captured_bytes_buffered_before_flush": 4480,
+      "queued_chunks": [
+        {
+          "sequence": 0,
+          "bytes": 6400,
+          "all_zero": true,
+          "starts_with_captured_speech_tail": false
+        },
+        {
+          "sequence": 1,
+          "bytes": 4800,
+          "all_zero": false,
+          "starts_with_captured_speech_tail": true
+        }
+      ]
+    },
+    {
+      "probe": "quiet_audio_does_not_advance_speech_clock",
+      "energy_dbfs": -48,
+      "threshold_dbfs": -42.0,
+      "speech_clock_advanced": false
+    }
+  ]
+}

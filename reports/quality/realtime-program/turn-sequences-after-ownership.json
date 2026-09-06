@@ -1,0 +1,732 @@
+{
+  "scope": "Synthetic continuous ASR/endpointing only; real cloud/Silero/Smart Turn; no calls/messages/microphone/speaker",
+  "rows": [
+    {
+      "case": "en_short",
+      "expected": "Yes, please.",
+      "audio_ms": 1160.0,
+      "start_ms": 1353.6657920049038,
+      "eof_ms": 2513.665792004904,
+      "commits": [
+        {
+          "at_ms": 3856.578292004997,
+          "text": "Yes, please.",
+          "metadata": {
+            "phone_agent": {
+              "speech_epoch": 2,
+              "provider_final": false,
+              "speech_end_monotonic_ns": 120117637359708,
+              "committed_monotonic_ns": 120118978829000,
+              "endpoint_wait_ms": 1340.0,
+              "completion_reason": "smart_turn"
+            }
+          },
+          "after_eof_ms": 1342.9125000000931
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 2782.0335419964977,
+          "text": "Yes,",
+          "final": false
+        },
+        {
+          "at_ms": 3166.035166999791,
+          "text": "Yes, please.",
+          "final": false
+        },
+        {
+          "at_ms": 3821.6127500054426,
+          "text": "Yes, please.",
+          "final": false
+        },
+        {
+          "at_ms": 4208.126249999623,
+          "text": "Yes, please.",
+          "final": false
+        },
+        {
+          "at_ms": 4348.4593339962885,
+          "text": "Yes, please.",
+          "final": true
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 2134.5763749995967,
+          "elapsed_ms": 75.00070800597314,
+          "prediction": 0,
+          "probability": 0.4122953414916992
+        },
+        {
+          "at_ms": 2820.5370840005344,
+          "elapsed_ms": 78.5827500076266,
+          "prediction": 1,
+          "probability": 0.87754225730896
+        },
+        {
+          "at_ms": 2962.937125004828,
+          "elapsed_ms": 67.72237500990741,
+          "prediction": 1,
+          "probability": 0.9685282111167908
+        },
+        {
+          "at_ms": 3351.268041995354,
+          "elapsed_ms": 64.05020899546798,
+          "prediction": 1,
+          "probability": 0.970842719078064
+        },
+        {
+          "at_ms": 4123.028875008458,
+          "elapsed_ms": 61.748834006721154,
+          "prediction": 1,
+          "probability": 0.9870367050170898
+        }
+      ],
+      "premature_commit": false,
+      "final_commit_after_eof_ms": 1342.9125000000931
+    },
+    {
+      "case": "en_auxiliary",
+      "expected": "Yes, I can.",
+      "audio_ms": 1300.0,
+      "start_ms": 4475.545875000535,
+      "eof_ms": 5775.545875000535,
+      "commits": [
+        {
+          "at_ms": 8739.77204199764,
+          "text": "Yes, I can.",
+          "metadata": {
+            "phone_agent": {
+              "speech_epoch": 4,
+              "provider_final": true,
+              "speech_end_monotonic_ns": 120120858893500,
+              "committed_monotonic_ns": 120123861611000,
+              "endpoint_wait_ms": 3000.0,
+              "completion_reason": "bounded_incomplete"
+            }
+          },
+          "after_eof_ms": 2964.226166997105
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 5677.66704200767,
+          "text": "Yes.",
+          "final": false
+        },
+        {
+          "at_ms": 6326.103958999738,
+          "text": "Yes, I",
+          "final": false
+        },
+        {
+          "at_ms": 6731.288625000161,
+          "text": "Yes, I can.",
+          "final": false
+        },
+        {
+          "at_ms": 7147.556167008588,
+          "text": "Yes, I can.",
+          "final": false
+        },
+        {
+          "at_ms": 7396.322417000192,
+          "text": "Yes, I can.",
+          "final": true
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 6030.859749997035,
+          "elapsed_ms": 69.30783299321774,
+          "prediction": 0,
+          "probability": 0.33859044313430786
+        },
+        {
+          "at_ms": 6521.940499995253,
+          "elapsed_ms": 64.35375000000931,
+          "prediction": 0,
+          "probability": 0.14524120092391968
+        },
+        {
+          "at_ms": 6896.766542005935,
+          "elapsed_ms": 61.35616698884405,
+          "prediction": 0,
+          "probability": 0.3655349016189575
+        },
+        {
+          "at_ms": 7585.203875001753,
+          "elapsed_ms": 76.11870899563655,
+          "prediction": 1,
+          "probability": 0.59721440076828
+        },
+        {
+          "at_ms": 9025.209542000084,
+          "elapsed_ms": 77.52600000821985,
+          "prediction": 1,
+          "probability": 0.9870367050170898
+        }
+      ],
+      "premature_commit": false,
+      "final_commit_after_eof_ms": 2964.226166997105
+    },
+    {
+      "case": "fr_negative",
+      "expected": "Je ne sais pas.",
+      "audio_ms": 780.0,
+      "start_ms": 9356.32775000704,
+      "eof_ms": 10136.32775000704,
+      "commits": [
+        {
+          "at_ms": 13128.187624999555,
+          "text": "Je ne sais pas.",
+          "metadata": {
+            "phone_agent": {
+              "speech_epoch": 5,
+              "provider_final": true,
+              "speech_end_monotonic_ns": 120125240915958,
+              "committed_monotonic_ns": 120128250494166,
+              "endpoint_wait_ms": 3000.0,
+              "completion_reason": "bounded_incomplete"
+            }
+          },
+          "after_eof_ms": 2991.859874992515
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 10640.223499998683,
+          "text": "Je ne sais",
+          "final": false
+        },
+        {
+          "at_ms": 11162.014000001363,
+          "text": "Je ne sais pas.",
+          "final": false
+        },
+        {
+          "at_ms": 11687.49941700662,
+          "text": "Je ne sais pas.",
+          "final": true
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 10409.26225000294,
+          "elapsed_ms": 67.21808400470763,
+          "prediction": 0,
+          "probability": 0.4803165793418884
+        },
+        {
+          "at_ms": 10843.97645900026,
+          "elapsed_ms": 66.39579200418666,
+          "prediction": 1,
+          "probability": 0.978554368019104
+        },
+        {
+          "at_ms": 11347.477999996045,
+          "elapsed_ms": 79.00133299699519,
+          "prediction": 1,
+          "probability": 0.9875311851501465
+        },
+        {
+          "at_ms": 11898.45104199776,
+          "elapsed_ms": 107.19691700069234,
+          "prediction": 1,
+          "probability": 0.9870367050170898
+        },
+        {
+          "at_ms": 13422.905875006109,
+          "elapsed_ms": 85.13845900597516,
+          "prediction": 1,
+          "probability": 0.9870367050170898
+        }
+      ],
+      "premature_commit": false,
+      "final_commit_after_eof_ms": 2991.859874992515
+    },
+    {
+      "case": "en_stranded_question",
+      "expected": "Where are you calling from?",
+      "audio_ms": 1420.0,
+      "start_ms": 13738.208834009129,
+      "eof_ms": 15158.208834009129,
+      "commits": [
+        {
+          "at_ms": 18121.873291995144,
+          "text": "Where are you calling from?",
+          "metadata": {
+            "phone_agent": {
+              "speech_epoch": 6,
+              "provider_final": true,
+              "speech_end_monotonic_ns": 120130242609875,
+              "committed_monotonic_ns": 120133244167916,
+              "endpoint_wait_ms": 3000.0,
+              "completion_reason": "bounded_incomplete"
+            }
+          },
+          "after_eof_ms": 2963.664457986015
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 14944.80929200654,
+          "text": "Where are you",
+          "final": false
+        },
+        {
+          "at_ms": 15427.8936250048,
+          "text": "Where are you calling",
+          "final": false
+        },
+        {
+          "at_ms": 16010.812084001373,
+          "text": "Where are you calling from?",
+          "final": false
+        },
+        {
+          "at_ms": 16444.457083998714,
+          "text": "Where are you calling from?",
+          "final": false
+        },
+        {
+          "at_ms": 16591.93070900801,
+          "text": "Where are you calling from?",
+          "final": true
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 15427.714417004609,
+          "elapsed_ms": 68.31420899834484,
+          "prediction": 1,
+          "probability": 0.9697068929672241
+        },
+        {
+          "at_ms": 15607.274541995139,
+          "elapsed_ms": 74.11345800210256,
+          "prediction": 1,
+          "probability": 0.9808988571166992
+        },
+        {
+          "at_ms": 16193.723042000784,
+          "elapsed_ms": 71.85904200014193,
+          "prediction": 1,
+          "probability": 0.9808988571166992
+        },
+        {
+          "at_ms": 16780.572874995414,
+          "elapsed_ms": 86.52850000362378,
+          "prediction": 1,
+          "probability": 0.9255857467651367
+        },
+        {
+          "at_ms": 18408.447499998147,
+          "elapsed_ms": 80.51866698951926,
+          "prediction": 1,
+          "probability": 0.9870367050170898
+        }
+      ],
+      "premature_commit": false,
+      "final_commit_after_eof_ms": 2963.664457986015
+    },
+    {
+      "case": "en_preference_pause",
+      "expected": "I prefer movies and series.",
+      "pause_ms": 900,
+      "continuation_at_ms": 1640.0,
+      "audio_ms": 2840.0,
+      "start_ms": 18739.17275000713,
+      "eof_ms": 21579.17275000713,
+      "commits": [
+        {
+          "at_ms": 23268.626375007443,
+          "text": "I prefer movies and series.",
+          "metadata": {
+            "phone_agent": {
+              "speech_epoch": 8,
+              "provider_final": true,
+              "speech_end_monotonic_ns": 120136544605208,
+              "committed_monotonic_ns": 120138390979125,
+              "endpoint_wait_ms": 1840.0,
+              "completion_reason": "smart_turn"
+            }
+          },
+          "after_eof_ms": 1689.4536250003148
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 20074.841124995146,
+          "text": "I",
+          "final": false
+        },
+        {
+          "at_ms": 20490.713334002066,
+          "text": "I prefer",
+          "final": false
+        },
+        {
+          "at_ms": 21011.874042000272,
+          "text": "I prefer.",
+          "final": false
+        },
+        {
+          "at_ms": 21445.132875000127,
+          "text": "I prefer. Movies",
+          "final": false
+        },
+        {
+          "at_ms": 21861.147750008968,
+          "text": "I prefer. movies and",
+          "final": false
+        },
+        {
+          "at_ms": 22454.846209002426,
+          "text": "I prefer. movies and series",
+          "final": false
+        },
+        {
+          "at_ms": 22901.472708996153,
+          "text": "I prefer. movies and series.",
+          "final": false
+        },
+        {
+          "at_ms": 23078.08833400486,
+          "text": "I prefer movies and series.",
+          "final": true
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 19727.706959005445,
+          "elapsed_ms": 64.14312499691732,
+          "prediction": 1,
+          "probability": 0.9719371795654297
+        },
+        {
+          "at_ms": 20254.380667000078,
+          "elapsed_ms": 76.10320800449699,
+          "prediction": 1,
+          "probability": 0.9749865531921387
+        },
+        {
+          "at_ms": 21732.853666995652,
+          "elapsed_ms": 74.6098749950761,
+          "prediction": 1,
+          "probability": 0.9749865531921387
+        },
+        {
+          "at_ms": 22066.07666700438,
+          "elapsed_ms": 65.54866700025741,
+          "prediction": 1,
+          "probability": 0.9685282111167908
+        },
+        {
+          "at_ms": 22636.945749996812,
+          "elapsed_ms": 74.37933300388977,
+          "prediction": 1,
+          "probability": 0.9880069494247437
+        },
+        {
+          "at_ms": 23122.79658400803,
+          "elapsed_ms": 81.23904099920765,
+          "prediction": 1,
+          "probability": 0.9816229343414307
+        },
+        {
+          "at_ms": 23234.47241699614,
+          "elapsed_ms": 55.21041700558271,
+          "prediction": 1,
+          "probability": 0.9829913973808289
+        },
+        {
+          "at_ms": 23563.638292005635,
+          "elapsed_ms": 63.043750007636845,
+          "prediction": 1,
+          "probability": 0.9870367050170898
+        }
+      ],
+      "premature_commit": false,
+      "final_commit_after_eof_ms": 1689.4536250003148
+    },
+    {
+      "case": "fr_preference_pause",
+      "expected": "Je préfère les films et les séries.",
+      "pause_ms": 1200,
+      "continuation_at_ms": 2180.0,
+      "audio_ms": 3340.0,
+      "start_ms": 23881.173583999043,
+      "eof_ms": 27221.173583999043,
+      "commits": [
+        {
+          "at_ms": 28600.838124999427,
+          "text": "Je préfère. les films et les séries",
+          "metadata": {
+            "phone_agent": {
+              "speech_epoch": 10,
+              "provider_final": false,
+              "speech_end_monotonic_ns": 120142305980833,
+              "committed_monotonic_ns": 120143723095708,
+              "endpoint_wait_ms": 1400.0,
+              "completion_reason": "smart_turn"
+            }
+          },
+          "after_eof_ms": 1379.664541000384
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 25194.03675000649,
+          "text": "Je",
+          "final": false
+        },
+        {
+          "at_ms": 25650.351000003866,
+          "text": "Je préfère.",
+          "final": false
+        },
+        {
+          "at_ms": 26107.339084002888,
+          "text": "Je préfère.",
+          "final": false
+        },
+        {
+          "at_ms": 26366.45750000025,
+          "text": "Je préfère.",
+          "final": true
+        },
+        {
+          "at_ms": 27416.32716699678,
+          "text": "les films et",
+          "final": false
+        },
+        {
+          "at_ms": 27938.539834009134,
+          "text": "les films et les séries",
+          "final": false
+        },
+        {
+          "at_ms": 28357.804458995815,
+          "text": "les films et les séries",
+          "final": false
+        },
+        {
+          "at_ms": 28748.93129200791,
+          "text": "les films et les séries",
+          "final": false
+        },
+        {
+          "at_ms": 28991.435375006404,
+          "text": "les films et les séries",
+          "final": true
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 25121.65124999592,
+          "elapsed_ms": 76.82554199709557,
+          "prediction": 1,
+          "probability": 0.59721440076828
+        },
+        {
+          "at_ms": 25369.074417001684,
+          "elapsed_ms": 59.00725000537932,
+          "prediction": 1,
+          "probability": 0.7357640266418457
+        },
+        {
+          "at_ms": 25827.365042001475,
+          "elapsed_ms": 63.99700000474695,
+          "prediction": 1,
+          "probability": 0.6344650983810425
+        },
+        {
+          "at_ms": 27624.53479200485,
+          "elapsed_ms": 98.36479200748727,
+          "prediction": 1,
+          "probability": 0.9255857467651367
+        },
+        {
+          "at_ms": 28120.855084009236,
+          "elapsed_ms": 77.78766700357664,
+          "prediction": 1,
+          "probability": 0.9647200703620911
+        },
+        {
+          "at_ms": 28860.35983399779,
+          "elapsed_ms": 73.42304199119098,
+          "prediction": 1,
+          "probability": 0.9870367050170898
+        }
+      ],
+      "premature_commit": false,
+      "final_commit_after_eof_ms": 1379.664541000384
+    },
+    {
+      "case": "fr_repeated_yes_0",
+      "expected": "Oui, s'il vous plaît.",
+      "audio_ms": 1380.0,
+      "start_ms": 29203.425084007904,
+      "eof_ms": 30583.425084007904,
+      "commits": [
+        {
+          "at_ms": 32146.52679199935,
+          "text": "Oui, s'il vous plaît.",
+          "metadata": {
+            "phone_agent": {
+              "speech_epoch": 12,
+              "provider_final": false,
+              "speech_end_monotonic_ns": 120145706411041,
+              "committed_monotonic_ns": 120147268844000,
+              "endpoint_wait_ms": 1560.0,
+              "completion_reason": "smart_turn"
+            }
+          },
+          "after_eof_ms": 1563.1017079914454
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 30447.71283400769,
+          "text": "Oui.",
+          "final": false
+        },
+        {
+          "at_ms": 30875.529791999725,
+          "text": "Oui, s'il vous",
+          "final": false
+        },
+        {
+          "at_ms": 31476.907749995007,
+          "text": "Oui, s'il vous plaît.",
+          "final": false
+        },
+        {
+          "at_ms": 31899.767834009253,
+          "text": "Oui, s'il vous plaît.",
+          "final": false
+        },
+        {
+          "at_ms": 32203.822625000612,
+          "text": "Oui, s'il vous plaît.",
+          "final": true
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 29873.353250004584,
+          "elapsed_ms": 66.61812499805819,
+          "prediction": 0,
+          "probability": 0.3655349016189575
+        },
+        {
+          "at_ms": 30877.247334006825,
+          "elapsed_ms": 69.25137499638367,
+          "prediction": 1,
+          "probability": 0.9673051834106445
+        },
+        {
+          "at_ms": 31041.5399170015,
+          "elapsed_ms": 61.421667007380165,
+          "prediction": 1,
+          "probability": 0.9589470624923706
+        },
+        {
+          "at_ms": 31675.832959008403,
+          "elapsed_ms": 78.34683299006429,
+          "prediction": 1,
+          "probability": 0.9793655872344971
+        },
+        {
+          "at_ms": 32425.90170900803,
+          "elapsed_ms": 73.01483399351127,
+          "prediction": 1,
+          "probability": 0.9870367050170898
+        }
+      ],
+      "premature_commit": false,
+      "final_commit_after_eof_ms": 1563.1017079914454
+    },
+    {
+      "case": "fr_repeated_yes_1",
+      "expected": "Oui, s'il vous plaît.",
+      "audio_ms": 1380.0,
+      "start_ms": 32765.471459002583,
+      "eof_ms": 34145.47145900258,
+      "commits": [
+        {
+          "at_ms": 35520.16733400524,
+          "text": "Oui, s'il vous plaît.",
+          "metadata": {
+            "phone_agent": {
+              "speech_epoch": 14,
+              "provider_final": false,
+              "speech_end_monotonic_ns": 120149251799083,
+              "committed_monotonic_ns": 120150642408583,
+              "endpoint_wait_ms": 1380.0,
+              "completion_reason": "smart_turn"
+            }
+          },
+          "after_eof_ms": 1374.6958750026533
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 33957.88387500215,
+          "text": "Oui,",
+          "final": false
+        },
+        {
+          "at_ms": 34408.087292002165,
+          "text": "Oui, s'il vous",
+          "final": false
+        },
+        {
+          "at_ms": 34859.713541998644,
+          "text": "Oui, s'il vous plaît.",
+          "final": false
+        },
+        {
+          "at_ms": 35289.369792008074,
+          "text": "Oui, s'il vous plaît.",
+          "final": false
+        },
+        {
+          "at_ms": 35702.1740420023,
+          "text": "Oui, s'il vous plaît.",
+          "final": true
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 33413.690750006936,
+          "elapsed_ms": 78.2421250041807,
+          "prediction": 0,
+          "probability": 0.23476183414459229
+        },
+        {
+          "at_ms": 34575.50999999512,
+          "elapsed_ms": 64.33020898839459,
+          "prediction": 1,
+          "probability": 0.9557313919067383
+        },
+        {
+          "at_ms": 35033.815458999015,
+          "elapsed_ms": 61.3050829997519,
+          "prediction": 1,
+          "probability": 0.9557313919067383
+        },
+        {
+          "at_ms": 35800.57454200869,
+          "elapsed_ms": 92.83758400124498,
+          "prediction": 1,
+          "probability": 0.9870367050170898
+        }
+      ],
+      "premature_commit": false,
+      "final_commit_after_eof_ms": 1374.6958750026533
+    }
+  ]
+}

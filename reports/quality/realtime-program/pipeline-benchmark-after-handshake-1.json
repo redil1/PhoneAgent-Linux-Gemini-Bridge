@@ -1,0 +1,323 @@
+{
+  "scope": "Real providers with simulated phone clock; all tool side effects disabled",
+  "pipeline_start_ms": 2279.453374998411,
+  "first_simulated_playout_after_eof_ms": 2152.568917008466,
+  "barge_in_to_flush_ms": 174.9521660094615,
+  "events": [
+    {
+      "at_ms": 229.5731249905657,
+      "type": "managed_tools_reloaded",
+      "active_tools": [],
+      "pipeline": "cascade"
+    },
+    {
+      "at_ms": 241.07641699083615,
+      "type": "provider_latency",
+      "provider": "openwa",
+      "operation": "session_status",
+      "elapsed_ms": 10.787,
+      "monotonic_ns": 118932878217708,
+      "outcome": "ok"
+    },
+    {
+      "at_ms": 241.1667089909315,
+      "type": "openwa_runtime_status",
+      "state": "ready",
+      "tools": [
+        "whatsapp_last_delivery_status",
+        "whatsapp_read_current_customer_chat",
+        "whatsapp_reply_current_customer",
+        "whatsapp_send_text_current_customer"
+      ],
+      "self_chat": false
+    },
+    {
+      "at_ms": 241.18383399036247,
+      "type": "openwa_tools_reloaded",
+      "active_tools": [
+        "whatsapp_last_delivery_status",
+        "whatsapp_read_current_customer_chat",
+        "whatsapp_reply_current_customer",
+        "whatsapp_send_text_current_customer"
+      ],
+      "pipeline": "cascade"
+    },
+    {
+      "at_ms": 241.80308399081696,
+      "type": "web_research_runtime_status",
+      "state": "ready",
+      "tools": [
+        "web_research"
+      ]
+    },
+    {
+      "at_ms": 241.81824999686796,
+      "type": "web_research_tools_reloaded",
+      "active_tools": [
+        "web_research"
+      ],
+      "pipeline": "cascade"
+    },
+    {
+      "at_ms": 251.05570899904706,
+      "type": "frappe_runtime_status",
+      "state": "ready",
+      "tools": [
+        "business_create_opportunity",
+        "business_create_quotation_draft",
+        "business_create_support_ticket",
+        "business_get_customer_context",
+        "business_get_invoice_status",
+        "business_get_order_status",
+        "business_get_support_status",
+        "business_mark_do_not_call",
+        "business_record_call_outcome",
+        "business_schedule_follow_up",
+        "business_search_catalog",
+        "business_update_support_ticket",
+        "business_upsert_current_lead"
+      ],
+      "site": "phoneagent.localhost"
+    },
+    {
+      "at_ms": 251.07899999420624,
+      "type": "frappe_tools_reloaded",
+      "active_tools": [
+        "business_create_opportunity",
+        "business_create_quotation_draft",
+        "business_create_support_ticket",
+        "business_get_customer_context",
+        "business_get_invoice_status",
+        "business_get_order_status",
+        "business_get_support_status",
+        "business_mark_do_not_call",
+        "business_record_call_outcome",
+        "business_schedule_follow_up",
+        "business_search_catalog",
+        "business_update_support_ticket",
+        "business_upsert_current_lead"
+      ],
+      "pipeline": "cascade"
+    },
+    {
+      "at_ms": 6099.132999996073,
+      "type": "task_state",
+      "task_id": "iptv_shopping_prod_v3_3",
+      "outcome": "in_progress",
+      "stage": "OPEN",
+      "turns": 1,
+      "collected": {
+        "caller_situation": "plan",
+        "plan_duration": "six month"
+      },
+      "missing": [
+        "permission_to_continue",
+        "problem_or_desired_outcome",
+        "explicit_interest",
+        "next_step_consent"
+      ]
+    },
+    {
+      "at_ms": 6099.1782499913825,
+      "type": "transcript",
+      "role": "user",
+      "text": "I would like the six month plan for $39.",
+      "detected_language": "en"
+    },
+    {
+      "at_ms": 6885.579291993054,
+      "type": "provider_latency",
+      "provider": "antigravity_gemini",
+      "operation": "response_complete",
+      "elapsed_ms": 784.119,
+      "monotonic_ns": 118939522706625,
+      "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH",
+      "attempt": 1,
+      "prompt_chars": 41074,
+      "response_chars": 142,
+      "streaming": false
+    },
+    {
+      "at_ms": 6901.526333997026,
+      "type": "transcript",
+      "role": "assistant",
+      "text": "That's a great choice. I can get that Professional Package details over to you on WhatsApp right now; is that the best number to reach you at?",
+      "metrics": {
+        "turn_latency_ms": 805.0,
+        "fidelity": 100.0,
+        "task_score": 100.0
+      },
+      "response_id": "response-1",
+      "response_kind": "turn",
+      "delivery_status": "generated"
+    },
+    {
+      "at_ms": 6901.536958990619,
+      "type": "evaluation",
+      "score": 100.0,
+      "task_score": 100.0,
+      "passed": true,
+      "feedback": [],
+      "task_id": "iptv_shopping_prod_v3_3"
+    },
+    {
+      "at_ms": 7433.079291993636,
+      "type": "provider_latency",
+      "provider": "edge_tts",
+      "operation": "first_pcm",
+      "elapsed_ms": 507.494,
+      "monotonic_ns": 118940070214291,
+      "context_id": "3036c328-59f6-4ef3-a6ed-a0eb08dc1898",
+      "text_chars": 22
+    },
+    {
+      "at_ms": 7435.936333989957,
+      "type": "playback_status",
+      "response_id": "response-1",
+      "status": "playing",
+      "message": ""
+    },
+    {
+      "at_ms": 7476.403291992028,
+      "type": "provider_latency",
+      "provider": "edge_tts",
+      "operation": "synthesis_complete",
+      "elapsed_ms": 550.825,
+      "monotonic_ns": 118940113545041,
+      "context_id": "3036c328-59f6-4ef3-a6ed-a0eb08dc1898",
+      "text_chars": 22,
+      "first_pcm_ms": 507.48466700315475,
+      "pcm_bytes": 55296,
+      "outcome": "complete"
+    },
+    {
+      "at_ms": 8248.747749996255,
+      "type": "provider_latency",
+      "provider": "edge_tts",
+      "operation": "first_pcm",
+      "elapsed_ms": 771.63,
+      "monotonic_ns": 118940885884833,
+      "context_id": "3036c328-59f6-4ef3-a6ed-a0eb08dc1898",
+      "text_chars": 119
+    },
+    {
+      "at_ms": 8330.80029199482,
+      "type": "provider_latency",
+      "provider": "edge_tts",
+      "operation": "synthesis_complete",
+      "elapsed_ms": 853.693,
+      "monotonic_ns": 118940967943333,
+      "context_id": "3036c328-59f6-4ef3-a6ed-a0eb08dc1898",
+      "text_chars": 119,
+      "first_pcm_ms": 771.6107089945581,
+      "pcm_bytes": 207328,
+      "outcome": "cancelled"
+    },
+    {
+      "at_ms": 9334.418083992205,
+      "type": "playback_status",
+      "response_id": "response-1",
+      "status": "interrupted",
+      "message": "Caller heard approximately 0.76s"
+    },
+    {
+      "at_ms": 11093.717499999912,
+      "type": "transcript",
+      "role": "user",
+      "text": "Wait, I want the yearly plan",
+      "detected_language": "en"
+    },
+    {
+      "at_ms": 11905.433958992944,
+      "type": "provider_latency",
+      "provider": "antigravity_gemini",
+      "operation": "response_complete",
+      "elapsed_ms": 813.348,
+      "monotonic_ns": 118944542573750,
+      "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH",
+      "attempt": 1,
+      "prompt_chars": 41248,
+      "response_chars": 142,
+      "streaming": false
+    },
+    {
+      "at_ms": 11924.398999995901,
+      "type": "transcript",
+      "role": "assistant",
+      "text": "I cannot confirm that action without verification. I can collect the required information.",
+      "metrics": {
+        "turn_latency_ms": 830.2,
+        "fidelity": 80.0,
+        "task_score": 100.0
+      },
+      "response_id": "response-2",
+      "response_kind": "turn",
+      "delivery_status": "generated"
+    },
+    {
+      "at_ms": 11924.413583998103,
+      "type": "evaluation",
+      "score": 80.0,
+      "task_score": 100.0,
+      "passed": false,
+      "feedback": [
+        "Claimed an external action without a verified tool result"
+      ],
+      "task_id": "iptv_shopping_prod_v3_3"
+    },
+    {
+      "at_ms": 12025.74095899763,
+      "type": "provider_latency",
+      "provider": "edge_tts",
+      "operation": "synthesis_complete",
+      "elapsed_ms": 100.555,
+      "monotonic_ns": 118944662882250,
+      "context_id": "0b744b67-6c67-40b3-b153-6ed952b3a7c6",
+      "text_chars": 50,
+      "first_pcm_ms": null,
+      "pcm_bytes": 0,
+      "outcome": "cancelled"
+    },
+    {
+      "at_ms": 12030.617833996075,
+      "type": "playback_status",
+      "response_id": "response-2",
+      "status": "interrupted",
+      "message": ""
+    },
+    {
+      "at_ms": 12030.652458997793,
+      "type": "call_outcome",
+      "task_id": "iptv_shopping_prod_v3_3",
+      "outcome": "abandoned",
+      "stage": "OPEN",
+      "turns": 2,
+      "collected": {
+        "caller_situation": "plan",
+        "plan_duration": "six month"
+      },
+      "missing": [
+        "permission_to_continue",
+        "problem_or_desired_outcome",
+        "explicit_interest",
+        "next_step_consent"
+      ]
+    }
+  ],
+  "flushes": [
+    {
+      "at_ms": 2652.9749169858405,
+      "generation": 2
+    },
+    {
+      "at_ms": 8331.996875000186,
+      "generation": 3
+    },
+    {
+      "at_ms": 8890.12549999461,
+      "generation": 4
+    }
+  ],
+  "write_count": 38,
+  "disabled_tool_calls": []
+}

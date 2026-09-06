@@ -1,0 +1,20 @@
+{
+  "status": {
+    "status": "ok",
+    "call_state": "IDLE"
+  },
+  "config": {
+    "stt_provider": "antigravity_live",
+    "llm_provider": "antigravity_gemini",
+    "tts_provider": "edge_tts",
+    "smart_turn_enabled": true,
+    "turn_management": {
+      "complete_pause_ms": 600,
+      "partial_transcript_stability_ms": 650,
+      "uncertain_pause_ms": 900,
+      "incomplete_pause_ms": 3000,
+      "speculation_changes_speech_deadline": false,
+      "acoustic_speech_detection": "silero"
+    }
+  }
+}

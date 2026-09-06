@@ -1,0 +1,156 @@
+{
+  "scope": "Paired current versus preserved pre-compaction live-state LLM latency.\n\nBoth variants use the current sanitized stable prompt and identical tool\nprotocol. Only the mutable live-state text changes. Real selected LLM, no STT,\nTTS, phone, tool execution, memory write, or customer data.\n",
+  "question": "What does the Professional plan cost?",
+  "live_state_chars": {
+    "preserved": 6531,
+    "current": 1943
+  },
+  "prompt_chars": {
+    "preserved": 40322,
+    "current": 35734
+  },
+  "rows": [
+    {
+      "trial": 0,
+      "order": [
+        "preserved",
+        "current"
+      ],
+      "variant": "preserved",
+      "elapsed_ms": 717.5476670090575,
+      "response": "The Professional package is thirty-nine dollars for six months of service. Would you like me to send you the direct checkout link for that one via WhatsApp?",
+      "correct_price": true
+    },
+    {
+      "trial": 0,
+      "order": [
+        "preserved",
+        "current"
+      ],
+      "variant": "current",
+      "elapsed_ms": 923.4212909941562,
+      "response": "The Professional plan is thirty-nine dollars for six months of service. It provides one active connection at a time.",
+      "correct_price": true
+    },
+    {
+      "trial": 1,
+      "order": [
+        "current",
+        "preserved"
+      ],
+      "variant": "current",
+      "elapsed_ms": 642.8852080134675,
+      "response": "The professional plan is thirty-nine dollars for six months of access, which covers one active connection at a time. Does that fit what you're looking for, or were you hoping for a different timeframe?",
+      "correct_price": true
+    },
+    {
+      "trial": 1,
+      "order": [
+        "current",
+        "preserved"
+      ],
+      "variant": "preserved",
+      "elapsed_ms": 902.7732090034988,
+      "response": "The Professional package is thirty-nine dollars for six months of service. It’s our mid-tier option, offering a single active connection for your devices. Would you like me to send you the direct checkout link for that plan via WhatsApp?",
+      "correct_price": true
+    },
+    {
+      "trial": 2,
+      "order": [
+        "preserved",
+        "current"
+      ],
+      "variant": "preserved",
+      "elapsed_ms": 638.0865410028491,
+      "response": "The Professional package is thirty-nine dollars for six months of service. Does that fit what you're looking for, or were you hoping for a different length?",
+      "correct_price": true
+    },
+    {
+      "trial": 2,
+      "order": [
+        "preserved",
+        "current"
+      ],
+      "variant": "current",
+      "elapsed_ms": 600.0428749830462,
+      "response": "The Professional package is thirty-nine dollars for six months of service. It provides one active connection at a time.",
+      "correct_price": true
+    },
+    {
+      "trial": 3,
+      "order": [
+        "current",
+        "preserved"
+      ],
+      "variant": "current",
+      "elapsed_ms": 669.7827499883715,
+      "response": "The Professional plan is thirty-nine dollars for six months of service. It provides one active connection at a time.",
+      "correct_price": true
+    },
+    {
+      "trial": 3,
+      "order": [
+        "current",
+        "preserved"
+      ],
+      "variant": "preserved",
+      "elapsed_ms": 1078.380583989201,
+      "response": "The Professional plan is thirty-nine dollars for six months of service. Does that sound like the kind of fit you’re looking for, or were you hoping for a different duration?",
+      "correct_price": true
+    },
+    {
+      "trial": 4,
+      "order": [
+        "preserved",
+        "current"
+      ],
+      "variant": "preserved",
+      "elapsed_ms": 657.9126669967081,
+      "response": "The Professional package is thirty-nine dollars for six months of service. It’s our mid-tier option that includes one active connection at a time. Does that match what you're looking for, or were you hoping for a different duration?",
+      "correct_price": true
+    },
+    {
+      "trial": 4,
+      "order": [
+        "preserved",
+        "current"
+      ],
+      "variant": "current",
+      "elapsed_ms": 593.1647090183105,
+      "response": "The Professional package is thirty-nine dollars for six months of service. It provides one active connection at a time.",
+      "correct_price": true
+    },
+    {
+      "trial": 5,
+      "order": [
+        "current",
+        "preserved"
+      ],
+      "variant": "current",
+      "elapsed_ms": 818.6187090177555,
+      "response": "The Professional package is thirty-nine dollars for six months of service. It provides one active connection at a time.",
+      "correct_price": true
+    },
+    {
+      "trial": 5,
+      "order": [
+        "current",
+        "preserved"
+      ],
+      "variant": "preserved",
+      "elapsed_ms": 679.1442919929978,
+      "response": "The Professional plan is thirty-nine dollars for six months of service. It provides one active connection at a time, and you can use it on your smart TV, phone, or streaming devices. Does that sound like it would cover what you're looking for?",
+      "correct_price": true
+    }
+  ],
+  "summary": {
+    "preserved": {
+      "median_ms": 698.3459795010276,
+      "correct": 6
+    },
+    "current": {
+      "median_ms": 656.3339790009195,
+      "correct": 6
+    }
+  }
+}

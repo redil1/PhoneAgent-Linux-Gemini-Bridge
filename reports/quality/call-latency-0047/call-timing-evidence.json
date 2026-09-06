@@ -1,0 +1,30 @@
+{
+  "call_date": "2026-09-05",
+  "call_start": "00:46:51",
+  "stt_used_in_this_call": "antigravity_live",
+  "whatsapp": {
+    "message_characters": 195,
+    "tool_return_log_time": "00:47:55,239",
+    "delivery_wait_ms": 3001.1,
+    "delivery_status_at_return": "accepted",
+    "accepted": true,
+    "typing_planned_ms": 5000,
+    "typing_jitter_min_ms": 4250.0,
+    "typing_jitter_max_ms": 5750.0
+  },
+  "phase_reconstruction": {
+    "committed_at": "00:47:44.274",
+    "cached_model_result_ready_at": "00:47:46.491",
+    "tool_returned_at": "00:47:55.239",
+    "displayed_response_ms": 11904.6,
+    "pre_tool_interval_ms": 2217.0,
+    "tool_interval_ms": 8748.0,
+    "tool_interval_excluding_delivery_wait_ms": 5746.9,
+    "post_tool_to_finalized_response_approx_ms": 939.6000000000004
+  },
+  "notes": [
+    "Only text-commit/model/tool-return logs carry exact wall timestamps here. Structured events lack timestamps; post-tool phase is an approximation.",
+    "Typing delay is confirmed by deployed code/config; the exact random draw for this request was not logged.",
+    "No message was sent by this investigation."
+  ]
+}

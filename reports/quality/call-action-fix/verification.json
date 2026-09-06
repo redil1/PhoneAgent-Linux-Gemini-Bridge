@@ -1,0 +1,46 @@
+{
+  "status": "ok",
+  "call_state": "IDLE",
+  "voice_host": {
+    "ready": true,
+    "configuration_current": true
+  },
+  "openwa": {
+    "enabled": true,
+    "session_ready": true,
+    "revision": 17
+  },
+  "tests": {
+    "full_suite_passed": 903,
+    "pre_existing_failed": 13,
+    "skipped": 39,
+    "hardware_deselected": 1,
+    "final_binding_focused_passed": 54
+  },
+  "real_messages_sent": 0,
+  "source_hashes": {
+    "ai_bridge/turn_continuity.py": "59cd39a3a535962fd0d7e746409d6e92ec82bcb7045b63d2b93ec03714980962",
+    "ai_bridge/agent_policy.py": "a849df055e361a71a5bda85530207e2a4044e902d1f74476cf6f460089b2a934",
+    "ai_bridge/cascade_tools.py": "7b18cff579daf426b5e996afc2acdc3ba3eb13bc738607b5c2078392e53210bd",
+    "ai_bridge/production_pipeline.py": "8fc7d9c7e48938b9c38b021d355eadba7581412f73a4798e7793a2d913735d64",
+    "ai_bridge/personality/persona_compiler.py": "dea2055b81f8c4d31473a5dd5b634fe0106e0a987c406df84e24365106e22b52",
+    "ai_bridge/openwa_integration.py": "970504f81bdfa5b8a536c84bf39065c2848fed1347a6a80b831b158100503388",
+    "ai_bridge/guardrails/permission_gate.py": "76752867705879262381ff45408e7ffa3dbe519913de9dd6cb6de0cbf549234b",
+    "ai_bridge/tasks/tool_catalog.py": "9603604be8cf01fab9574ce7a1fe638be4bdcf8f33385ad00172720be16d35d8"
+  },
+  "remaining_tests": [
+    "FAILED tests/production/test_frozen_whatsapp.py::test_qualified_whatsapp_files_are_byte_for_byte_frozen",
+    "FAILED tests/test_android_telephony_track_lifecycle.py::test_android_never_retries_physical_telephony_track_creation",
+    "FAILED tests/test_baseline_corpus.py::test_protected_baseline_corpus_is_complete_and_integrity_checked",
+    "FAILED tests/test_baseline_corpus.py::test_baseline_corpus_manifest_contains_no_unlisted_artifacts",
+    "FAILED tests/test_ci_contract.py::test_ci_exposes_every_required_stage_with_immutable_actions",
+    "FAILED tests/test_ci_contract.py::test_ci_jobs_share_the_local_stage_contract",
+    "FAILED tests/test_ci_contract.py::test_device_qualification_is_manual_self_hosted_and_fail_closed",
+    "FAILED tests/test_performance_harness.py::test_fixture_is_hash_verified_phone_ready_audio",
+    "FAILED tests/test_performance_harness.py::test_contract_profile_measures_all_stages_and_sixty_turn_drift",
+    "FAILED tests/test_performance_harness.py::test_threshold_regression_is_machine_visible",
+    "FAILED tests/test_performance_harness.py::test_tampered_corpus_and_unknown_profile_fail_closed",
+    "FAILED tests/test_runtime_migration_rollback.py::test_upgrade_s2s_installation_migrates_to_cascade_and_preserves_state",
+    "FAILED tests/test_s2s_inventory.py::test_s2s_surface_is_complete_classified_and_migration_owned"
+  ]
+}

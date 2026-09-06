@@ -1,0 +1,156 @@
+{
+  "input_case": "fr_refusal_noise",
+  "local_corroboration": true,
+  "injected_llm_failure": false,
+  "injected_tts_failure": false,
+  "tts_failure_mode": null,
+  "injected_stt_disconnect": false,
+  "scope": "Real providers with simulated phone clock; all tool side effects disabled",
+  "correction_observation_timeout_secs": 30,
+  "pipeline_start_ms": 3713.532249996206,
+  "error": "TimeoutError",
+  "events": [
+    {
+      "at_ms": 232.77658299775794,
+      "type": "managed_tools_reloaded",
+      "active_tools": [],
+      "pipeline": "cascade"
+    },
+    {
+      "at_ms": 241.11645799712278,
+      "type": "provider_latency",
+      "provider": "openwa",
+      "operation": "session_status",
+      "elapsed_ms": 7.685,
+      "monotonic_ns": 153592718692083,
+      "outcome": "ok"
+    },
+    {
+      "at_ms": 241.24604201642796,
+      "type": "openwa_runtime_status",
+      "state": "ready",
+      "tools": [
+        "whatsapp_last_delivery_status",
+        "whatsapp_read_current_customer_chat",
+        "whatsapp_reply_current_customer",
+        "whatsapp_send_text_current_customer"
+      ],
+      "self_chat": false
+    },
+    {
+      "at_ms": 241.26558299758472,
+      "type": "openwa_tools_reloaded",
+      "active_tools": [
+        "whatsapp_last_delivery_status",
+        "whatsapp_read_current_customer_chat",
+        "whatsapp_reply_current_customer",
+        "whatsapp_send_text_current_customer"
+      ],
+      "pipeline": "cascade"
+    },
+    {
+      "at_ms": 242.11129199829884,
+      "type": "web_research_runtime_status",
+      "state": "ready",
+      "tools": [
+        "web_research"
+      ]
+    },
+    {
+      "at_ms": 242.12375000934117,
+      "type": "web_research_tools_reloaded",
+      "active_tools": [
+        "web_research"
+      ],
+      "pipeline": "cascade"
+    },
+    {
+      "at_ms": 257.40775000303984,
+      "type": "frappe_runtime_status",
+      "state": "ready",
+      "tools": [
+        "business_create_opportunity",
+        "business_create_quotation_draft",
+        "business_create_support_ticket",
+        "business_get_customer_context",
+        "business_get_invoice_status",
+        "business_get_order_status",
+        "business_get_support_status",
+        "business_mark_do_not_call",
+        "business_record_call_outcome",
+        "business_schedule_follow_up",
+        "business_search_catalog",
+        "business_update_support_ticket",
+        "business_upsert_current_lead"
+      ],
+      "site": "phoneagent.localhost"
+    },
+    {
+      "at_ms": 257.430875004502,
+      "type": "frappe_tools_reloaded",
+      "active_tools": [
+        "business_create_opportunity",
+        "business_create_quotation_draft",
+        "business_create_support_ticket",
+        "business_get_customer_context",
+        "business_get_invoice_status",
+        "business_get_order_status",
+        "business_get_support_status",
+        "business_mark_do_not_call",
+        "business_record_call_outcome",
+        "business_schedule_follow_up",
+        "business_search_catalog",
+        "business_update_support_ticket",
+        "business_upsert_current_lead"
+      ],
+      "pipeline": "cascade"
+    },
+    {
+      "at_ms": 7344.272000016645,
+      "type": "transcript",
+      "role": "user",
+      "text": "à l'abonnement annuel",
+      "detected_language": "fr",
+      "transcription_low_confidence": true
+    },
+    {
+      "at_ms": 8010.050792014226,
+      "type": "provider_latency",
+      "provider": "antigravity_gemini",
+      "operation": "response_complete",
+      "elapsed_ms": 1206.524,
+      "monotonic_ns": 153600487626541,
+      "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH",
+      "attempt": 1,
+      "prompt_chars": 41045,
+      "response_chars": 236,
+      "streaming": false
+    },
+    {
+      "at_ms": 9838.99420799571,
+      "type": "speculation",
+      "state": "ready",
+      "candidate_chars": 21,
+      "elapsed_ms": 3036.5,
+      "llm_ms": 1214.1,
+      "tts_ms": 1822.3
+    },
+    {
+      "at_ms": 25961.578458023723,
+      "type": "call_outcome",
+      "task_id": "iptv_shopping_prod_v3_3",
+      "outcome": "abandoned",
+      "stage": "OPEN",
+      "turns": 0,
+      "collected": {},
+      "missing": [
+        "permission_to_continue",
+        "caller_situation",
+        "problem_or_desired_outcome",
+        "explicit_interest",
+        "plan_duration",
+        "next_step_consent"
+      ]
+    }
+  ]
+}

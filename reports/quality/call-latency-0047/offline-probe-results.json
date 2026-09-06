@@ -1,0 +1,18 @@
+{
+  "scope": "Offline control-flow evidence, not a latency benchmark",
+  "preamble": {
+    "preamble_reached_output_while_tool_waited": false,
+    "event_order": [
+      "preamble_queued",
+      "tool_started",
+      "tool_finished",
+      "preamble_reached_speech_output"
+    ]
+  },
+  "speculation": {
+    "tts_prefetch_requests": [
+      "<tool call {\"name\":\"whatsapp send text current customer\",\"arguments\":{\"text\":\"Example offer\"}}</tool call"
+    ],
+    "tool_only_response_synthesized": true
+  }
+}

@@ -1,0 +1,960 @@
+{
+  "scope": "Paced continuous EN/FR endpoint matrix, real cloud ASR; no call or tool effects.\n\nNoise is deterministic stationary 300-3400 Hz noise, not recorded café/echo audio.\nSource EOF is used for measurement only and never passed to the turn controller.\n",
+  "initial_language": "en-US",
+  "local_corroboration": true,
+  "rows": [
+    {
+      "case": "fr_request",
+      "language": "fr-FR",
+      "expected": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+      "noise_seed": 106,
+      "continuation_ms": 1820.0,
+      "pause_ms": 900,
+      "source_sha256": "d22a411e5cf9ad4cd3613b4f380a76f2a8f41a6d2f91f8986a67c602797c76cc",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 3580.0,
+      "start_ms": 2545.429207995767,
+      "verifications": [
+        {
+          "at_ms": 4112.522500014165,
+          "text": "Est-ce que vous pouvez...",
+          "trusted": true,
+          "language_mode": "fr",
+          "audio_ms": 1040.0,
+          "audio_sha256": "d6eafbbb8510c47e8b2d88f2c42cd275b300f9e8176ae2f6f85581dc411bec0f"
+        },
+        {
+          "at_ms": 6973.313374997815,
+          "text": "Est-ce que vous pouvez envoyer les détails sur Web?",
+          "trusted": true,
+          "language_mode": "fr",
+          "audio_ms": 3660.0,
+          "audio_sha256": "c020d1d0c42ea2a5931e9673440f18764ca5b906c383c9d74dd1a64d4565de48"
+        }
+      ],
+      "commits": [
+        {
+          "at_ms": 9075.038083014078,
+          "text": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": false,
+              "corroboration": {
+                "reason": "transcript_disagreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.7651712629963785,
+                "language": "fr",
+                "decode_ms": 588.5505829937756
+              },
+              "speech_epoch": 2,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150470164740500,
+              "committed_monotonic_ns": 150473173658916,
+              "endpoint_wait_ms": 3000.0,
+              "completion_reason": "bounded_incomplete"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 3702.474792022258,
+          "text": "Est-ce que",
+          "final": false,
+          "accepted": "Est-ce que",
+          "speech_epoch": 1
+        },
+        {
+          "at_ms": 4156.084707996342,
+          "text": "Est-ce que vous",
+          "final": false,
+          "accepted": "Est-ce que vous",
+          "speech_epoch": 1
+        },
+        {
+          "at_ms": 4638.697582995519,
+          "text": "Est-ce que vous pouvez?",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez?",
+          "speech_epoch": 2
+        },
+        {
+          "at_ms": 5086.58495801501,
+          "text": "Est-ce que vous pouvez?",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez?",
+          "speech_epoch": 2
+        },
+        {
+          "at_ms": 5532.353332993807,
+          "text": "Est-ce que vous pouvez envoyer",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez envoyer",
+          "speech_epoch": 2
+        },
+        {
+          "at_ms": 6093.928957998287,
+          "text": "Est-ce que vous pouvez envoyer les détails",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez envoyer les détails",
+          "speech_epoch": 2
+        },
+        {
+          "at_ms": 6553.394582995679,
+          "text": "Est-ce que vous pouvez envoyer les détails sur",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez envoyer les détails sur",
+          "speech_epoch": 2
+        },
+        {
+          "at_ms": 7092.933625011938,
+          "text": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+          "speech_epoch": 2
+        },
+        {
+          "at_ms": 7553.233542013913,
+          "text": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+          "speech_epoch": 2
+        },
+        {
+          "at_ms": 7723.406667006202,
+          "text": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+          "final": true,
+          "accepted": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+          "speech_epoch": 2
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 2687.3402500059456,
+          "speech_epoch": 1
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 3753.9517499972135,
+          "elapsed_ms": 73.0920410132967,
+          "prediction": 0,
+          "probability": 0.3839901089668274
+        },
+        {
+          "at_ms": 3882.480000000214,
+          "elapsed_ms": 65.71833399357274,
+          "prediction": 0,
+          "probability": 0.47049394249916077
+        },
+        {
+          "at_ms": 4319.407875009347,
+          "elapsed_ms": 62.03233401174657,
+          "prediction": 1,
+          "probability": 0.828564465045929
+        },
+        {
+          "at_ms": 6397.779417020502,
+          "elapsed_ms": 69.34566699783318,
+          "prediction": 0,
+          "probability": 0.018377035856246948
+        },
+        {
+          "at_ms": 7063.977792015066,
+          "elapsed_ms": 343.147957988549,
+          "prediction": 0,
+          "probability": 0.04954594373703003
+        },
+        {
+          "at_ms": 7309.057042002678,
+          "elapsed_ms": 79.67925001867115,
+          "prediction": 0,
+          "probability": 0.03269481658935547
+        },
+        {
+          "at_ms": 7925.708750000922,
+          "elapsed_ms": 89.23837501788512,
+          "prediction": 0,
+          "probability": 0.08297324180603027
+        }
+      ],
+      "actual": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        2949.6088750183117
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_negative",
+      "language": "fr-FR",
+      "expected": "Non, pas l'abonnement annuel.",
+      "noise_seed": 108,
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "5b88cbfa62a9f3f678d201cf906d2293c3d4d9b6e1a839e14b7a6193a6c703d5",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 1860.0,
+      "start_ms": 9828.865207993658,
+      "verifications": [
+        {
+          "at_ms": 11653.289167006733,
+          "text": "Non.",
+          "trusted": true,
+          "language_mode": "auto",
+          "audio_ms": 1180.0,
+          "audio_sha256": "546b11d1eb11a3f4ff4572ffe7cc8b31e32617e49b7bd43c41ea0b4b8f408288"
+        },
+        {
+          "at_ms": 13290.296167018823,
+          "text": "Non, pas l'abonnement annuel.",
+          "trusted": true,
+          "language_mode": "auto",
+          "audio_ms": 2720.0,
+          "audio_sha256": "8df87910608799173ed3fa1c4e07dec10219b0e89e34965aee126aa14d83688c"
+        }
+      ],
+      "commits": [
+        {
+          "at_ms": 13304.840083001181,
+          "text": "Non, pas l'abonnement annuel.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.8612214798096508,
+                "language": "fr",
+                "decode_ms": 1307.838582986733
+              },
+              "speech_epoch": 4,
+              "provider_final": false,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150475768835958,
+              "committed_monotonic_ns": 150477403593875,
+              "endpoint_wait_ms": 1620.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 11539.942792005604,
+          "text": "Non,",
+          "final": false,
+          "accepted": "Non,",
+          "speech_epoch": 4
+        },
+        {
+          "at_ms": 12272.774042008677,
+          "text": "Non, pas",
+          "final": false,
+          "accepted": "Non, pas",
+          "speech_epoch": 4
+        },
+        {
+          "at_ms": 12375.863749999553,
+          "text": "Non, pas l'abonnement annuel.",
+          "final": false,
+          "accepted": "Non, pas l'abonnement annuel.",
+          "speech_epoch": 4
+        },
+        {
+          "at_ms": 12948.82979200338,
+          "text": "Non, pas l'abonnement annuel.",
+          "final": false,
+          "accepted": "Non, pas l'abonnement annuel.",
+          "speech_epoch": 4
+        },
+        {
+          "at_ms": 13361.631167004816,
+          "text": "Non, pas l'abonnement annuel.",
+          "final": true,
+          "accepted": "",
+          "speech_epoch": 4
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 10090.927167009795,
+          "speech_epoch": 3
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 10436.274792009499,
+          "elapsed_ms": 74.88112500868738,
+          "prediction": 1,
+          "probability": 0.8498003482818604
+        },
+        {
+          "at_ms": 11957.109667011537,
+          "elapsed_ms": 61.498665978433564,
+          "prediction": 1,
+          "probability": 0.9485659599304199
+        },
+        {
+          "at_ms": 12594.485500012524,
+          "elapsed_ms": 102.82200001529418,
+          "prediction": 1,
+          "probability": 0.9768373966217041
+        }
+      ],
+      "actual": "Non, pas l'abonnement annuel.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1615.9748750075232
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_request",
+      "language": "fr-FR",
+      "expected": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+      "noise_seed": 106,
+      "continuation_ms": 1820.0,
+      "pause_ms": 900,
+      "source_sha256": "d22a411e5cf9ad4cd3613b4f380a76f2a8f41a6d2f91f8986a67c602797c76cc",
+      "level": "20",
+      "clipped_samples": 0,
+      "source_duration_ms": 3580.0,
+      "start_ms": 14090.095999999903,
+      "verifications": [
+        {
+          "at_ms": 15967.027333012084,
+          "text": "Est-ce que vous pouvez...",
+          "trusted": true,
+          "language_mode": "auto",
+          "audio_ms": 1800.0,
+          "audio_sha256": "4ab6f7483d4e216b4540562f5f746798de288af7a742fbda3c0b05738266e4b3"
+        },
+        {
+          "at_ms": 18198.04491699324,
+          "text": "Est-ce que vous pouvez envoyer les détails sur web ?",
+          "trusted": true,
+          "language_mode": "fr",
+          "audio_ms": 4320.0,
+          "audio_sha256": "6e5f4d429b67b08ea889f02a1e64fe3d75c12dc6e7dc1fb556e8ecc18502382a"
+        }
+      ],
+      "commits": [
+        {
+          "at_ms": 20520.040167000843,
+          "text": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": false,
+              "corroboration": {
+                "reason": "transcript_disagreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.687224103149115,
+                "language": "fr",
+                "decode_ms": 361.81529198074713
+              },
+              "speech_epoch": 6,
+              "provider_final": true,
+              "partial_confirmations": 3,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150481611261333,
+              "committed_monotonic_ns": 150484618774791,
+              "endpoint_wait_ms": 3000.0,
+              "completion_reason": "bounded_incomplete"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 15443.272000004072,
+          "text": "Est-ce que vous",
+          "final": false,
+          "accepted": "Est-ce que vous",
+          "speech_epoch": 5
+        },
+        {
+          "at_ms": 15976.578500005417,
+          "text": "Est-ce que vous pouvez",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez",
+          "speech_epoch": 5
+        },
+        {
+          "at_ms": 16467.952583014267,
+          "text": "Est-ce que vous pouvez?",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez?",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 16859.14829201647,
+          "text": "Est-ce que vous pouvez?",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez?",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 17356.459958013147,
+          "text": "Est-ce que vous pouvez? Envoyer les",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez? Envoyer les",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 17791.55749999336,
+          "text": "Est-ce que vous pouvez? envoyer les détails sur",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez? envoyer les détails sur",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 18347.541291994276,
+          "text": "Est-ce que vous pouvez? envoyer les détails sur",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez? envoyer les détails sur",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 18815.761792007834,
+          "text": "Est-ce que vous pouvez? envoyer les détails sur",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez? envoyer les détails sur",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 19173.37887501344,
+          "text": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+          "final": true,
+          "accepted": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+          "speech_epoch": 6
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 14213.010917010251,
+          "speech_epoch": 5
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 15306.03562502074,
+          "elapsed_ms": 77.44641698081978,
+          "prediction": 0,
+          "probability": 0.09577557444572449
+        },
+        {
+          "at_ms": 15636.178458022187,
+          "elapsed_ms": 78.52229100535624,
+          "prediction": 0,
+          "probability": 0.4411926567554474
+        },
+        {
+          "at_ms": 17813.94837499829,
+          "elapsed_ms": 74.55279200803488,
+          "prediction": 0,
+          "probability": 0.009870380163192749
+        },
+        {
+          "at_ms": 17985.228250006912,
+          "elapsed_ms": 71.80562501889654,
+          "prediction": 0,
+          "probability": 0.020634442567825317
+        },
+        {
+          "at_ms": 19355.060917005176,
+          "elapsed_ms": 62.575000018114224,
+          "prediction": 0,
+          "probability": 0.02228793501853943
+        }
+      ],
+      "actual": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        2849.94416700094
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_negative",
+      "language": "fr-FR",
+      "expected": "Non, pas l'abonnement annuel.",
+      "noise_seed": 108,
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "5b88cbfa62a9f3f678d201cf906d2293c3d4d9b6e1a839e14b7a6193a6c703d5",
+      "level": "20",
+      "clipped_samples": 0,
+      "source_duration_ms": 1860.0,
+      "start_ms": 21281.91637501004,
+      "verifications": [
+        {
+          "at_ms": 23125.414667010773,
+          "text": "non",
+          "trusted": true,
+          "language_mode": "auto",
+          "audio_ms": 1220.0,
+          "audio_sha256": "21ff9bd9579a973fc2b09ad3b758a2651f33ed1327bf22e7c0580484583d7b51"
+        },
+        {
+          "at_ms": 24852.578292018734,
+          "text": "Non, pas l'abonnement annuel.",
+          "trusted": true,
+          "language_mode": "auto",
+          "audio_ms": 2720.0,
+          "audio_sha256": "29ddc6513a69a97f6ac72a177f42d47a0a4e74d490b20ad19a6538713a1efbbf"
+        }
+      ],
+      "commits": [
+        {
+          "at_ms": 24867.68625001423,
+          "text": "Non, pas l'abonnement annuel.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.8367360016944173,
+                "language": "fr",
+                "decode_ms": 1420.138583984226
+              },
+              "speech_epoch": 8,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150487222843000,
+              "committed_monotonic_ns": 150488966253125,
+              "endpoint_wait_ms": 1740.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 23280.829708004603,
+          "text": "Non, pas",
+          "final": false,
+          "accepted": "Non, pas",
+          "speech_epoch": 8
+        },
+        {
+          "at_ms": 23615.321332996245,
+          "text": "Non, pas l'abonnement",
+          "final": false,
+          "accepted": "Non, pas l'abonnement",
+          "speech_epoch": 8
+        },
+        {
+          "at_ms": 24104.122542019468,
+          "text": "Non, pas l'abonnement annuel.",
+          "final": false,
+          "accepted": "Non, pas l'abonnement annuel.",
+          "speech_epoch": 8
+        },
+        {
+          "at_ms": 24533.40833299444,
+          "text": "Non, pas l'abonnement annuel.",
+          "final": false,
+          "accepted": "Non, pas l'abonnement annuel.",
+          "speech_epoch": 8
+        },
+        {
+          "at_ms": 24647.73024999886,
+          "text": "Non, pas l'abonnement annuel.",
+          "final": true,
+          "accepted": "Non, pas l'abonnement annuel.",
+          "speech_epoch": 8
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 21425.307583005633,
+          "speech_epoch": 7
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 21953.91195800039,
+          "elapsed_ms": 69.20166697818786,
+          "prediction": 1,
+          "probability": 0.8547587990760803
+        },
+        {
+          "at_ms": 23459.427708003204,
+          "elapsed_ms": 75.8301249879878,
+          "prediction": 1,
+          "probability": 0.9255857467651367
+        },
+        {
+          "at_ms": 24103.43325001304,
+          "elapsed_ms": 374.5748749934137,
+          "prediction": 1,
+          "probability": 0.9685282111167908
+        },
+        {
+          "at_ms": 24338.213083014125,
+          "elapsed_ms": 100.85012501804158,
+          "prediction": 1,
+          "probability": 0.9808988571166992
+        },
+        {
+          "at_ms": 24845.763833000092,
+          "elapsed_ms": 84.71729198936373,
+          "prediction": 1,
+          "probability": 0.963354766368866
+        }
+      ],
+      "actual": "Non, pas l'abonnement annuel.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1725.769875004189
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_request",
+      "language": "fr-FR",
+      "expected": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+      "noise_seed": 106,
+      "continuation_ms": 1820.0,
+      "pause_ms": 900,
+      "source_sha256": "d22a411e5cf9ad4cd3613b4f380a76f2a8f41a6d2f91f8986a67c602797c76cc",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 3580.0,
+      "start_ms": 25641.316167020705,
+      "verifications": [
+        {
+          "at_ms": 27470.147582993377,
+          "text": "Est-ce que vous pouvez...",
+          "trusted": true,
+          "language_mode": "auto",
+          "audio_ms": 1780.0,
+          "audio_sha256": "fb96a503b0b9540aa4d7c9c45f3678dd2727f78782eb170d9b5e1b4e78e13775"
+        },
+        {
+          "at_ms": 28572.729833016638,
+          "text": "Est-ce que vous pouvez envoyer un message sur le site web ?",
+          "trusted": true,
+          "language_mode": "fr",
+          "audio_ms": 2860.0,
+          "audio_sha256": "f8840fe858bca85de6ac73c6444d06b00abdec3d0d29435279a0ff4b7ca11b5e"
+        },
+        {
+          "at_ms": 29875.905332999537,
+          "text": "Est-ce que vous pouvez envoyer les détails sur web ?",
+          "trusted": true,
+          "language_mode": "fr",
+          "audio_ms": 4300.0,
+          "audio_sha256": "56a78f4185750b3c3817d094cb3530e6ebbdd1cc614084ac092036b72f32e599"
+        }
+      ],
+      "commits": [
+        {
+          "at_ms": 32070.64958300907,
+          "text": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": false,
+              "corroboration": {
+                "reason": "transcript_disagreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.7401711671978238,
+                "language": "fr",
+                "decode_ms": 506.55716701294295
+              },
+              "speech_epoch": 11,
+              "provider_final": true,
+              "partial_confirmations": 3,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150493163039250,
+              "committed_monotonic_ns": 150496168866250,
+              "endpoint_wait_ms": 3000.0,
+              "completion_reason": "bounded_incomplete"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 27034.203957999125,
+          "text": "Est-ce que vous",
+          "final": false,
+          "accepted": "Est-ce que vous",
+          "speech_epoch": 9
+        },
+        {
+          "at_ms": 27589.670500019565,
+          "text": "Est-ce que vous pouvez",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez",
+          "speech_epoch": 10
+        },
+        {
+          "at_ms": 28077.55166699644,
+          "text": "Est-ce que vous pouvez?",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez?",
+          "speech_epoch": 10
+        },
+        {
+          "at_ms": 28526.844667008845,
+          "text": "Est-ce que vous pouvez?",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez?",
+          "speech_epoch": 11
+        },
+        {
+          "at_ms": 28947.09937501466,
+          "text": "Est-ce que vous pouvez? envoyer les",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez? envoyer les",
+          "speech_epoch": 11
+        },
+        {
+          "at_ms": 29460.982624994358,
+          "text": "Est-ce que vous pouvez? Envoyer les détails sur",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez? Envoyer les détails sur",
+          "speech_epoch": 11
+        },
+        {
+          "at_ms": 29987.71650000708,
+          "text": "Est-ce que vous pouvez? Envoyer les détails sur",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez? Envoyer les détails sur",
+          "speech_epoch": 11
+        },
+        {
+          "at_ms": 30443.923458020436,
+          "text": "Est-ce que vous pouvez? Envoyer les détails sur",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez? Envoyer les détails sur",
+          "speech_epoch": 11
+        },
+        {
+          "at_ms": 30732.612457999494,
+          "text": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+          "final": true,
+          "accepted": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+          "speech_epoch": 11
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 25763.304042018717,
+          "speech_epoch": 9
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 26853.09016701649,
+          "elapsed_ms": 72.5316249881871,
+          "prediction": 1,
+          "probability": 0.8896843194961548
+        },
+        {
+          "at_ms": 27213.963332993444,
+          "elapsed_ms": 59.27854200126603,
+          "prediction": 1,
+          "probability": 0.834087073802948
+        },
+        {
+          "at_ms": 27906.577000016114,
+          "elapsed_ms": 60.766292008338496,
+          "prediction": 0,
+          "probability": 0.17143553495407104
+        },
+        {
+          "at_ms": 29360.346208006376,
+          "elapsed_ms": 61.55112499254756,
+          "prediction": 0,
+          "probability": 0.009870380163192749
+        },
+        {
+          "at_ms": 29633.96662499872,
+          "elapsed_ms": 66.67912498232909,
+          "prediction": 0,
+          "probability": 0.044268637895584106
+        },
+        {
+          "at_ms": 30908.066208008677,
+          "elapsed_ms": 74.04725000378676,
+          "prediction": 0,
+          "probability": 0.013476967811584473
+        }
+      ],
+      "actual": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        2849.333415988367
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_negative",
+      "language": "fr-FR",
+      "expected": "Non, pas l'abonnement annuel.",
+      "noise_seed": 108,
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "5b88cbfa62a9f3f678d201cf906d2293c3d4d9b6e1a839e14b7a6193a6c703d5",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 1860.0,
+      "start_ms": 32834.90625000559,
+      "verifications": [
+        {
+          "at_ms": 34575.837292009965,
+          "text": "Non.",
+          "trusted": true,
+          "language_mode": "auto",
+          "audio_ms": 1120.0,
+          "audio_sha256": "44398e812f42c62371c4cebfc7a337c5db9b8d4faac07bcd178b92a68d9d0ae0"
+        },
+        {
+          "at_ms": 36485.40983299608,
+          "text": "Non, pas l'abonnement annuel.",
+          "trusted": true,
+          "language_mode": "auto",
+          "audio_ms": 2720.0,
+          "audio_sha256": "7bba6bf36910cc1a8108022fe1fd9c0045da4a0f42cfba96792c2e4dcb53ecf7"
+        }
+      ],
+      "commits": [
+        {
+          "at_ms": 36516.9055419974,
+          "text": "un abonnement annuel",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": false,
+              "corroboration": {
+                "reason": "transcript_disagreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.8130960952606806,
+                "language": "fr",
+                "decode_ms": 1502.2653749911115
+              },
+              "speech_epoch": 13,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150498777930458,
+              "committed_monotonic_ns": 150500615665541,
+              "endpoint_wait_ms": 1837.736,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 34569.483958010096,
+          "text": "11",
+          "final": false,
+          "accepted": "11",
+          "speech_epoch": 13
+        },
+        {
+          "at_ms": 35172.64779200195,
+          "text": "un abonnement",
+          "final": false,
+          "accepted": "un abonnement",
+          "speech_epoch": 13
+        },
+        {
+          "at_ms": 35646.224041993264,
+          "text": "un abonnement annuel",
+          "final": false,
+          "accepted": "un abonnement annuel",
+          "speech_epoch": 13
+        },
+        {
+          "at_ms": 36084.166250017006,
+          "text": "un abonnement annuel",
+          "final": false,
+          "accepted": "un abonnement annuel",
+          "speech_epoch": 13
+        },
+        {
+          "at_ms": 36128.399958019145,
+          "text": "un abonnement annuel",
+          "final": true,
+          "accepted": "un abonnement annuel",
+          "speech_epoch": 13
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 32977.0406250027,
+          "speech_epoch": 12
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 33391.43725001486,
+          "elapsed_ms": 78.42533400980756,
+          "prediction": 1,
+          "probability": 0.9685282111167908
+        },
+        {
+          "at_ms": 34953.64074999816,
+          "elapsed_ms": 56.952791986986995,
+          "prediction": 1,
+          "probability": 0.6788204908370972
+        },
+        {
+          "at_ms": 35643.8158749952,
+          "elapsed_ms": 346.50487499311566,
+          "prediction": 1,
+          "probability": 0.9228270053863525
+        },
+        {
+          "at_ms": 35829.46770801209,
+          "elapsed_ms": 70.09820800158195,
+          "prediction": 1,
+          "probability": 0.9816229343414307
+        },
+        {
+          "at_ms": 36305.74012501165,
+          "elapsed_ms": 68.23441700544208,
+          "prediction": 1,
+          "probability": 0.7987582683563232
+        }
+      ],
+      "actual": "un abonnement annuel",
+      "words_match": false,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1821.999291991815
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    }
+  ],
+  "errors": [],
+  "elapsed_seconds": 37.288750458013965
+}

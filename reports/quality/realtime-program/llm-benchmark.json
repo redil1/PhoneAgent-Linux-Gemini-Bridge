@@ -1,0 +1,284 @@
+{
+  "phase": "llm",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "repeats": 3,
+  "methodology": "Synthetic telephone-bandlimited 16kHz PCM, real providers; no calls/messages/microphone/speaker. Reference EOF simulates manual PTT. Metrics are observable arrival points, not perceived audio.",
+  "rows": [
+    {
+      "mode": "reference_short",
+      "trial": 0,
+      "elapsed_ms": 568.4538330096984,
+      "prompt_chars": null,
+      "response_words": 20,
+      "response": "If you are looking for something gripping, I highly recommend the suspenseful thriller Severance or the visually stunning epic Dune.",
+      "error": null,
+      "attempts": [
+        {
+          "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH",
+          "prompt_chars": 513,
+          "status": 200,
+          "elapsed_ms": 568.2686660002219
+        }
+      ]
+    },
+    {
+      "mode": "runtime_full",
+      "trial": 0,
+      "elapsed_ms": 930.4324169934262,
+      "prompt_chars": 34364,
+      "response_words": 48,
+      "response": "I’m Adam, the AI assistant with IPTV Shopping. It sounds like you're tired of paying for multiple services and still coming up short on content, so let me quickly search our latest plan options to see what fits best.\n\n<tool_call>{\"name\":\"business_search_catalog\",\"query\":\"IPTV subscription plans\"}</tool_call>",
+      "error": null,
+      "attempts": [
+        {
+          "type": "provider_latency",
+          "provider": "antigravity_gemini",
+          "operation": "response_complete",
+          "elapsed_ms": 930.343,
+          "monotonic_ns": 111565999417875,
+          "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH",
+          "attempt": 1,
+          "prompt_chars": 34364,
+          "response_chars": 309,
+          "streaming": false
+        }
+      ]
+    },
+    {
+      "mode": "runtime_compact",
+      "trial": 0,
+      "elapsed_ms": 4457.120624996605,
+      "prompt_chars": 40058,
+      "response_words": 23,
+      "response": "We combine live channels, sports, and on-demand movies into one setup so you stop searching across apps. What are you usually missing?",
+      "error": null,
+      "attempts": [
+        {
+          "type": "provider_latency",
+          "provider": "antigravity_gemini",
+          "operation": "attempt_failed",
+          "elapsed_ms": 206.027,
+          "monotonic_ns": 111566205914250,
+          "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH",
+          "attempt": 1,
+          "http_status": 400,
+          "error_type": "RuntimeError",
+          "prompt_chars": 40058
+        },
+        {
+          "type": "provider_latency",
+          "provider": "antigravity_gemini",
+          "operation": "attempt_failed",
+          "elapsed_ms": 137.107,
+          "monotonic_ns": 111566543272833,
+          "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH",
+          "attempt": 2,
+          "http_status": 400,
+          "error_type": "RuntimeError",
+          "prompt_chars": 40058
+        },
+        {
+          "type": "provider_latency",
+          "provider": "antigravity_gemini",
+          "operation": "response_complete",
+          "elapsed_ms": 3913.7,
+          "monotonic_ns": 111570456986041,
+          "model": "MODEL_PLACEHOLDER_M298",
+          "attempt": 1,
+          "prompt_chars": 40058,
+          "response_chars": 134,
+          "streaming": false
+        }
+      ]
+    },
+    {
+      "mode": "reference_wire_full",
+      "trial": 0,
+      "elapsed_ms": 759.5045410125749,
+      "prompt_chars": 34364,
+      "response_words": 50,
+      "response": "Hi, I’m Adam, the AI assistant with IPTV Shopping. Since you’re still missing what you want to watch despite your current setup, we provide access to over 18,000 live channels and 35,000 movies and series. Are you currently using a specific device to stream your content?",
+      "error": null,
+      "attempts": [
+        {
+          "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH",
+          "prompt_chars": 34364,
+          "status": 200,
+          "elapsed_ms": 759.3213329964783
+        }
+      ]
+    },
+    {
+      "mode": "runtime_full",
+      "trial": 1,
+      "elapsed_ms": 756.8266670132289,
+      "prompt_chars": 34364,
+      "response_words": 53,
+      "response": "I'm Adam, the AI assistant with IPTV Shopping. Since you’re still missing content despite what you're paying, we specialize in a simpler, all-in-one setup that pulls thousands of live channels and on-demand movies into one place. Are you currently using a Firestick or a Smart TV for your streaming?",
+      "error": null,
+      "attempts": [
+        {
+          "type": "provider_latency",
+          "provider": "antigravity_gemini",
+          "operation": "response_complete",
+          "elapsed_ms": 756.797,
+          "monotonic_ns": 111571974205166,
+          "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH",
+          "attempt": 1,
+          "prompt_chars": 34364,
+          "response_chars": 299,
+          "streaming": false
+        }
+      ]
+    },
+    {
+      "mode": "runtime_compact",
+      "trial": 1,
+      "elapsed_ms": 1048.2347080105683,
+      "prompt_chars": 40058,
+      "response_words": 41,
+      "response": "I'm Adam, the AI assistant with IPTV Shopping. We offer three plans—starting at twenty-five dollars for three months—that provide access to thousands of channels, movies, and series in one simple setup. What do you usually watch most often?",
+      "error": null,
+      "attempts": [
+        {
+          "type": "provider_latency",
+          "provider": "antigravity_gemini",
+          "operation": "attempt_failed",
+          "elapsed_ms": 120.399,
+          "monotonic_ns": 111572095226000,
+          "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH",
+          "attempt": 1,
+          "http_status": 400,
+          "error_type": "RuntimeError",
+          "prompt_chars": 40058
+        },
+        {
+          "type": "provider_latency",
+          "provider": "antigravity_gemini",
+          "operation": "response_complete",
+          "elapsed_ms": 726.727,
+          "monotonic_ns": 111573023040625,
+          "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH",
+          "attempt": 2,
+          "prompt_chars": 40058,
+          "response_chars": 240,
+          "streaming": false
+        }
+      ]
+    },
+    {
+      "mode": "reference_wire_full",
+      "trial": 1,
+      "elapsed_ms": 696.0690830019303,
+      "prompt_chars": 34364,
+      "response_words": 49,
+      "response": "I’m Adam, the AI assistant with IPTV Shopping. Since you’re still missing content despite what you're paying, we specialize in a simpler digital setup with over 18,000 live channels and 35,000 titles. Are you looking to replace your current service or just add more variety?",
+      "error": null,
+      "attempts": [
+        {
+          "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH",
+          "prompt_chars": 34364,
+          "status": 200,
+          "elapsed_ms": 695.9367499948712
+        }
+      ]
+    },
+    {
+      "mode": "reference_short",
+      "trial": 1,
+      "elapsed_ms": 570.7968339993386,
+      "prompt_chars": null,
+      "response_words": 22,
+      "response": "If you like gripping thrillers, try Severance on Apple TV, or check out The Bear on Hulu for intense, high-energy drama.",
+      "error": null,
+      "attempts": [
+        {
+          "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH",
+          "prompt_chars": 513,
+          "status": 200,
+          "elapsed_ms": 570.6103330012411
+        }
+      ]
+    },
+    {
+      "mode": "runtime_compact",
+      "trial": 2,
+      "elapsed_ms": 655.2806250110734,
+      "prompt_chars": 40058,
+      "response_words": 41,
+      "response": "I’m Adam, the AI assistant with IPTV Shopping. We offer three simple plans—starting at twenty-five dollars for three months—that consolidate thousands of channels and titles into one single subscription. What content are you currently struggling to find?",
+      "error": null,
+      "attempts": [
+        {
+          "type": "provider_latency",
+          "provider": "antigravity_gemini",
+          "operation": "response_complete",
+          "elapsed_ms": 655.257,
+          "monotonic_ns": 111574946702791,
+          "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH",
+          "attempt": 1,
+          "prompt_chars": 40058,
+          "response_chars": 254,
+          "streaming": false
+        }
+      ]
+    },
+    {
+      "mode": "reference_wire_full",
+      "trial": 2,
+      "elapsed_ms": 793.7717089953367,
+      "prompt_chars": 34364,
+      "response_words": 56,
+      "response": "I’m Adam, the AI assistant with IPTV Shopping. It sounds like you're tired of piecing together different apps and still missing content. We provide a single, simplified service with access to 18,000 live channels and 35,000 movies and shows, starting at 25 dollars for 3 months. Does that sound like the right direction?",
+      "error": null,
+      "attempts": [
+        {
+          "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH",
+          "prompt_chars": 34364,
+          "status": 200,
+          "elapsed_ms": 793.5745830036467
+        }
+      ]
+    },
+    {
+      "mode": "reference_short",
+      "trial": 2,
+      "elapsed_ms": 546.0789589997148,
+      "prompt_chars": null,
+      "response_words": 21,
+      "response": "If you are in the mood for a thriller, try Severance, or if you want something lighter, check out Ted Lasso.",
+      "error": null,
+      "attempts": [
+        {
+          "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH",
+          "prompt_chars": 513,
+          "status": 200,
+          "elapsed_ms": 545.938915995066
+        }
+      ]
+    },
+    {
+      "mode": "runtime_full",
+      "trial": 2,
+      "elapsed_ms": 931.3819170056377,
+      "prompt_chars": 34364,
+      "response_words": 53,
+      "response": "I'm Adam, the AI assistant with IPTV Shopping. We provide a single digital subscription that brings over 18,000 live channels and 35,000 movies and shows into one setup. Are you looking to keep your costs down with a shorter plan, or do you prefer the best value for the full year?",
+      "error": null,
+      "attempts": [
+        {
+          "type": "provider_latency",
+          "provider": "antigravity_gemini",
+          "operation": "response_complete",
+          "elapsed_ms": 931.359,
+          "monotonic_ns": 111577219528041,
+          "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH",
+          "attempt": 1,
+          "prompt_chars": 34364,
+          "response_chars": 281,
+          "streaming": false
+        }
+      ]
+    }
+  ]
+}

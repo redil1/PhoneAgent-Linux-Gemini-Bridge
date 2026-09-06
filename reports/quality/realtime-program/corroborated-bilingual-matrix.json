@@ -1,0 +1,4761 @@
+{
+  "scope": "Paced continuous EN/FR endpoint matrix, real cloud ASR; no call or tool effects.\n\nNoise is deterministic stationary 300-3400 Hz noise, not recorded café/echo audio.\nSource EOF is used for measurement only and never passed to the turn controller.\n",
+  "initial_language": "en-US",
+  "local_corroboration": true,
+  "rows": [
+    {
+      "case": "en_preference",
+      "language": "en-US",
+      "expected": "I prefer movies and series.",
+      "continuation_ms": 1640.0,
+      "pause_ms": 900,
+      "source_sha256": "7cd3a9942aa6963b575804a8624f08557eb67db6ebf505b776437a4b3c873ec0",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 2840.0,
+      "start_ms": 2762.2093749814667,
+      "commits": [
+        {
+          "at_ms": 7197.514249972301,
+          "text": "I prefer movies and series.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.7512038386055584,
+                "language": "en",
+                "decode_ms": 322.76287500280887
+              },
+              "speech_epoch": 2,
+              "provider_final": true,
+              "partial_confirmations": 1,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150200797225458,
+              "committed_monotonic_ns": 150202411783125,
+              "endpoint_wait_ms": 1600.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 3808.7016659846995,
+          "text": "I",
+          "final": false,
+          "accepted": "I",
+          "speech_epoch": 1
+        },
+        {
+          "at_ms": 4332.729124987964,
+          "text": "I prefer",
+          "final": false,
+          "accepted": "I prefer",
+          "speech_epoch": 1
+        },
+        {
+          "at_ms": 4856.354957999429,
+          "text": "I prefer.",
+          "final": false,
+          "accepted": "I prefer.",
+          "speech_epoch": 2
+        },
+        {
+          "at_ms": 5150.646957976278,
+          "text": "I prefer",
+          "final": false,
+          "accepted": "I prefer",
+          "speech_epoch": 2
+        },
+        {
+          "at_ms": 5625.535999977728,
+          "text": "I prefer movies and",
+          "final": false,
+          "accepted": "I prefer movies and",
+          "speech_epoch": 2
+        },
+        {
+          "at_ms": 6210.36220798851,
+          "text": "I prefer movies and series",
+          "final": false,
+          "accepted": "I prefer movies and series",
+          "speech_epoch": 2
+        },
+        {
+          "at_ms": 6637.889624980744,
+          "text": "I prefer movies and series.",
+          "final": false,
+          "accepted": "I prefer movies and series.",
+          "speech_epoch": 2
+        },
+        {
+          "at_ms": 7020.134665974183,
+          "text": "I prefer movies and series.",
+          "final": true,
+          "accepted": "I prefer movies and series.",
+          "speech_epoch": 2
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 2903.708915982861,
+          "speech_epoch": 1
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 3756.8528749980032,
+          "elapsed_ms": 69.59358300082386,
+          "prediction": 1,
+          "probability": 0.9719371795654297
+        },
+        {
+          "at_ms": 4018.9752079895698,
+          "elapsed_ms": 67.4447909987066,
+          "prediction": 1,
+          "probability": 0.975929319858551
+        },
+        {
+          "at_ms": 4492.762707988732,
+          "elapsed_ms": 57.19045799924061,
+          "prediction": 1,
+          "probability": 0.9308329224586487
+        },
+        {
+          "at_ms": 5885.487290972378,
+          "elapsed_ms": 79.32087499648333,
+          "prediction": 1,
+          "probability": 0.9685282111167908
+        },
+        {
+          "at_ms": 6387.780624994775,
+          "elapsed_ms": 63.06533300084993,
+          "prediction": 1,
+          "probability": 0.9808988571166992
+        },
+        {
+          "at_ms": 6816.329415974906,
+          "elapsed_ms": 72.7081660006661,
+          "prediction": 1,
+          "probability": 0.9829913973808289
+        },
+        {
+          "at_ms": 7192.163040977903,
+          "elapsed_ms": 64.9033329973463,
+          "prediction": 1,
+          "probability": 0.9836374521255493
+        }
+      ],
+      "actual": "I prefer movies and series.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1595.304874990834
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_preference",
+      "language": "fr-FR",
+      "expected": "Je préfère les films et les séries.",
+      "continuation_ms": 2180.0,
+      "pause_ms": 1200,
+      "source_sha256": "76f3be6c5a9e180af3b72ebbbf68c083bc58c67e187c56c129b55c895a95f4b3",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 3340.0,
+      "start_ms": 7965.827207983239,
+      "commits": [
+        {
+          "at_ms": 12528.705999982776,
+          "text": "Je préfère.les films et les séries",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.8398844114671952,
+                "language": "fr",
+                "decode_ms": 322.3227919952478
+              },
+              "speech_epoch": 4,
+              "provider_final": false,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150206501832416,
+              "committed_monotonic_ns": 150207742958208,
+              "endpoint_wait_ms": 1240.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 9314.145999989705,
+          "text": "Je",
+          "final": false,
+          "accepted": "Je",
+          "speech_epoch": 3
+        },
+        {
+          "at_ms": 9827.013957983581,
+          "text": "Je préfère.",
+          "final": false,
+          "accepted": "Je préfère.",
+          "speech_epoch": 3
+        },
+        {
+          "at_ms": 10433.312040986493,
+          "text": "Je préfère.",
+          "final": false,
+          "accepted": "Je préfère.",
+          "speech_epoch": 4
+        },
+        {
+          "at_ms": 10624.00354098645,
+          "text": "Je préfère.",
+          "final": true,
+          "accepted": "Je préfère.",
+          "speech_epoch": 4
+        },
+        {
+          "at_ms": 10970.817207999062,
+          "text": "Je préfère.Les",
+          "final": false,
+          "accepted": "Je préfère.Les",
+          "speech_epoch": 4
+        },
+        {
+          "at_ms": 11406.126332993153,
+          "text": "Je préfère.Les films et",
+          "final": false,
+          "accepted": "Je préfère.Les films et",
+          "speech_epoch": 4
+        },
+        {
+          "at_ms": 11809.804958000313,
+          "text": "Je préfère.les films et les séries",
+          "final": false,
+          "accepted": "Je préfère.les films et les séries",
+          "speech_epoch": 4
+        },
+        {
+          "at_ms": 12418.866583000636,
+          "text": "Je préfère.les films et les séries",
+          "final": false,
+          "accepted": "Je préfère.les films et les séries",
+          "speech_epoch": 4
+        },
+        {
+          "at_ms": 12838.536499999464,
+          "text": "Je préfère.les films et les séries",
+          "final": false,
+          "accepted": "",
+          "speech_epoch": 4
+        },
+        {
+          "at_ms": 13043.74512497452,
+          "text": "les films et les séries",
+          "final": true,
+          "accepted": "",
+          "speech_epoch": 4
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 8188.139790989226,
+          "speech_epoch": 3
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 9178.554582991637,
+          "elapsed_ms": 70.24733300204389,
+          "prediction": 1,
+          "probability": 0.509845495223999
+        },
+        {
+          "at_ms": 9882.893624977442,
+          "elapsed_ms": 453.4191249986179,
+          "prediction": 1,
+          "probability": 0.7280358076095581
+        },
+        {
+          "at_ms": 10008.867582975654,
+          "elapsed_ms": 77.87649999954738,
+          "prediction": 1,
+          "probability": 0.8547587990760803
+        },
+        {
+          "at_ms": 11577.280249999603,
+          "elapsed_ms": 64.03237499762326,
+          "prediction": 1,
+          "probability": 0.8111233115196228
+        },
+        {
+          "at_ms": 12015.385165985208,
+          "elapsed_ms": 68.150750012137,
+          "prediction": 1,
+          "probability": 0.9673051834106445
+        }
+      ],
+      "actual": "Je préfère.les films et les séries",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1222.8787919995375
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_correction",
+      "language": "en-US",
+      "expected": "Actually, I want the six month plan.",
+      "continuation_ms": 1460.0,
+      "pause_ms": 800,
+      "source_sha256": "59c5506bae2bc024c57093b2db902682b9e2529923f74d063eda5f7e626ea80d",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 3040.0,
+      "start_ms": 13289.784707973013,
+      "commits": [
+        {
+          "at_ms": 18084.107249975204,
+          "text": "I want the six-month plan.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6537556038691178,
+                "language": "en",
+                "decode_ms": 322.4054170132149
+              },
+              "speech_epoch": 6,
+              "provider_final": true,
+              "partial_confirmations": 1,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150211485972708,
+              "committed_monotonic_ns": 150213297997916,
+              "endpoint_wait_ms": 1800.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 14649.950124992756,
+          "text": "Actually,",
+          "final": false,
+          "accepted": "Actually,",
+          "speech_epoch": 5
+        },
+        {
+          "at_ms": 15090.329082973767,
+          "text": "Actually",
+          "final": false,
+          "accepted": "Actually",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 15560.053332999814,
+          "text": "Actually,",
+          "final": false,
+          "accepted": "Actually,",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 16019.123915990349,
+          "text": "Actually, I want the",
+          "final": false,
+          "accepted": "Actually, I want the",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 16490.12941599358,
+          "text": "Actually, I want the six month",
+          "final": false,
+          "accepted": "Actually, I want the six month",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 17054.30424999213,
+          "text": "Actually, I want the six month plan.",
+          "final": false,
+          "accepted": "Actually, I want the six month plan.",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 17502.402165991953,
+          "text": "Actually, I want the 6-month plan.",
+          "final": false,
+          "accepted": "Actually, I want the 6-month plan.",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 17878.09974999982,
+          "text": "I want the six-month plan.",
+          "final": true,
+          "accepted": "I want the six-month plan.",
+          "speech_epoch": 6
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 13451.776165980846,
+          "speech_epoch": 5
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 14225.13091599103,
+          "elapsed_ms": 69.454583019251,
+          "prediction": 1,
+          "probability": 0.9445840716362
+        },
+        {
+          "at_ms": 14838.973332982277,
+          "elapsed_ms": 86.99279100983404,
+          "prediction": 1,
+          "probability": 0.9357357025146484
+        },
+        {
+          "at_ms": 16666.336082998896,
+          "elapsed_ms": 71.00804199581034,
+          "prediction": 1,
+          "probability": 0.9619386196136475
+        },
+        {
+          "at_ms": 17250.200499984203,
+          "elapsed_ms": 75.87066601263359,
+          "prediction": 1,
+          "probability": 0.9424859285354614
+        },
+        {
+          "at_ms": 17681.626374978805,
+          "elapsed_ms": 74.89950000308454,
+          "prediction": 1,
+          "probability": 0.7722399234771729
+        },
+        {
+          "at_ms": 18065.99783297861,
+          "elapsed_ms": 74.09241699497215,
+          "prediction": 1,
+          "probability": 0.91398024559021
+        }
+      ],
+      "actual": "I want the six-month plan.",
+      "words_match": false,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1754.3225420021918
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_correction",
+      "language": "fr-FR",
+      "expected": "En fait, je voudrais le forfait de six mois.",
+      "continuation_ms": 1540.0,
+      "pause_ms": 900,
+      "source_sha256": "96f340b5c6f8cd813cbd461dfbca4834e39c8f5a405a0980b959df36872cfbfd",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 3480.0,
+      "start_ms": 18853.44583299593,
+      "commits": [
+        {
+          "at_ms": 25339.31595797185,
+          "text": "En fait, je voudrais le forfait de 6 mois.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.8714353693602802,
+                "language": "fr",
+                "decode_ms": 353.68916697916575
+              },
+              "speech_epoch": 8,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150217549346291,
+              "committed_monotonic_ns": 150220553551791,
+              "endpoint_wait_ms": 3000.0,
+              "completion_reason": "bounded_incomplete"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 20212.14724998572,
+          "text": "En fait,",
+          "final": false,
+          "accepted": "En fait,",
+          "speech_epoch": 7
+        },
+        {
+          "at_ms": 20647.62354097911,
+          "text": "en fait",
+          "final": false,
+          "accepted": "en fait",
+          "speech_epoch": 8
+        },
+        {
+          "at_ms": 21124.65337497997,
+          "text": "En fait.",
+          "final": false,
+          "accepted": "En fait.",
+          "speech_epoch": 8
+        },
+        {
+          "at_ms": 21634.164249990135,
+          "text": "En fait. Je voudrais",
+          "final": false,
+          "accepted": "En fait. Je voudrais",
+          "speech_epoch": 8
+        },
+        {
+          "at_ms": 22158.601874980377,
+          "text": "En fait. Je voudrais le",
+          "final": false,
+          "accepted": "En fait. Je voudrais le",
+          "speech_epoch": 8
+        },
+        {
+          "at_ms": 22684.221832983894,
+          "text": "En fait. Je voudrais le forfait de",
+          "final": false,
+          "accepted": "En fait. Je voudrais le forfait de",
+          "speech_epoch": 8
+        },
+        {
+          "at_ms": 23062.51933297608,
+          "text": "En fait. Je voudrais le forfait de 6 mois.",
+          "final": false,
+          "accepted": "En fait. Je voudrais le forfait de 6 mois.",
+          "speech_epoch": 8
+        },
+        {
+          "at_ms": 23504.542749986285,
+          "text": "En fait. Je voudrais le forfait de 6 mois.",
+          "final": false,
+          "accepted": "En fait. Je voudrais le forfait de 6 mois.",
+          "speech_epoch": 8
+        },
+        {
+          "at_ms": 24058.56545799179,
+          "text": "En fait, je voudrais le forfait de 6 mois.",
+          "final": true,
+          "accepted": "En fait, je voudrais le forfait de 6 mois.",
+          "speech_epoch": 8
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 19057.366415974684,
+          "speech_epoch": 7
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 19596.634499990614,
+          "elapsed_ms": 73.05074998294003,
+          "prediction": 1,
+          "probability": 0.8394662141799927
+        },
+        {
+          "at_ms": 20372.33233297593,
+          "elapsed_ms": 57.49999999534339,
+          "prediction": 1,
+          "probability": 0.9660363793373108
+        },
+        {
+          "at_ms": 22646.230915997876,
+          "elapsed_ms": 74.68195899855345,
+          "prediction": 0,
+          "probability": 0.013476967811584473
+        },
+        {
+          "at_ms": 22864.477124996483,
+          "elapsed_ms": 71.52174998191185,
+          "prediction": 0,
+          "probability": 0.024070680141448975
+        },
+        {
+          "at_ms": 23224.32562499307,
+          "elapsed_ms": 57.86337499739602,
+          "prediction": 0,
+          "probability": 0.019853323698043823
+        },
+        {
+          "at_ms": 24217.92899997672,
+          "elapsed_ms": 56.975040992256254,
+          "prediction": 0,
+          "probability": 0.4803165793418884
+        }
+      ],
+      "actual": "En fait, je voudrais le forfait de 6 mois.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        3005.870124975918
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_request",
+      "language": "en-US",
+      "expected": "Could you send the details on WhatsApp?",
+      "continuation_ms": 1150.0,
+      "pause_ms": 650,
+      "source_sha256": "0a7cccabea736f82d52e030f7edce0ce10080fcb18e08554daef51207fc0d50e",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 2840.0,
+      "start_ms": 26096.328665997135,
+      "commits": [
+        {
+          "at_ms": 30777.25662497687,
+          "text": "Could you send the details on WhatsApp?",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.7033861476686032,
+                "language": "en",
+                "decode_ms": 329.6762910031248
+              },
+              "speech_epoch": 10,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150224072788541,
+              "committed_monotonic_ns": 150225991525750,
+              "endpoint_wait_ms": 1900.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 27497.738499980187,
+          "text": "Could you",
+          "final": false,
+          "accepted": "Could you",
+          "speech_epoch": 10
+        },
+        {
+          "at_ms": 27996.232374978717,
+          "text": "Could you?",
+          "final": false,
+          "accepted": "Could you?",
+          "speech_epoch": 10
+        },
+        {
+          "at_ms": 28450.01424997463,
+          "text": "Could you send the",
+          "final": false,
+          "accepted": "Could you send the",
+          "speech_epoch": 10
+        },
+        {
+          "at_ms": 29064.748790988233,
+          "text": "Could you send the details",
+          "final": false,
+          "accepted": "Could you send the details",
+          "speech_epoch": 10
+        },
+        {
+          "at_ms": 29499.496624979656,
+          "text": "Could you send the details on",
+          "final": false,
+          "accepted": "Could you send the details on",
+          "speech_epoch": 10
+        },
+        {
+          "at_ms": 30021.706749976147,
+          "text": "Could you send the details on WhatsApp?",
+          "final": false,
+          "accepted": "Could you send the details on WhatsApp?",
+          "speech_epoch": 10
+        },
+        {
+          "at_ms": 30376.481499988586,
+          "text": "Could you send the details on WhatsApp?",
+          "final": false,
+          "accepted": "Could you send the details on WhatsApp?",
+          "speech_epoch": 10
+        },
+        {
+          "at_ms": 30584.019290981814,
+          "text": "Could you send the details on WhatsApp?",
+          "final": true,
+          "accepted": "Could you send the details on WhatsApp?",
+          "speech_epoch": 10
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 26278.512790973764,
+          "speech_epoch": 9
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 26885.21845798823,
+          "elapsed_ms": 74.98954099719413,
+          "prediction": 1,
+          "probability": 0.9604700207710266
+        },
+        {
+          "at_ms": 29251.683290989604,
+          "elapsed_ms": 79.73858300829306,
+          "prediction": 0,
+          "probability": 0.3655349016189575
+        },
+        {
+          "at_ms": 29686.220374976983,
+          "elapsed_ms": 67.90341599844396,
+          "prediction": 1,
+          "probability": 0.9522762298583984
+        },
+        {
+          "at_ms": 30198.917582980357,
+          "elapsed_ms": 59.71383300493471,
+          "prediction": 1,
+          "probability": 0.9540347456932068
+        },
+        {
+          "at_ms": 30768.92799997586,
+          "elapsed_ms": 79.06916600768454,
+          "prediction": 1,
+          "probability": 0.9647200703620911
+        }
+      ],
+      "actual": "Could you send the details on WhatsApp?",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1840.927958979737
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_request",
+      "language": "fr-FR",
+      "expected": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+      "continuation_ms": 1820.0,
+      "pause_ms": 900,
+      "source_sha256": "d22a411e5cf9ad4cd3613b4f380a76f2a8f41a6d2f91f8986a67c602797c76cc",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 3580.0,
+      "start_ms": 31541.22020798968,
+      "commits": [
+        {
+          "at_ms": 38064.69766597729,
+          "text": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": false,
+              "corroboration": {
+                "reason": "transcript_disagreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6925898107938236,
+                "language": "fr",
+                "decode_ms": 563.3053339843173
+              },
+              "speech_epoch": 12,
+              "provider_final": true,
+              "partial_confirmations": 1,
+              "partial_confirmed": false,
+              "speech_end_monotonic_ns": 150230278186708,
+              "committed_monotonic_ns": 150233278981833,
+              "endpoint_wait_ms": 3000.0,
+              "completion_reason": "bounded_incomplete"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 32713.198790996103,
+          "text": "Est-ce que vous",
+          "final": false,
+          "accepted": "Est-ce que vous",
+          "speech_epoch": 11
+        },
+        {
+          "at_ms": 33174.88362497534,
+          "text": "Est-ce que vous pouvez",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez",
+          "speech_epoch": 11
+        },
+        {
+          "at_ms": 33728.54220797308,
+          "text": "Est-ce que vous pouvez?",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez?",
+          "speech_epoch": 12
+        },
+        {
+          "at_ms": 34216.17979099392,
+          "text": "Est-ce que vous pouvez?",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez?",
+          "speech_epoch": 12
+        },
+        {
+          "at_ms": 34644.64712498011,
+          "text": "Est-ce que vous pouvez? envoyer les",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez? envoyer les",
+          "speech_epoch": 12
+        },
+        {
+          "at_ms": 35111.90862499643,
+          "text": "Est-ce que vous pouvez? envoyer les détails sur",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez? envoyer les détails sur",
+          "speech_epoch": 12
+        },
+        {
+          "at_ms": 35580.5100829748,
+          "text": "Est-ce que vous pouvez? envoyer les détails sur",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez? envoyer les détails sur",
+          "speech_epoch": 12
+        },
+        {
+          "at_ms": 36137.561707990244,
+          "text": "Est-ce que vous pouvez? envoyer les détails sur WhatsApp?",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez? envoyer les détails sur WhatsApp?",
+          "speech_epoch": 12
+        },
+        {
+          "at_ms": 36729.739707981935,
+          "text": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+          "final": true,
+          "accepted": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+          "speech_epoch": 12
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 31704.455207975116,
+          "speech_epoch": 11
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 32747.8824579739,
+          "elapsed_ms": 74.40745798521675,
+          "prediction": 0,
+          "probability": 0.3839901089668274
+        },
+        {
+          "at_ms": 32896.30570798181,
+          "elapsed_ms": 77.81158402212895,
+          "prediction": 0,
+          "probability": 0.47049394249916077
+        },
+        {
+          "at_ms": 33350.633082998684,
+          "elapsed_ms": 67.14945897692814,
+          "prediction": 1,
+          "probability": 0.834087073802948
+        },
+        {
+          "at_ms": 35362.64174999087,
+          "elapsed_ms": 75.33608298399486,
+          "prediction": 0,
+          "probability": 0.02316257357597351
+        },
+        {
+          "at_ms": 36358.241957990685,
+          "elapsed_ms": 113.22716702125035,
+          "prediction": 0,
+          "probability": 0.03952997922897339
+        },
+        {
+          "at_ms": 36916.69099999126,
+          "elapsed_ms": 70.05766598740593,
+          "prediction": 0,
+          "probability": 0.03664523363113403
+        }
+      ],
+      "actual": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        2943.4774579876103
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_negative",
+      "language": "en-US",
+      "expected": "No, not the yearly plan.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "8bef835fb3fcda69ca47c8dc74ebde19c67214c661cad580f926abd41415a1c7",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 1800.0,
+      "start_ms": 38825.76562499162,
+      "commits": [
+        {
+          "at_ms": 42253.87179097743,
+          "text": "No, not the yearly plan.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6834255846722903,
+                "language": "en",
+                "decode_ms": 565.0695830117911
+              },
+              "speech_epoch": 14,
+              "provider_final": true,
+              "partial_confirmations": 1,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150235801379791,
+              "committed_monotonic_ns": 150237468157250,
+              "endpoint_wait_ms": 1660.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 40146.770665975055,
+          "text": "No,",
+          "final": false,
+          "accepted": "No,",
+          "speech_epoch": 14
+        },
+        {
+          "at_ms": 40612.30929099838,
+          "text": "No, not the year",
+          "final": false,
+          "accepted": "No, not the year",
+          "speech_epoch": 14
+        },
+        {
+          "at_ms": 41053.650082991226,
+          "text": "No, not the yearly",
+          "final": false,
+          "accepted": "No, not the yearly",
+          "speech_epoch": 14
+        },
+        {
+          "at_ms": 41560.128290992,
+          "text": "No, not the yearly plan.",
+          "final": false,
+          "accepted": "No, not the yearly plan.",
+          "speech_epoch": 14
+        },
+        {
+          "at_ms": 42081.409249978606,
+          "text": "No, not the yearly plan.",
+          "final": true,
+          "accepted": "No, not the yearly plan.",
+          "speech_epoch": 14
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 39009.51145798899,
+          "speech_epoch": 13
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 39500.49841598957,
+          "elapsed_ms": 72.2234160057269,
+          "prediction": 1,
+          "probability": 0.8896843194961548
+        },
+        {
+          "at_ms": 40883.83516599424,
+          "elapsed_ms": 66.41129098716192,
+          "prediction": 1,
+          "probability": 0.9884648323059082
+        },
+        {
+          "at_ms": 41516.097457992146,
+          "elapsed_ms": 354.2689159803558,
+          "prediction": 1,
+          "probability": 0.978554368019104
+        },
+        {
+          "at_ms": 41745.31158298487,
+          "elapsed_ms": 69.13787499070168,
+          "prediction": 1,
+          "probability": 0.9801466464996338
+        },
+        {
+          "at_ms": 42253.47662498825,
+          "elapsed_ms": 68.8535840017721,
+          "prediction": 1,
+          "probability": 0.9801466464996338
+        }
+      ],
+      "actual": "No, not the yearly plan.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1628.1061659858096
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_negative",
+      "language": "fr-FR",
+      "expected": "Non, pas l'abonnement annuel.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "5b88cbfa62a9f3f678d201cf906d2293c3d4d9b6e1a839e14b7a6193a6c703d5",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 1860.0,
+      "start_ms": 43008.87087499723,
+      "commits": [
+        {
+          "at_ms": 46536.89041599864,
+          "text": "Non, pas l'abonnement annuel.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.8632494266749091,
+                "language": "fr",
+                "decode_ms": 1204.7963330114726
+              },
+              "speech_epoch": 16,
+              "provider_final": true,
+              "partial_confirmations": 3,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150240045819916,
+              "committed_monotonic_ns": 150241751176000,
+              "endpoint_wait_ms": 1700.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 44248.36166598834,
+          "text": "Non,",
+          "final": false,
+          "accepted": "Non,",
+          "speech_epoch": 16
+        },
+        {
+          "at_ms": 44812.10379098775,
+          "text": "Non, pas",
+          "final": false,
+          "accepted": "Non, pas",
+          "speech_epoch": 16
+        },
+        {
+          "at_ms": 45267.36233299016,
+          "text": "Non, pas l'abonnement annuel.",
+          "final": false,
+          "accepted": "Non, pas l'abonnement annuel.",
+          "speech_epoch": 16
+        },
+        {
+          "at_ms": 45751.04995799484,
+          "text": "Non, pas l'abonnement annuel.",
+          "final": false,
+          "accepted": "Non, pas l'abonnement annuel.",
+          "speech_epoch": 16
+        },
+        {
+          "at_ms": 46176.92808297579,
+          "text": "Non, pas l'abonnement annuel.",
+          "final": false,
+          "accepted": "Non, pas l'abonnement annuel.",
+          "speech_epoch": 16
+        },
+        {
+          "at_ms": 46338.33112497814,
+          "text": "Non, pas l'abonnement annuel.",
+          "final": true,
+          "accepted": "Non, pas l'abonnement annuel.",
+          "speech_epoch": 16
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 43172.734207997564,
+          "speech_epoch": 15
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 43664.17774997535,
+          "elapsed_ms": 65.67174999509007,
+          "prediction": 1,
+          "probability": 0.7580885291099548
+        },
+        {
+          "at_ms": 45168.007415981265,
+          "elapsed_ms": 104.00575000676326,
+          "prediction": 1,
+          "probability": 0.9403132200241089
+        },
+        {
+          "at_ms": 45605.61112497817,
+          "elapsed_ms": 236.74208301235922,
+          "prediction": 1,
+          "probability": 0.9740077257156372
+        },
+        {
+          "at_ms": 46513.43483297387,
+          "elapsed_ms": 58.15224998514168,
+          "prediction": 1,
+          "probability": 0.9540347456932068
+        }
+      ],
+      "actual": "Non, pas l'abonnement annuel.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1668.019541001413
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_yes_1",
+      "language": "en-US",
+      "expected": "Yes, please.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "f371edfdeb1e4588ba53cd9b48ec0afb652f27bbfea81468cf2415ade99abfee",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 1160.0,
+      "start_ms": 47293.18779098685,
+      "commits": [
+        {
+          "at_ms": 49693.14029099769,
+          "text": "Yes, please.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6187752027109251,
+                "language": "en",
+                "decode_ms": 598.7514999869745
+              },
+              "speech_epoch": 18,
+              "provider_final": false,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150243648598166,
+              "committed_monotonic_ns": 150244907412750,
+              "endpoint_wait_ms": 1240.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 48493.49299998721,
+          "text": "Yes,",
+          "final": false,
+          "accepted": "Yes,",
+          "speech_epoch": 18
+        },
+        {
+          "at_ms": 49040.3319579782,
+          "text": "Yes, please.",
+          "final": false,
+          "accepted": "Yes, please.",
+          "speech_epoch": 18
+        },
+        {
+          "at_ms": 49506.498874980025,
+          "text": "Yes, please.",
+          "final": false,
+          "accepted": "Yes, please.",
+          "speech_epoch": 18
+        },
+        {
+          "at_ms": 49952.740415988956,
+          "text": "Yes, please.",
+          "final": true,
+          "accepted": "",
+          "speech_epoch": 18
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 47418.44879099517,
+          "speech_epoch": 17
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 48096.9950829749,
+          "elapsed_ms": 80.85804199799895,
+          "prediction": 1,
+          "probability": 0.7357640266418457
+        },
+        {
+          "at_ms": 48722.26733298157,
+          "elapsed_ms": 66.65241598966531,
+          "prediction": 1,
+          "probability": 0.9075815677642822
+        },
+        {
+          "at_ms": 49234.95808299049,
+          "elapsed_ms": 82.95604199520312,
+          "prediction": 1,
+          "probability": 0.9823201894760132
+        }
+      ],
+      "actual": "Yes, please.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1239.9525000108406
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_yes_2",
+      "language": "en-US",
+      "expected": "Yes, please.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "f371edfdeb1e4588ba53cd9b48ec0afb652f27bbfea81468cf2415ade99abfee",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 1160.0,
+      "start_ms": 50459.254916000646,
+      "commits": [
+        {
+          "at_ms": 52954.49204099714,
+          "text": "Yes, please.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6213288477362826,
+                "language": "en",
+                "decode_ms": 602.0429579948541
+              },
+              "speech_epoch": 20,
+              "provider_final": false,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150246814037208,
+              "committed_monotonic_ns": 150248168213583,
+              "endpoint_wait_ms": 1340.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 51717.82979098498,
+          "text": "Yes.",
+          "final": false,
+          "accepted": "Yes.",
+          "speech_epoch": 20
+        },
+        {
+          "at_ms": 52290.26729098405,
+          "text": "Yes, please.",
+          "final": false,
+          "accepted": "Yes, please.",
+          "speech_epoch": 20
+        },
+        {
+          "at_ms": 52745.8526249975,
+          "text": "Yes, please.",
+          "final": false,
+          "accepted": "Yes, please.",
+          "speech_epoch": 20
+        },
+        {
+          "at_ms": 53121.406665974064,
+          "text": "Yes, please.",
+          "final": true,
+          "accepted": "",
+          "speech_epoch": 20
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 50602.68354098662,
+          "speech_epoch": 19
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 51200.669290992664,
+          "elapsed_ms": 59.29937501787208,
+          "prediction": 1,
+          "probability": 0.5588073134422302
+        },
+        {
+          "at_ms": 51902.513082983205,
+          "elapsed_ms": 75.7972499995958,
+          "prediction": 1,
+          "probability": 0.9075815677642822
+        },
+        {
+          "at_ms": 52485.72045797482,
+          "elapsed_ms": 82.54008300718851,
+          "prediction": 1,
+          "probability": 0.9777120351791382
+        }
+      ],
+      "actual": "Yes, please.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1335.2371249964926
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_yes_1",
+      "language": "fr-FR",
+      "expected": "Oui, s'il vous plaît.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "9d6af4d960f2e5bbfb241f20e77bf3cc97edb8f3a9e67ba1c9acdb179eb4106c",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 1380.0,
+      "start_ms": 53726.574540982256,
+      "commits": [
+        {
+          "at_ms": 56986.16704097367,
+          "text": "Oui, s'il vous plaît.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6967339496105233,
+                "language": "fr",
+                "decode_ms": 1387.56766699953
+              },
+              "speech_epoch": 22,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150250305203208,
+              "committed_monotonic_ns": 150252198455125,
+              "endpoint_wait_ms": 1880.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 55189.72287498764,
+          "text": "Oui.",
+          "final": false,
+          "accepted": "Oui.",
+          "speech_epoch": 22
+        },
+        {
+          "at_ms": 55562.82833300065,
+          "text": "Oui, s'il vous",
+          "final": false,
+          "accepted": "Oui, s'il vous",
+          "speech_epoch": 22
+        },
+        {
+          "at_ms": 56020.27545799501,
+          "text": "Oui, s'il vous plaît.",
+          "final": false,
+          "accepted": "Oui, s'il vous plaît.",
+          "speech_epoch": 22
+        },
+        {
+          "at_ms": 56587.98262497294,
+          "text": "Oui, s'il vous plaît.",
+          "final": false,
+          "accepted": "Oui, s'il vous plaît.",
+          "speech_epoch": 22
+        },
+        {
+          "at_ms": 56766.242540994426,
+          "text": "Oui, s'il vous plaît.",
+          "final": true,
+          "accepted": "Oui, s'il vous plaît.",
+          "speech_epoch": 22
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 53990.48012497951,
+          "speech_epoch": 21
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 54357.77174998657,
+          "elapsed_ms": 69.26629101508297,
+          "prediction": 0,
+          "probability": 0.23476183414459229
+        },
+        {
+          "at_ms": 55393.47233297303,
+          "elapsed_ms": 67.53187498543411,
+          "prediction": 1,
+          "probability": 0.9485659599304199
+        },
+        {
+          "at_ms": 55926.2115409947,
+          "elapsed_ms": 247.0597909996286,
+          "prediction": 1,
+          "probability": 0.9660363793373108
+        },
+        {
+          "at_ms": 56200.498207996134,
+          "elapsed_ms": 72.8360409848392,
+          "prediction": 1,
+          "probability": 0.9816229343414307
+        },
+        {
+          "at_ms": 56960.30299999984,
+          "elapsed_ms": 77.88079199963249,
+          "prediction": 1,
+          "probability": 0.9697068929672241
+        }
+      ],
+      "actual": "Oui, s'il vous plaît.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1879.5924999914132
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_yes_2",
+      "language": "fr-FR",
+      "expected": "Oui, s'il vous plaît.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "9d6af4d960f2e5bbfb241f20e77bf3cc97edb8f3a9e67ba1c9acdb179eb4106c",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 1380.0,
+      "start_ms": 57757.70670798374,
+      "commits": [
+        {
+          "at_ms": 60669.42654098966,
+          "text": "Oui, s'il vous plaît.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6974617994948621,
+                "language": "fr",
+                "decode_ms": 607.1771249989979
+              },
+              "speech_epoch": 23,
+              "provider_final": false,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150254352990166,
+              "committed_monotonic_ns": 150255883648000,
+              "endpoint_wait_ms": 1520.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 59084.31799997925,
+          "text": "Oui.",
+          "final": false,
+          "accepted": "Oui.",
+          "speech_epoch": 23
+        },
+        {
+          "at_ms": 59552.276415983215,
+          "text": "Oui, s'il vous",
+          "final": false,
+          "accepted": "Oui, s'il vous",
+          "speech_epoch": 23
+        },
+        {
+          "at_ms": 60004.11724997684,
+          "text": "Oui, s'il vous plaît.",
+          "final": false,
+          "accepted": "Oui, s'il vous plaît.",
+          "speech_epoch": 23
+        },
+        {
+          "at_ms": 60553.59508297988,
+          "text": "Oui, s'il vous plaît.",
+          "final": false,
+          "accepted": "Oui, s'il vous plaît.",
+          "speech_epoch": 23
+        },
+        {
+          "at_ms": 60816.62412500009,
+          "text": "Oui, s'il vous plaît.",
+          "final": true,
+          "accepted": "",
+          "speech_epoch": 23
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 58578.90841597691,
+          "speech_epoch": 23
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 59439.25983298686,
+          "elapsed_ms": 76.93958299933001,
+          "prediction": 1,
+          "probability": 0.9673051834106445
+        },
+        {
+          "at_ms": 59735.8018749801,
+          "elapsed_ms": 64.8383749939967,
+          "prediction": 1,
+          "probability": 0.9685282111167908
+        },
+        {
+          "at_ms": 60181.283874990186,
+          "elapsed_ms": 64.23641601577401,
+          "prediction": 1,
+          "probability": 0.9749865531921387
+        }
+      ],
+      "actual": "Oui, s'il vous plaît.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1531.7198330059182
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_preference",
+      "language": "en-US",
+      "expected": "I prefer movies and series.",
+      "continuation_ms": 1640.0,
+      "pause_ms": 900,
+      "source_sha256": "7cd3a9942aa6963b575804a8624f08557eb67db6ebf505b776437a4b3c873ec0",
+      "level": "20",
+      "clipped_samples": 0,
+      "source_duration_ms": 2840.0,
+      "start_ms": 61456.76083298167,
+      "commits": [
+        {
+          "at_ms": 65839.71545798704,
+          "text": "I prefer. movies and series.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.7094327391467623,
+                "language": "en",
+                "decode_ms": 620.6621250021271
+              },
+              "speech_epoch": 25,
+              "provider_final": false,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150259452544500,
+              "committed_monotonic_ns": 150261053962625,
+              "endpoint_wait_ms": 1600.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 62281.06958299759,
+          "text": "I",
+          "final": false,
+          "accepted": "I",
+          "speech_epoch": 24
+        },
+        {
+          "at_ms": 62717.24791597808,
+          "text": "I",
+          "final": false,
+          "accepted": "I",
+          "speech_epoch": 24
+        },
+        {
+          "at_ms": 63308.527957997285,
+          "text": "I prefer",
+          "final": false,
+          "accepted": "I prefer",
+          "speech_epoch": 25
+        },
+        {
+          "at_ms": 63807.9582079954,
+          "text": "I prefer.",
+          "final": false,
+          "accepted": "I prefer.",
+          "speech_epoch": 25
+        },
+        {
+          "at_ms": 64188.206832972355,
+          "text": "I prefer. movies",
+          "final": false,
+          "accepted": "I prefer. movies",
+          "speech_epoch": 25
+        },
+        {
+          "at_ms": 64711.48849997553,
+          "text": "I prefer. Movies and",
+          "final": false,
+          "accepted": "I prefer. Movies and",
+          "speech_epoch": 25
+        },
+        {
+          "at_ms": 65154.791124979965,
+          "text": "I prefer. movies and series.",
+          "final": false,
+          "accepted": "I prefer. movies and series.",
+          "speech_epoch": 25
+        },
+        {
+          "at_ms": 65712.9128749948,
+          "text": "I prefer. movies and series.",
+          "final": false,
+          "accepted": "I prefer. movies and series.",
+          "speech_epoch": 25
+        },
+        {
+          "at_ms": 65843.50116597489,
+          "text": "I prefer movies and series.",
+          "final": true,
+          "accepted": "",
+          "speech_epoch": 25
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 61638.72599997558,
+          "speech_epoch": 24
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 62449.19595797546,
+          "elapsed_ms": 66.46766699850559,
+          "prediction": 1,
+          "probability": 0.9729918241500854
+        },
+        {
+          "at_ms": 64540.04566598451,
+          "elapsed_ms": 75.78866698895581,
+          "prediction": 1,
+          "probability": 0.9829913973808289
+        },
+        {
+          "at_ms": 64879.69962498755,
+          "elapsed_ms": 55.9953750052955,
+          "prediction": 1,
+          "probability": 0.9870367050170898
+        },
+        {
+          "at_ms": 65343.841333000455,
+          "elapsed_ms": 69.27799998084083,
+          "prediction": 1,
+          "probability": 0.9880069494247437
+        }
+      ],
+      "actual": "I prefer. movies and series.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1542.9546250053681
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_preference",
+      "language": "fr-FR",
+      "expected": "Je préfère les films et les séries.",
+      "continuation_ms": 2180.0,
+      "pause_ms": 1200,
+      "source_sha256": "76f3be6c5a9e180af3b72ebbbf68c083bc58c67e187c56c129b55c895a95f4b3",
+      "level": "20",
+      "clipped_samples": 0,
+      "source_duration_ms": 3340.0,
+      "start_ms": 66609.96349999914,
+      "commits": [
+        {
+          "at_ms": 71340.79137499793,
+          "text": "Je préfère.les films et les séries",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.8428611726754341,
+                "language": "fr",
+                "decode_ms": 333.9541250024922
+              },
+              "speech_epoch": 27,
+              "provider_final": false,
+              "partial_confirmations": 1,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150265145407333,
+              "committed_monotonic_ns": 150266554620541,
+              "endpoint_wait_ms": 1400.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 68042.16045798967,
+          "text": "Je",
+          "final": false,
+          "accepted": "Je",
+          "speech_epoch": 26
+        },
+        {
+          "at_ms": 68363.63929099753,
+          "text": "Je préfère.",
+          "final": false,
+          "accepted": "Je préfère.",
+          "speech_epoch": 26
+        },
+        {
+          "at_ms": 68975.143165997,
+          "text": "Je préfère.",
+          "final": false,
+          "accepted": "Je préfère.",
+          "speech_epoch": 27
+        },
+        {
+          "at_ms": 69759.11020798958,
+          "text": "Je préfère.",
+          "final": false,
+          "accepted": "Je préfère.",
+          "speech_epoch": 27
+        },
+        {
+          "at_ms": 70242.32662498252,
+          "text": "Je préfère.Les films et",
+          "final": false,
+          "accepted": "Je préfère.Les films et",
+          "speech_epoch": 27
+        },
+        {
+          "at_ms": 70685.35495799733,
+          "text": "Je préfère.les films et les séries",
+          "final": false,
+          "accepted": "Je préfère.les films et les séries",
+          "speech_epoch": 27
+        },
+        {
+          "at_ms": 71347.91791599127,
+          "text": "Je préfère.les films et les séries",
+          "final": false,
+          "accepted": "",
+          "speech_epoch": 27
+        },
+        {
+          "at_ms": 71747.12241598172,
+          "text": "Je préfère.les films et les séries",
+          "final": true,
+          "accepted": "",
+          "speech_epoch": 27
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 66752.13337497553,
+          "speech_epoch": 26
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 67887.25216599414,
+          "elapsed_ms": 75.40091700502671,
+          "prediction": 1,
+          "probability": 0.9199748635292053
+        },
+        {
+          "at_ms": 68234.83758297516,
+          "elapsed_ms": 73.70787500985898,
+          "prediction": 1,
+          "probability": 0.9619386196136475
+        },
+        {
+          "at_ms": 68530.2703329944,
+          "elapsed_ms": 54.75562499486841,
+          "prediction": 1,
+          "probability": 0.8857588768005371
+        },
+        {
+          "at_ms": 70246.6403329745,
+          "elapsed_ms": 94.82370800105855,
+          "prediction": 1,
+          "probability": 0.7652381658554077
+        },
+        {
+          "at_ms": 70429.27354099811,
+          "elapsed_ms": 77.61983401724137,
+          "prediction": 1,
+          "probability": 0.9557313919067383
+        },
+        {
+          "at_ms": 70842.19920798205,
+          "elapsed_ms": 56.29708300693892,
+          "prediction": 1,
+          "probability": 0.9740077257156372
+        }
+      ],
+      "actual": "Je préfère.les films et les séries",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1390.8278749987949
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_correction",
+      "language": "en-US",
+      "expected": "Actually, I want the six month plan.",
+      "continuation_ms": 1460.0,
+      "pause_ms": 800,
+      "source_sha256": "59c5506bae2bc024c57093b2db902682b9e2529923f74d063eda5f7e626ea80d",
+      "level": "20",
+      "clipped_samples": 0,
+      "source_duration_ms": 3040.0,
+      "start_ms": 72123.67033297778,
+      "commits": [
+        {
+          "at_ms": 78130.6117909844,
+          "text": "Actually, I want the six-month plan.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6539093875864198,
+                "language": "en",
+                "decode_ms": 356.68512497795746
+              },
+              "speech_epoch": 29,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150270339786583,
+              "committed_monotonic_ns": 150273344593750,
+              "endpoint_wait_ms": 3000.0,
+              "completion_reason": "bounded_incomplete"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 73675.93095797929,
+          "text": "Actually,",
+          "final": false,
+          "accepted": "Actually,",
+          "speech_epoch": 28
+        },
+        {
+          "at_ms": 74137.56170799024,
+          "text": "Actually",
+          "final": false,
+          "accepted": "Actually",
+          "speech_epoch": 29
+        },
+        {
+          "at_ms": 74586.6526249738,
+          "text": "Actually, I",
+          "final": false,
+          "accepted": "Actually, I",
+          "speech_epoch": 29
+        },
+        {
+          "at_ms": 75005.60474998201,
+          "text": "Actually, I want the",
+          "final": false,
+          "accepted": "Actually, I want the",
+          "speech_epoch": 29
+        },
+        {
+          "at_ms": 75636.17929097381,
+          "text": "Actually, I want the six month",
+          "final": false,
+          "accepted": "Actually, I want the six month",
+          "speech_epoch": 29
+        },
+        {
+          "at_ms": 76056.99870799435,
+          "text": "Actually, I want the 6-month plan.",
+          "final": false,
+          "accepted": "Actually, I want the 6-month plan.",
+          "speech_epoch": 29
+        },
+        {
+          "at_ms": 76503.58562497422,
+          "text": "Actually, I want the 6-month plan.",
+          "final": false,
+          "accepted": "Actually, I want the 6-month plan.",
+          "speech_epoch": 29
+        },
+        {
+          "at_ms": 76872.98270798055,
+          "text": "Actually, I want the six-month plan.",
+          "final": true,
+          "accepted": "Actually, I want the six-month plan.",
+          "speech_epoch": 29
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 72265.7618749945,
+          "speech_epoch": 28
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 73084.02541599935,
+          "elapsed_ms": 64.96720798895694,
+          "prediction": 1,
+          "probability": 0.95045405626297
+        },
+        {
+          "at_ms": 75440.83087498439,
+          "elapsed_ms": 76.31904201116413,
+          "prediction": 1,
+          "probability": 0.6525336503982544
+        },
+        {
+          "at_ms": 75811.43154099118,
+          "elapsed_ms": 62.31529201613739,
+          "prediction": 0,
+          "probability": 0.22776007652282715
+        },
+        {
+          "at_ms": 76226.95179097354,
+          "elapsed_ms": 61.100332997739315,
+          "prediction": 0,
+          "probability": 0.42187100648880005
+        },
+        {
+          "at_ms": 77043.7937079987,
+          "elapsed_ms": 69.66979199205525,
+          "prediction": 0,
+          "probability": 0.09577557444572449
+        }
+      ],
+      "actual": "Actually, I want the six-month plan.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        2966.9414580066223
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_correction",
+      "language": "fr-FR",
+      "expected": "En fait, je voudrais le forfait de six mois.",
+      "continuation_ms": 1540.0,
+      "pause_ms": 900,
+      "source_sha256": "96f340b5c6f8cd813cbd461dfbca4834e39c8f5a405a0980b959df36872cfbfd",
+      "level": "20",
+      "clipped_samples": 0,
+      "source_duration_ms": 3480.0,
+      "start_ms": 78904.59091597586,
+      "commits": [
+        {
+          "at_ms": 85381.63908297429,
+          "text": "En fait, je voudrais le forfait de 6 mois.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.8822515565242011,
+                "language": "fr",
+                "decode_ms": 334.85141600249335
+              },
+              "speech_epoch": 31,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150277582584750,
+              "committed_monotonic_ns": 150280595888416,
+              "endpoint_wait_ms": 3000.0,
+              "completion_reason": "bounded_incomplete"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 80100.82687498652,
+          "text": "En fait,",
+          "final": false,
+          "accepted": "En fait,",
+          "speech_epoch": 30
+        },
+        {
+          "at_ms": 80777.66079097637,
+          "text": "En fait,",
+          "final": false,
+          "accepted": "En fait,",
+          "speech_epoch": 31
+        },
+        {
+          "at_ms": 81149.2254579789,
+          "text": "En fait.",
+          "final": false,
+          "accepted": "En fait.",
+          "speech_epoch": 31
+        },
+        {
+          "at_ms": 81559.88470799639,
+          "text": "En fait. Je voudrais",
+          "final": false,
+          "accepted": "En fait. Je voudrais",
+          "speech_epoch": 31
+        },
+        {
+          "at_ms": 82017.18941598665,
+          "text": "En fait. Je voudrais le",
+          "final": false,
+          "accepted": "En fait. Je voudrais le",
+          "speech_epoch": 31
+        },
+        {
+          "at_ms": 82496.63587499526,
+          "text": "En fait. Je voudrais le forfait de",
+          "final": false,
+          "accepted": "En fait. Je voudrais le forfait de",
+          "speech_epoch": 31
+        },
+        {
+          "at_ms": 83068.54566599941,
+          "text": "En fait. Je voudrais le forfait de 6 mois.",
+          "final": false,
+          "accepted": "En fait. Je voudrais le forfait de 6 mois.",
+          "speech_epoch": 31
+        },
+        {
+          "at_ms": 83514.7168749827,
+          "text": "En fait. Je voudrais le forfait de 6 mois.",
+          "final": false,
+          "accepted": "En fait. Je voudrais le forfait de 6 mois.",
+          "speech_epoch": 31
+        },
+        {
+          "at_ms": 84193.61879097414,
+          "text": "En fait, je voudrais le forfait de 6 mois.",
+          "final": true,
+          "accepted": "En fait, je voudrais le forfait de 6 mois.",
+          "speech_epoch": 31
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 79028.56537498883,
+          "speech_epoch": 30
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 79756.34174997685,
+          "elapsed_ms": 64.207916992018,
+          "prediction": 1,
+          "probability": 0.6873466372489929
+        },
+        {
+          "at_ms": 80455.40095798788,
+          "elapsed_ms": 252.38995798281394,
+          "prediction": 1,
+          "probability": 0.8547587990760803
+        },
+        {
+          "at_ms": 82669.50308298692,
+          "elapsed_ms": 72.66533400979824,
+          "prediction": 0,
+          "probability": 0.1142410933971405
+        },
+        {
+          "at_ms": 83251.3804579794,
+          "elapsed_ms": 63.22070799069479,
+          "prediction": 0,
+          "probability": 0.03147178888320923
+        },
+        {
+          "at_ms": 84376.2571659754,
+          "elapsed_ms": 67.93241697596386,
+          "prediction": 0,
+          "probability": 0.165912926197052
+        }
+      ],
+      "actual": "En fait, je voudrais le forfait de 6 mois.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        2997.048166998429
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_request",
+      "language": "en-US",
+      "expected": "Could you send the details on WhatsApp?",
+      "continuation_ms": 1150.0,
+      "pause_ms": 650,
+      "source_sha256": "0a7cccabea736f82d52e030f7edce0ce10080fcb18e08554daef51207fc0d50e",
+      "level": "20",
+      "clipped_samples": 0,
+      "source_duration_ms": 2840.0,
+      "start_ms": 86167.2236249724,
+      "commits": [
+        {
+          "at_ms": 90638.94016598351,
+          "text": "Could you send the details on WhatsApp?",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.7257816919365092,
+                "language": "en",
+                "decode_ms": 388.0204579909332
+              },
+              "speech_epoch": 33,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150284141995083,
+              "committed_monotonic_ns": 150285853055541,
+              "endpoint_wait_ms": 1700.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 87171.20204097591,
+          "text": "Could",
+          "final": false,
+          "accepted": "Could",
+          "speech_epoch": 32
+        },
+        {
+          "at_ms": 87549.4922910002,
+          "text": "Could you",
+          "final": false,
+          "accepted": "Could you",
+          "speech_epoch": 32
+        },
+        {
+          "at_ms": 88036.59312499803,
+          "text": "Could you",
+          "final": false,
+          "accepted": "Could you",
+          "speech_epoch": 33
+        },
+        {
+          "at_ms": 88395.12770797592,
+          "text": "Could you send the",
+          "final": false,
+          "accepted": "Could you send the",
+          "speech_epoch": 33
+        },
+        {
+          "at_ms": 89000.23399997735,
+          "text": "Could you send the details",
+          "final": false,
+          "accepted": "Could you send the details",
+          "speech_epoch": 33
+        },
+        {
+          "at_ms": 89416.55683299177,
+          "text": "Could you send the details on",
+          "final": false,
+          "accepted": "Could you send the details on",
+          "speech_epoch": 33
+        },
+        {
+          "at_ms": 89892.35804099008,
+          "text": "Could you send the details on WhatsApp?",
+          "final": false,
+          "accepted": "Could you send the details on WhatsApp?",
+          "speech_epoch": 33
+        },
+        {
+          "at_ms": 90375.18741597887,
+          "text": "Could you send the details on WhatsApp?",
+          "final": false,
+          "accepted": "Could you send the details on WhatsApp?",
+          "speech_epoch": 33
+        },
+        {
+          "at_ms": 90458.24379098485,
+          "text": "Could you send the details on WhatsApp?",
+          "final": true,
+          "accepted": "Could you send the details on WhatsApp?",
+          "speech_epoch": 33
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 86330.34458299517,
+          "speech_epoch": 32
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 86954.57545798854,
+          "elapsed_ms": 60.94366702018306,
+          "prediction": 1,
+          "probability": 0.9880069494247437
+        },
+        {
+          "at_ms": 87612.05591598991,
+          "elapsed_ms": 280.71895899483934,
+          "prediction": 1,
+          "probability": 0.9897372126579285
+        },
+        {
+          "at_ms": 89217.11279099691,
+          "elapsed_ms": 63.843917014310136,
+          "prediction": 0,
+          "probability": 0.11031565070152283
+        },
+        {
+          "at_ms": 89593.32758298842,
+          "elapsed_ms": 67.43558301241137,
+          "prediction": 1,
+          "probability": 0.8547587990760803
+        },
+        {
+          "at_ms": 90067.57966597797,
+          "elapsed_ms": 64.66066598659381,
+          "prediction": 1,
+          "probability": 0.7040206789970398
+        },
+        {
+          "at_ms": 90637.27095798822,
+          "elapsed_ms": 67.58216602611355,
+          "prediction": 1,
+          "probability": 0.8394662141799927
+        }
+      ],
+      "actual": "Could you send the details on WhatsApp?",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1631.7165410111193
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_request",
+      "language": "fr-FR",
+      "expected": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+      "continuation_ms": 1820.0,
+      "pause_ms": 900,
+      "source_sha256": "d22a411e5cf9ad4cd3613b4f380a76f2a8f41a6d2f91f8986a67c602797c76cc",
+      "level": "20",
+      "clipped_samples": 0,
+      "source_duration_ms": 3580.0,
+      "start_ms": 91425.22620799718,
+      "commits": [
+        {
+          "at_ms": 98048.70029099402,
+          "text": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": false,
+              "corroboration": {
+                "reason": "transcript_disagreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.702759882074751,
+                "language": "fr",
+                "decode_ms": 338.1626670015976
+              },
+              "speech_epoch": 35,
+              "provider_final": true,
+              "partial_confirmations": 3,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150290179934041,
+              "committed_monotonic_ns": 150293262719458,
+              "endpoint_wait_ms": 3080.0,
+              "completion_reason": "bounded_incomplete"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 92766.21141599026,
+          "text": "Est-ce que vous",
+          "final": false,
+          "accepted": "Est-ce que vous",
+          "speech_epoch": 34
+        },
+        {
+          "at_ms": 93250.47487497795,
+          "text": "Est-ce que vous pouvez",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez",
+          "speech_epoch": 34
+        },
+        {
+          "at_ms": 93709.0327909973,
+          "text": "Est-ce que vous pouvez?",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez?",
+          "speech_epoch": 35
+        },
+        {
+          "at_ms": 94133.38337498135,
+          "text": "Est-ce que vous pouvez?",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez?",
+          "speech_epoch": 35
+        },
+        {
+          "at_ms": 94576.44954099669,
+          "text": "Est-ce que vous pouvez? envoyer les",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez? envoyer les",
+          "speech_epoch": 35
+        },
+        {
+          "at_ms": 95165.39370798273,
+          "text": "Est-ce que vous pouvez? envoyer les détails sur",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez? envoyer les détails sur",
+          "speech_epoch": 35
+        },
+        {
+          "at_ms": 95609.86579098972,
+          "text": "Est-ce que vous pouvez? envoyer les détails sur",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez? envoyer les détails sur",
+          "speech_epoch": 35
+        },
+        {
+          "at_ms": 96100.06470797816,
+          "text": "Est-ce que vous pouvez? envoyer les détails sur",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez? envoyer les détails sur",
+          "speech_epoch": 35
+        },
+        {
+          "at_ms": 96772.63495797524,
+          "text": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+          "final": true,
+          "accepted": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+          "speech_epoch": 35
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 91588.35558299324,
+          "speech_epoch": 34
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 92630.1940829726,
+          "elapsed_ms": 70.98420799593441,
+          "prediction": 0,
+          "probability": 0.03664523363113403
+        },
+        {
+          "at_ms": 92938.29733299208,
+          "elapsed_ms": 53.555708000203595,
+          "prediction": 0,
+          "probability": 0.40278559923171997
+        },
+        {
+          "at_ms": 95353.81366597721,
+          "elapsed_ms": 85.02487497753464,
+          "prediction": 0,
+          "probability": 0.01514175534248352
+        },
+        {
+          "at_ms": 96949.91954098805,
+          "elapsed_ms": 67.75133300106972,
+          "prediction": 0,
+          "probability": 0.30425208806991577
+        }
+      ],
+      "actual": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        3043.474082996836
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_negative",
+      "language": "en-US",
+      "expected": "No, not the yearly plan.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "8bef835fb3fcda69ca47c8dc74ebde19c67214c661cad580f926abd41415a1c7",
+      "level": "20",
+      "clipped_samples": 0,
+      "source_duration_ms": 1800.0,
+      "start_ms": 98820.6051659945,
+      "commits": [
+        {
+          "at_ms": 102305.33708297298,
+          "text": "No, not the yearly plan.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6723762632750035,
+                "language": "en",
+                "decode_ms": 584.4272079993971
+              },
+              "speech_epoch": 37,
+              "provider_final": false,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150295796094875,
+              "committed_monotonic_ns": 150297519438458,
+              "endpoint_wait_ms": 1720.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 100150.4745829734,
+          "text": "No",
+          "final": false,
+          "accepted": "No",
+          "speech_epoch": 37
+        },
+        {
+          "at_ms": 100572.20766597311,
+          "text": "No, not the year",
+          "final": false,
+          "accepted": "No, not the year",
+          "speech_epoch": 37
+        },
+        {
+          "at_ms": 101038.40608298196,
+          "text": "No, not the yearly",
+          "final": false,
+          "accepted": "No, not the yearly",
+          "speech_epoch": 37
+        },
+        {
+          "at_ms": 101604.65216598823,
+          "text": "No, not the yearly plan.",
+          "final": false,
+          "accepted": "No, not the yearly plan.",
+          "speech_epoch": 37
+        },
+        {
+          "at_ms": 102046.26987499068,
+          "text": "No, not the yearly plan.",
+          "final": false,
+          "accepted": "No, not the yearly plan.",
+          "speech_epoch": 37
+        },
+        {
+          "at_ms": 102532.6087079884,
+          "text": "No, not the yearly plan.",
+          "final": true,
+          "accepted": "",
+          "speech_epoch": 37
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 98925.62495797756,
+          "speech_epoch": 36
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 100871.2205409829,
+          "elapsed_ms": 67.56312499055639,
+          "prediction": 1,
+          "probability": 0.9836374521255493
+        },
+        {
+          "at_ms": 101523.96433299873,
+          "elapsed_ms": 331.2882079917472,
+          "prediction": 1,
+          "probability": 0.9793655872344971
+        },
+        {
+          "at_ms": 101782.83958300017,
+          "elapsed_ms": 63.9885839773342,
+          "prediction": 1,
+          "probability": 0.9557313919067383
+        }
+      ],
+      "actual": "No, not the yearly plan.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1684.7319169784896
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_negative",
+      "language": "fr-FR",
+      "expected": "Non, pas l'abonnement annuel.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "5b88cbfa62a9f3f678d201cf906d2293c3d4d9b6e1a839e14b7a6193a6c703d5",
+      "level": "20",
+      "clipped_samples": 0,
+      "source_duration_ms": 1860.0,
+      "start_ms": 103079.16762499372,
+      "commits": [
+        {
+          "at_ms": 106806.63383298088,
+          "text": "Non, pas l'abonnement annuel.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.8542722792227536,
+                "language": "fr",
+                "decode_ms": 611.7852909956127
+              },
+              "speech_epoch": 38,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150300135260375,
+              "committed_monotonic_ns": 150302020922416,
+              "endpoint_wait_ms": 1880.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 104363.3908329939,
+          "text": "No.",
+          "final": false,
+          "accepted": "No.",
+          "speech_epoch": 38
+        },
+        {
+          "at_ms": 104799.40570797771,
+          "text": "Non. Pas la",
+          "final": false,
+          "accepted": "Non. Pas la",
+          "speech_epoch": 38
+        },
+        {
+          "at_ms": 105641.78654097486,
+          "text": "Non, pas l'abonnement",
+          "final": false,
+          "accepted": "Non, pas l'abonnement",
+          "speech_epoch": 38
+        },
+        {
+          "at_ms": 105945.05208299961,
+          "text": "Non, pas l'abonnement annuel.",
+          "final": false,
+          "accepted": "Non, pas l'abonnement annuel.",
+          "speech_epoch": 38
+        },
+        {
+          "at_ms": 106279.43962498102,
+          "text": "Non, pas l'abonnement annuel.",
+          "final": false,
+          "accepted": "Non, pas l'abonnement annuel.",
+          "speech_epoch": 38
+        },
+        {
+          "at_ms": 106627.00799998129,
+          "text": "Non, pas l'abonnement annuel.",
+          "final": true,
+          "accepted": "Non, pas l'abonnement annuel.",
+          "speech_epoch": 38
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 103902.16099997633,
+          "speech_epoch": 38
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 105222.15037498972,
+          "elapsed_ms": 66.00854097632691,
+          "prediction": 1,
+          "probability": 0.91398024559021
+        },
+        {
+          "at_ms": 105877.91333298082,
+          "elapsed_ms": 127.96754200826399,
+          "prediction": 1,
+          "probability": 0.963354766368866
+        },
+        {
+          "at_ms": 106112.05916598556,
+          "elapsed_ms": 56.24812500900589,
+          "prediction": 1,
+          "probability": 0.9749865531921387
+        },
+        {
+          "at_ms": 106806.23695798567,
+          "elapsed_ms": 70.02650000504218,
+          "prediction": 1,
+          "probability": 0.9333261251449585
+        }
+      ],
+      "actual": "Non, pas l'abonnement annuel.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1867.4662079871632
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_yes_1",
+      "language": "en-US",
+      "expected": "Yes, please.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "f371edfdeb1e4588ba53cd9b48ec0afb652f27bbfea81468cf2415ade99abfee",
+      "level": "20",
+      "clipped_samples": 0,
+      "source_duration_ms": 1160.0,
+      "start_ms": 107573.00945799216,
+      "commits": [
+        {
+          "at_ms": 109871.10104097519,
+          "text": "Yes, please.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.5903016438293652,
+                "language": "en",
+                "decode_ms": 596.3656250096392
+              },
+              "speech_epoch": 40,
+              "provider_final": false,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150303909230250,
+              "committed_monotonic_ns": 150305085302416,
+              "endpoint_wait_ms": 1160.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 108788.30841599847,
+          "text": "Yes.",
+          "final": false,
+          "accepted": "Yes.",
+          "speech_epoch": 40
+        },
+        {
+          "at_ms": 109211.72799999476,
+          "text": "Yes, please.",
+          "final": false,
+          "accepted": "Yes, please.",
+          "speech_epoch": 40
+        },
+        {
+          "at_ms": 109816.49404097698,
+          "text": "Yes, please.",
+          "final": false,
+          "accepted": "Yes, please.",
+          "speech_epoch": 40
+        },
+        {
+          "at_ms": 110240.05462499917,
+          "text": "Yes, please.",
+          "final": true,
+          "accepted": "",
+          "speech_epoch": 40
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 107735.94849999063,
+          "speech_epoch": 39
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 108324.89124999847,
+          "elapsed_ms": 70.10295797954313,
+          "prediction": 1,
+          "probability": 0.970842719078064
+        },
+        {
+          "at_ms": 109004.58524998976,
+          "elapsed_ms": 69.65208298061043,
+          "prediction": 1,
+          "probability": 0.8642676472663879
+        },
+        {
+          "at_ms": 109403.70979098952,
+          "elapsed_ms": 72.79079101863317,
+          "prediction": 1,
+          "probability": 0.978554368019104
+        }
+      ],
+      "actual": "Yes, please.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1138.0915829830337
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_yes_2",
+      "language": "en-US",
+      "expected": "Yes, please.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "f371edfdeb1e4588ba53cd9b48ec0afb652f27bbfea81468cf2415ade99abfee",
+      "level": "20",
+      "clipped_samples": 0,
+      "source_duration_ms": 1160.0,
+      "start_ms": 110653.68370799115,
+      "commits": [
+        {
+          "at_ms": 113593.3817079931,
+          "text": "Yes, please.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6058743699561824,
+                "language": "en",
+                "decode_ms": 1328.1096249993425
+              },
+              "speech_epoch": 42,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150307008642291,
+              "committed_monotonic_ns": 150308807503958,
+              "endpoint_wait_ms": 1780.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 111999.9117909756,
+          "text": "Yes.",
+          "final": false,
+          "accepted": "Yes.",
+          "speech_epoch": 42
+        },
+        {
+          "at_ms": 112596.55816599843,
+          "text": "Yes, please.",
+          "final": false,
+          "accepted": "Yes, please.",
+          "speech_epoch": 42
+        },
+        {
+          "at_ms": 113129.25608298974,
+          "text": "Yes, please.",
+          "final": false,
+          "accepted": "Yes, please.",
+          "speech_epoch": 42
+        },
+        {
+          "at_ms": 113385.79212498735,
+          "text": "Yes, please.",
+          "final": true,
+          "accepted": "Yes, please.",
+          "speech_epoch": 42
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 110800.53708297783,
+          "speech_epoch": 41
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 111418.01850000047,
+          "elapsed_ms": 61.90837497706525,
+          "prediction": 1,
+          "probability": 0.9697068929672241
+        },
+        {
+          "at_ms": 112167.06349997548,
+          "elapsed_ms": 66.94820799748413,
+          "prediction": 1,
+          "probability": 0.9749865531921387
+        },
+        {
+          "at_ms": 112836.89237499493,
+          "elapsed_ms": 138.3429160050582,
+          "prediction": 1,
+          "probability": 0.9854345321655273
+        },
+        {
+          "at_ms": 113583.78924999852,
+          "elapsed_ms": 79.21949998126365,
+          "prediction": 1,
+          "probability": 0.9816229343414307
+        }
+      ],
+      "actual": "Yes, please.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1779.698000001954
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_yes_1",
+      "language": "fr-FR",
+      "expected": "Oui, s'il vous plaît.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "9d6af4d960f2e5bbfb241f20e77bf3cc97edb8f3a9e67ba1c9acdb179eb4106c",
+      "level": "20",
+      "clipped_samples": 0,
+      "source_duration_ms": 1380.0,
+      "start_ms": 114369.64187497506,
+      "commits": [
+        {
+          "at_ms": 117570.69733299431,
+          "text": "Oui, s'il vous plaît.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.716779205654025,
+                "language": "fr",
+                "decode_ms": 1498.630707996199
+              },
+              "speech_epoch": 44,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150310965684875,
+              "committed_monotonic_ns": 150312784983208,
+              "endpoint_wait_ms": 1800.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 116144.41654097755,
+          "text": "Oui, s'il vous",
+          "final": false,
+          "accepted": "Oui, s'il vous",
+          "speech_epoch": 44
+        },
+        {
+          "at_ms": 116672.76058299467,
+          "text": "Oui, s'il vous plaît.",
+          "final": false,
+          "accepted": "Oui, s'il vous plaît.",
+          "speech_epoch": 44
+        },
+        {
+          "at_ms": 117101.27491599997,
+          "text": "Oui, s'il vous plaît.",
+          "final": false,
+          "accepted": "Oui, s'il vous plaît.",
+          "speech_epoch": 44
+        },
+        {
+          "at_ms": 117299.73191599129,
+          "text": "Oui, s'il vous plaît.",
+          "final": true,
+          "accepted": "Oui, s'il vous plaît.",
+          "speech_epoch": 44
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 114492.5802910002,
+          "speech_epoch": 43
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 115027.58341599838,
+          "elapsed_ms": 73.01579200429842,
+          "prediction": 1,
+          "probability": 0.59721440076828
+        },
+        {
+          "at_ms": 116063.0543329753,
+          "elapsed_ms": 78.48208298673853,
+          "prediction": 1,
+          "probability": 0.9697068929672241
+        },
+        {
+          "at_ms": 116696.93758297944,
+          "elapsed_ms": 422.99837499740534,
+          "prediction": 1,
+          "probability": 0.9801466464996338
+        },
+        {
+          "at_ms": 116887.58887498989,
+          "elapsed_ms": 101.17791697848588,
+          "prediction": 1,
+          "probability": 0.9880069494247437
+        },
+        {
+          "at_ms": 117483.38666599011,
+          "elapsed_ms": 70.47508299001493,
+          "prediction": 1,
+          "probability": 0.978554368019104
+        }
+      ],
+      "actual": "Oui, s'il vous plaît.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1821.0554580192547
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_yes_2",
+      "language": "fr-FR",
+      "expected": "Oui, s'il vous plaît.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "9d6af4d960f2e5bbfb241f20e77bf3cc97edb8f3a9e67ba1c9acdb179eb4106c",
+      "level": "20",
+      "clipped_samples": 0,
+      "source_duration_ms": 1380.0,
+      "start_ms": 118349.64737499831,
+      "commits": [
+        {
+          "at_ms": 121525.87024998502,
+          "text": "Oui, s'il vous plaît.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.7287401345678318,
+                "language": "fr",
+                "decode_ms": 1475.3215840028133
+              },
+              "speech_epoch": 46,
+              "provider_final": false,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150314946456750,
+              "committed_monotonic_ns": 150316740174416,
+              "endpoint_wait_ms": 1780.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 119870.31429097988,
+          "text": "Oui.",
+          "final": false,
+          "accepted": "Oui.",
+          "speech_epoch": 46
+        },
+        {
+          "at_ms": 120331.88645797782,
+          "text": "Oui, s'il vous",
+          "final": false,
+          "accepted": "Oui, s'il vous",
+          "speech_epoch": 46
+        },
+        {
+          "at_ms": 120810.19829097204,
+          "text": "Oui, s'il vous plaît.",
+          "final": false,
+          "accepted": "Oui, s'il vous plaît.",
+          "speech_epoch": 46
+        },
+        {
+          "at_ms": 121248.06208297377,
+          "text": "Oui, s'il vous plaît.",
+          "final": false,
+          "accepted": "Oui, s'il vous plaît.",
+          "speech_epoch": 46
+        },
+        {
+          "at_ms": 121797.94774999027,
+          "text": "Oui, s'il vous plaît.",
+          "final": true,
+          "accepted": "",
+          "speech_epoch": 46
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 118571.75224999082,
+          "speech_epoch": 45
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 118985.66341598053,
+          "elapsed_ms": 75.93762499163859,
+          "prediction": 1,
+          "probability": 0.5393059253692627
+        },
+        {
+          "at_ms": 120061.90041598165,
+          "elapsed_ms": 81.00270899012685,
+          "prediction": 1,
+          "probability": 0.9793655872344971
+        },
+        {
+          "at_ms": 120821.20258299983,
+          "elapsed_ms": 316.2727910093963,
+          "prediction": 1,
+          "probability": 0.9823201894760132
+        },
+        {
+          "at_ms": 121029.66695799842,
+          "elapsed_ms": 102.32504099258222,
+          "prediction": 1,
+          "probability": 0.9777120351791382
+        }
+      ],
+      "actual": "Oui, s'il vous plaît.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1796.2228749867063
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_preference",
+      "language": "en-US",
+      "expected": "I prefer movies and series.",
+      "continuation_ms": 1640.0,
+      "pause_ms": 900,
+      "source_sha256": "7cd3a9942aa6963b575804a8624f08557eb67db6ebf505b776437a4b3c873ec0",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 2840.0,
+      "start_ms": 122314.19316597749,
+      "commits": [
+        {
+          "at_ms": 126851.59937498975,
+          "text": "I prefer movies and series.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.7114221895532352,
+                "language": "en",
+                "decode_ms": 922.3145830037538
+              },
+              "speech_epoch": 48,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150320311311041,
+              "committed_monotonic_ns": 150322065885708,
+              "endpoint_wait_ms": 1740.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 123663.0349579791,
+          "text": "I",
+          "final": false,
+          "accepted": "I",
+          "speech_epoch": 47
+        },
+        {
+          "at_ms": 124114.4411659916,
+          "text": "I prefer",
+          "final": false,
+          "accepted": "I prefer",
+          "speech_epoch": 48
+        },
+        {
+          "at_ms": 124616.10308298259,
+          "text": "I prefer.",
+          "final": false,
+          "accepted": "I prefer.",
+          "speech_epoch": 48
+        },
+        {
+          "at_ms": 125155.68837497267,
+          "text": "I prefer. movies",
+          "final": false,
+          "accepted": "I prefer. movies",
+          "speech_epoch": 48
+        },
+        {
+          "at_ms": 125596.44795799977,
+          "text": "I prefer. movies and",
+          "final": false,
+          "accepted": "I prefer. movies and",
+          "speech_epoch": 48
+        },
+        {
+          "at_ms": 126075.75420799549,
+          "text": "I prefer. movies and series.",
+          "final": false,
+          "accepted": "I prefer. movies and series.",
+          "speech_epoch": 48
+        },
+        {
+          "at_ms": 126557.38995797583,
+          "text": "I prefer. movies and series.",
+          "final": false,
+          "accepted": "I prefer. movies and series.",
+          "speech_epoch": 48
+        },
+        {
+          "at_ms": 126659.94883299572,
+          "text": "I prefer movies and series.",
+          "final": true,
+          "accepted": "I prefer movies and series.",
+          "speech_epoch": 48
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 122475.13487498509,
+          "speech_epoch": 47
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 123312.55729097757,
+          "elapsed_ms": 73.87162500526756,
+          "prediction": 1,
+          "probability": 0.9808988571166992
+        },
+        {
+          "at_ms": 123840.26933298446,
+          "elapsed_ms": 66.28475000616163,
+          "prediction": 1,
+          "probability": 0.9836374521255493
+        },
+        {
+          "at_ms": 125383.65895798779,
+          "elapsed_ms": 62.41900002351031,
+          "prediction": 1,
+          "probability": 0.9875311851501465
+        },
+        {
+          "at_ms": 125773.25041597942,
+          "elapsed_ms": 57.02558398479596,
+          "prediction": 1,
+          "probability": 0.9880069494247437
+        },
+        {
+          "at_ms": 126345.08904098766,
+          "elapsed_ms": 152.35333400778472,
+          "prediction": 1,
+          "probability": 0.9893293380737305
+        },
+        {
+          "at_ms": 126835.2652079775,
+          "elapsed_ms": 69.45854099467397,
+          "prediction": 1,
+          "probability": 0.9884648323059082
+        }
+      ],
+      "actual": "I prefer movies and series.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1697.4062090122607
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_preference",
+      "language": "fr-FR",
+      "expected": "Je préfère les films et les séries.",
+      "continuation_ms": 2180.0,
+      "pause_ms": 1200,
+      "source_sha256": "76f3be6c5a9e180af3b72ebbbf68c083bc58c67e187c56c129b55c895a95f4b3",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 3340.0,
+      "start_ms": 127633.53187497705,
+      "commits": [
+        {
+          "at_ms": 132417.5290829735,
+          "text": "Je préfère. les films et les séries",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.7905889550060718,
+                "language": "fr",
+                "decode_ms": 345.51220800494775
+              },
+              "speech_epoch": 50,
+              "provider_final": false,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150326169279916,
+              "committed_monotonic_ns": 150327631791083,
+              "endpoint_wait_ms": 1460.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 128789.3339159782,
+          "text": "Je",
+          "final": false,
+          "accepted": "Je",
+          "speech_epoch": 49
+        },
+        {
+          "at_ms": 129256.58295798348,
+          "text": "Je préfère",
+          "final": false,
+          "accepted": "Je préfère",
+          "speech_epoch": 49
+        },
+        {
+          "at_ms": 129896.62858299562,
+          "text": "Je préfère.",
+          "final": false,
+          "accepted": "Je préfère.",
+          "speech_epoch": 49
+        },
+        {
+          "at_ms": 130050.17945799045,
+          "text": "Je préfère.",
+          "final": true,
+          "accepted": "Je préfère.",
+          "speech_epoch": 50
+        },
+        {
+          "at_ms": 131285.70920799393,
+          "text": "J'ai filmé",
+          "final": false,
+          "accepted": "Je préfère. J'ai filmé",
+          "speech_epoch": 50
+        },
+        {
+          "at_ms": 131746.47045799065,
+          "text": "les films et les séries",
+          "final": false,
+          "accepted": "Je préfère. les films et les séries",
+          "speech_epoch": 50
+        },
+        {
+          "at_ms": 132166.1822499882,
+          "text": "les films et les séries",
+          "final": false,
+          "accepted": "Je préfère. les films et les séries",
+          "speech_epoch": 50
+        },
+        {
+          "at_ms": 132553.29941597302,
+          "text": "les films et les séries",
+          "final": true,
+          "accepted": "",
+          "speech_epoch": 50
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 127838.67262498825,
+          "speech_epoch": 49
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 128787.29695797665,
+          "elapsed_ms": 71.33999999496154,
+          "prediction": 1,
+          "probability": 0.8111233115196228
+        },
+        {
+          "at_ms": 128960.44704099768,
+          "elapsed_ms": 64.84916698536836,
+          "prediction": 1,
+          "probability": 0.9466100931167603
+        },
+        {
+          "at_ms": 129444.88391597406,
+          "elapsed_ms": 67.67749998834915,
+          "prediction": 1,
+          "probability": 0.9604700207710266
+        },
+        {
+          "at_ms": 131255.82933297846,
+          "elapsed_ms": 80.19883299130015,
+          "prediction": 1,
+          "probability": 0.834087073802948
+        },
+        {
+          "at_ms": 131455.3117499745,
+          "elapsed_ms": 53.43120900215581,
+          "prediction": 1,
+          "probability": 0.9673051834106445
+        },
+        {
+          "at_ms": 131935.3348329896,
+          "elapsed_ms": 71.13237501471303,
+          "prediction": 1,
+          "probability": 0.9865230321884155
+        }
+      ],
+      "actual": "Je préfère. les films et les séries",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1443.9972079964355
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_correction",
+      "language": "en-US",
+      "expected": "Actually, I want the six month plan.",
+      "continuation_ms": 1460.0,
+      "pause_ms": 800,
+      "source_sha256": "59c5506bae2bc024c57093b2db902682b9e2529923f74d063eda5f7e626ea80d",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 3040.0,
+      "start_ms": 133193.85579097434,
+      "commits": [
+        {
+          "at_ms": 137658.14091599896,
+          "text": "Actually, I want the 6-month plan.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6572872747541539,
+                "language": "en",
+                "decode_ms": 1170.6646670063492
+              },
+              "speech_epoch": 52,
+              "provider_final": false,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150331391525041,
+              "committed_monotonic_ns": 150332872441083,
+              "endpoint_wait_ms": 1480.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 134584.4231659721,
+          "text": "Actually,",
+          "final": false,
+          "accepted": "Actually,",
+          "speech_epoch": 51
+        },
+        {
+          "at_ms": 135019.52083298238,
+          "text": "Actually",
+          "final": false,
+          "accepted": "Actually",
+          "speech_epoch": 52
+        },
+        {
+          "at_ms": 135491.63841598784,
+          "text": "Actually, I",
+          "final": false,
+          "accepted": "Actually, I",
+          "speech_epoch": 52
+        },
+        {
+          "at_ms": 136080.24274997297,
+          "text": "Actually, I want to",
+          "final": false,
+          "accepted": "Actually, I want to",
+          "speech_epoch": 52
+        },
+        {
+          "at_ms": 136520.41829098016,
+          "text": "Actually, I want the six month",
+          "final": false,
+          "accepted": "Actually, I want the six month",
+          "speech_epoch": 52
+        },
+        {
+          "at_ms": 136982.8470829816,
+          "text": "Actually, I want the 6-month plan.",
+          "final": false,
+          "accepted": "Actually, I want the 6-month plan.",
+          "speech_epoch": 52
+        },
+        {
+          "at_ms": 137539.343499986,
+          "text": "Actually, I want the 6-month plan.",
+          "final": false,
+          "accepted": "Actually, I want the 6-month plan.",
+          "speech_epoch": 52
+        },
+        {
+          "at_ms": 138025.57920798426,
+          "text": "Actually, I want the six-month plan.",
+          "final": true,
+          "accepted": "",
+          "speech_epoch": 52
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 133317.80708298902,
+          "speech_epoch": 51
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 134157.60037497967,
+          "elapsed_ms": 68.66162500227802,
+          "prediction": 1,
+          "probability": 0.8934911489486694
+        },
+        {
+          "at_ms": 136484.11004099762,
+          "elapsed_ms": 68.13816700014286,
+          "prediction": 1,
+          "probability": 0.8688222169876099
+        },
+        {
+          "at_ms": 136688.13520797994,
+          "elapsed_ms": 56.250166991958395,
+          "prediction": 1,
+          "probability": 0.828564465045929
+        },
+        {
+          "at_ms": 137312.63216599473,
+          "elapsed_ms": 194.83466702513397,
+          "prediction": 1,
+          "probability": 0.9673051834106445
+        }
+      ],
+      "actual": "Actually, I want the 6-month plan.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1424.2851250246167
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_correction",
+      "language": "fr-FR",
+      "expected": "En fait, je voudrais le forfait de six mois.",
+      "continuation_ms": 1540.0,
+      "pause_ms": 900,
+      "source_sha256": "96f340b5c6f8cd813cbd461dfbca4834e39c8f5a405a0980b959df36872cfbfd",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 3480.0,
+      "start_ms": 138431.63149998873,
+      "commits": [
+        {
+          "at_ms": 144913.41674997238,
+          "text": "En fait, je voudrais le forfait de 6 mois.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.8729478753274201,
+                "language": "fr",
+                "decode_ms": 353.0775000108406
+              },
+              "speech_epoch": 54,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150337108189041,
+              "committed_monotonic_ns": 150340127542458,
+              "endpoint_wait_ms": 3019.354,
+              "completion_reason": "bounded_incomplete"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 139845.870249992,
+          "text": "En fait,",
+          "final": false,
+          "accepted": "En fait,",
+          "speech_epoch": 53
+        },
+        {
+          "at_ms": 140320.46108299983,
+          "text": "En fait",
+          "final": false,
+          "accepted": "En fait",
+          "speech_epoch": 54
+        },
+        {
+          "at_ms": 140779.17049999814,
+          "text": "En fait.",
+          "final": false,
+          "accepted": "En fait.",
+          "speech_epoch": 54
+        },
+        {
+          "at_ms": 141358.69924997678,
+          "text": "En fait. Je voudrais",
+          "final": false,
+          "accepted": "En fait. Je voudrais",
+          "speech_epoch": 54
+        },
+        {
+          "at_ms": 141784.3151659763,
+          "text": "En fait. Je voudrais le",
+          "final": false,
+          "accepted": "En fait. Je voudrais le",
+          "speech_epoch": 54
+        },
+        {
+          "at_ms": 142242.4170409795,
+          "text": "En fait. Je voudrais le forfait de",
+          "final": false,
+          "accepted": "En fait. Je voudrais le forfait de",
+          "speech_epoch": 54
+        },
+        {
+          "at_ms": 142792.62595798355,
+          "text": "En fait. Je voudrais le forfait de 6 mois.",
+          "final": false,
+          "accepted": "En fait. Je voudrais le forfait de 6 mois.",
+          "speech_epoch": 54
+        },
+        {
+          "at_ms": 143165.05087498808,
+          "text": "En fait. Je voudrais le forfait de 6 mois.",
+          "final": false,
+          "accepted": "En fait. Je voudrais le forfait de 6 mois.",
+          "speech_epoch": 54
+        },
+        {
+          "at_ms": 143586.82954098913,
+          "text": "En fait, je voudrais le forfait de 6 mois.",
+          "final": true,
+          "accepted": "En fait, je voudrais le forfait de 6 mois.",
+          "speech_epoch": 54
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 138552.8712909727,
+          "speech_epoch": 53
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 139185.5476659839,
+          "elapsed_ms": 68.81458399584517,
+          "prediction": 1,
+          "probability": 0.8817123174667358
+        },
+        {
+          "at_ms": 140175.51587498747,
+          "elapsed_ms": 229.38262502430007,
+          "prediction": 1,
+          "probability": 0.9485659599304199
+        },
+        {
+          "at_ms": 142196.01966597838,
+          "elapsed_ms": 67.40599998738617,
+          "prediction": 0,
+          "probability": 0.042631834745407104
+        },
+        {
+          "at_ms": 142454.52033297624,
+          "elapsed_ms": 103.62958299810998,
+          "prediction": 0,
+          "probability": 0.04954594373703003
+        },
+        {
+          "at_ms": 142966.53679097653,
+          "elapsed_ms": 71.9999999855645,
+          "prediction": 0,
+          "probability": 0.08297324180603027
+        },
+        {
+          "at_ms": 143757.12487497367,
+          "elapsed_ms": 63.80949998856522,
+          "prediction": 0,
+          "probability": 0.03396362066268921
+        }
+      ],
+      "actual": "En fait, je voudrais le forfait de 6 mois.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        3001.785249983659
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_request",
+      "language": "en-US",
+      "expected": "Could you send the details on WhatsApp?",
+      "continuation_ms": 1150.0,
+      "pause_ms": 650,
+      "source_sha256": "0a7cccabea736f82d52e030f7edce0ce10080fcb18e08554daef51207fc0d50e",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 2840.0,
+      "start_ms": 145697.98266599537,
+      "commits": [
+        {
+          "at_ms": 149942.46804097202,
+          "text": "Could you send the details on WhatsApp?",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.7547059468407861,
+                "language": "en",
+                "decode_ms": 354.6474580070935
+              },
+              "speech_epoch": 56,
+              "provider_final": false,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150343633504000,
+              "committed_monotonic_ns": 150345156683708,
+              "endpoint_wait_ms": 1520.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 146939.37774997903,
+          "text": "Could you",
+          "final": false,
+          "accepted": "Could you",
+          "speech_epoch": 55
+        },
+        {
+          "at_ms": 147988.47916600062,
+          "text": "Could you send the",
+          "final": false,
+          "accepted": "Could you send the",
+          "speech_epoch": 56
+        },
+        {
+          "at_ms": 148349.9370829959,
+          "text": "Could you send the details",
+          "final": false,
+          "accepted": "Could you send the details",
+          "speech_epoch": 56
+        },
+        {
+          "at_ms": 148837.15170799405,
+          "text": "Could you send the details on",
+          "final": false,
+          "accepted": "Could you send the details on",
+          "speech_epoch": 56
+        },
+        {
+          "at_ms": 149269.1402079945,
+          "text": "Could you send the details on WhatsApp?",
+          "final": false,
+          "accepted": "Could you send the details on WhatsApp?",
+          "speech_epoch": 56
+        },
+        {
+          "at_ms": 149754.62708299165,
+          "text": "Could you send the details on WhatsApp?",
+          "final": false,
+          "accepted": "Could you send the details on WhatsApp?",
+          "speech_epoch": 56
+        },
+        {
+          "at_ms": 150089.25258298405,
+          "text": "Could you send the details on WhatsApp?",
+          "final": true,
+          "accepted": "",
+          "speech_epoch": 56
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 145881.1196249735,
+          "speech_epoch": 55
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 146478.64637497696,
+          "elapsed_ms": 74.90095801767893,
+          "prediction": 1,
+          "probability": 0.9880069494247437
+        },
+        {
+          "at_ms": 148722.4857499823,
+          "elapsed_ms": 76.44624999375083,
+          "prediction": 0,
+          "probability": 0.3933483958244324
+        },
+        {
+          "at_ms": 149037.54179098178,
+          "elapsed_ms": 83.1857500015758,
+          "prediction": 1,
+          "probability": 0.9075815677642822
+        },
+        {
+          "at_ms": 149441.25866598915,
+          "elapsed_ms": 69.44349998957478,
+          "prediction": 1,
+          "probability": 0.9466100931167603
+        }
+      ],
+      "actual": "Could you send the details on WhatsApp?",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1404.485374976648
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_request",
+      "language": "fr-FR",
+      "expected": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+      "continuation_ms": 1820.0,
+      "pause_ms": 900,
+      "source_sha256": "d22a411e5cf9ad4cd3613b4f380a76f2a8f41a6d2f91f8986a67c602797c76cc",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 3580.0,
+      "start_ms": 150723.45012499136,
+      "commits": [
+        {
+          "at_ms": 157160.7152079814,
+          "text": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": false,
+              "corroboration": {
+                "reason": "transcript_disagreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.7408485841507705,
+                "language": "fr",
+                "decode_ms": 363.4675000212155
+              },
+              "speech_epoch": 58,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150349359684333,
+              "committed_monotonic_ns": 150352374967458,
+              "endpoint_wait_ms": 3000.0,
+              "completion_reason": "bounded_incomplete"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 151983.5055829899,
+          "text": "Qu'est-ce que vous",
+          "final": false,
+          "accepted": "Qu'est-ce que vous",
+          "speech_epoch": 57
+        },
+        {
+          "at_ms": 152503.36762497318,
+          "text": "Est-ce que vous pouvez",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez",
+          "speech_epoch": 57
+        },
+        {
+          "at_ms": 152902.02712497558,
+          "text": "Est-ce que vous pouvez?",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez?",
+          "speech_epoch": 58
+        },
+        {
+          "at_ms": 153362.39966598805,
+          "text": "Est-ce que vous pouvez?",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez?",
+          "speech_epoch": 58
+        },
+        {
+          "at_ms": 153816.24212497263,
+          "text": "Est-ce que vous pouvez? envoyer les",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez? envoyer les",
+          "speech_epoch": 58
+        },
+        {
+          "at_ms": 154420.9164159838,
+          "text": "Est-ce que vous pouvez? Envoyer les détails sur",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez? Envoyer les détails sur",
+          "speech_epoch": 58
+        },
+        {
+          "at_ms": 154848.9199159958,
+          "text": "Est-ce que vous pouvez? envoyer les détails sur",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez? envoyer les détails sur",
+          "speech_epoch": 58
+        },
+        {
+          "at_ms": 155326.92945798044,
+          "text": "Est-ce que vous pouvez? envoyer les détails sur",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez? envoyer les détails sur",
+          "speech_epoch": 58
+        },
+        {
+          "at_ms": 155756.0681659961,
+          "text": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+          "final": true,
+          "accepted": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+          "speech_epoch": 58
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 150827.18083297368,
+          "speech_epoch": 57
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 151922.35037498176,
+          "elapsed_ms": 76.54237499809824,
+          "prediction": 1,
+          "probability": 0.8228970766067505
+        },
+        {
+          "at_ms": 152170.21758298506,
+          "elapsed_ms": 71.94866699865088,
+          "prediction": 1,
+          "probability": 0.8111233115196228
+        },
+        {
+          "at_ms": 154451.12095799414,
+          "elapsed_ms": 69.51437500538304,
+          "prediction": 0,
+          "probability": 0.010670661926269531
+        },
+        {
+          "at_ms": 154598.20458298782,
+          "elapsed_ms": 60.238792008021846,
+          "prediction": 0,
+          "probability": 0.04596525430679321
+        },
+        {
+          "at_ms": 155036.96199998376,
+          "elapsed_ms": 72.98287498997524,
+          "prediction": 0,
+          "probability": 0.03147178888320923
+        },
+        {
+          "at_ms": 155936.95774997468,
+          "elapsed_ms": 77.6409579848405,
+          "prediction": 0,
+          "probability": 0.008120238780975342
+        }
+      ],
+      "actual": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        2857.265082990052
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_negative",
+      "language": "en-US",
+      "expected": "No, not the yearly plan.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "8bef835fb3fcda69ca47c8dc74ebde19c67214c661cad580f926abd41415a1c7",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 1800.0,
+      "start_ms": 157943.49554099608,
+      "commits": [
+        {
+          "at_ms": 161418.12733298866,
+          "text": "No, not the yearly plan.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6925730451752646,
+                "language": "en",
+                "decode_ms": 577.7165000035893
+              },
+              "speech_epoch": 60,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150354919133333,
+              "committed_monotonic_ns": 150356632414583,
+              "endpoint_wait_ms": 1700.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 159195.95041597495,
+          "text": "No,",
+          "final": false,
+          "accepted": "No,",
+          "speech_epoch": 60
+        },
+        {
+          "at_ms": 159663.38666598313,
+          "text": "No, not the year",
+          "final": false,
+          "accepted": "No, not the year",
+          "speech_epoch": 60
+        },
+        {
+          "at_ms": 160107.36224998254,
+          "text": "No, not the yearly",
+          "final": false,
+          "accepted": "No, not the yearly",
+          "speech_epoch": 60
+        },
+        {
+          "at_ms": 160577.6130409795,
+          "text": "No, not the yearly plan.",
+          "final": false,
+          "accepted": "No, not the yearly plan.",
+          "speech_epoch": 60
+        },
+        {
+          "at_ms": 161001.7742079799,
+          "text": "No, not the yearly plan.",
+          "final": false,
+          "accepted": "No, not the yearly plan.",
+          "speech_epoch": 60
+        },
+        {
+          "at_ms": 161213.8979579904,
+          "text": "No, not the yearly plan.",
+          "final": true,
+          "accepted": "No, not the yearly plan.",
+          "speech_epoch": 60
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 158088.76379099092,
+          "speech_epoch": 59
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 158608.6333329731,
+          "elapsed_ms": 63.06283301091753,
+          "prediction": 1,
+          "probability": 0.8896843194961548
+        },
+        {
+          "at_ms": 160024.85383299063,
+          "elapsed_ms": 81.96283300640061,
+          "prediction": 1,
+          "probability": 0.9801466464996338
+        },
+        {
+          "at_ms": 160690.42145798448,
+          "elapsed_ms": 450.3205000073649,
+          "prediction": 1,
+          "probability": 0.9042243957519531
+        },
+        {
+          "at_ms": 160773.68824998848,
+          "elapsed_ms": 70.65812501241453,
+          "prediction": 1,
+          "probability": 0.9740077257156372
+        },
+        {
+          "at_ms": 161399.8909999791,
+          "elapsed_ms": 70.0425420072861,
+          "prediction": 1,
+          "probability": 0.9816229343414307
+        }
+      ],
+      "actual": "No, not the yearly plan.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1674.6317919925787
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_negative",
+      "language": "fr-FR",
+      "expected": "Non, pas l'abonnement annuel.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "5b88cbfa62a9f3f678d201cf906d2293c3d4d9b6e1a839e14b7a6193a6c703d5",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 1860.0,
+      "start_ms": 162198.41012498364,
+      "commits": [
+        {
+          "at_ms": 165653.46312499605,
+          "text": "à l'abonnement annuel",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": false,
+              "uncertainty_reason": "provider_revision_removed_negation",
+              "corroboration": {
+                "reason": "transcript_disagreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6618589325484052,
+                "language": "fr",
+                "decode_ms": 1649.3860830087215
+              },
+              "speech_epoch": 61,
+              "provider_final": false,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150358614428791,
+              "committed_monotonic_ns": 150360867399083,
+              "endpoint_wait_ms": 1680.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 164120.60487497365,
+          "text": "Pas la bonne",
+          "final": false,
+          "accepted": "Pas la bonne",
+          "speech_epoch": 61
+        },
+        {
+          "at_ms": 164766.09604098485,
+          "text": "à l'abonnement",
+          "final": false,
+          "accepted": "à l'abonnement",
+          "speech_epoch": 61
+        },
+        {
+          "at_ms": 165001.17458298337,
+          "text": "à l'abonnement annuel",
+          "final": false,
+          "accepted": "à l'abonnement annuel",
+          "speech_epoch": 61
+        },
+        {
+          "at_ms": 165586.9017909863,
+          "text": "à l'abonnement annuel",
+          "final": false,
+          "accepted": "à l'abonnement annuel",
+          "speech_epoch": 61
+        },
+        {
+          "at_ms": 165813.1979579921,
+          "text": "à l'abonnement annuel",
+          "final": true,
+          "accepted": "",
+          "speech_epoch": 61
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 163022.8607909812,
+          "speech_epoch": 61
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 163703.91108299373,
+          "elapsed_ms": 77.64145801775157,
+          "prediction": 1,
+          "probability": 0.9445840716362
+        },
+        {
+          "at_ms": 164474.8183329939,
+          "elapsed_ms": 239.31599999195896,
+          "prediction": 1,
+          "probability": 0.6344650983810425
+        },
+        {
+          "at_ms": 164972.3348330008,
+          "elapsed_ms": 71.11029198858887,
+          "prediction": 1,
+          "probability": 0.9485659599304199
+        },
+        {
+          "at_ms": 165194.84145799652,
+          "elapsed_ms": 72.94695798191242,
+          "prediction": 1,
+          "probability": 0.9793655872344971
+        }
+      ],
+      "actual": "à l'abonnement annuel",
+      "words_match": false,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1595.0530000124127
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_yes_1",
+      "language": "en-US",
+      "expected": "Yes, please.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "f371edfdeb1e4588ba53cd9b48ec0afb652f27bbfea81468cf2415ade99abfee",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 1160.0,
+      "start_ms": 166439.68737497926,
+      "commits": [
+        {
+          "at_ms": 169366.9759159966,
+          "text": "Yes, please.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6247086164546756,
+                "language": "en",
+                "decode_ms": 1529.4468749780208
+              },
+              "speech_epoch": 63,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150362715948041,
+              "committed_monotonic_ns": 150364581069250,
+              "endpoint_wait_ms": 1860.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 167912.48099997756,
+          "text": "Yes.",
+          "final": false,
+          "accepted": "Yes.",
+          "speech_epoch": 63
+        },
+        {
+          "at_ms": 168267.50283298315,
+          "text": "Yes, please.",
+          "final": false,
+          "accepted": "Yes, please.",
+          "speech_epoch": 63
+        },
+        {
+          "at_ms": 168739.39708297257,
+          "text": "Yes, please.",
+          "final": false,
+          "accepted": "Yes, please.",
+          "speech_epoch": 63
+        },
+        {
+          "at_ms": 169055.54149998352,
+          "text": "Yes, please.",
+          "final": true,
+          "accepted": "Yes, please.",
+          "speech_epoch": 63
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 166560.9023750003,
+          "speech_epoch": 62
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 167149.26179099712,
+          "elapsed_ms": 73.842167010298,
+          "prediction": 1,
+          "probability": 0.9829913973808289
+        },
+        {
+          "at_ms": 167816.1951249931,
+          "elapsed_ms": 74.58000001497567,
+          "prediction": 0,
+          "probability": 0.13117775321006775
+        },
+        {
+          "at_ms": 168318.69358298718,
+          "elapsed_ms": 187.3977910145186,
+          "prediction": 1,
+          "probability": 0.9255857467651367
+        },
+        {
+          "at_ms": 168443.06349998806,
+          "elapsed_ms": 64.98083300539292,
+          "prediction": 1,
+          "probability": 0.975929319858551
+        },
+        {
+          "at_ms": 169309.96595797478,
+          "elapsed_ms": 66.87729101395234,
+          "prediction": 1,
+          "probability": 0.9685282111167908
+        }
+      ],
+      "actual": "Yes, please.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1767.288541017333
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_yes_2",
+      "language": "en-US",
+      "expected": "Yes, please.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "f371edfdeb1e4588ba53cd9b48ec0afb652f27bbfea81468cf2415ade99abfee",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 1160.0,
+      "start_ms": 170140.55612499942,
+      "commits": [
+        {
+          "at_ms": 173240.99641598877,
+          "text": "Yes, please.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6288379006624801,
+                "language": "en",
+                "decode_ms": 1525.4749999730848
+              },
+              "speech_epoch": 65,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150366455613875,
+              "committed_monotonic_ns": 150368455295541,
+              "endpoint_wait_ms": 1980.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 171271.52737497818,
+          "text": "Yes.",
+          "final": false,
+          "accepted": "Yes.",
+          "speech_epoch": 65
+        },
+        {
+          "at_ms": 172105.85154098226,
+          "text": "Yes, please.",
+          "final": false,
+          "accepted": "Yes, please.",
+          "speech_epoch": 65
+        },
+        {
+          "at_ms": 172334.3053329736,
+          "text": "Yes, please.",
+          "final": false,
+          "accepted": "Yes, please.",
+          "speech_epoch": 65
+        },
+        {
+          "at_ms": 172662.52991597867,
+          "text": "Yes, please.",
+          "final": true,
+          "accepted": "Yes, please.",
+          "speech_epoch": 65
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 170263.69787499425,
+          "speech_epoch": 64
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 170874.49645798188,
+          "elapsed_ms": 93.79070799332112,
+          "prediction": 1,
+          "probability": 0.9823201894760132
+        },
+        {
+          "at_ms": 171682.31195799308,
+          "elapsed_ms": 218.65350002190098,
+          "prediction": 0,
+          "probability": 0.04954594373703003
+        },
+        {
+          "at_ms": 172299.26120798336,
+          "elapsed_ms": 89.85316602047533,
+          "prediction": 1,
+          "probability": 0.9660363793373108
+        },
+        {
+          "at_ms": 172827.3890829878,
+          "elapsed_ms": 63.26104101026431,
+          "prediction": 1,
+          "probability": 0.9308329224586487
+        }
+      ],
+      "actual": "Yes, please.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1940.4402909893543
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_yes_1",
+      "language": "fr-FR",
+      "expected": "Oui, s'il vous plaît.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "9d6af4d960f2e5bbfb241f20e77bf3cc97edb8f3a9e67ba1c9acdb179eb4106c",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 1380.0,
+      "start_ms": 174020.6259159895,
+      "commits": [
+        {
+          "at_ms": 177226.7632909934,
+          "text": "Oui, s'il vous plaît.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.7395849704817046,
+                "language": "fr",
+                "decode_ms": 1501.121334003983
+              },
+              "speech_epoch": 67,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150370596423375,
+              "committed_monotonic_ns": 150372441047791,
+              "endpoint_wait_ms": 1840.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 175323.71458297712,
+          "text": "Oui.",
+          "final": false,
+          "accepted": "Oui.",
+          "speech_epoch": 67
+        },
+        {
+          "at_ms": 175783.56408298714,
+          "text": "Oui, s'il vous",
+          "final": false,
+          "accepted": "Oui, s'il vous",
+          "speech_epoch": 67
+        },
+        {
+          "at_ms": 176370.4047909996,
+          "text": "Oui, s'il vous plaît.",
+          "final": false,
+          "accepted": "Oui, s'il vous plaît.",
+          "speech_epoch": 67
+        },
+        {
+          "at_ms": 176823.5033749952,
+          "text": "Oui, s'il vous plaît.",
+          "final": false,
+          "accepted": "Oui, s'il vous plaît.",
+          "speech_epoch": 67
+        },
+        {
+          "at_ms": 176966.13483299734,
+          "text": "Oui, s'il vous plaît.",
+          "final": true,
+          "accepted": "Oui, s'il vous plaît.",
+          "speech_epoch": 67
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 174123.54187498568,
+          "speech_epoch": 66
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 174695.46983297914,
+          "elapsed_ms": 72.97408298472874,
+          "prediction": 1,
+          "probability": 0.6344650983810425
+        },
+        {
+          "at_ms": 175682.77383298846,
+          "elapsed_ms": 74.96458300738595,
+          "prediction": 1,
+          "probability": 0.9719371795654297
+        },
+        {
+          "at_ms": 176211.27720799996,
+          "elapsed_ms": 312.04045898630284,
+          "prediction": 1,
+          "probability": 0.9777120351791382
+        },
+        {
+          "at_ms": 176546.8284159724,
+          "elapsed_ms": 63.72012500651181,
+          "prediction": 1,
+          "probability": 0.9859892129898071
+        },
+        {
+          "at_ms": 177164.8014159873,
+          "elapsed_ms": 82.48487501987256,
+          "prediction": 1,
+          "probability": 0.9768373966217041
+        }
+      ],
+      "actual": "Oui, s'il vous plaît.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1826.137375003891
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_yes_2",
+      "language": "fr-FR",
+      "expected": "Oui, s'il vous plaît.",
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "9d6af4d960f2e5bbfb241f20e77bf3cc97edb8f3a9e67ba1c9acdb179eb4106c",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 1380.0,
+      "start_ms": 177999.7632909799,
+      "commits": [
+        {
+          "at_ms": 181292.25320799742,
+          "text": "Oui, s'il vous plaît.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.7336568982355938,
+                "language": "fr",
+                "decode_ms": 1535.0760000001173
+              },
+              "speech_epoch": 69,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 150374595567208,
+              "committed_monotonic_ns": 150376506204375,
+              "endpoint_wait_ms": 1900.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 179968.65920798155,
+          "text": "Oui, s'il vous",
+          "final": false,
+          "accepted": "Oui, s'il vous",
+          "speech_epoch": 69
+        },
+        {
+          "at_ms": 180267.47674998478,
+          "text": "Oui, s'il vous plaît.",
+          "final": false,
+          "accepted": "Oui, s'il vous plaît.",
+          "speech_epoch": 69
+        },
+        {
+          "at_ms": 180729.30154099595,
+          "text": "Oui, s'il vous plaît.",
+          "final": false,
+          "accepted": "Oui, s'il vous plaît.",
+          "speech_epoch": 69
+        },
+        {
+          "at_ms": 181019.29558298434,
+          "text": "Oui, s'il vous plaît.",
+          "final": true,
+          "accepted": "Oui, s'il vous plaît.",
+          "speech_epoch": 69
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 178141.61545797833,
+          "speech_epoch": 68
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 178617.95187499956,
+          "elapsed_ms": 64.58991600084119,
+          "prediction": 1,
+          "probability": 0.7580885291099548
+        },
+        {
+          "at_ms": 179671.7855409952,
+          "elapsed_ms": 70.62133299768902,
+          "prediction": 1,
+          "probability": 0.9729918241500854
+        },
+        {
+          "at_ms": 180161.68433299754,
+          "elapsed_ms": 80.23854199564084,
+          "prediction": 1,
+          "probability": 0.9836374521255493
+        },
+        {
+          "at_ms": 180456.87712499057,
+          "elapsed_ms": 73.43708400730975,
+          "prediction": 1,
+          "probability": 0.9865230321884155
+        },
+        {
+          "at_ms": 181282.62474999065,
+          "elapsed_ms": 79.98091701301746,
+          "prediction": 1,
+          "probability": 0.9673051834106445
+        }
+      ],
+      "actual": "Oui, s'il vous plaît.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1912.4899170175195
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    }
+  ],
+  "errors": [],
+  "elapsed_seconds": 182.08439533298952
+}

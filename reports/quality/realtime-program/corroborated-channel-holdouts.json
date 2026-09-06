@@ -1,0 +1,1697 @@
+{
+  "scope": "Paced continuous EN/FR endpoint matrix, real cloud ASR; no call or tool effects.\n\nNoise is deterministic stationary 300-3400 Hz noise, not recorded café/echo audio.\nSource EOF is used for measurement only and never passed to the turn controller.\n",
+  "initial_language": "en-US",
+  "local_corroboration": true,
+  "rows": [
+    {
+      "case": "en_web",
+      "language": "en-US",
+      "expected": "Send the details through the website.",
+      "noise_seed": 101,
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "ae4ebcb57a449b9cf237d16daa11dfdeff9b5f5baf756795118213edca7e45a7",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 1880.0,
+      "start_ms": 2526.4511670102365,
+      "verifications": [
+        {
+          "at_ms": 5265.723000018625,
+          "text": "Send the details through the website.",
+          "trusted": true,
+          "language_mode": "en",
+          "audio_ms": 2000.0,
+          "audio_sha256": "dac5e51510f26f6c5023af62b97e1c39a73968ce7ce54d082bb03736354d21a9"
+        }
+      ],
+      "commits": [
+        {
+          "at_ms": 6146.093750023283,
+          "text": "Send the details through the website.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.8330313981219776,
+                "language": "en",
+                "decode_ms": 552.4630829750095
+              },
+              "speech_epoch": 1,
+              "provider_final": true,
+              "partial_confirmations": 1,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 151672040844916,
+              "committed_monotonic_ns": 151673798255458,
+              "endpoint_wait_ms": 1740.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 3571.354292012984,
+          "text": "Send the",
+          "final": false,
+          "accepted": "Send the",
+          "speech_epoch": 1
+        },
+        {
+          "at_ms": 4098.006125015672,
+          "text": "Send the details",
+          "final": false,
+          "accepted": "Send the details",
+          "speech_epoch": 1
+        },
+        {
+          "at_ms": 4531.947208015481,
+          "text": "Send the details through the",
+          "final": false,
+          "accepted": "Send the details through the",
+          "speech_epoch": 1
+        },
+        {
+          "at_ms": 4949.420125019969,
+          "text": "Send the details through the",
+          "final": false,
+          "accepted": "Send the details through the",
+          "speech_epoch": 1
+        },
+        {
+          "at_ms": 5431.017499999143,
+          "text": "Send the details through the website.",
+          "final": false,
+          "accepted": "Send the details through the website.",
+          "speech_epoch": 1
+        },
+        {
+          "at_ms": 5936.484500009101,
+          "text": "Send the details through the website.",
+          "final": true,
+          "accepted": "Send the details through the website.",
+          "speech_epoch": 1
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 2749.8573750199284,
+          "speech_epoch": 1
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 4734.925208002096,
+          "elapsed_ms": 81.9301669835113,
+          "prediction": 1,
+          "probability": 0.9829913973808289
+        },
+        {
+          "at_ms": 5627.382375008892,
+          "elapsed_ms": 75.7830000075046,
+          "prediction": 1,
+          "probability": 0.9808988571166992
+        },
+        {
+          "at_ms": 6124.58850000985,
+          "elapsed_ms": 78.59316701069474,
+          "prediction": 1,
+          "probability": 0.9897372126579285
+        }
+      ],
+      "actual": "Send the details through the website.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1739.6425830130465
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_web",
+      "language": "fr-FR",
+      "expected": "Pouvez-vous envoyer les détails sur le site web ?",
+      "noise_seed": 102,
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "5da4560150ff81aaf3867243e5c70703913d71b71125f99785242d5e05f339a2",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 2500.0,
+      "start_ms": 6912.359625013778,
+      "verifications": [
+        {
+          "at_ms": 10245.754833013052,
+          "text": "Pouvez-vous envoyer les détails sur le site web ?",
+          "trusted": true,
+          "language_mode": "fr",
+          "audio_ms": 3360.0,
+          "audio_sha256": "e5f87cc38851428bb53eda86f7e88e5bcc4d51805953f8b8138997bef260a663"
+        }
+      ],
+      "commits": [
+        {
+          "at_ms": 11279.587917000754,
+          "text": "Pouvez-vous envoyer les détails sur le site web ?",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.7521382715640369,
+                "language": "fr",
+                "decode_ms": 567.8272079967428
+              },
+              "speech_epoch": 2,
+              "provider_final": true,
+              "partial_confirmations": 1,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 151677027971708,
+              "committed_monotonic_ns": 151678931750333,
+              "endpoint_wait_ms": 1900.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 8289.600750023965,
+          "text": "Pouvez-vous",
+          "final": false,
+          "accepted": "Pouvez-vous",
+          "speech_epoch": 2
+        },
+        {
+          "at_ms": 8817.699250008445,
+          "text": "Pouvez-vous envoyer les",
+          "final": false,
+          "accepted": "Pouvez-vous envoyer les",
+          "speech_epoch": 2
+        },
+        {
+          "at_ms": 9140.343542007031,
+          "text": "Pouvez-vous envoyer les détails sur",
+          "final": false,
+          "accepted": "Pouvez-vous envoyer les détails sur",
+          "speech_epoch": 2
+        },
+        {
+          "at_ms": 9626.601000025403,
+          "text": "Pouvez-vous envoyer les détails sur le site",
+          "final": false,
+          "accepted": "Pouvez-vous envoyer les détails sur le site",
+          "speech_epoch": 2
+        },
+        {
+          "at_ms": 10148.285417002626,
+          "text": "Pouvez-vous envoyer les détails sur le site web",
+          "final": false,
+          "accepted": "Pouvez-vous envoyer les détails sur le site web",
+          "speech_epoch": 2
+        },
+        {
+          "at_ms": 10637.482125021052,
+          "text": "Pouvez-vous envoyer les détails sur le site web ?",
+          "final": false,
+          "accepted": "Pouvez-vous envoyer les détails sur le site web ?",
+          "speech_epoch": 2
+        },
+        {
+          "at_ms": 11014.016583008924,
+          "text": "Pouvez-vous envoyer les détails sur le site web ?",
+          "final": true,
+          "accepted": "Pouvez-vous envoyer les détails sur le site web ?",
+          "speech_epoch": 2
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 7095.969125017291,
+          "speech_epoch": 2
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 9697.785791999195,
+          "elapsed_ms": 89.94637499563396,
+          "prediction": 0,
+          "probability": 0.5
+        },
+        {
+          "at_ms": 9806.425375019899,
+          "elapsed_ms": 66.4478329999838,
+          "prediction": 1,
+          "probability": 0.5393059253692627
+        },
+        {
+          "at_ms": 10334.738042001845,
+          "elapsed_ms": 68.59529099892825,
+          "prediction": 1,
+          "probability": 0.8817123174667358
+        },
+        {
+          "at_ms": 10848.136708023958,
+          "elapsed_ms": 72.57704099174589,
+          "prediction": 1,
+          "probability": 0.7652381658554077
+        },
+        {
+          "at_ms": 11260.740042023826,
+          "elapsed_ms": 87.00537498225458,
+          "prediction": 1,
+          "probability": 0.6788204908370972
+        }
+      ],
+      "actual": "Pouvez-vous envoyer les détails sur le site web ?",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1867.2282919869758
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_email",
+      "language": "en-US",
+      "expected": "Not WhatsApp, please send me an email.",
+      "noise_seed": 103,
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "f49053890df676759846859498199d5e287de1dc87b373a0ed3527dc06482b7d",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 2320.0,
+      "start_ms": 12036.10050000134,
+      "verifications": [
+        {
+          "at_ms": 13679.931333026616,
+          "text": "Not WhatsApp.",
+          "trusted": true,
+          "language_mode": "auto",
+          "audio_ms": 1620.0,
+          "audio_sha256": "68454df247a49bd3474ef573bfc53a121c0b2f50501572b4ccb428579db5e3ae"
+        },
+        {
+          "at_ms": 15603.311042010318,
+          "text": "Not WhatsApp. Please send me an email.",
+          "trusted": true,
+          "language_mode": "auto",
+          "audio_ms": 3160.0,
+          "audio_sha256": "e30f636135e38d0b1f64d0a719561341f973abc15560ef46217f12bf79eaf10a"
+        }
+      ],
+      "commits": [
+        {
+          "at_ms": 16054.747250018409,
+          "text": "Not WhatsApp, please send me an email.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6640697579209701,
+                "language": "en",
+                "decode_ms": 978.836834023241
+              },
+              "speech_epoch": 4,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 151681969824708,
+              "committed_monotonic_ns": 151683706912541,
+              "endpoint_wait_ms": 1720.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 13359.388833021512,
+          "text": "Not",
+          "final": false,
+          "accepted": "Not",
+          "speech_epoch": 4
+        },
+        {
+          "at_ms": 13799.84904199955,
+          "text": "Not WhatsApp,",
+          "final": false,
+          "accepted": "Not WhatsApp,",
+          "speech_epoch": 4
+        },
+        {
+          "at_ms": 14291.786957997829,
+          "text": "Not WhatsApp, please send",
+          "final": false,
+          "accepted": "Not WhatsApp, please send",
+          "speech_epoch": 4
+        },
+        {
+          "at_ms": 14852.92595802457,
+          "text": "Not WhatsApp, please send me an",
+          "final": false,
+          "accepted": "Not WhatsApp, please send me an",
+          "speech_epoch": 4
+        },
+        {
+          "at_ms": 15302.02170801931,
+          "text": "Not WhatsApp, please send me an email.",
+          "final": false,
+          "accepted": "Not WhatsApp, please send me an email.",
+          "speech_epoch": 4
+        },
+        {
+          "at_ms": 15749.395250022644,
+          "text": "Not WhatsApp, please send me an email.",
+          "final": false,
+          "accepted": "Not WhatsApp, please send me an email.",
+          "speech_epoch": 4
+        },
+        {
+          "at_ms": 15851.924667018466,
+          "text": "Not WhatsApp, please send me an email.",
+          "final": true,
+          "accepted": "Not WhatsApp, please send me an email.",
+          "speech_epoch": 4
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 12200.199750019237,
+          "speech_epoch": 3
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 13080.576917011058,
+          "elapsed_ms": 79.95350001147017,
+          "prediction": 1,
+          "probability": 0.828564465045929
+        },
+        {
+          "at_ms": 14624.366167001426,
+          "elapsed_ms": 67.3763329978101,
+          "prediction": 1,
+          "probability": 0.9816229343414307
+        },
+        {
+          "at_ms": 15035.035042004893,
+          "elapsed_ms": 65.51020799088292,
+          "prediction": 1,
+          "probability": 0.9777120351791382
+        },
+        {
+          "at_ms": 15522.961792012211,
+          "elapsed_ms": 85.25770899723284,
+          "prediction": 1,
+          "probability": 0.9673051834106445
+        },
+        {
+          "at_ms": 16034.006875008345,
+          "elapsed_ms": 73.6134999897331,
+          "prediction": 1,
+          "probability": 0.978554368019104
+        }
+      ],
+      "actual": "Not WhatsApp, please send me an email.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1698.6467500170693
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_email",
+      "language": "fr-FR",
+      "expected": "Pas sur WhatsApp, envoyez-moi un e-mail.",
+      "noise_seed": 104,
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "f39df1c367e971627c19893cd36e626891fcb0519297a4161a3a6d013880d5ee",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 2520.0,
+      "start_ms": 16821.851250017062,
+      "verifications": [
+        {
+          "at_ms": 20948.816667019855,
+          "text": "Pas sur WhatsApp, envoyez-moi un e-mail.",
+          "trusted": true,
+          "language_mode": "auto",
+          "audio_ms": 3380.0,
+          "audio_sha256": "af364157f42d14a95921da0d2ab2377e4cee684a671522a2298493365fa21b99"
+        }
+      ],
+      "commits": [
+        {
+          "at_ms": 21060.83495801431,
+          "text": "Pas sur WhatsApp, envoyez-moi un e-mail.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.7531089042550932,
+                "language": "fr",
+                "decode_ms": 1339.1940829751547
+              },
+              "speech_epoch": 6,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 151686958548416,
+              "committed_monotonic_ns": 151688713000541,
+              "endpoint_wait_ms": 1740.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 18064.251583011355,
+          "text": "Pas sur",
+          "final": false,
+          "accepted": "Pas sur",
+          "speech_epoch": 5
+        },
+        {
+          "at_ms": 18447.708332998445,
+          "text": "pas sur WhatsApp",
+          "final": false,
+          "accepted": "pas sur WhatsApp",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 18934.793083026307,
+          "text": "Pas sur WhatsApp, envoyer",
+          "final": false,
+          "accepted": "Pas sur WhatsApp, envoyer",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 19393.176833022153,
+          "text": "Pas sur WhatsApp, envoyez-moi un",
+          "final": false,
+          "accepted": "Pas sur WhatsApp, envoyez-moi un",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 19960.6579579995,
+          "text": "Pas sur WhatsApp, envoyez-moi un e-mail.",
+          "final": false,
+          "accepted": "Pas sur WhatsApp, envoyez-moi un e-mail.",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 20441.820083011407,
+          "text": "Pas sur WhatsApp, envoyez-moi un e-mail.",
+          "final": false,
+          "accepted": "Pas sur WhatsApp, envoyez-moi un e-mail.",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 20875.512917002197,
+          "text": "Pas sur WhatsApp, envoyez-moi un e-mail.",
+          "final": true,
+          "accepted": "Pas sur WhatsApp, envoyez-moi un e-mail.",
+          "speech_epoch": 6
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 17006.22683300753,
+          "speech_epoch": 5
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 18077.455292019295,
+          "elapsed_ms": 69.96574997901917,
+          "prediction": 0,
+          "probability": 0.27983254194259644
+        },
+        {
+          "at_ms": 19620.396958023775,
+          "elapsed_ms": 83.74058298068121,
+          "prediction": 0,
+          "probability": 0.13573235273361206
+        },
+        {
+          "at_ms": 20328.676708013518,
+          "elapsed_ms": 241.20729201240465,
+          "prediction": 0,
+          "probability": 0.4606940746307373
+        },
+        {
+          "at_ms": 21060.390708007617,
+          "elapsed_ms": 68.0974580172915,
+          "prediction": 1,
+          "probability": 0.643550455570221
+        }
+      ],
+      "actual": "Pas sur WhatsApp, envoyez-moi un e-mail.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1718.9837079972494
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_whatsapp",
+      "language": "en-US",
+      "expected": "Please send the details on WhatsApp.",
+      "noise_seed": 105,
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "9f50e6236dd4a5c4d87b87f6823bc18d89ef498818f8320c33921bae62c11f31",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 1900.0,
+      "start_ms": 21825.86683300906,
+      "verifications": [
+        {
+          "at_ms": 24641.020083014155,
+          "text": "Please send the details on WhatsApp.",
+          "trusted": true,
+          "language_mode": "en",
+          "audio_ms": 2740.0,
+          "audio_sha256": "7cc06148d792fbc3ea133fa1e708be6d3158c487ce9fbe11572cb0bc480835a3"
+        }
+      ],
+      "commits": [
+        {
+          "at_ms": 25240.09941701661,
+          "text": "Please send the details on WhatsApp.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.7231458735318731,
+                "language": "en",
+                "decode_ms": 612.0519160176627
+              },
+              "speech_epoch": 7,
+              "provider_final": false,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 151691319067666,
+              "committed_monotonic_ns": 151692892234666,
+              "endpoint_wait_ms": 1560.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 23104.560667008627,
+          "text": "Please send the",
+          "final": false,
+          "accepted": "Please send the",
+          "speech_epoch": 7
+        },
+        {
+          "at_ms": 23714.678208023543,
+          "text": "Please send the details",
+          "final": false,
+          "accepted": "Please send the details",
+          "speech_epoch": 7
+        },
+        {
+          "at_ms": 24162.977792002494,
+          "text": "Please send the details on",
+          "final": false,
+          "accepted": "Please send the details on",
+          "speech_epoch": 7
+        },
+        {
+          "at_ms": 24584.9292500061,
+          "text": "Please send the details on WhatsApp.",
+          "final": false,
+          "accepted": "Please send the details on WhatsApp.",
+          "speech_epoch": 7
+        },
+        {
+          "at_ms": 25096.559750003507,
+          "text": "Please send the details on WhatsApp.",
+          "final": false,
+          "accepted": "Please send the details on WhatsApp.",
+          "speech_epoch": 7
+        },
+        {
+          "at_ms": 25289.33812500327,
+          "text": "Please send the details on WhatsApp.",
+          "final": true,
+          "accepted": "",
+          "speech_epoch": 7
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 22027.947624999797,
+          "speech_epoch": 7
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 23993.40812501032,
+          "elapsed_ms": 65.6598329951521,
+          "prediction": 1,
+          "probability": 0.9854345321655273
+        },
+        {
+          "at_ms": 24652.15750000789,
+          "elapsed_ms": 376.9171249878127,
+          "prediction": 1,
+          "probability": 0.9854345321655273
+        },
+        {
+          "at_ms": 24766.632458020467,
+          "elapsed_ms": 77.5925420166459,
+          "prediction": 1,
+          "probability": 0.9875311851501465
+        }
+      ],
+      "actual": "Please send the details on WhatsApp.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1514.23258400755
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_whatsapp",
+      "language": "fr-FR",
+      "expected": "Envoyez les détails sur WhatsApp, merci.",
+      "noise_seed": 106,
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "71da819ce686a43dcf1be230a92d587fa86618bbfe69f7781b3a7bc1b53d3dcb",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 2560.0,
+      "start_ms": 26010.17987501109,
+      "verifications": [
+        {
+          "at_ms": 29561.417958000675,
+          "text": "Envoyez les détails sur WAP, merci.",
+          "trusted": true,
+          "language_mode": "fr",
+          "audio_ms": 3420.0,
+          "audio_sha256": "8ca7904182152bc1cb7eb6231e10dbb11d940795d09a14768cec6019ea04b383"
+        }
+      ],
+      "commits": [
+        {
+          "at_ms": 29952.619292016607,
+          "text": "Envoyer les détails sur WhatsApp, merci.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": false,
+              "corroboration": {
+                "reason": "transcript_disagreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6431884856628842,
+                "language": "fr",
+                "decode_ms": 712.5133750087116
+              },
+              "speech_epoch": 9,
+              "provider_final": false,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 151696186030875,
+              "committed_monotonic_ns": 151697604740958,
+              "endpoint_wait_ms": 1418.711,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 27315.069208008936,
+          "text": "Envoyer les",
+          "final": false,
+          "accepted": "Envoyer les",
+          "speech_epoch": 8
+        },
+        {
+          "at_ms": 27764.574542001355,
+          "text": "Envoyer les détails sur",
+          "final": false,
+          "accepted": "Envoyer les détails sur",
+          "speech_epoch": 8
+        },
+        {
+          "at_ms": 28216.452458000276,
+          "text": "Envoyer les détails sur",
+          "final": false,
+          "accepted": "Envoyer les détails sur",
+          "speech_epoch": 9
+        },
+        {
+          "at_ms": 28774.95404201909,
+          "text": "Envoyer les détails sur WhatsApp",
+          "final": false,
+          "accepted": "Envoyer les détails sur WhatsApp",
+          "speech_epoch": 9
+        },
+        {
+          "at_ms": 29273.78850002424,
+          "text": "Envoyer les détails sur WhatsApp, merci.",
+          "final": false,
+          "accepted": "Envoyer les détails sur WhatsApp, merci.",
+          "speech_epoch": 9
+        },
+        {
+          "at_ms": 29784.73675000714,
+          "text": "Envoyer les détails sur WhatsApp, merci.",
+          "final": false,
+          "accepted": "Envoyer les détails sur WhatsApp, merci.",
+          "speech_epoch": 9
+        },
+        {
+          "at_ms": 30309.443000005558,
+          "text": "Envoyer les détails sur WhatsApp, merci.",
+          "final": false,
+          "accepted": "",
+          "speech_epoch": 9
+        },
+        {
+          "at_ms": 30331.800375017338,
+          "text": "Envoyez les détails sur WhatsApp, merci.",
+          "final": true,
+          "accepted": "",
+          "speech_epoch": 9
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 26152.387500012992,
+          "speech_epoch": 8
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 28848.9588330267,
+          "elapsed_ms": 78.69720799499191,
+          "prediction": 0,
+          "probability": 0.05541592836380005
+        },
+        {
+          "at_ms": 28956.390417006332,
+          "elapsed_ms": 62.99008399946615,
+          "prediction": 0,
+          "probability": 0.12675368785858154
+        },
+        {
+          "at_ms": 29626.141625019955,
+          "elapsed_ms": 239.09158297465183,
+          "prediction": 1,
+          "probability": 0.5393059253692627
+        }
+      ],
+      "actual": "Envoyer les détails sur WhatsApp, merci.",
+      "words_match": false,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1382.4394170055166
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_web",
+      "language": "en-US",
+      "expected": "Send the details through the website.",
+      "noise_seed": 101,
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "ae4ebcb57a449b9cf237d16daa11dfdeff9b5f5baf756795118213edca7e45a7",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 1880.0,
+      "start_ms": 30721.021833014674,
+      "verifications": [
+        {
+          "at_ms": 33365.12445801054,
+          "text": "Send the details through the website.",
+          "trusted": true,
+          "language_mode": "en",
+          "audio_ms": 2680.0,
+          "audio_sha256": "312c70bc3bd981a9e2a11848c854c434156b0de6e0628c7a6b757004e33b6dad"
+        }
+      ],
+      "commits": [
+        {
+          "at_ms": 34236.96075001499,
+          "text": "Send the details through the website.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.7063370756656752,
+                "language": "en",
+                "decode_ms": 517.5812079978641
+              },
+              "speech_epoch": 10,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 151700175318458,
+              "committed_monotonic_ns": 151701889128750,
+              "endpoint_wait_ms": 1700.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 32032.87237501354,
+          "text": "Send a",
+          "final": false,
+          "accepted": "Send a",
+          "speech_epoch": 10
+        },
+        {
+          "at_ms": 32551.544000016293,
+          "text": "Send the details through the",
+          "final": false,
+          "accepted": "Send the details through the",
+          "speech_epoch": 10
+        },
+        {
+          "at_ms": 32936.95016700076,
+          "text": "Send the details through the",
+          "final": false,
+          "accepted": "Send the details through the",
+          "speech_epoch": 10
+        },
+        {
+          "at_ms": 33519.88658300252,
+          "text": "Send the details through the website.",
+          "final": false,
+          "accepted": "Send the details through the website.",
+          "speech_epoch": 10
+        },
+        {
+          "at_ms": 33980.001250019995,
+          "text": "Send the details through the website.",
+          "final": false,
+          "accepted": "Send the details through the website.",
+          "speech_epoch": 10
+        },
+        {
+          "at_ms": 34044.27229199791,
+          "text": "Send the details through the website.",
+          "final": true,
+          "accepted": "Send the details through the website.",
+          "speech_epoch": 10
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 30966.30675002234,
+          "speech_epoch": 10
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 32836.11508301692,
+          "elapsed_ms": 78.63116700900719,
+          "prediction": 1,
+          "probability": 0.975929319858551
+        },
+        {
+          "at_ms": 33700.37091700942,
+          "elapsed_ms": 62.51054201857187,
+          "prediction": 1,
+          "probability": 0.9870367050170898
+        },
+        {
+          "at_ms": 34229.459542024415,
+          "elapsed_ms": 67.31237500207499,
+          "prediction": 1,
+          "probability": 0.9801466464996338
+        }
+      ],
+      "actual": "Send the details through the website.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1635.9389170003124
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_web",
+      "language": "fr-FR",
+      "expected": "Pouvez-vous envoyer les détails sur le site web ?",
+      "noise_seed": 102,
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "5da4560150ff81aaf3867243e5c70703913d71b71125f99785242d5e05f339a2",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 2500.0,
+      "start_ms": 35017.54066700232,
+      "verifications": [
+        {
+          "at_ms": 38578.913417004514,
+          "text": "Vous pouvez vous envoyer les détails sur le site web ?",
+          "trusted": true,
+          "language_mode": "fr",
+          "audio_ms": 3380.0,
+          "audio_sha256": "8c934fab0a134a1e14d6572162168e5c41b961d3d5e21094839e98fb200aefe8"
+        }
+      ],
+      "commits": [
+        {
+          "at_ms": 39189.241542015225,
+          "text": "Pouvez-vous envoyer les détails sur le site web ?",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": false,
+              "corroboration": {
+                "reason": "transcript_disagreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.72059510347545,
+                "language": "fr",
+                "decode_ms": 765.6267079873942
+              },
+              "speech_epoch": 11,
+              "provider_final": true,
+              "partial_confirmations": 1,
+              "partial_confirmed": false,
+              "speech_end_monotonic_ns": 151705151318166,
+              "committed_monotonic_ns": 151706841401041,
+              "endpoint_wait_ms": 1680.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 36273.91429201816,
+          "text": "Pouvez-vous",
+          "final": false,
+          "accepted": "Pouvez-vous",
+          "speech_epoch": 11
+        },
+        {
+          "at_ms": 36751.88750002417,
+          "text": "Pouvez-vous envoyer les",
+          "final": false,
+          "accepted": "Pouvez-vous envoyer les",
+          "speech_epoch": 11
+        },
+        {
+          "at_ms": 37228.26800000621,
+          "text": "Pouvez-vous envoyer les détails sur le",
+          "final": false,
+          "accepted": "Pouvez-vous envoyer les détails sur le",
+          "speech_epoch": 11
+        },
+        {
+          "at_ms": 37813.526292011375,
+          "text": "Pouvez-vous envoyer les détails sur le cycle",
+          "final": false,
+          "accepted": "Pouvez-vous envoyer les détails sur le cycle",
+          "speech_epoch": 11
+        },
+        {
+          "at_ms": 38272.73387502646,
+          "text": "Pouvez-vous envoyer les détails sur le site web",
+          "final": false,
+          "accepted": "Pouvez-vous envoyer les détails sur le site web",
+          "speech_epoch": 11
+        },
+        {
+          "at_ms": 38736.53266701149,
+          "text": "Pouvez-vous envoyer les détails sur le site web?",
+          "final": false,
+          "accepted": "Pouvez-vous envoyer les détails sur le site web?",
+          "speech_epoch": 11
+        },
+        {
+          "at_ms": 38972.11216701544,
+          "text": "Pouvez-vous envoyer les détails sur le site web ?",
+          "final": true,
+          "accepted": "Pouvez-vous envoyer les détails sur le site web ?",
+          "speech_epoch": 11
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 35181.944917014334,
+          "speech_epoch": 11
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 37848.65075000562,
+          "elapsed_ms": 67.5350000092294,
+          "prediction": 0,
+          "probability": 0.32117950916290283
+        },
+        {
+          "at_ms": 38242.36808301066,
+          "elapsed_ms": 298.49654200370423,
+          "prediction": 1,
+          "probability": 0.8447034358978271
+        },
+        {
+          "at_ms": 38641.04104202124,
+          "elapsed_ms": 258.2908329786733,
+          "prediction": 1,
+          "probability": 0.978554368019104
+        },
+        {
+          "at_ms": 38913.509875012096,
+          "elapsed_ms": 67.10675000795163,
+          "prediction": 1,
+          "probability": 0.9108326435089111
+        },
+        {
+          "at_ms": 39163.111875008326,
+          "elapsed_ms": 73.79808399127796,
+          "prediction": 1,
+          "probability": 0.834087073802948
+        }
+      ],
+      "actual": "Pouvez-vous envoyer les détails sur le site web ?",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1671.7008750129025
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_email",
+      "language": "en-US",
+      "expected": "Not WhatsApp, please send me an email.",
+      "noise_seed": 103,
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "f49053890df676759846859498199d5e287de1dc87b373a0ed3527dc06482b7d",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 2320.0,
+      "start_ms": 39974.324708018685,
+      "verifications": [
+        {
+          "at_ms": 41647.06775001832,
+          "text": "Not WhatsApp.",
+          "trusted": true,
+          "language_mode": "auto",
+          "audio_ms": 1660.0,
+          "audio_sha256": "18230b0bbc0411e55a207ef8fb1c1f036a9ad0c8fe461ae77623adcc2bddd0eb"
+        },
+        {
+          "at_ms": 43729.59550001542,
+          "text": "Not WhatsApp. Please send me an e-mail.",
+          "trusted": true,
+          "language_mode": "auto",
+          "audio_ms": 3200.0,
+          "audio_sha256": "80c3ee7300c63590777bd5495975436c35b894953e4f392a56a864ad8a6ac9be"
+        }
+      ],
+      "commits": [
+        {
+          "at_ms": 43824.685083003715,
+          "text": "Not WhatsApp. Please send me an email.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": false,
+              "corroboration": {
+                "reason": "transcript_disagreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.7169999729875537,
+                "language": "en",
+                "decode_ms": 1133.9393749949522
+              },
+              "speech_epoch": 13,
+              "provider_final": false,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 151709927440375,
+              "committed_monotonic_ns": 151711476836416,
+              "endpoint_wait_ms": 1540.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 41224.15395799908,
+          "text": "Not",
+          "final": false,
+          "accepted": "Not",
+          "speech_epoch": 13
+        },
+        {
+          "at_ms": 41706.43816702068,
+          "text": "Not WhatsApp.",
+          "final": false,
+          "accepted": "Not WhatsApp.",
+          "speech_epoch": 13
+        },
+        {
+          "at_ms": 42134.419292007806,
+          "text": "Not WhatsApp. Please send",
+          "final": false,
+          "accepted": "Not WhatsApp. Please send",
+          "speech_epoch": 13
+        },
+        {
+          "at_ms": 42606.907167006284,
+          "text": "Not WhatsApp. Please send me an",
+          "final": false,
+          "accepted": "Not WhatsApp. Please send me an",
+          "speech_epoch": 13
+        },
+        {
+          "at_ms": 43164.79854201316,
+          "text": "Not WhatsApp. Please send me an email.",
+          "final": false,
+          "accepted": "Not WhatsApp. Please send me an email.",
+          "speech_epoch": 13
+        },
+        {
+          "at_ms": 43620.73595801485,
+          "text": "Not WhatsApp. Please send me an email.",
+          "final": false,
+          "accepted": "Not WhatsApp. Please send me an email.",
+          "speech_epoch": 13
+        },
+        {
+          "at_ms": 43847.074625024106,
+          "text": "Not WhatsApp, please send me an email.",
+          "final": true,
+          "accepted": "",
+          "speech_epoch": 13
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 40116.62495799828,
+          "speech_epoch": 12
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 41064.88062502467,
+          "elapsed_ms": 67.37795798107982,
+          "prediction": 1,
+          "probability": 0.5684942007064819
+        },
+        {
+          "at_ms": 42578.07595800841,
+          "elapsed_ms": 65.75825001345947,
+          "prediction": 1,
+          "probability": 0.9604700207710266
+        },
+        {
+          "at_ms": 42782.00570802437,
+          "elapsed_ms": 62.12050002068281,
+          "prediction": 0,
+          "probability": 0.3839901089668274
+        },
+        {
+          "at_ms": 43408.63941700081,
+          "elapsed_ms": 140.08970800205134,
+          "prediction": 1,
+          "probability": 0.9485659599304199
+        }
+      ],
+      "actual": "Not WhatsApp. Please send me an email.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1530.36037498503
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_email",
+      "language": "fr-FR",
+      "expected": "Pas sur WhatsApp, envoyez-moi un e-mail.",
+      "noise_seed": 104,
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "f39df1c367e971627c19893cd36e626891fcb0519297a4161a3a6d013880d5ee",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 2520.0,
+      "start_ms": 44598.57345800265,
+      "verifications": [
+        {
+          "at_ms": 46290.67058302462,
+          "text": "Passer ou voilà.",
+          "trusted": false,
+          "language_mode": "auto",
+          "audio_ms": 1660.0,
+          "audio_sha256": "663653e0656a0015282cb71664da76177006d070a31aff079e4866ad25b4f9aa"
+        },
+        {
+          "at_ms": 48380.516792007256,
+          "text": "Pas sur WAC, envoyez-moi un e-mail.",
+          "trusted": true,
+          "language_mode": "auto",
+          "audio_ms": 3380.0,
+          "audio_sha256": "c86945c8ad82c07d9a37e60ad34d6afa11a6cd1663e6a0285e8fa72e373ccf35"
+        }
+      ],
+      "commits": [
+        {
+          "at_ms": 48856.62020801101,
+          "text": "Envoyez-moi un e-mail.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": false,
+              "corroboration": {
+                "reason": "transcript_disagreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6843600859216903,
+                "language": "fr",
+                "decode_ms": 960.8575839956757
+              },
+              "speech_epoch": 15,
+              "provider_final": true,
+              "partial_confirmations": 1,
+              "partial_confirmed": false,
+              "speech_end_monotonic_ns": 151714751462541,
+              "committed_monotonic_ns": 151716508813916,
+              "endpoint_wait_ms": 1740.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 47245.182708022185,
+          "text": "Patientez, envoyez-moi un",
+          "final": false,
+          "accepted": "Patientez, envoyez-moi un",
+          "speech_epoch": 15
+        },
+        {
+          "at_ms": 47705.61679202365,
+          "text": "Patientez, envoyez-moi un e-mail.",
+          "final": false,
+          "accepted": "Patientez, envoyez-moi un e-mail.",
+          "speech_epoch": 15
+        },
+        {
+          "at_ms": 48269.22512502642,
+          "text": "Envoyez-moi un e-mail.",
+          "final": false,
+          "accepted": "Envoyez-moi un e-mail.",
+          "speech_epoch": 15
+        },
+        {
+          "at_ms": 48661.13266700995,
+          "text": "Envoyez-moi un e-mail.",
+          "final": true,
+          "accepted": "Envoyez-moi un e-mail.",
+          "speech_epoch": 15
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 44762.02812499832,
+          "speech_epoch": 14
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 45680.73429202195,
+          "elapsed_ms": 65.27141598053277,
+          "prediction": 0,
+          "probability": 0.4122953414916992
+        },
+        {
+          "at_ms": 47419.37437502202,
+          "elapsed_ms": 70.63237499096431,
+          "prediction": 1,
+          "probability": 0.8111233115196228
+        },
+        {
+          "at_ms": 47887.944583024364,
+          "elapsed_ms": 67.42937499075197,
+          "prediction": 0,
+          "probability": 0.32117950916290283
+        },
+        {
+          "at_ms": 48443.72595800087,
+          "elapsed_ms": 63.801332988077775,
+          "prediction": 1,
+          "probability": 0.8547587990760803
+        },
+        {
+          "at_ms": 48835.69658300257,
+          "elapsed_ms": 72.42762498208322,
+          "prediction": 1,
+          "probability": 0.9075815677642822
+        }
+      ],
+      "actual": "Envoyez-moi un e-mail.",
+      "words_match": false,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1738.0467500083614
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_whatsapp",
+      "language": "en-US",
+      "expected": "Please send the details on WhatsApp.",
+      "noise_seed": 105,
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "9f50e6236dd4a5c4d87b87f6823bc18d89ef498818f8320c33921bae62c11f31",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 1900.0,
+      "start_ms": 49640.801917004865,
+      "verifications": [
+        {
+          "at_ms": 52410.847083025146,
+          "text": "Please send the details on WhatsApp.",
+          "trusted": true,
+          "language_mode": "en",
+          "audio_ms": 2740.0,
+          "audio_sha256": "76f3c983e3a47235a23501b8a87157a515d78343243bc07491cc0b40ecced11e"
+        }
+      ],
+      "commits": [
+        {
+          "at_ms": 53179.24279201543,
+          "text": "Please send the details on WhatsApp.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": true,
+              "corroboration": {
+                "reason": "agreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.6997740206405114,
+                "language": "en",
+                "decode_ms": 612.1147919911891
+              },
+              "speech_epoch": 16,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 151719134357750,
+              "committed_monotonic_ns": 151720831199875,
+              "endpoint_wait_ms": 1680.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 50923.55837501236,
+          "text": "Please send the",
+          "final": false,
+          "accepted": "Please send the",
+          "speech_epoch": 16
+        },
+        {
+          "at_ms": 51396.46604200243,
+          "text": "Please send the details",
+          "final": false,
+          "accepted": "Please send the details",
+          "speech_epoch": 16
+        },
+        {
+          "at_ms": 51941.32625000202,
+          "text": "Please send the details on",
+          "final": false,
+          "accepted": "Please send the details on",
+          "speech_epoch": 16
+        },
+        {
+          "at_ms": 52370.054708007956,
+          "text": "Please send the details on WhatsApp.",
+          "final": false,
+          "accepted": "Please send the details on WhatsApp.",
+          "speech_epoch": 16
+        },
+        {
+          "at_ms": 52853.89904200565,
+          "text": "Please send the details on WhatsApp.",
+          "final": false,
+          "accepted": "Please send the details on WhatsApp.",
+          "speech_epoch": 16
+        },
+        {
+          "at_ms": 52976.64212502423,
+          "text": "Please send the details on WhatsApp.",
+          "final": true,
+          "accepted": "Please send the details on WhatsApp.",
+          "speech_epoch": 16
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 49803.75429202104,
+          "speech_epoch": 16
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 51762.33175001107,
+          "elapsed_ms": 60.371416999259964,
+          "prediction": 1,
+          "probability": 0.9042243957519531
+        },
+        {
+          "at_ms": 52431.30958301481,
+          "elapsed_ms": 368.37187499622814,
+          "prediction": 1,
+          "probability": 0.9875311851501465
+        },
+        {
+          "at_ms": 52539.64137501316,
+          "elapsed_ms": 61.79054200765677,
+          "prediction": 1,
+          "probability": 0.9816229343414307
+        },
+        {
+          "at_ms": 53162.861292017624,
+          "elapsed_ms": 68.86941698030569,
+          "prediction": 1,
+          "probability": 0.9842595458030701
+        }
+      ],
+      "actual": "Please send the details on WhatsApp.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1638.440875010565
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_whatsapp",
+      "language": "fr-FR",
+      "expected": "Envoyez les détails sur WhatsApp, merci.",
+      "noise_seed": 106,
+      "continuation_ms": null,
+      "pause_ms": 0,
+      "source_sha256": "71da819ce686a43dcf1be230a92d587fa86618bbfe69f7781b3a7bc1b53d3dcb",
+      "level": "10",
+      "clipped_samples": 0,
+      "source_duration_ms": 2560.0,
+      "start_ms": 53956.85504202265,
+      "verifications": [
+        {
+          "at_ms": 56418.68320800131,
+          "text": "Envoyez les détails sur WhatsApp.",
+          "trusted": true,
+          "language_mode": "fr",
+          "audio_ms": 2500.0,
+          "audio_sha256": "be03f5aacdb30efe9563973571f994498eef358569f92808ff2c88a0e8c09172"
+        },
+        {
+          "at_ms": 57374.378208012786,
+          "text": "Envoyez les détails sur WAP, merci.",
+          "trusted": true,
+          "language_mode": "fr",
+          "audio_ms": 3420.0,
+          "audio_sha256": "25a1afc33e4623624b8c2bff316ab6603988b064e7710434704c0516db84739d"
+        }
+      ],
+      "commits": [
+        {
+          "at_ms": 59492.1410829993,
+          "text": "Envoyez les détails sur WhatsApp, merci.",
+          "metadata": {
+            "phone_agent": {
+              "trusted_for_task": false,
+              "corroboration": {
+                "reason": "transcript_disagreement",
+                "model": "mlx-community/whisper-large-v3-turbo-q4",
+                "local_confidence": 0.5895950164224528,
+                "language": "fr",
+                "decode_ms": 581.0800409817602
+              },
+              "speech_epoch": 18,
+              "provider_final": true,
+              "partial_confirmations": 1,
+              "partial_confirmed": false,
+              "speech_end_monotonic_ns": 151724130712916,
+              "committed_monotonic_ns": 151727144291416,
+              "endpoint_wait_ms": 3000.0,
+              "completion_reason": "bounded_incomplete"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 55212.2584580211,
+          "text": "Envoyer les",
+          "final": false,
+          "accepted": "Envoyer les",
+          "speech_epoch": 17
+        },
+        {
+          "at_ms": 55686.81141702109,
+          "text": "Envoyer les détails",
+          "final": false,
+          "accepted": "Envoyer les détails",
+          "speech_epoch": 17
+        },
+        {
+          "at_ms": 56140.62858300167,
+          "text": "Envoyer les détails sur",
+          "final": false,
+          "accepted": "Envoyer les détails sur",
+          "speech_epoch": 18
+        },
+        {
+          "at_ms": 56615.835000004154,
+          "text": "Envoyer les détails sur",
+          "final": false,
+          "accepted": "Envoyer les détails sur",
+          "speech_epoch": 18
+        },
+        {
+          "at_ms": 57062.61216700659,
+          "text": "Envoyer les détails sur WhatsApp. Merci.",
+          "final": false,
+          "accepted": "Envoyer les détails sur WhatsApp. Merci.",
+          "speech_epoch": 18
+        },
+        {
+          "at_ms": 57713.75562500907,
+          "text": "Envoyer les détails sur WhatsApp, merci.",
+          "final": false,
+          "accepted": "Envoyer les détails sur WhatsApp, merci.",
+          "speech_epoch": 18
+        },
+        {
+          "at_ms": 58125.083958002506,
+          "text": "Envoyez les détails sur WhatsApp, merci.",
+          "final": true,
+          "accepted": "Envoyez les détails sur WhatsApp, merci.",
+          "speech_epoch": 18
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 54078.86570802657,
+          "speech_epoch": 17
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 55877.09866699879,
+          "elapsed_ms": 71.00133399944752,
+          "prediction": 0,
+          "probability": 0.165912926197052
+        },
+        {
+          "at_ms": 56799.472208018415,
+          "elapsed_ms": 80.30550001421943,
+          "prediction": 0,
+          "probability": 0.02144560217857361
+        },
+        {
+          "at_ms": 57457.059458014555,
+          "elapsed_ms": 288.598750019446,
+          "prediction": 0,
+          "probability": 0.06667384505271912
+        },
+        {
+          "at_ms": 57878.754500008654,
+          "elapsed_ms": 59.5415830030106,
+          "prediction": 0,
+          "probability": 0.33859044313430786
+        },
+        {
+          "at_ms": 58285.69225000683,
+          "elapsed_ms": 59.296749997884035,
+          "prediction": 0,
+          "probability": 0.06426429748535156
+        }
+      ],
+      "actual": "Envoyez les détails sur WhatsApp, merci.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        2975.2860409766436
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    }
+  ],
+  "errors": [],
+  "elapsed_seconds": 60.270819750003284
+}

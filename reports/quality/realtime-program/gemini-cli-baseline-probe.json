@@ -1,0 +1,8 @@
+{
+  "scope": "Installed legacy Gemini CLI, known empty extension/MCP surface, text-only prompt; no call or external action",
+  "model": "gemini-2.5-flash",
+  "first_text_ms": 1217.7732910058694,
+  "error_type": "GeminiCliError",
+  "error_summary": "An unexpected critical error occurred: | Error: This account requires setting the GOOGLE_CLOUD_PROJECT env var. See https://goo.gle/gemini-cli-auth-docs#workspace-gca",
+  "total_ms": 2443.36087499687
+}

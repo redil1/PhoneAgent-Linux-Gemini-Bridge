@@ -1,0 +1,1060 @@
+{
+  "scope": "Real recognizer and acoustic-controller probes using protected synthetic audio.\n\nNo calls, messages, microphone, speaker, or customer recordings are used.\n",
+  "rows": [
+    {
+      "case": "silence",
+      "language": "en-US",
+      "injected_provider_fault": false,
+      "audio_ms": 2000.0,
+      "hypotheses": [],
+      "frames": [],
+      "interruptions": 0,
+      "acoustic_epochs": 0,
+      "chunk_ms": 200,
+      "send_queue_peak": 1,
+      "send_queue_remaining": 0,
+      "sends": [
+        {
+          "sequence": 0,
+          "bytes": 6400,
+          "elapsed_ms": 6.508292019134387
+        },
+        {
+          "sequence": 1,
+          "bytes": 6400,
+          "elapsed_ms": 6.193375011207536
+        },
+        {
+          "sequence": 2,
+          "bytes": 6400,
+          "elapsed_ms": 6.080084014683962
+        },
+        {
+          "sequence": 3,
+          "bytes": 6400,
+          "elapsed_ms": 6.328333984129131
+        },
+        {
+          "sequence": 4,
+          "bytes": 6400,
+          "elapsed_ms": 6.5142080129589885
+        },
+        {
+          "sequence": 5,
+          "bytes": 6400,
+          "elapsed_ms": 5.909250001423061
+        },
+        {
+          "sequence": 6,
+          "bytes": 6400,
+          "elapsed_ms": 8.41999999829568
+        },
+        {
+          "sequence": 7,
+          "bytes": 6400,
+          "elapsed_ms": 6.267249991651624
+        },
+        {
+          "sequence": 8,
+          "bytes": 6400,
+          "elapsed_ms": 7.852749986341223
+        },
+        {
+          "sequence": 9,
+          "bytes": 6400,
+          "elapsed_ms": 5.356290988856927
+        },
+        {
+          "sequence": 10,
+          "bytes": 6400,
+          "elapsed_ms": 7.0458340051118284
+        },
+        {
+          "sequence": 11,
+          "bytes": 6400,
+          "elapsed_ms": 7.282292004674673
+        },
+        {
+          "sequence": 12,
+          "bytes": 6400,
+          "elapsed_ms": 7.713458995567635
+        },
+        {
+          "sequence": 13,
+          "bytes": 6400,
+          "elapsed_ms": 7.602083001984283
+        },
+        {
+          "sequence": 14,
+          "bytes": 6400,
+          "elapsed_ms": 7.034749985905364
+        },
+        {
+          "sequence": 15,
+          "bytes": 6400,
+          "elapsed_ms": 8.12258300720714
+        },
+        {
+          "sequence": 16,
+          "bytes": 6400,
+          "elapsed_ms": 6.956542027182877
+        },
+        {
+          "sequence": 17,
+          "bytes": 6400,
+          "elapsed_ms": 6.90612499602139
+        },
+        {
+          "sequence": 18,
+          "bytes": 6400,
+          "elapsed_ms": 7.046125014312565
+        },
+        {
+          "sequence": 19,
+          "bytes": 6400,
+          "elapsed_ms": 6.565375020727515
+        },
+        {
+          "sequence": 20,
+          "bytes": 6400,
+          "elapsed_ms": 6.10983298975043
+        },
+        {
+          "sequence": 21,
+          "bytes": 6400,
+          "elapsed_ms": 6.711875001201406
+        },
+        {
+          "sequence": 22,
+          "bytes": 6400,
+          "elapsed_ms": 6.301250017713755
+        },
+        {
+          "sequence": 23,
+          "bytes": 6400,
+          "elapsed_ms": 7.213667005999014
+        },
+        {
+          "sequence": 24,
+          "bytes": 6400,
+          "elapsed_ms": 7.0223750080913305
+        },
+        {
+          "sequence": 25,
+          "bytes": 6400,
+          "elapsed_ms": 7.424250012263656
+        },
+        {
+          "sequence": 26,
+          "bytes": 6400,
+          "elapsed_ms": 7.696375017985702
+        },
+        {
+          "sequence": 27,
+          "bytes": 6400,
+          "elapsed_ms": 6.622082990361378
+        },
+        {
+          "sequence": 28,
+          "bytes": 6400,
+          "elapsed_ms": 7.726792013272643
+        },
+        {
+          "sequence": 29,
+          "bytes": 6400,
+          "elapsed_ms": 5.34066601539962
+        }
+      ]
+    },
+    {
+      "case": "noise_only",
+      "language": "en-US",
+      "injected_provider_fault": false,
+      "audio_ms": 3000.0,
+      "hypotheses": [],
+      "frames": [],
+      "interruptions": 0,
+      "acoustic_epochs": 0,
+      "chunk_ms": 200,
+      "send_queue_peak": 1,
+      "send_queue_remaining": 0,
+      "sends": [
+        {
+          "sequence": 0,
+          "bytes": 6400,
+          "elapsed_ms": 7.044833997497335
+        },
+        {
+          "sequence": 1,
+          "bytes": 6400,
+          "elapsed_ms": 4.8835840134415776
+        },
+        {
+          "sequence": 2,
+          "bytes": 6400,
+          "elapsed_ms": 5.548290995648131
+        },
+        {
+          "sequence": 3,
+          "bytes": 6400,
+          "elapsed_ms": 6.686874985462055
+        },
+        {
+          "sequence": 4,
+          "bytes": 6400,
+          "elapsed_ms": 7.058417017105967
+        },
+        {
+          "sequence": 5,
+          "bytes": 6400,
+          "elapsed_ms": 7.137749984394759
+        },
+        {
+          "sequence": 6,
+          "bytes": 6400,
+          "elapsed_ms": 6.17416700697504
+        },
+        {
+          "sequence": 7,
+          "bytes": 6400,
+          "elapsed_ms": 6.832375016529113
+        },
+        {
+          "sequence": 8,
+          "bytes": 6400,
+          "elapsed_ms": 5.944874981651083
+        },
+        {
+          "sequence": 9,
+          "bytes": 6400,
+          "elapsed_ms": 7.9677909961901605
+        },
+        {
+          "sequence": 10,
+          "bytes": 6400,
+          "elapsed_ms": 8.045209018746391
+        },
+        {
+          "sequence": 11,
+          "bytes": 6400,
+          "elapsed_ms": 7.653415988897905
+        },
+        {
+          "sequence": 12,
+          "bytes": 6400,
+          "elapsed_ms": 7.8541249968111515
+        },
+        {
+          "sequence": 13,
+          "bytes": 6400,
+          "elapsed_ms": 7.258249999722466
+        },
+        {
+          "sequence": 14,
+          "bytes": 6400,
+          "elapsed_ms": 7.942040974739939
+        },
+        {
+          "sequence": 15,
+          "bytes": 6400,
+          "elapsed_ms": 7.0509170182049274
+        },
+        {
+          "sequence": 16,
+          "bytes": 6400,
+          "elapsed_ms": 6.4001659920904785
+        },
+        {
+          "sequence": 17,
+          "bytes": 6400,
+          "elapsed_ms": 6.413833005353808
+        },
+        {
+          "sequence": 18,
+          "bytes": 6400,
+          "elapsed_ms": 6.9362500216811895
+        },
+        {
+          "sequence": 19,
+          "bytes": 6400,
+          "elapsed_ms": 7.55287500214763
+        },
+        {
+          "sequence": 20,
+          "bytes": 6400,
+          "elapsed_ms": 6.390833004843444
+        },
+        {
+          "sequence": 21,
+          "bytes": 6400,
+          "elapsed_ms": 7.754666992696002
+        },
+        {
+          "sequence": 22,
+          "bytes": 6400,
+          "elapsed_ms": 7.130749989300966
+        },
+        {
+          "sequence": 23,
+          "bytes": 6400,
+          "elapsed_ms": 7.720708003034815
+        },
+        {
+          "sequence": 24,
+          "bytes": 6400,
+          "elapsed_ms": 6.442083977162838
+        },
+        {
+          "sequence": 25,
+          "bytes": 6400,
+          "elapsed_ms": 7.4744169833138585
+        },
+        {
+          "sequence": 26,
+          "bytes": 6400,
+          "elapsed_ms": 5.308749998221174
+        },
+        {
+          "sequence": 27,
+          "bytes": 6400,
+          "elapsed_ms": 7.007417007116601
+        },
+        {
+          "sequence": 28,
+          "bytes": 6400,
+          "elapsed_ms": 7.23529199603945
+        },
+        {
+          "sequence": 29,
+          "bytes": 6400,
+          "elapsed_ms": 6.927584006916732
+        },
+        {
+          "sequence": 30,
+          "bytes": 6400,
+          "elapsed_ms": 8.229958009906113
+        },
+        {
+          "sequence": 31,
+          "bytes": 6400,
+          "elapsed_ms": 7.340292009757832
+        },
+        {
+          "sequence": 32,
+          "bytes": 6400,
+          "elapsed_ms": 6.2154999759513885
+        },
+        {
+          "sequence": 33,
+          "bytes": 6400,
+          "elapsed_ms": 6.511082989163697
+        },
+        {
+          "sequence": 34,
+          "bytes": 6400,
+          "elapsed_ms": 8.027167001273483
+        }
+      ]
+    },
+    {
+      "case": "clear_en",
+      "language": "en-US",
+      "injected_provider_fault": false,
+      "audio_ms": 4355.125,
+      "hypotheses": [],
+      "frames": [
+        {
+          "kind": "start",
+          "at": 131585.878120708,
+          "after_eof_ms": -4171.558875008486
+        }
+      ],
+      "interruptions": 2,
+      "acoustic_epochs": 2,
+      "chunk_ms": 200,
+      "send_queue_peak": 1,
+      "send_queue_remaining": 0,
+      "sends": [
+        {
+          "sequence": 0,
+          "bytes": 6400,
+          "elapsed_ms": 8.206750004319474
+        },
+        {
+          "sequence": 1,
+          "bytes": 6400,
+          "elapsed_ms": 7.842082995921373
+        },
+        {
+          "sequence": 2,
+          "bytes": 6400,
+          "elapsed_ms": 8.243874995969236
+        },
+        {
+          "sequence": 3,
+          "bytes": 6400,
+          "elapsed_ms": 7.645292003871873
+        },
+        {
+          "sequence": 4,
+          "bytes": 6400,
+          "elapsed_ms": 7.263625011546537
+        },
+        {
+          "sequence": 5,
+          "bytes": 6400,
+          "elapsed_ms": 8.945083012804389
+        },
+        {
+          "sequence": 6,
+          "bytes": 6400,
+          "elapsed_ms": 9.52391600003466
+        },
+        {
+          "sequence": 7,
+          "bytes": 6400,
+          "elapsed_ms": 5.949916987447068
+        },
+        {
+          "sequence": 8,
+          "bytes": 6400,
+          "elapsed_ms": 8.040500018978491
+        },
+        {
+          "sequence": 9,
+          "bytes": 6400,
+          "elapsed_ms": 8.784334000665694
+        },
+        {
+          "sequence": 10,
+          "bytes": 6400,
+          "elapsed_ms": 6.388957990566269
+        },
+        {
+          "sequence": 11,
+          "bytes": 6400,
+          "elapsed_ms": 7.461583008989692
+        },
+        {
+          "sequence": 12,
+          "bytes": 6400,
+          "elapsed_ms": 8.11495800735429
+        },
+        {
+          "sequence": 13,
+          "bytes": 6400,
+          "elapsed_ms": 9.27791598951444
+        },
+        {
+          "sequence": 14,
+          "bytes": 6400,
+          "elapsed_ms": 5.571541987592354
+        },
+        {
+          "sequence": 15,
+          "bytes": 6400,
+          "elapsed_ms": 7.662749994779006
+        },
+        {
+          "sequence": 16,
+          "bytes": 6400,
+          "elapsed_ms": 6.267584016313776
+        },
+        {
+          "sequence": 17,
+          "bytes": 6400,
+          "elapsed_ms": 7.926916994620115
+        },
+        {
+          "sequence": 18,
+          "bytes": 6400,
+          "elapsed_ms": 7.98370799748227
+        },
+        {
+          "sequence": 19,
+          "bytes": 6400,
+          "elapsed_ms": 7.982457987964153
+        },
+        {
+          "sequence": 20,
+          "bytes": 6400,
+          "elapsed_ms": 6.6665410122368485
+        },
+        {
+          "sequence": 21,
+          "bytes": 6400,
+          "elapsed_ms": 6.644124980084598
+        },
+        {
+          "sequence": 22,
+          "bytes": 6400,
+          "elapsed_ms": 4.815291002159938
+        },
+        {
+          "sequence": 23,
+          "bytes": 6400,
+          "elapsed_ms": 6.73079100670293
+        },
+        {
+          "sequence": 24,
+          "bytes": 6400,
+          "elapsed_ms": 5.361083021853119
+        },
+        {
+          "sequence": 25,
+          "bytes": 6400,
+          "elapsed_ms": 10.926332994131371
+        },
+        {
+          "sequence": 26,
+          "bytes": 6400,
+          "elapsed_ms": 6.757499999366701
+        },
+        {
+          "sequence": 27,
+          "bytes": 6400,
+          "elapsed_ms": 6.988792010815814
+        },
+        {
+          "sequence": 28,
+          "bytes": 6400,
+          "elapsed_ms": 8.431708993157372
+        },
+        {
+          "sequence": 29,
+          "bytes": 6400,
+          "elapsed_ms": 22.02237499295734
+        },
+        {
+          "sequence": 30,
+          "bytes": 6400,
+          "elapsed_ms": 6.444667000323534
+        },
+        {
+          "sequence": 31,
+          "bytes": 6400,
+          "elapsed_ms": 7.030709006357938
+        },
+        {
+          "sequence": 32,
+          "bytes": 6400,
+          "elapsed_ms": 8.064041991019621
+        },
+        {
+          "sequence": 33,
+          "bytes": 6400,
+          "elapsed_ms": 8.766457991441712
+        },
+        {
+          "sequence": 34,
+          "bytes": 6400,
+          "elapsed_ms": 6.825291988207027
+        },
+        {
+          "sequence": 35,
+          "bytes": 6400,
+          "elapsed_ms": 6.81733398232609
+        },
+        {
+          "sequence": 36,
+          "bytes": 6400,
+          "elapsed_ms": 7.1291660133283585
+        },
+        {
+          "sequence": 37,
+          "bytes": 6400,
+          "elapsed_ms": 7.746332994429395
+        },
+        {
+          "sequence": 38,
+          "bytes": 6400,
+          "elapsed_ms": 6.952207972062752
+        },
+        {
+          "sequence": 39,
+          "bytes": 6400,
+          "elapsed_ms": 6.736208975780755
+        },
+        {
+          "sequence": 40,
+          "bytes": 6400,
+          "elapsed_ms": 6.4653340086806566
+        }
+      ]
+    },
+    {
+      "case": "quiet_en_minus20db",
+      "language": "en-US",
+      "injected_provider_fault": false,
+      "audio_ms": 4355.125,
+      "hypotheses": [],
+      "frames": [
+        {
+          "kind": "start",
+          "at": 131595.673686333,
+          "after_eof_ms": -4172.079250012757
+        }
+      ],
+      "interruptions": 2,
+      "acoustic_epochs": 2,
+      "chunk_ms": 200,
+      "send_queue_peak": 1,
+      "send_queue_remaining": 0,
+      "sends": [
+        {
+          "sequence": 0,
+          "bytes": 6400,
+          "elapsed_ms": 11.887125001521781
+        },
+        {
+          "sequence": 1,
+          "bytes": 6400,
+          "elapsed_ms": 8.25679101399146
+        },
+        {
+          "sequence": 2,
+          "bytes": 6400,
+          "elapsed_ms": 7.05099999322556
+        },
+        {
+          "sequence": 3,
+          "bytes": 6400,
+          "elapsed_ms": 7.505832996685058
+        },
+        {
+          "sequence": 4,
+          "bytes": 6400,
+          "elapsed_ms": 7.8508750011678785
+        },
+        {
+          "sequence": 5,
+          "bytes": 6400,
+          "elapsed_ms": 8.430541987763718
+        },
+        {
+          "sequence": 6,
+          "bytes": 6400,
+          "elapsed_ms": 6.873083009850234
+        },
+        {
+          "sequence": 7,
+          "bytes": 6400,
+          "elapsed_ms": 7.250833004945889
+        },
+        {
+          "sequence": 8,
+          "bytes": 6400,
+          "elapsed_ms": 7.90541700553149
+        },
+        {
+          "sequence": 9,
+          "bytes": 6400,
+          "elapsed_ms": 6.124166015069932
+        },
+        {
+          "sequence": 10,
+          "bytes": 6400,
+          "elapsed_ms": 6.29862499772571
+        },
+        {
+          "sequence": 11,
+          "bytes": 6400,
+          "elapsed_ms": 7.587166997836903
+        },
+        {
+          "sequence": 12,
+          "bytes": 6400,
+          "elapsed_ms": 6.021375011187047
+        },
+        {
+          "sequence": 13,
+          "bytes": 6400,
+          "elapsed_ms": 8.589083008700982
+        },
+        {
+          "sequence": 14,
+          "bytes": 6400,
+          "elapsed_ms": 7.5631249928846955
+        },
+        {
+          "sequence": 15,
+          "bytes": 6400,
+          "elapsed_ms": 10.149333014851436
+        },
+        {
+          "sequence": 16,
+          "bytes": 6400,
+          "elapsed_ms": 12.060833018040285
+        },
+        {
+          "sequence": 17,
+          "bytes": 6400,
+          "elapsed_ms": 7.404417003272101
+        },
+        {
+          "sequence": 18,
+          "bytes": 6400,
+          "elapsed_ms": 6.386708002537489
+        },
+        {
+          "sequence": 19,
+          "bytes": 6400,
+          "elapsed_ms": 6.410542002413422
+        },
+        {
+          "sequence": 20,
+          "bytes": 6400,
+          "elapsed_ms": 8.22445799713023
+        },
+        {
+          "sequence": 21,
+          "bytes": 6400,
+          "elapsed_ms": 9.555458003887907
+        },
+        {
+          "sequence": 22,
+          "bytes": 6400,
+          "elapsed_ms": 6.152333022328094
+        },
+        {
+          "sequence": 23,
+          "bytes": 6400,
+          "elapsed_ms": 8.744791994104162
+        },
+        {
+          "sequence": 24,
+          "bytes": 6400,
+          "elapsed_ms": 7.114125008229166
+        },
+        {
+          "sequence": 25,
+          "bytes": 6400,
+          "elapsed_ms": 6.62837500567548
+        },
+        {
+          "sequence": 26,
+          "bytes": 6400,
+          "elapsed_ms": 8.410749986069277
+        },
+        {
+          "sequence": 27,
+          "bytes": 6400,
+          "elapsed_ms": 9.279707999667153
+        },
+        {
+          "sequence": 28,
+          "bytes": 6400,
+          "elapsed_ms": 7.040041993604973
+        },
+        {
+          "sequence": 29,
+          "bytes": 6400,
+          "elapsed_ms": 7.1084999945014715
+        },
+        {
+          "sequence": 30,
+          "bytes": 6400,
+          "elapsed_ms": 5.533457995625213
+        },
+        {
+          "sequence": 31,
+          "bytes": 6400,
+          "elapsed_ms": 8.441000012680888
+        },
+        {
+          "sequence": 32,
+          "bytes": 6400,
+          "elapsed_ms": 9.293457987951115
+        },
+        {
+          "sequence": 33,
+          "bytes": 6400,
+          "elapsed_ms": 7.734624989097938
+        },
+        {
+          "sequence": 34,
+          "bytes": 6400,
+          "elapsed_ms": 8.046832983382046
+        },
+        {
+          "sequence": 35,
+          "bytes": 6400,
+          "elapsed_ms": 5.645957979140803
+        },
+        {
+          "sequence": 36,
+          "bytes": 6400,
+          "elapsed_ms": 9.414458007086068
+        },
+        {
+          "sequence": 37,
+          "bytes": 6400,
+          "elapsed_ms": 7.388750003883615
+        },
+        {
+          "sequence": 38,
+          "bytes": 6400,
+          "elapsed_ms": 8.955958997830749
+        },
+        {
+          "sequence": 39,
+          "bytes": 6400,
+          "elapsed_ms": 8.776624978054315
+        },
+        {
+          "sequence": 40,
+          "bytes": 6400,
+          "elapsed_ms": 5.399582994868979
+        }
+      ]
+    },
+    {
+      "case": "clear_fr",
+      "language": "fr-FR",
+      "injected_provider_fault": false,
+      "audio_ms": 3711.375,
+      "hypotheses": [
+        {
+          "text": "Bonjour, je",
+          "final": false,
+          "speech_epoch": 2
+        },
+        {
+          "text": "Bonjour, je",
+          "final": true,
+          "speech_epoch": 2
+        }
+      ],
+      "frames": [
+        {
+          "kind": "start",
+          "at": 131605.504594791,
+          "after_eof_ms": -3568.1043340009637
+        },
+        {
+          "kind": "commit",
+          "text": "Bonjour, je",
+          "at": 131611.786412666,
+          "after_eof_ms": 2713.713540986646
+        }
+      ],
+      "interruptions": 2,
+      "acoustic_epochs": 2,
+      "chunk_ms": 200,
+      "send_queue_peak": 1,
+      "send_queue_remaining": 0,
+      "sends": [
+        {
+          "sequence": 0,
+          "bytes": 6400,
+          "elapsed_ms": 8.39979201555252
+        },
+        {
+          "sequence": 1,
+          "bytes": 6400,
+          "elapsed_ms": 5.77562497346662
+        },
+        {
+          "sequence": 2,
+          "bytes": 6400,
+          "elapsed_ms": 6.768624996766448
+        },
+        {
+          "sequence": 3,
+          "bytes": 6400,
+          "elapsed_ms": 7.528292015194893
+        },
+        {
+          "sequence": 4,
+          "bytes": 6400,
+          "elapsed_ms": 8.32483297563158
+        },
+        {
+          "sequence": 5,
+          "bytes": 6400,
+          "elapsed_ms": 7.156334002502263
+        },
+        {
+          "sequence": 6,
+          "bytes": 6400,
+          "elapsed_ms": 6.541542010381818
+        },
+        {
+          "sequence": 7,
+          "bytes": 6400,
+          "elapsed_ms": 8.851459017023444
+        },
+        {
+          "sequence": 8,
+          "bytes": 6400,
+          "elapsed_ms": 8.118792000459507
+        },
+        {
+          "sequence": 9,
+          "bytes": 6400,
+          "elapsed_ms": 9.039165975991637
+        },
+        {
+          "sequence": 10,
+          "bytes": 6400,
+          "elapsed_ms": 8.587959018768743
+        },
+        {
+          "sequence": 11,
+          "bytes": 6400,
+          "elapsed_ms": 8.102041989332065
+        },
+        {
+          "sequence": 12,
+          "bytes": 6400,
+          "elapsed_ms": 8.292916027130559
+        },
+        {
+          "sequence": 13,
+          "bytes": 6400,
+          "elapsed_ms": 8.286833006422967
+        },
+        {
+          "sequence": 14,
+          "bytes": 6400,
+          "elapsed_ms": 7.603167003253475
+        },
+        {
+          "sequence": 15,
+          "bytes": 6400,
+          "elapsed_ms": 10.313042002962902
+        },
+        {
+          "sequence": 16,
+          "bytes": 6400,
+          "elapsed_ms": 5.255666997982189
+        },
+        {
+          "sequence": 17,
+          "bytes": 6400,
+          "elapsed_ms": 7.815541990566999
+        },
+        {
+          "sequence": 18,
+          "bytes": 6400,
+          "elapsed_ms": 5.502999993041158
+        },
+        {
+          "sequence": 19,
+          "bytes": 6400,
+          "elapsed_ms": 4.5628329971805215
+        },
+        {
+          "sequence": 20,
+          "bytes": 6400,
+          "elapsed_ms": 7.334124995395541
+        },
+        {
+          "sequence": 21,
+          "bytes": 6400,
+          "elapsed_ms": 7.1501670172438025
+        },
+        {
+          "sequence": 22,
+          "bytes": 6400,
+          "elapsed_ms": 6.916999991517514
+        },
+        {
+          "sequence": 23,
+          "bytes": 6400,
+          "elapsed_ms": 7.114417006960139
+        },
+        {
+          "sequence": 24,
+          "bytes": 6400,
+          "elapsed_ms": 6.440541998017579
+        },
+        {
+          "sequence": 25,
+          "bytes": 6400,
+          "elapsed_ms": 7.861499994760379
+        },
+        {
+          "sequence": 26,
+          "bytes": 6400,
+          "elapsed_ms": 6.139791017631069
+        },
+        {
+          "sequence": 27,
+          "bytes": 6400,
+          "elapsed_ms": 7.5068750011269
+        },
+        {
+          "sequence": 28,
+          "bytes": 6400,
+          "elapsed_ms": 8.0734160146676
+        },
+        {
+          "sequence": 29,
+          "bytes": 6400,
+          "elapsed_ms": 8.159707998856902
+        },
+        {
+          "sequence": 30,
+          "bytes": 6400,
+          "elapsed_ms": 8.245958015322685
+        },
+        {
+          "sequence": 31,
+          "bytes": 6400,
+          "elapsed_ms": 7.932209002319723
+        },
+        {
+          "sequence": 32,
+          "bytes": 6400,
+          "elapsed_ms": 8.90079201781191
+        },
+        {
+          "sequence": 33,
+          "bytes": 6400,
+          "elapsed_ms": 6.334709003567696
+        },
+        {
+          "sequence": 34,
+          "bytes": 6400,
+          "elapsed_ms": 5.663207994075492
+        },
+        {
+          "sequence": 35,
+          "bytes": 6400,
+          "elapsed_ms": 9.270334005123004
+        },
+        {
+          "sequence": 36,
+          "bytes": 6400,
+          "elapsed_ms": 8.258749992819503
+        },
+        {
+          "sequence": 37,
+          "bytes": 6400,
+          "elapsed_ms": 8.065665984759107
+        }
+      ]
+    },
+    {
+      "case": "silence_with_provider_fault",
+      "language": "en-US",
+      "injected_provider_fault": true,
+      "audio_ms": 2000.0,
+      "hypotheses": [
+        {
+          "text": "Yes, please.",
+          "final": true,
+          "speech_epoch": 0
+        }
+      ],
+      "frames": [],
+      "interruptions": 0,
+      "acoustic_epochs": 0,
+      "chunk_ms": 200,
+      "send_queue_peak": 0,
+      "send_queue_remaining": 0,
+      "sends": []
+    }
+  ]
+}

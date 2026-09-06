@@ -1,0 +1,49 @@
+{
+  "scope": "LLM decision replay; no WhatsApp send handlers invoked",
+  "cases": [
+    {
+      "language": "en-US",
+      "model_response": "<tool_call>{\"name\": \"whatsapp_send_text_current_customer\", \"arguments\": {\"text\": \"Thank you for your interest in the Advanced Package, which is $59 for 12 months. You can complete your order here: https://routinereliefcom.com/checkout?package=advanced. Please let me know if you have any other questions!\"}}</tool_call>",
+      "tool_selected": "whatsapp_send_text_current_customer",
+      "argument_fields": [
+        "text"
+      ],
+      "passed": true,
+      "verified_offer_included": true,
+      "fixture_confirmation_response": "I've sent that information over to your WhatsApp. Did you have any other questions I could help you with before we finish up?"
+    },
+    {
+      "language": "fr-FR",
+      "model_response": "<tool_call>{\"name\":\"whatsapp_send_text_current_customer\",\"text\":\"Voici les détails de notre forfait Advanced : 59 $ pour 12 mois avec un accès complet. Vous pouvez finaliser votre commande ici : https://routinereliefcom.com/checkout?package=advanced. N'hésitez pas si vous avez des questions.\"}</tool_call>",
+      "tool_selected": "whatsapp_send_text_current_customer",
+      "argument_fields": [
+        "text"
+      ],
+      "passed": true,
+      "verified_offer_included": true,
+      "fixture_confirmation_response": "C'est envoyé. Vous devriez recevoir le lien sur WhatsApp d'ici quelques instants. Avez-vous besoin d'autre chose pour le moment ?"
+    }
+  ],
+  "available_tools": [
+    "business_create_opportunity",
+    "business_create_quotation_draft",
+    "business_create_support_ticket",
+    "business_get_customer_context",
+    "business_get_invoice_status",
+    "business_get_order_status",
+    "business_get_support_status",
+    "business_mark_do_not_call",
+    "business_record_call_outcome",
+    "business_schedule_follow_up",
+    "business_search_catalog",
+    "business_update_support_ticket",
+    "business_upsert_current_lead",
+    "end_call",
+    "load_agent_skill",
+    "web_research",
+    "whatsapp_last_delivery_status",
+    "whatsapp_read_current_customer_chat",
+    "whatsapp_reply_current_customer",
+    "whatsapp_send_text_current_customer"
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "before": {
+    "rows": 36,
+    "duration_seconds": 175.6256474579859,
+    "by_level": {
+      "clean": {
+        "n": 12,
+        "word_matches": 10,
+        "median_eof_to_commit_ms": 1587.963958514738,
+        "max_eof_to_commit_ms": 2995.8516250003595,
+        "before_continuation": 0,
+        "unresolved_floor": 0
+      },
+      "20": {
+        "n": 12,
+        "word_matches": 12,
+        "median_eof_to_commit_ms": 1598.3453540015034,
+        "max_eof_to_commit_ms": 3012.7938749897294,
+        "before_continuation": 0,
+        "unresolved_floor": 0
+      },
+      "10": {
+        "n": 12,
+        "word_matches": 10,
+        "median_eof_to_commit_ms": 1582.8641875024186,
+        "max_eof_to_commit_ms": 3009.1417080070823,
+        "before_continuation": 0,
+        "unresolved_floor": 0
+      }
+    },
+    "mismatches": [
+      {
+        "case": "en_correction",
+        "level": "clean",
+        "expected": "Actually, I want the six month plan.",
+        "actual": "Actually, I want the six month"
+      },
+      {
+        "case": "en_yes_2",
+        "level": "clean",
+        "expected": "Yes, please.",
+        "actual": "Yes."
+      },
+      {
+        "case": "en_preference",
+        "level": "10",
+        "expected": "I prefer movies and series.",
+        "actual": "I prefer. movies"
+      },
+      {
+        "case": "fr_negative",
+        "level": "10",
+        "expected": "Non, pas l'abonnement annuel.",
+        "actual": "à l'abonnement annuel."
+      }
+    ]
+  },
+  "after": {
+    "rows": 36,
+    "duration_seconds": 177.26385937500163,
+    "by_level": {
+      "clean": {
+        "n": 12,
+        "word_matches": 11,
+        "median_eof_to_commit_ms": 1581.944916510256,
+        "max_eof_to_commit_ms": 3014.23304098309,
+        "before_continuation": 0,
+        "unresolved_floor": 0
+      },
+      "20": {
+        "n": 12,
+        "word_matches": 12,
+        "median_eof_to_commit_ms": 1605.1599374960642,
+        "max_eof_to_commit_ms": 3042.7384999743663,
+        "before_continuation": 0,
+        "unresolved_floor": 0
+      },
+      "10": {
+        "n": 12,
+        "word_matches": 11,
+        "median_eof_to_commit_ms": 1574.4218539970461,
+        "max_eof_to_commit_ms": 3019.7180420032237,
+        "before_continuation": 0,
+        "unresolved_floor": 0
+      }
+    },
+    "mismatches": [
+      {
+        "case": "en_correction",
+        "level": "clean",
+        "expected": "Actually, I want the six month plan.",
+        "actual": "I want the six-month plan."
+      },
+      {
+        "case": "fr_negative",
+        "level": "10",
+        "expected": "Non, pas l'abonnement annuel.",
+        "actual": "à l'abonnement annuel"
+      }
+    ]
+  }
+}

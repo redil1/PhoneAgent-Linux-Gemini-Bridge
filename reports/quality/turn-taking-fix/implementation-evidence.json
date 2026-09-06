@@ -1,0 +1,50 @@
+{
+  "source_files": {
+    "ai_bridge/antigravity_live_stt.py": "c26db1f088911ba7a61621ff2e8b3be0f56908267b5ef5d8ade5daaea1f19d0c",
+    "ai_bridge/production_pipeline.py": "9ed61e8c773cd15cb279ae2c3adb3712f9ec090fc1039bf8a3458e7e61aaea56",
+    "ai_bridge/agent_policy.py": "03ced8f803d53ee8915354af15ab10c09fd29501ee8a1de38c948f17bf4b02af",
+    "ai_bridge/speech_floor_guard.py": "2dc83b03cd487249113db29ddd36124e3d2408bd9e44457732da142bcc261be0",
+    "ai_bridge/runtime_config.py": "2f959b0abf094fa979df116658329596b8538bf8cbb634f8d2efff80ba8d9f64",
+    "ai_bridge/web_server.py": "d1055c6bcf6db88956e8d1256b4f660f492a970547f02bfb56eb9085eddc1fee",
+    "ai_bridge/feature_flags.json": "a006fb90110cb6d746e30420c012f318541dac0b48124b9a85c8f1b44a7576f3",
+    "tests/conftest.py": "c97e95d675e06b0c322aef75e451bf3de9c05deb96188ebfd7087cd9a2ab08d2",
+    "tests/test_turn_commit_safety.py": "05ef5bef331dffa61f0dabd042aa62a45e3ca4f6dc3a074e32a36836b1665925",
+    "tests/test_speech_floor_guard.py": "ad741ef00630d1e37ebf323cf302b269fc154a325028f640a9482d499a1f9647",
+    "tests/test_turn_runtime_config.py": "4bca02a56451afc5c15156794adb8c6fc1f6aa4850d15b9ee94a2470f8e1b7b5",
+    "tests/test_antigravity_live_stt.py": "83f26e346ac4e03399219e845b88c116a856f033ded79fdf23bcec0db741738e",
+    "tests/test_voice_host_lifecycle.py": "56dedfe31d43fb3af0e460eaeebcd11f15f38d5181bf58b04f093ed9b5675275"
+  },
+  "test_results": {
+    "focused_turn_pipeline": 185,
+    "focused_final_races_repair_webui": 147,
+    "full_suite_passed": 889,
+    "full_suite_failed_existing": 13,
+    "skipped": 39,
+    "deselected_hardware": 1,
+    "real_detector_smoke_scenarios_passed": 4
+  },
+  "lint_changed_files": "passed",
+  "configured_pyright": "passed",
+  "physical_calls_performed": false,
+  "adb_devices_available": false,
+  "existing_full_suite_failures": [
+    "FAILED tests/production/test_frozen_whatsapp.py::test_qualified_whatsapp_files_are_byte_for_byte_frozen",
+    "FAILED tests/test_android_telephony_track_lifecycle.py::test_android_never_retries_physical_telephony_track_creation",
+    "FAILED tests/test_baseline_corpus.py::test_protected_baseline_corpus_is_complete_and_integrity_checked",
+    "FAILED tests/test_baseline_corpus.py::test_baseline_corpus_manifest_contains_no_unlisted_artifacts",
+    "FAILED tests/test_ci_contract.py::test_ci_exposes_every_required_stage_with_immutable_actions",
+    "FAILED tests/test_ci_contract.py::test_ci_jobs_share_the_local_stage_contract",
+    "FAILED tests/test_ci_contract.py::test_device_qualification_is_manual_self_hosted_and_fail_closed",
+    "FAILED tests/test_performance_harness.py::test_fixture_is_hash_verified_phone_ready_audio",
+    "FAILED tests/test_performance_harness.py::test_contract_profile_measures_all_stages_and_sixty_turn_drift",
+    "FAILED tests/test_performance_harness.py::test_threshold_regression_is_machine_visible",
+    "FAILED tests/test_performance_harness.py::test_tampered_corpus_and_unknown_profile_fail_closed",
+    "FAILED tests/test_runtime_migration_rollback.py::test_upgrade_s2s_installation_migrates_to_cascade_and_preserves_state",
+    "FAILED tests/test_s2s_inventory.py::test_s2s_surface_is_complete_classified_and_migration_owned"
+  ],
+  "verification_notes": [
+    "A new checkout Studio process was verified with updated turn-management diagnostics.",
+    "No physical call made. No Android device visible over ADB.",
+    "13 existing release/fixture/inventory/migration failures remain; this is not full release qualification."
+  ]
+}

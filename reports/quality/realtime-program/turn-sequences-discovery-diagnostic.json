@@ -1,0 +1,5 @@
+{
+  "scope": "Synthetic continuous ASR/endpointing only; real cloud/Silero/Smart Turn; no calls/messages/microphone/speaker",
+  "rows": [],
+  "error": "ConnectionRefusedError"
+}

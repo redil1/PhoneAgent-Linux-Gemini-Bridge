@@ -1,0 +1,113 @@
+{
+  "warmup_ms": 10165.558958004112,
+  "rows": [
+    {
+      "case": "en_short",
+      "elapsed_ms": 582.9015000053914,
+      "text": "Yes, please.",
+      "trusted": true,
+      "confidence": 0.8002732669675369,
+      "diagnostics": {
+        "engine": "mlx-whisper",
+        "model": "mlx-community/whisper-large-v3-turbo-q4",
+        "decoder": "greedy",
+        "quality_retry": false,
+        "vad": "external_turn_controller",
+        "avg_logprob": -0.2228,
+        "no_speech_prob": 0.0,
+        "compression_ratio": 0.6,
+        "segments": 1
+      }
+    },
+    {
+      "case": "en_offer",
+      "elapsed_ms": 605.6830000015907,
+      "text": "I would like the 6 month plan for $39",
+      "trusted": true,
+      "confidence": 0.7500149775189442,
+      "diagnostics": {
+        "engine": "mlx-whisper",
+        "model": "mlx-community/whisper-large-v3-turbo-q4",
+        "decoder": "greedy",
+        "quality_retry": false,
+        "vad": "external_turn_controller",
+        "avg_logprob": -0.2877,
+        "no_speech_prob": 0.0,
+        "compression_ratio": 0.8222,
+        "segments": 1
+      }
+    },
+    {
+      "case": "fr_short",
+      "elapsed_ms": 611.6659580002306,
+      "text": "Oui, s'il vous plaît.",
+      "trusted": true,
+      "confidence": 0.8941129779022969,
+      "diagnostics": {
+        "engine": "mlx-whisper",
+        "model": "mlx-community/whisper-large-v3-turbo-q4",
+        "decoder": "greedy",
+        "quality_retry": false,
+        "vad": "external_turn_controller",
+        "avg_logprob": -0.1119,
+        "no_speech_prob": 0.0,
+        "compression_ratio": 0.7333,
+        "segments": 1
+      }
+    },
+    {
+      "case": "fr_offer",
+      "elapsed_ms": 680.089333007345,
+      "text": "Je voudrais le forfait de 6 mois à 39 dollars.",
+      "trusted": true,
+      "confidence": 0.9090451359504529,
+      "diagnostics": {
+        "engine": "mlx-whisper",
+        "model": "mlx-community/whisper-large-v3-turbo-q4",
+        "decoder": "greedy",
+        "quality_retry": false,
+        "vad": "external_turn_controller",
+        "avg_logprob": -0.0954,
+        "no_speech_prob": 0.0,
+        "compression_ratio": 0.8704,
+        "segments": 1
+      }
+    },
+    {
+      "case": "fr_negative",
+      "elapsed_ms": 592.7613750100136,
+      "text": "Je ne sais pas.",
+      "trusted": true,
+      "confidence": 0.8570757663286637,
+      "diagnostics": {
+        "engine": "mlx-whisper",
+        "model": "mlx-community/whisper-large-v3-turbo-q4",
+        "decoder": "greedy",
+        "quality_retry": false,
+        "vad": "external_turn_controller",
+        "avg_logprob": -0.1542,
+        "no_speech_prob": 0.0,
+        "compression_ratio": 0.6522,
+        "segments": 1
+      }
+    },
+    {
+      "case": "en_auxiliary",
+      "elapsed_ms": 625.1844999933382,
+      "text": "Yes, I can.",
+      "trusted": true,
+      "confidence": 0.9117309115143238,
+      "diagnostics": {
+        "engine": "mlx-whisper",
+        "model": "mlx-community/whisper-large-v3-turbo-q4",
+        "decoder": "greedy",
+        "quality_retry": false,
+        "vad": "external_turn_controller",
+        "avg_logprob": -0.0924,
+        "no_speech_prob": 0.0,
+        "compression_ratio": 0.5789,
+        "segments": 1
+      }
+    }
+  ]
+}

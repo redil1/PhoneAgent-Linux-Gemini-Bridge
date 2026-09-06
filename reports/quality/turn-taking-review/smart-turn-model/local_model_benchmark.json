@@ -1,0 +1,416 @@
+{
+  "scope": "Offline synthetic CPU timing and read-only introspection; NOT an accuracy or conversation-quality evaluation.",
+  "created_at_utc": "2026-09-04T22:17:05Z",
+  "environment": {
+    "executable": "/Users/aziz/Desktop/phone-agent-linux/.venv/bin/python",
+    "python": "3.11.0 (v3.11.0:deaf509e8f, Oct 24 2022, 14:43:23) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "architecture": "arm64",
+    "logical_cpu_count": 14,
+    "exact_cpu_model": "Not inspected: macOS sysctl query denied by sandbox.",
+    "versions": {
+      "pipecat-ai": "1.7.0",
+      "onnxruntime": "1.24.4",
+      "numpy": "1.26.4",
+      "soxr": "1.0.0"
+    },
+    "available_onnx_providers": [
+      "CoreMLExecutionProvider",
+      "AzureExecutionProvider",
+      "CPUExecutionProvider"
+    ],
+    "active_session_providers": [
+      "CPUExecutionProvider"
+    ],
+    "session_provider_options": {
+      "CPUExecutionProvider": {}
+    },
+    "session_settings": {
+      "intra_op_num_threads": 1,
+      "inter_op_num_threads": 1,
+      "execution_mode": "ExecutionMode.ORT_SEQUENTIAL",
+      "graph_optimization_level": "GraphOptimizationLevel.ORT_ENABLE_ALL"
+    }
+  },
+  "model": {
+    "path": "/Users/aziz/Desktop/phone-agent-linux/.venv/lib/python3.11/site-packages/pipecat/audio/turn/smart_turn/data/smart-turn-v3.2-cpu.onnx",
+    "bytes": 8679182,
+    "sha256": "2bb026316b14a660486a75b1733cd3fbab8c2fd0314dc9af7be49f8cca967e4f",
+    "inputs": [
+      {
+        "name": "input_features",
+        "type": "tensor(float)",
+        "shape": [
+          "s6",
+          80,
+          800
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "logits",
+        "type": "tensor(float)",
+        "shape": [
+          "s6",
+          1
+        ]
+      }
+    ],
+    "metadata": {
+      "producer_name": "onnx.quantize",
+      "graph_name": "main_graph",
+      "domain": "",
+      "description": "",
+      "graph_description": "",
+      "version": 9223372036854775807,
+      "custom_metadata_map": {
+        "onnx.quant.pre_process": "onnxruntime.quant",
+        "onnx.infer": "onnxruntime.quant"
+      }
+    }
+  },
+  "implementation": {
+    "wrapper_path": "/Users/aziz/Desktop/phone-agent-linux/.venv/lib/python3.11/site-packages/pipecat/audio/turn/smart_turn/local_smart_turn_v3.py",
+    "wrapper_sha256": "8bd3bc15ed96fd54539ec63400ce64ce86ce82a388d0aa467e641c9a27a2f970",
+    "feature_extractor_path": "/Users/aziz/Desktop/phone-agent-linux/.venv/lib/python3.11/site-packages/pipecat/audio/turn/smart_turn/_whisper_features.py",
+    "feature_extractor_sha256": "c4eb415855fc2c66ea09ad1189a18396ce9b26d060b2b9ced39b9b81a0f60342",
+    "model_sample_rate_hz": 16000,
+    "retained_audio_window_seconds": 8,
+    "short_input_padding": "zeros before audio",
+    "feature_shape": [
+      1,
+      80,
+      800
+    ],
+    "wrapper_complete_threshold": "probability > 0.5",
+    "audio_logs_enabled": false
+  },
+  "initial_current_process": {
+    "import_ms": 196.54320800327696,
+    "analyzer_constructor_ms": 44.74116599885747,
+    "first_wrapper_inference_ms": 77.1519160043681
+  },
+  "methodology": {
+    "input": "Deterministic non-speech amplitude-modulated 180 Hz tone; initial call uses 8 seconds of zeros.",
+    "warmup_iterations_per_case": 3,
+    "measured_iterations_per_case": 30,
+    "cpu_threads": 1,
+    "fresh_process_trials": 3,
+    "cold_definition": "New Python subprocess; import, constructor, and first wrapper call are separate. Filesystem cache is not flushed.",
+    "warm_wrapper_includes": "resampling check, padding/truncation, normalization, log-mel feature extraction, ONNX inference, output thresholding",
+    "warm_session_includes": "session.run on cached [1,80,800] float32 features only",
+    "excluded": "live media, VAD waiting, STT, application queues, LLM, TTS, network, playback, multilingual accuracy",
+    "system_load": "Not isolated; other processes and scheduling can affect observed latency."
+  },
+  "warm_wrapper": {
+    "synthetic_1s_at_16000hz": {
+      "n": 30,
+      "mean_ms": 64.29332643310772,
+      "median_ms": 64.22995799948694,
+      "p95_ms": 80.12497950330723,
+      "min_ms": 51.21145799057558,
+      "max_ms": 84.44129099370912,
+      "samples_ms": [
+        70.0425830000313,
+        64.17304099886678,
+        62.112958999932744,
+        67.52300000516698,
+        66.75791699672118,
+        68.86983299045824,
+        84.44129099370912,
+        70.29008299286943,
+        66.98670900368597,
+        59.94824999652337,
+        52.43483300728258,
+        58.420624991413206,
+        61.82808299490716,
+        54.60904201027006,
+        57.94791699736379,
+        67.84883300133515,
+        59.5374590047868,
+        53.88162500457838,
+        57.558000000426546,
+        84.29704200534616,
+        73.5735000052955,
+        66.45412500074599,
+        58.68579199886881,
+        67.37837499531452,
+        52.72845800209325,
+        51.21145799057558,
+        61.42020900733769,
+        64.2868750001071,
+        75.02579200081527,
+        68.52608399640303
+      ]
+    },
+    "synthetic_4s_at_16000hz": {
+      "n": 30,
+      "mean_ms": 65.74556796695106,
+      "median_ms": 65.8439789986005,
+      "p95_ms": 78.14638095733243,
+      "min_ms": 54.42412500269711,
+      "max_ms": 88.49433300201781,
+      "samples_ms": [
+        69.82737500220537,
+        69.40858400776051,
+        70.92729100259021,
+        71.35133400151972,
+        62.45974999910686,
+        58.76699999498669,
+        76.31916600803379,
+        62.07295799686108,
+        79.64137500675861,
+        72.14316600584425,
+        56.95304200344253,
+        56.348833997617476,
+        65.95687499793712,
+        59.89016700186767,
+        58.30033299571369,
+        72.01674999669194,
+        61.27595799625851,
+        88.49433300201781,
+        67.40116600121837,
+        56.76462499832269,
+        59.767625003587455,
+        70.21870798780583,
+        55.83991599269211,
+        66.96862500393763,
+        66.3852500001667,
+        54.42412500269711,
+        62.46687500970438,
+        65.73108299926389,
+        76.21016699704342,
+        58.03458299487829
+      ]
+    },
+    "synthetic_8s_at_16000hz": {
+      "n": 30,
+      "mean_ms": 67.30344719884063,
+      "median_ms": 65.27358349558199,
+      "p95_ms": 83.2451728529122,
+      "min_ms": 51.145749996067025,
+      "max_ms": 108.95354099920951,
+      "samples_ms": [
+        58.6082080117194,
+        69.31754200195428,
+        76.20983298693318,
+        57.97624999831896,
+        51.145749996067025,
+        73.44416598789394,
+        62.00091699429322,
+        64.13412500114646,
+        52.710875010234304,
+        64.36070898780599,
+        52.925957992556505,
+        66.52283300354611,
+        68.85683299333323,
+        54.91783400066197,
+        65.04258399945684,
+        65.50458299170714,
+        75.28375000401866,
+        74.12041698989924,
+        62.71470899810083,
+        77.87854100752156,
+        68.15729200025089,
+        79.26058399607427,
+        61.63254099374171,
+        72.83208300941624,
+        86.5052910085069,
+        62.00554200040642,
+        108.95354099920951,
+        78.13004199124407,
+        53.50775000988506,
+        54.44233299931511
+      ]
+    },
+    "synthetic_12s_at_16000hz": {
+      "n": 30,
+      "mean_ms": 64.45020266692154,
+      "median_ms": 63.59379149944289,
+      "p95_ms": 77.58337690029293,
+      "min_ms": 51.05670800548978,
+      "max_ms": 86.0101250000298,
+      "samples_ms": [
+        57.11245800193865,
+        76.25187499797903,
+        69.70133299182635,
+        56.17912499292288,
+        61.274000006960705,
+        70.69779100129381,
+        55.43995799962431,
+        51.05670800548978,
+        67.65700000687502,
+        68.60995800525416,
+        86.0101250000298,
+        71.0613330011256,
+        66.21870900562499,
+        77.71633300581016,
+        61.889457996585406,
+        65.83054098882712,
+        56.57908400462475,
+        61.90845801029354,
+        58.20145799953025,
+        65.70454199390952,
+        66.40887499088421,
+        77.42087499354966,
+        54.91608299780637,
+        59.24808399868198,
+        65.27587500750087,
+        62.57412499689963,
+        58.65508299029898,
+        60.93504201271571,
+        58.35833300079685,
+        64.61345800198615
+      ]
+    }
+  },
+  "warm_feature_extraction_8s": {
+    "n": 30,
+    "mean_ms": 4.203568033699412,
+    "median_ms": 3.020770993316546,
+    "p95_ms": 8.207204355130669,
+    "min_ms": 2.351542003452778,
+    "max_ms": 8.469834006973542,
+    "samples_ms": [
+      2.672625007107854,
+      2.9504999984055758,
+      3.677291009807959,
+      7.28499999968335,
+      2.7348329895175993,
+      5.409750010585412,
+      8.469834006973542,
+      2.687083004275337,
+      2.680250006960705,
+      3.521083010127768,
+      8.440042001893744,
+      6.054207988199778,
+      3.0910419882275164,
+      6.3226670026779175,
+      5.304624995915219,
+      5.76645799446851,
+      5.59787500242237,
+      2.53612500091549,
+      3.3947909978451207,
+      2.9399159975582734,
+      7.922625009086914,
+      2.611500007333234,
+      2.4266670079668984,
+      2.351542003452778,
+      2.818582986947149,
+      5.725708993850276,
+      2.726374994381331,
+      2.9339169996092096,
+      2.5031249970197678,
+      2.550999997765757
+    ]
+  },
+  "warm_session_compute": {
+    "n": 30,
+    "mean_ms": 49.47079450066667,
+    "median_ms": 48.71033349627396,
+    "p95_ms": 51.217785050539526,
+    "min_ms": 48.4991249977611,
+    "max_ms": 64.69174999801908,
+    "samples_ms": [
+      64.69174999801908,
+      52.26979100552853,
+      48.72020799666643,
+      48.91420800413471,
+      48.64841701055411,
+      48.58570899523329,
+      49.93199999444187,
+      49.37170799530577,
+      48.67195899714716,
+      49.02504201163538,
+      48.92933400697075,
+      48.954874990158714,
+      48.75287500908598,
+      49.06241700518876,
+      49.06449999543838,
+      48.705666995374486,
+      48.4991249977611,
+      48.587583005428314,
+      48.595624990412034,
+      48.54037500626873,
+      48.508874999242835,
+      48.714999997173436,
+      49.801583008957095,
+      48.73666699859314,
+      48.699749997467734,
+      48.63704199669883,
+      48.70387499977369,
+      48.50299999816343,
+      48.66250000486616,
+      48.63237500831019
+    ]
+  },
+  "fresh_process_trials": [
+    {
+      "import_ms": 193.3740829990711,
+      "analyzer_constructor_ms": 43.85441700287629,
+      "first_wrapper_inference_ms": 66.22416699246969,
+      "session_providers": [
+        "CPUExecutionProvider"
+      ],
+      "prediction_returned": true
+    },
+    {
+      "import_ms": 214.07370798988268,
+      "analyzer_constructor_ms": 52.8677910042461,
+      "first_wrapper_inference_ms": 64.03541700274218,
+      "session_providers": [
+        "CPUExecutionProvider"
+      ],
+      "prediction_returned": true
+    },
+    {
+      "import_ms": 174.8774159932509,
+      "analyzer_constructor_ms": 44.32870900200214,
+      "first_wrapper_inference_ms": 68.71045799925923,
+      "session_providers": [
+        "CPUExecutionProvider"
+      ],
+      "prediction_returned": true
+    }
+  ],
+  "fresh_process_import_ms": {
+    "n": 3,
+    "mean_ms": 194.10840232740156,
+    "median_ms": 193.3740829990711,
+    "p95_ms": 212.00374549080152,
+    "min_ms": 174.8774159932509,
+    "max_ms": 214.07370798988268,
+    "samples_ms": [
+      193.3740829990711,
+      214.07370798988268,
+      174.8774159932509
+    ]
+  },
+  "fresh_process_analyzer_constructor_ms": {
+    "n": 3,
+    "mean_ms": 47.01697233637484,
+    "median_ms": 44.32870900200214,
+    "p95_ms": 52.013882804021705,
+    "min_ms": 43.85441700287629,
+    "max_ms": 52.8677910042461,
+    "samples_ms": [
+      43.85441700287629,
+      52.8677910042461,
+      44.32870900200214
+    ]
+  },
+  "fresh_process_first_wrapper_inference_ms": {
+    "n": 3,
+    "mean_ms": 66.32334733149037,
+    "median_ms": 66.22416699246969,
+    "p95_ms": 68.46182889858028,
+    "min_ms": 64.03541700274218,
+    "max_ms": 68.71045799925923,
+    "samples_ms": [
+      66.22416699246969,
+      64.03541700274218,
+      68.71045799925923
+    ]
+  }
+}

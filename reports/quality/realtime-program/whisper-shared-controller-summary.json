@@ -1,0 +1,42 @@
+{
+  "scope": "Real providers with simulated phone clock; all tool side effects disabled",
+  "correction_observation_timeout_secs": 60,
+  "pipeline_start_ms": 3378.1342080037575,
+  "first_simulated_playout_after_eof_ms": 15993.204875005176,
+  "barge_in_to_flush_ms": 182.0589999842923,
+  "correction_transcribed": true,
+  "correction_answered": true,
+  "playback_accounting_resolved": true,
+  "write_count": 340,
+  "disabled_tool_calls": [
+    "whatsapp_send_text_current_customer"
+  ],
+  "decoder_observations": [
+    {
+      "at_ms": 20148.4333340195,
+      "type": "provider_latency",
+      "provider": "local_stt",
+      "operation": "decode",
+      "elapsed_ms": 13321.229,
+      "monotonic_ns": 138353615973208,
+      "outcome": "ready",
+      "audio_ms": 3020.0,
+      "model": "large-v3-turbo"
+    },
+    {
+      "at_ms": 39013.88554199366,
+      "type": "provider_latency",
+      "provider": "local_stt",
+      "operation": "decode",
+      "elapsed_ms": 13241.744,
+      "monotonic_ns": 138372481428583,
+      "outcome": "ready",
+      "audio_ms": 2630.0,
+      "model": "large-v3-turbo"
+    }
+  ],
+  "caller_texts": [
+    "I would like the 6 month plan for $39",
+    "wait I want the yearly plan instead"
+  ]
+}

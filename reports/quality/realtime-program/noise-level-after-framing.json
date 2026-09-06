@@ -1,0 +1,118 @@
+{
+  "scope": "Real recognizer and acoustic-controller probes using protected synthetic audio.\n\nNo calls, messages, microphone, speaker, or customer recordings are used.\n",
+  "rows": [
+    {
+      "case": "silence",
+      "language": "en-US",
+      "injected_provider_fault": false,
+      "audio_ms": 2000.0,
+      "hypotheses": [],
+      "frames": [],
+      "interruptions": 0,
+      "acoustic_epochs": 0
+    },
+    {
+      "case": "noise_only",
+      "language": "en-US",
+      "injected_provider_fault": false,
+      "audio_ms": 3000.0,
+      "hypotheses": [],
+      "frames": [],
+      "interruptions": 0,
+      "acoustic_epochs": 0
+    },
+    {
+      "case": "clear_en",
+      "language": "en-US",
+      "injected_provider_fault": false,
+      "audio_ms": 4355.125,
+      "hypotheses": [],
+      "frames": [
+        {
+          "kind": "start",
+          "at": 131245.089158541,
+          "after_eof_ms": -4171.822584001347
+        }
+      ],
+      "interruptions": 2,
+      "acoustic_epochs": 2
+    },
+    {
+      "case": "quiet_en_minus20db",
+      "language": "en-US",
+      "injected_provider_fault": false,
+      "audio_ms": 4355.125,
+      "hypotheses": [],
+      "frames": [
+        {
+          "kind": "start",
+          "at": 131254.883619833,
+          "after_eof_ms": -4171.376374986721
+        }
+      ],
+      "interruptions": 2,
+      "acoustic_epochs": 2
+    },
+    {
+      "case": "clear_fr",
+      "language": "fr-FR",
+      "injected_provider_fault": false,
+      "audio_ms": 3711.375,
+      "hypotheses": [
+        {
+          "text": "Bonjour, je",
+          "final": false,
+          "speech_epoch": 2
+        },
+        {
+          "text": "Bonjour, je",
+          "final": true,
+          "speech_epoch": 2
+        }
+      ],
+      "frames": [
+        {
+          "kind": "start",
+          "at": 131264.588413375,
+          "after_eof_ms": -3567.0955830137245
+        },
+        {
+          "kind": "commit",
+          "text": "Bonjour, je",
+          "at": 131270.865949875,
+          "after_eof_ms": 2710.4409169987775
+        }
+      ],
+      "interruptions": 2,
+      "acoustic_epochs": 2
+    },
+    {
+      "case": "silence_with_provider_fault",
+      "language": "en-US",
+      "injected_provider_fault": true,
+      "audio_ms": 2000.0,
+      "hypotheses": [
+        {
+          "text": "Yes, please.",
+          "final": true,
+          "speech_epoch": 0
+        }
+      ],
+      "frames": [
+        {
+          "kind": "start",
+          "at": 131272.986656708,
+          "after_eof_ms": -1315.2526250050869
+        },
+        {
+          "kind": "commit",
+          "text": "Yes, please.",
+          "at": 131272.986717208,
+          "after_eof_ms": -1315.1921250100713
+        }
+      ],
+      "interruptions": 1,
+      "acoustic_epochs": 0
+    }
+  ]
+}

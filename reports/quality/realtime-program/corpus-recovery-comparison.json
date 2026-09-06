@@ -1,0 +1,76 @@
+{
+  "generator_environment": {
+    "espeak_ng": "eSpeak NG text-to-speech: 1.50  Data at: /usr/lib/x86_64-linux-gnu/espeak-ng-data",
+    "ffmpeg": "ffmpeg version 4.4.2-0ubuntu0.22.04.1 Copyright (c) 2000-2021 the FFmpeg developers"
+  },
+  "expected_environment": {
+    "espeak_ng": "eSpeak NG text-to-speech: 1.50  Data at: /usr/lib/x86_64-linux-gnu/espeak-ng-data",
+    "ffmpeg": "ffmpeg version 4.4.2-0ubuntu0.22.04.1 Copyright (c) 2000-2021 the FFmpeg developers"
+  },
+  "audio": [
+    {
+      "id": "clear_en",
+      "match": true,
+      "expected": "b0e01989b4d35490fe3f6a172cd913076217bea0e36a54850240a613123833bb",
+      "actual": "b0e01989b4d35490fe3f6a172cd913076217bea0e36a54850240a613123833bb",
+      "bytes": 139408
+    },
+    {
+      "id": "clear_fr",
+      "match": true,
+      "expected": "3edc142c234b6e0c96e4f6c900a2151d93ead7162b044babb8265cccee3b6402",
+      "actual": "3edc142c234b6e0c96e4f6c900a2151d93ead7162b044babb8265cccee3b6402",
+      "bytes": 118808
+    },
+    {
+      "id": "noise_only",
+      "match": true,
+      "expected": "78a5e0442b6fa0ad4e673b09767db6c70c273defbda9d7e09e619ab316b49c46",
+      "actual": "78a5e0442b6fa0ad4e673b09767db6c70c273defbda9d7e09e619ab316b49c46",
+      "bytes": 96044
+    },
+    {
+      "id": "interruption",
+      "match": true,
+      "expected": "2b04dff6d5fa9d30903ce0c4e00d7170c53a61bab2fb76b52b0f44cddc79d1b0",
+      "actual": "2b04dff6d5fa9d30903ce0c4e00d7170c53a61bab2fb76b52b0f44cddc79d1b0",
+      "bytes": 139408
+    },
+    {
+      "id": "silence",
+      "match": true,
+      "expected": "20eaebffe1816e0ffa6f7f854f5ef4ea80d5349faaf0ce1fec1b713e7fde58fa",
+      "actual": "20eaebffe1816e0ffa6f7f854f5ef4ea80d5349faaf0ce1fec1b713e7fde58fa",
+      "bytes": 64044
+    },
+    {
+      "id": "fragment",
+      "match": true,
+      "expected": "7bd465be591987e226db5a0a8436f8c29ecf79ddfb0ce4882ad1294444802e25",
+      "actual": "7bd465be591987e226db5a0a8436f8c29ecf79ddfb0ce4882ad1294444802e25",
+      "bytes": 20844
+    },
+    {
+      "id": "tool_call",
+      "match": true,
+      "expected": "45634be0f8b71a650657316b0ed43241497bdab32be3bf8cb1288ac3b8be33c8",
+      "actual": "45634be0f8b71a650657316b0ed43241497bdab32be3bf8cb1288ac3b8be33c8",
+      "bytes": 89614
+    },
+    {
+      "id": "long_turn",
+      "match": true,
+      "expected": "71d3fdedae9a294fce166a0e914ec71a6260fbd1d94fad70036d4334d720d906",
+      "actual": "71d3fdedae9a294fce166a0e914ec71a6260fbd1d94fad70036d4334d720d906",
+      "bytes": 572152
+    },
+    {
+      "id": "call_teardown",
+      "match": true,
+      "expected": "21c1090a29546bf6e940f3778e776cf8ce28a944af081f121ef1ee352444eadc",
+      "actual": "21c1090a29546bf6e940f3778e776cf8ce28a944af081f121ef1ee352444eadc",
+      "bytes": 145532
+    }
+  ],
+  "all_audio_match": true
+}

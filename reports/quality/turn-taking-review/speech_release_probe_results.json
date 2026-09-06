@@ -1,0 +1,29 @@
+{
+  "energy_before_provider_transcript": {
+    "input_pcm_ms": 500,
+    "provider_transcript_received": false,
+    "user_started": false,
+    "interruption_count": 0,
+    "speech_candidate_at": 0.0,
+    "energy_registered": true
+  },
+  "caller_started_while_answer_pending_then_bot_started": {
+    "user_started": true,
+    "stt_user_speaking": true,
+    "stt_bot_speaking": true,
+    "interruption_count": 0
+  },
+  "resume_after_commit_before_next_transcript": {
+    "committed_transcription": true,
+    "input_pcm_ms": 500,
+    "speculation_cancellations": [],
+    "interruption_count": 0,
+    "last_speculation_text_after_commit": ""
+  },
+  "local_stt_twenty_ms_frames_barge_in": {
+    "input_pcm_ms": 500,
+    "user_started": true,
+    "interruption_count": 0,
+    "accumulated_speech_ms": 500.0
+  }
+}

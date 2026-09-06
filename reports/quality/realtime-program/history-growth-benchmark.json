@@ -1,0 +1,75 @@
+{
+  "scope": "Synthetic history-size/recall probe; real LLM, no calls or action execution.\n\nThis is an assembled-history experiment, not a sixty-turn live conversation.\nThe current task/tool context is read; all replies are collected as text only.\n",
+  "rows": [
+    {
+      "trial": 0,
+      "prior_exchanges": 0,
+      "prompt_chars": 34585,
+      "response": "You mentioned you want French subtitles and have exactly one television.",
+      "elapsed_ms": 2403.5814170056256
+    },
+    {
+      "trial": 0,
+      "prior_exchanges": 20,
+      "prompt_chars": 37329,
+      "response": "You mentioned that you want French subtitles and have exactly one television.",
+      "elapsed_ms": 2256.0231249954086
+    },
+    {
+      "trial": 0,
+      "prior_exchanges": 60,
+      "prompt_chars": 42845,
+      "response": "You mentioned that you want French subtitles and have exactly one television.",
+      "elapsed_ms": 2099.7575420042267
+    },
+    {
+      "trial": 1,
+      "prior_exchanges": 60,
+      "prompt_chars": 42845,
+      "response": "You mentioned that you want French subtitles and have exactly one television.",
+      "elapsed_ms": 2161.1675000021933
+    },
+    {
+      "trial": 1,
+      "prior_exchanges": 20,
+      "prompt_chars": 37329,
+      "response": "You mentioned that you want French subtitles and have exactly one television.",
+      "elapsed_ms": 2397.914375003893
+    },
+    {
+      "trial": 1,
+      "prior_exchanges": 0,
+      "prompt_chars": 34585,
+      "response": "You mentioned you want French subtitles and have exactly one television.",
+      "elapsed_ms": 1916.4772079966497
+    },
+    {
+      "trial": 2,
+      "prior_exchanges": 0,
+      "prompt_chars": 34585,
+      "response": "You mentioned you want French subtitles and have exactly one television.",
+      "elapsed_ms": 2015.5265829962445
+    },
+    {
+      "trial": 2,
+      "prior_exchanges": 20,
+      "prompt_chars": 37329,
+      "response": "You mentioned that you want French subtitles and have exactly one television.",
+      "elapsed_ms": 2832.391000003554
+    },
+    {
+      "trial": 2,
+      "prior_exchanges": 60,
+      "prompt_chars": 42845,
+      "response": "You mentioned wanting French subtitles and having exactly one television.",
+      "elapsed_ms": 2094.9536670086673
+    }
+  ],
+  "base_sections": {
+    "system_chars": 27773,
+    "live_state_chars": 6531,
+    "tool_protocol_chars": 6499
+  },
+  "live_state_included": false,
+  "history_is_assembled_not_live": true
+}

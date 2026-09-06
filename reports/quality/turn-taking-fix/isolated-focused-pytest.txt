@@ -1,0 +1,52 @@
+.............................F.......................................... [ 34%]
+...........................................F............................ [ 69%]
+........................................F......................          [100%]
+=================================== FAILURES ===================================
+_________________ test_runtime_config_accepts_antigravity_live _________________
+tests/test_antigravity_live_stt.py:34: in test_runtime_config_accepts_antigravity_live
+    assert config.antigravity_live_endpoint_ms == 260
+E   AssertionError: assert 600 == 260
+E    +  where 600 = ProviderConfig(stt_provider='antigravity_live', stt_model='gemini-3.1-flash-live-preview', stt_language='en-US', flux_...prefix_ms=300, chatgpt_realtime_vad_silence_ms=700, chatgpt_realtime_idle_timeout_ms=8000, chatgpt_realtime_speed=1.05).antigravity_live_endpoint_ms
+______ test_pipeline_retry_decontaminates_context_and_targets_latest_turn ______
+tests/test_conversation_repair.py:891: in test_pipeline_retry_decontaminates_context_and_targets_latest_turn
+    assert correction not in context.messages
+E   assert {'content': '# INTERNAL RESPONSE QUALITY RETRY — never mention this block aloud\nThe previous draft was blocked before...good, tell me a rough time window.\'. Blocked draft: "No problem, I\'ve caught you at a bad time.".', 'role': 'system'} not in [{'content': 'Answer the caller naturally.', 'role': 'system'}, {'content': '# INTERNAL RESPONSE QUALITY RETRY — never...me.".', 'role': 'system'}, {'content': 'No worries, if now is not good, tell me a rough time window.', 'role': 'user'}]
+E    +  where [{'content': 'Answer the caller naturally.', 'role': 'system'}, {'content': '# INTERNAL RESPONSE QUALITY RETRY — never...me.".', 'role': 'system'}, {'content': 'No worries, if now is not good, tell me a rough time window.', 'role': 'user'}] = <pipecat.processors.aggregators.llm_context.LLMContext object at 0x17d8a4b50>.messages
+------------------------------ Captured log call -------------------------------
+WARNING  PhoneAgentPipeline:production_pipeline.py:1210 Regenerating blocked repeated response attempt=1 epoch=1
+___________ test_graphiti_http_mirror_uses_bounded_off_path_contract ___________
+tests/production/test_identity_kernel.py:370: in test_graphiti_http_mirror_uses_bounded_off_path_contract
+    server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socketserver.py:456: in __init__
+    self.server_bind()
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/server.py:135: in server_bind
+    socketserver.TCPServer.server_bind(self)
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socketserver.py:472: in server_bind
+    self.socket.bind(self.server_address)
+E   PermissionError: [Errno 1] Operation not permitted
+=============================== warnings summary ===============================
+.venv/lib/python3.11/site-packages/pipecat/audio/utils.py:14
+  /Users/aziz/Desktop/phone-agent-linux/.venv/lib/python3.11/site-packages/pipecat/audio/utils.py:14: DeprecationWarning: 'audioop' is deprecated and slated for removal in Python 3.13
+    import audioop
+
+<frozen abc>:106
+  <frozen abc>:106: DeprecationWarning: `SpeechTimeoutUserTurnStopStrategy` overrides `reset`, which is deprecated since 1.6.0 and will be removed in 2.0.0. Override `handle_user_turn_started` and `handle_user_turn_stopped` instead.
+
+<frozen abc>:106
+  <frozen abc>:106: DeprecationWarning: `AudioContextTTSService` is deprecated since 0.0.105 and will be removed in 2.0.0. Use `WebsocketTTSService` instead.
+
+tests/test_antigravity_live_stt.py: 22 warnings
+  /Users/aziz/Desktop/phone-agent-linux/.venv/lib/python3.11/site-packages/pipecat/audio/vad/silero.py:160: DeprecationWarning: path is deprecated. Use files() instead. Refer to https://importlib-resources.readthedocs.io/en/latest/using.html#migrating-from-legacy for migration advice.
+    with impresources.path(package_path, model_name) as f:
+
+tests/test_antigravity_live_stt.py: 22 warnings
+  /Users/aziz/Desktop/phone-agent-linux/.venv/lib/python3.11/site-packages/pipecat/audio/turn/smart_turn/local_smart_turn_v3.py:61: DeprecationWarning: path is deprecated. Use files() instead. Refer to https://importlib-resources.readthedocs.io/en/latest/using.html#migrating-from-legacy for migration advice.
+    with impresources.path(package_path, model_name) as f:
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_antigravity_live_stt.py::test_runtime_config_accepts_antigravity_live
+FAILED tests/test_conversation_repair.py::test_pipeline_retry_decontaminates_context_and_targets_latest_turn
+FAILED tests/production/test_identity_kernel.py::test_graphiti_http_mirror_uses_bounded_off_path_contract
+3 failed, 204 passed, 47 warnings in 6.52s

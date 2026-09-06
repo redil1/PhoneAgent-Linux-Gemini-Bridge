@@ -1,0 +1,263 @@
+{
+  "scope": "Synthetic controlled level/fault probes, production ASR receipt boundary; no calls or external actions",
+  "rows": [
+    {
+      "case": "quiet_natural_en_minus20db",
+      "language": "en-US",
+      "injected_provider_fault": false,
+      "audio_ms": 2900.0,
+      "hypotheses": [
+        {
+          "text": "I would",
+          "final": false,
+          "speech_epoch": 1
+        },
+        {
+          "text": "I would like the",
+          "final": false,
+          "speech_epoch": 1
+        },
+        {
+          "text": "I would like the six month",
+          "final": false,
+          "speech_epoch": 1
+        },
+        {
+          "text": "I would like the six month plan for",
+          "final": false,
+          "speech_epoch": 1
+        },
+        {
+          "text": "I would like the six month plan for 39",
+          "final": false,
+          "speech_epoch": 1
+        },
+        {
+          "text": "I would like the six month plan for $39.",
+          "final": false,
+          "speech_epoch": 1
+        },
+        {
+          "text": "I would like the six month plan for $39.",
+          "final": false,
+          "speech_epoch": 1
+        },
+        {
+          "text": "I would like the six-month plan for $39.",
+          "final": true,
+          "speech_epoch": 1
+        }
+      ],
+      "frames": [
+        {
+          "kind": "start",
+          "at": 134400.267150625,
+          "after_eof_ms": -2716.415207978571
+        },
+        {
+          "kind": "commit",
+          "text": "I would like the six month plan for $39.",
+          "at": 134404.18663625,
+          "after_eof_ms": 1203.070417017443
+        }
+      ],
+      "interruptions": 1,
+      "acoustic_epochs": 1,
+      "chunk_ms": 200,
+      "send_queue_peak": 1,
+      "send_queue_remaining": 0,
+      "sends": [
+        {
+          "sequence": 0,
+          "bytes": 6400,
+          "elapsed_ms": 7.578624994494021
+        },
+        {
+          "sequence": 1,
+          "bytes": 6400,
+          "elapsed_ms": 5.95920899650082
+        },
+        {
+          "sequence": 2,
+          "bytes": 6400,
+          "elapsed_ms": 8.432207978330553
+        },
+        {
+          "sequence": 3,
+          "bytes": 6400,
+          "elapsed_ms": 7.044500001939014
+        },
+        {
+          "sequence": 4,
+          "bytes": 6400,
+          "elapsed_ms": 6.738458992913365
+        },
+        {
+          "sequence": 5,
+          "bytes": 6400,
+          "elapsed_ms": 7.178458996349946
+        },
+        {
+          "sequence": 6,
+          "bytes": 6400,
+          "elapsed_ms": 9.480708016781136
+        },
+        {
+          "sequence": 7,
+          "bytes": 6400,
+          "elapsed_ms": 6.621167005505413
+        },
+        {
+          "sequence": 8,
+          "bytes": 6400,
+          "elapsed_ms": 7.636541995452717
+        },
+        {
+          "sequence": 9,
+          "bytes": 6400,
+          "elapsed_ms": 6.7132500116713345
+        },
+        {
+          "sequence": 10,
+          "bytes": 6400,
+          "elapsed_ms": 9.178708016406745
+        },
+        {
+          "sequence": 11,
+          "bytes": 6400,
+          "elapsed_ms": 7.136582979001105
+        },
+        {
+          "sequence": 12,
+          "bytes": 6400,
+          "elapsed_ms": 5.7490000035613775
+        },
+        {
+          "sequence": 13,
+          "bytes": 6400,
+          "elapsed_ms": 7.095624983776361
+        },
+        {
+          "sequence": 14,
+          "bytes": 6400,
+          "elapsed_ms": 9.694457985460758
+        },
+        {
+          "sequence": 15,
+          "bytes": 6400,
+          "elapsed_ms": 26.72054199501872
+        },
+        {
+          "sequence": 16,
+          "bytes": 6400,
+          "elapsed_ms": 7.689666002988815
+        },
+        {
+          "sequence": 17,
+          "bytes": 6400,
+          "elapsed_ms": 8.487624989356846
+        },
+        {
+          "sequence": 18,
+          "bytes": 6400,
+          "elapsed_ms": 5.136666004545987
+        },
+        {
+          "sequence": 19,
+          "bytes": 6400,
+          "elapsed_ms": 7.131124992156401
+        },
+        {
+          "sequence": 20,
+          "bytes": 6400,
+          "elapsed_ms": 7.835083990357816
+        },
+        {
+          "sequence": 21,
+          "bytes": 6400,
+          "elapsed_ms": 6.48424998507835
+        },
+        {
+          "sequence": 22,
+          "bytes": 6400,
+          "elapsed_ms": 4.133416980039328
+        },
+        {
+          "sequence": 23,
+          "bytes": 6400,
+          "elapsed_ms": 7.261791994096711
+        },
+        {
+          "sequence": 24,
+          "bytes": 6400,
+          "elapsed_ms": 8.093624986940995
+        },
+        {
+          "sequence": 25,
+          "bytes": 6400,
+          "elapsed_ms": 7.073540997225791
+        },
+        {
+          "sequence": 26,
+          "bytes": 6400,
+          "elapsed_ms": 8.97795899072662
+        },
+        {
+          "sequence": 27,
+          "bytes": 6400,
+          "elapsed_ms": 6.93866700748913
+        },
+        {
+          "sequence": 28,
+          "bytes": 6400,
+          "elapsed_ms": 8.171249995939434
+        },
+        {
+          "sequence": 29,
+          "bytes": 6400,
+          "elapsed_ms": 6.906499998876825
+        },
+        {
+          "sequence": 30,
+          "bytes": 6400,
+          "elapsed_ms": 8.117958001093939
+        },
+        {
+          "sequence": 31,
+          "bytes": 6400,
+          "elapsed_ms": 7.4581250082701445
+        },
+        {
+          "sequence": 32,
+          "bytes": 6400,
+          "elapsed_ms": 7.720834022620693
+        },
+        {
+          "sequence": 33,
+          "bytes": 6400,
+          "elapsed_ms": 6.766999984392896
+        }
+      ]
+    },
+    {
+      "case": "silence_with_provider_fault",
+      "language": "en-US",
+      "injected_provider_fault": true,
+      "audio_ms": 2000.0,
+      "hypotheses": [
+        {
+          "text": "Yes, please.",
+          "final": true,
+          "speech_epoch": 0
+        }
+      ],
+      "frames": [],
+      "interruptions": 0,
+      "acoustic_epochs": 0,
+      "chunk_ms": 200,
+      "send_queue_peak": 0,
+      "send_queue_remaining": 0,
+      "sends": []
+    }
+  ]
+}

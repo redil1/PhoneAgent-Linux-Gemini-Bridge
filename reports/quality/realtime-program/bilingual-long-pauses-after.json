@@ -1,0 +1,623 @@
+{
+  "scope": "Paced continuous EN/FR endpoint matrix, real cloud ASR; no call or tool effects.\n\nNoise is deterministic stationary 300-3400 Hz noise, not recorded café/echo audio.\nSource EOF is used for measurement only and never passed to the turn controller.\n",
+  "initial_language": "en-US",
+  "rows": [
+    {
+      "case": "en_preference",
+      "language": "en-US",
+      "expected": "I prefer movies and series.",
+      "continuation_ms": 2540.0,
+      "pause_ms": 1800,
+      "source_sha256": "33b4747e21620d0933f3e4e7f611cc18117351255ab35b310b3b3165a33a4ae6",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 3740.0,
+      "start_ms": 1228.0887500091922,
+      "commits": [
+        {
+          "at_ms": 6127.014917001361,
+          "text": "I prefer. movies and series",
+          "metadata": {
+            "phone_agent": {
+              "speech_epoch": 2,
+              "provider_final": false,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 147892293215625,
+              "committed_monotonic_ns": 147893470505625,
+              "endpoint_wait_ms": 1160.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 2252.754625020316,
+          "text": "I",
+          "final": false,
+          "accepted": "I",
+          "speech_epoch": 1
+        },
+        {
+          "at_ms": 2736.7560419952497,
+          "text": "I prefer",
+          "final": false,
+          "accepted": "I prefer",
+          "speech_epoch": 1
+        },
+        {
+          "at_ms": 3232.095292012673,
+          "text": "I prefer.",
+          "final": false,
+          "accepted": "I prefer.",
+          "speech_epoch": 1
+        },
+        {
+          "at_ms": 3649.7299580078106,
+          "text": "I prefer.",
+          "final": true,
+          "accepted": "I prefer.",
+          "speech_epoch": 1
+        },
+        {
+          "at_ms": 5023.1581249972805,
+          "text": "movies and",
+          "final": false,
+          "accepted": "I prefer. movies and",
+          "speech_epoch": 2
+        },
+        {
+          "at_ms": 5471.787000016775,
+          "text": "movies and series",
+          "final": false,
+          "accepted": "I prefer. movies and series",
+          "speech_epoch": 2
+        },
+        {
+          "at_ms": 5918.159291992197,
+          "text": "movies and series",
+          "final": false,
+          "accepted": "I prefer. movies and series",
+          "speech_epoch": 2
+        },
+        {
+          "at_ms": 6431.646125012776,
+          "text": "Movies and series.",
+          "final": true,
+          "accepted": "",
+          "speech_epoch": 2
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 1370.364000002155,
+          "speech_epoch": 1
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 2239.3570420099422,
+          "elapsed_ms": 85.6080419907812,
+          "prediction": 1,
+          "probability": 0.9719371795654297
+        },
+        {
+          "at_ms": 2462.7104999963194,
+          "elapsed_ms": 88.57533399714157,
+          "prediction": 1,
+          "probability": 0.978554368019104
+        },
+        {
+          "at_ms": 2934.1824580042157,
+          "elapsed_ms": 64.16099998750724,
+          "prediction": 1,
+          "probability": 0.9875311851501465
+        },
+        {
+          "at_ms": 3417.9665830160957,
+          "elapsed_ms": 69.69387500430457,
+          "prediction": 1,
+          "probability": 0.9897372126579285
+        },
+        {
+          "at_ms": 3823.10433301609,
+          "elapsed_ms": 71.4732920168899,
+          "prediction": 1,
+          "probability": 0.9880069494247437
+        },
+        {
+          "at_ms": 5245.678458013572,
+          "elapsed_ms": 75.61125000938773,
+          "prediction": 1,
+          "probability": 0.9836374521255493
+        },
+        {
+          "at_ms": 5647.291833010968,
+          "elapsed_ms": 56.06412500492297,
+          "prediction": 1,
+          "probability": 0.9854345321655273
+        }
+      ],
+      "actual": "I prefer. movies and series",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1158.9261669921689
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_preference",
+      "language": "fr-FR",
+      "expected": "Je préfère les films et les séries.",
+      "continuation_ms": 3380.0,
+      "pause_ms": 2400,
+      "source_sha256": "0c9f13339f79d4285fd808f59234fe0c6c147712c50656429fa409ba18a0f285",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 4540.0,
+      "start_ms": 6891.032582992921,
+      "commits": [
+        {
+          "at_ms": 12867.57783300709,
+          "text": "Je préfère. les films et les séries",
+          "metadata": {
+            "phone_agent": {
+              "speech_epoch": 4,
+              "provider_final": false,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 147898755739208,
+              "committed_monotonic_ns": 147900211084500,
+              "endpoint_wait_ms": 1440.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 8185.628000006545,
+          "text": "Je",
+          "final": false,
+          "accepted": "Je",
+          "speech_epoch": 3
+        },
+        {
+          "at_ms": 8763.032667018706,
+          "text": "Je préfère.",
+          "final": false,
+          "accepted": "Je préfère.",
+          "speech_epoch": 3
+        },
+        {
+          "at_ms": 9193.372833018657,
+          "text": "Je préfère.",
+          "final": false,
+          "accepted": "Je préfère.",
+          "speech_epoch": 3
+        },
+        {
+          "at_ms": 9392.095082992455,
+          "text": "Je préfère.",
+          "final": true,
+          "accepted": "Je préfère.",
+          "speech_epoch": 3
+        },
+        {
+          "at_ms": 11728.037082997616,
+          "text": "Les films et",
+          "final": false,
+          "accepted": "Je préfère. Les films et",
+          "speech_epoch": 4
+        },
+        {
+          "at_ms": 12210.272583004553,
+          "text": "les films et les séries",
+          "final": false,
+          "accepted": "Je préfère. les films et les séries",
+          "speech_epoch": 4
+        },
+        {
+          "at_ms": 12670.58229201939,
+          "text": "les films et les séries",
+          "final": false,
+          "accepted": "Je préfère. les films et les séries",
+          "speech_epoch": 4
+        },
+        {
+          "at_ms": 13078.432333015371,
+          "text": "les films et les séries",
+          "final": false,
+          "accepted": "",
+          "speech_epoch": 4
+        },
+        {
+          "at_ms": 13195.78595799976,
+          "text": "les films et les séries",
+          "final": true,
+          "accepted": "",
+          "speech_epoch": 4
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 7012.267667014385,
+          "speech_epoch": 3
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 8118.763458012836,
+          "elapsed_ms": 64.99908401747234,
+          "prediction": 1,
+          "probability": 0.59721440076828
+        },
+        {
+          "at_ms": 8368.69920801837,
+          "elapsed_ms": 73.81554201128893,
+          "prediction": 1,
+          "probability": 0.834087073802948
+        },
+        {
+          "at_ms": 8964.06370800105,
+          "elapsed_ms": 68.97975000902079,
+          "prediction": 1,
+          "probability": 0.509845495223999
+        },
+        {
+          "at_ms": 9568.05254201754,
+          "elapsed_ms": 72.03858299180865,
+          "prediction": 1,
+          "probability": 0.91398024559021
+        },
+        {
+          "at_ms": 11713.975916994968,
+          "elapsed_ms": 73.24075000360608,
+          "prediction": 1,
+          "probability": 0.6160098910331726
+        },
+        {
+          "at_ms": 11943.3132080012,
+          "elapsed_ms": 81.23270800570026,
+          "prediction": 1,
+          "probability": 0.9768373966217041
+        },
+        {
+          "at_ms": 12392.724792007357,
+          "elapsed_ms": 80.67370901699178,
+          "prediction": 1,
+          "probability": 0.9768373966217041
+        }
+      ],
+      "actual": "Je préfère. les films et les séries",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1436.5452500141691
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "en_request",
+      "language": "en-US",
+      "expected": "Could you send the details on WhatsApp?",
+      "continuation_ms": 1800.0,
+      "pause_ms": 1300,
+      "source_sha256": "1b4a3da183ab562d3e4646445508d81adb7cb22d6b2ed8254ff3885b4407cda2",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 3480.0,
+      "start_ms": 13634.632000001147,
+      "commits": [
+        {
+          "at_ms": 18930.481542018242,
+          "text": "Could you? Send the details on WhatsApp.",
+          "metadata": {
+            "phone_agent": {
+              "speech_epoch": 6,
+              "provider_final": true,
+              "partial_confirmations": 2,
+              "partial_confirmed": true,
+              "speech_end_monotonic_ns": 147904381971166,
+              "committed_monotonic_ns": 147906274013958,
+              "endpoint_wait_ms": 1880.0,
+              "completion_reason": "smart_turn"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 14839.244208007585,
+          "text": "Could you",
+          "final": false,
+          "accepted": "Could you",
+          "speech_epoch": 5
+        },
+        {
+          "at_ms": 15301.974833011627,
+          "text": "Could you?",
+          "final": false,
+          "accepted": "Could you?",
+          "speech_epoch": 5
+        },
+        {
+          "at_ms": 15821.814541995991,
+          "text": "Could you?",
+          "final": true,
+          "accepted": "Could you?",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 16607.402875000844,
+          "text": "Send the",
+          "final": false,
+          "accepted": "Could you? Send the",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 17218.723333004164,
+          "text": "Send the details on",
+          "final": false,
+          "accepted": "Could you? Send the details on",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 17656.509541993728,
+          "text": "Send the details on WhatsApp",
+          "final": false,
+          "accepted": "Could you? Send the details on WhatsApp",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 18107.646749995183,
+          "text": "Send the details on WhatsApp.",
+          "final": false,
+          "accepted": "Could you? Send the details on WhatsApp.",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 18590.133833000436,
+          "text": "Send the details on WhatsApp.",
+          "final": false,
+          "accepted": "Could you? Send the details on WhatsApp.",
+          "speech_epoch": 6
+        },
+        {
+          "at_ms": 18753.45987500623,
+          "text": "Send the details on WhatsApp.",
+          "final": true,
+          "accepted": "Could you? Send the details on WhatsApp.",
+          "speech_epoch": 6
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 13837.388417014154,
+          "speech_epoch": 5
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 14444.70070800162,
+          "elapsed_ms": 83.07666701148264,
+          "prediction": 1,
+          "probability": 0.975929319858551
+        },
+        {
+          "at_ms": 15071.583750017453,
+          "elapsed_ms": 73.64866699208505,
+          "prediction": 1,
+          "probability": 0.9859892129898071
+        },
+        {
+          "at_ms": 15480.082042020513,
+          "elapsed_ms": 57.57812500814907,
+          "prediction": 1,
+          "probability": 0.9897372126579285
+        },
+        {
+          "at_ms": 17414.6683330182,
+          "elapsed_ms": 81.14550000755116,
+          "prediction": 1,
+          "probability": 0.8688222169876099
+        },
+        {
+          "at_ms": 17838.36983301444,
+          "elapsed_ms": 65.05675002699718,
+          "prediction": 1,
+          "probability": 0.9540347456932068
+        },
+        {
+          "at_ms": 18273.65295801428,
+          "elapsed_ms": 56.589667015941814,
+          "prediction": 1,
+          "probability": 0.9719371795654297
+        },
+        {
+          "at_ms": 18925.478082994232,
+          "elapsed_ms": 64.07070902059786,
+          "prediction": 1,
+          "probability": 0.9719371795654297
+        }
+      ],
+      "actual": "Could you? Send the details on WhatsApp.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        1815.8495420170948
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    },
+    {
+      "case": "fr_request",
+      "language": "fr-FR",
+      "expected": "Est-ce que vous pouvez envoyer les détails sur WhatsApp ?",
+      "continuation_ms": 2720.0,
+      "pause_ms": 1800,
+      "source_sha256": "a63dc1f89211b6934c5bb5ae5ad4d1b2635cadc4537815e7dd76c9e65fe83c98",
+      "level": "clean",
+      "clipped_samples": 0,
+      "source_duration_ms": 4480.0,
+      "start_ms": 19699.459208000917,
+      "commits": [
+        {
+          "at_ms": 27050.003833021037,
+          "text": "Est-ce que vous pouvez ? Envoyer les détails sur WhatsApp.",
+          "metadata": {
+            "phone_agent": {
+              "speech_epoch": 8,
+              "provider_final": true,
+              "partial_confirmations": 1,
+              "partial_confirmed": false,
+              "speech_end_monotonic_ns": 147911365948750,
+              "committed_monotonic_ns": 147914393200208,
+              "endpoint_wait_ms": 3020.0,
+              "completion_reason": "bounded_incomplete"
+            }
+          }
+        }
+      ],
+      "hypotheses": [
+        {
+          "at_ms": 21060.094750020653,
+          "text": "Est-ce que vous",
+          "final": false,
+          "accepted": "Est-ce que vous",
+          "speech_epoch": 7
+        },
+        {
+          "at_ms": 21584.146208013408,
+          "text": "Est-ce que vous pouvez",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez",
+          "speech_epoch": 7
+        },
+        {
+          "at_ms": 21952.46779199806,
+          "text": "Est-ce que vous pouvez?",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez?",
+          "speech_epoch": 7
+        },
+        {
+          "at_ms": 22255.365292017814,
+          "text": "Est-ce que vous pouvez ?",
+          "final": true,
+          "accepted": "Est-ce que vous pouvez ?",
+          "speech_epoch": 7
+        },
+        {
+          "at_ms": 23741.25920800725,
+          "text": "Envoyer les",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez ? Envoyer les",
+          "speech_epoch": 8
+        },
+        {
+          "at_ms": 24207.07458301331,
+          "text": "Envoyer les détails sur",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez ? Envoyer les détails sur",
+          "speech_epoch": 8
+        },
+        {
+          "at_ms": 24625.2483749995,
+          "text": "Envoyer les détails sur",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez ? Envoyer les détails sur",
+          "speech_epoch": 8
+        },
+        {
+          "at_ms": 25085.787292016903,
+          "text": "Envoyer les détails sur WhatsApp.",
+          "final": false,
+          "accepted": "Est-ce que vous pouvez ? Envoyer les détails sur WhatsApp.",
+          "speech_epoch": 8
+        },
+        {
+          "at_ms": 25641.403000016,
+          "text": "Envoyer les détails sur WhatsApp.",
+          "final": true,
+          "accepted": "Est-ce que vous pouvez ? Envoyer les détails sur WhatsApp.",
+          "speech_epoch": 8
+        }
+      ],
+      "acoustic": [
+        {
+          "at_ms": 19863.716457999544,
+          "speech_epoch": 7
+        }
+      ],
+      "predictions": [
+        {
+          "at_ms": 20902.76925000944,
+          "elapsed_ms": 77.15591602027416,
+          "prediction": 0,
+          "probability": 0.3839901089668274
+        },
+        {
+          "at_ms": 21221.9428330136,
+          "elapsed_ms": 60.092875006375834,
+          "prediction": 1,
+          "probability": 0.8447034358978271
+        },
+        {
+          "at_ms": 21778.584125015186,
+          "elapsed_ms": 77.45729200541973,
+          "prediction": 1,
+          "probability": 0.963354766368866
+        },
+        {
+          "at_ms": 22146.089375019073,
+          "elapsed_ms": 73.94899998325855,
+          "prediction": 1,
+          "probability": 0.9816229343414307
+        },
+        {
+          "at_ms": 22417.87404200295,
+          "elapsed_ms": 57.6043339970056,
+          "prediction": 1,
+          "probability": 0.978554368019104
+        },
+        {
+          "at_ms": 24413.34216701216,
+          "elapsed_ms": 90.48020900809206,
+          "prediction": 0,
+          "probability": 0.013476967811584473
+        },
+        {
+          "at_ms": 25277.7381670021,
+          "elapsed_ms": 73.63774999976158,
+          "prediction": 0,
+          "probability": 0.03147178888320923
+        },
+        {
+          "at_ms": 25806.879917014157,
+          "elapsed_ms": 65.03925001015887,
+          "prediction": 0,
+          "probability": 0.1771029233932495
+        }
+      ],
+      "actual": "Est-ce que vous pouvez ? Envoyer les détails sur WhatsApp.",
+      "words_match": true,
+      "commit_count": 1,
+      "eof_to_commit_ms": [
+        2870.5446250201203
+      ],
+      "before_continuation": false,
+      "queue_peak": 1,
+      "unresolved_floor": false
+    }
+  ],
+  "errors": [],
+  "elapsed_seconds": 27.814956167014316
+}

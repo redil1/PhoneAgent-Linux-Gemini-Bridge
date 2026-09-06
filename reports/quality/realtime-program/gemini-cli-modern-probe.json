@@ -1,0 +1,10 @@
+{
+  "scope": "Isolated CLI0.39.1 binary; structured output with core tools/MCP/hooks/extensions disabled; text-only prompt",
+  "version": "0.39.1",
+  "mode": "stream_json",
+  "first_assistant_ms": null,
+  "error_type": "GeminiCliError",
+  "error_summary": "Gemini CLI ended without a completed assistant response",
+  "response": "",
+  "total_ms": 3592.8748339938466
+}

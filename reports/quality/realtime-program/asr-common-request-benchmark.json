@@ -1,0 +1,688 @@
+{
+  "phase": "asr",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "repeats": 2,
+  "methodology": "Synthetic telephone-bandlimited 16kHz PCM, real providers; no calls/messages/microphone/speaker. Reference EOF simulates manual PTT. Metrics are observable arrival points, not perceived audio.",
+  "rows": [
+    {
+      "case": "en_short",
+      "language": "en-US",
+      "trial": 0,
+      "expected": "Yes, please.",
+      "audio_ms": 1160.0,
+      "audio_sha256": "f371edfdeb1e4588ba53cd9b48ec0afb652f27bbfea81468cf2415ade99abfee",
+      "mode": "reference_original_request",
+      "text": "",
+      "return_after_eof_ms": 333.20383400132414,
+      "hypotheses": [],
+      "wer": 1.0
+    },
+    {
+      "case": "en_short",
+      "language": "en-US",
+      "trial": 0,
+      "expected": "Yes, please.",
+      "audio_ms": 1160.0,
+      "audio_sha256": "f371edfdeb1e4588ba53cd9b48ec0afb652f27bbfea81468cf2415ade99abfee",
+      "mode": "reference_default_backend_ptt",
+      "text": "",
+      "return_after_eof_ms": 276.4586249977583,
+      "hypotheses": [],
+      "wer": 1.0
+    },
+    {
+      "case": "en_short",
+      "language": "en-US",
+      "trial": 0,
+      "expected": "Yes, please.",
+      "audio_ms": 1160.0,
+      "audio_sha256": "f371edfdeb1e4588ba53cd9b48ec0afb652f27bbfea81468cf2415ade99abfee",
+      "mode": "runtime_automatic",
+      "text": "Yes, please.",
+      "return_after_eof_ms": 1152.2309160063742,
+      "commit_count": 1,
+      "hypotheses": [
+        {
+          "after_eof_ms": 312.89729100535624,
+          "text": "Yes,",
+          "final": false
+        },
+        {
+          "after_eof_ms": 936.7101660027402,
+          "text": "Yes, please.",
+          "final": false
+        }
+      ],
+      "commits": [
+        {
+          "at": 112248.520584166,
+          "text": "Yes, please.",
+          "timing": {
+            "phone_agent": {
+              "speech_epoch": 2,
+              "provider_final": false,
+              "speech_end_monotonic_ns": 112247369266041,
+              "committed_monotonic_ns": 112248520531208,
+              "endpoint_wait_ms": 1140.0,
+              "completion_reason": "smart_turn"
+            }
+          },
+          "after_eof_ms": 1152.2309160063742
+        }
+      ],
+      "wer": 0.0
+    },
+    {
+      "case": "en_offer",
+      "language": "en-US",
+      "trial": 0,
+      "expected": "I would like the six month plan for thirty nine dollars.",
+      "audio_ms": 2900.0,
+      "audio_sha256": "150a5ba74038b2b85179a7ae20e5698070bcf25d097242cfafab0d0cc5c2298c",
+      "mode": "reference_default_backend_ptt",
+      "text": "I would like the six month plan for",
+      "return_after_eof_ms": 383.5292920120992,
+      "hypotheses": [
+        {
+          "after_eof_ms": -1968.2087919936748,
+          "text": "I would",
+          "final": false
+        },
+        {
+          "after_eof_ms": -1532.5004579935921,
+          "text": "I would like the",
+          "final": false
+        },
+        {
+          "after_eof_ms": -1026.877082986175,
+          "text": "I would like the six-month",
+          "final": false
+        },
+        {
+          "after_eof_ms": -518.246249994263,
+          "text": "I would like the six month plan for",
+          "final": false
+        },
+        {
+          "after_eof_ms": -37.47845799080096,
+          "text": "I would like the six month plan for",
+          "final": false
+        }
+      ],
+      "wer": 0.2727272727272727
+    },
+    {
+      "case": "en_offer",
+      "language": "en-US",
+      "trial": 0,
+      "expected": "I would like the six month plan for thirty nine dollars.",
+      "audio_ms": 2900.0,
+      "audio_sha256": "150a5ba74038b2b85179a7ae20e5698070bcf25d097242cfafab0d0cc5c2298c",
+      "mode": "runtime_automatic",
+      "text": "I would like the six month plan for $39.",
+      "return_after_eof_ms": 631.3514579960611,
+      "commit_count": 1,
+      "hypotheses": [
+        {
+          "after_eof_ms": -1883.821084004012,
+          "text": "I would",
+          "final": false
+        },
+        {
+          "after_eof_ms": -1557.192042004317,
+          "text": "I would like the",
+          "final": false
+        },
+        {
+          "after_eof_ms": -965.7467500073835,
+          "text": "I would like the six month",
+          "final": false
+        },
+        {
+          "after_eof_ms": -549.3267499987269,
+          "text": "I would like the six month plan for",
+          "final": false
+        },
+        {
+          "after_eof_ms": -126.9649589958135,
+          "text": "I would like the six month plan for",
+          "final": false
+        },
+        {
+          "after_eof_ms": 455.18741599516943,
+          "text": "I would like the six month plan for $39.",
+          "final": false
+        }
+      ],
+      "commits": [
+        {
+          "at": 112257.451516833,
+          "text": "I would like the six month plan for $39.",
+          "timing": {
+            "phone_agent": {
+              "speech_epoch": 1,
+              "provider_final": false,
+              "speech_end_monotonic_ns": 112256801229625,
+              "committed_monotonic_ns": 112257451428708,
+              "endpoint_wait_ms": 640.0,
+              "completion_reason": "smart_turn"
+            }
+          },
+          "after_eof_ms": 631.3514579960611
+        }
+      ],
+      "wer": 0.2727272727272727
+    },
+    {
+      "case": "fr_short",
+      "language": "fr-FR",
+      "trial": 0,
+      "expected": "Oui, s'il vous plaît.",
+      "audio_ms": 1380.0,
+      "audio_sha256": "9d6af4d960f2e5bbfb241f20e77bf3cc97edb8f3a9e67ba1c9acdb179eb4106c",
+      "mode": "reference_default_backend_ptt",
+      "text": "Oui,",
+      "return_after_eof_ms": 407.0395000017015,
+      "hypotheses": [
+        {
+          "after_eof_ms": -465.917833003914,
+          "text": "Oui.",
+          "final": false
+        },
+        {
+          "after_eof_ms": 58.396708001964726,
+          "text": "Oui,",
+          "final": false
+        }
+      ],
+      "wer": 0.75
+    },
+    {
+      "case": "fr_short",
+      "language": "fr-FR",
+      "trial": 0,
+      "expected": "Oui, s'il vous plaît.",
+      "audio_ms": 1380.0,
+      "audio_sha256": "9d6af4d960f2e5bbfb241f20e77bf3cc97edb8f3a9e67ba1c9acdb179eb4106c",
+      "mode": "runtime_automatic",
+      "text": "Oui, s'il vous plaît.",
+      "return_after_eof_ms": 820.1596250000875,
+      "commit_count": 1,
+      "hypotheses": [
+        {
+          "after_eof_ms": -385.2418330061482,
+          "text": "Oui.",
+          "final": false
+        },
+        {
+          "after_eof_ms": -21.967458000290208,
+          "text": "Oui,",
+          "final": false
+        },
+        {
+          "after_eof_ms": 647.8000829956727,
+          "text": "Oui, s'il vous plaît.",
+          "final": false
+        }
+      ],
+      "commits": [
+        {
+          "at": 112263.503045958,
+          "text": "Oui, s'il vous plaît.",
+          "timing": {
+            "phone_agent": {
+              "speech_epoch": 2,
+              "provider_final": false,
+              "speech_end_monotonic_ns": 112262684102875,
+              "committed_monotonic_ns": 112263502995541,
+              "endpoint_wait_ms": 800.0,
+              "completion_reason": "smart_turn"
+            }
+          },
+          "after_eof_ms": 820.1596250000875
+        }
+      ],
+      "wer": 0.0
+    },
+    {
+      "case": "fr_offer",
+      "language": "fr-FR",
+      "trial": 0,
+      "expected": "Je voudrais le forfait de six mois à trente neuf dollars.",
+      "audio_ms": 3240.0,
+      "audio_sha256": "e9a034a8e3e2c88386dce9737d241af92679f915d88433456c86cfaa586ac97e",
+      "mode": "reference_default_backend_ptt",
+      "text": "Je voudrais le forfait de 6 mois à 39",
+      "return_after_eof_ms": 560.565374995349,
+      "hypotheses": [
+        {
+          "after_eof_ms": -2319.7729590028757,
+          "text": "Je vous",
+          "final": false
+        },
+        {
+          "after_eof_ms": -1832.250584004214,
+          "text": "Je voudrais le",
+          "final": false
+        },
+        {
+          "after_eof_ms": -1333.629959000973,
+          "text": "Je voudrais le forfait de",
+          "final": false
+        },
+        {
+          "after_eof_ms": -845.749917003559,
+          "text": "Je voudrais le forfait de 6",
+          "final": false
+        },
+        {
+          "after_eof_ms": -349.05008399800863,
+          "text": "Je voudrais le forfait de 6 mois à",
+          "final": false
+        },
+        {
+          "after_eof_ms": 223.4099579945905,
+          "text": "Je voudrais le forfait de 6 mois à 39",
+          "final": false
+        }
+      ],
+      "wer": 0.36363636363636365
+    },
+    {
+      "case": "fr_offer",
+      "language": "fr-FR",
+      "trial": 0,
+      "expected": "Je voudrais le forfait de six mois à trente neuf dollars.",
+      "audio_ms": 3240.0,
+      "audio_sha256": "e9a034a8e3e2c88386dce9737d241af92679f915d88433456c86cfaa586ac97e",
+      "mode": "runtime_automatic",
+      "text": "Je voudrais le forfait de 6 mois à 39 dollars.",
+      "return_after_eof_ms": 769.2402910033707,
+      "commit_count": 1,
+      "hypotheses": [
+        {
+          "after_eof_ms": -2225.4977090051398,
+          "text": "Je vous",
+          "final": false
+        },
+        {
+          "after_eof_ms": -1849.0292089991271,
+          "text": "Je voudrais le",
+          "final": false
+        },
+        {
+          "after_eof_ms": -1278.5693750047358,
+          "text": "Je voudrais le forfait de",
+          "final": false
+        },
+        {
+          "after_eof_ms": -784.7210839972831,
+          "text": "Je voudrais le forfait de 6",
+          "final": false
+        },
+        {
+          "after_eof_ms": -462.71391700429376,
+          "text": "Je voudrais le forfait de 6 mois à",
+          "final": false
+        },
+        {
+          "after_eof_ms": 131.20279100257903,
+          "text": "Je voudrais le forfait de 6 mois à 39",
+          "final": false
+        },
+        {
+          "after_eof_ms": 552.77812499844,
+          "text": "Je voudrais le forfait de 6 mois à 39 dollars.",
+          "final": false
+        }
+      ],
+      "commits": [
+        {
+          "at": 112273.319518916,
+          "text": "Je voudrais le forfait de 6 mois à 39 dollars.",
+          "timing": {
+            "phone_agent": {
+              "speech_epoch": 1,
+              "provider_final": false,
+              "speech_end_monotonic_ns": 112272511636083,
+              "committed_monotonic_ns": 112273319463791,
+              "endpoint_wait_ms": 800.0,
+              "completion_reason": "smart_turn"
+            }
+          },
+          "after_eof_ms": 769.2402910033707
+        }
+      ],
+      "wer": 0.2727272727272727
+    },
+    {
+      "case": "en_short",
+      "language": "en-US",
+      "trial": 1,
+      "expected": "Yes, please.",
+      "audio_ms": 1160.0,
+      "audio_sha256": "f371edfdeb1e4588ba53cd9b48ec0afb652f27bbfea81468cf2415ade99abfee",
+      "mode": "runtime_automatic",
+      "text": "Yes, please.",
+      "return_after_eof_ms": 1053.0719999951543,
+      "commit_count": 1,
+      "hypotheses": [
+        {
+          "after_eof_ms": 269.8184579930967,
+          "text": "Yes,",
+          "final": false
+        },
+        {
+          "after_eof_ms": 864.481499986141,
+          "text": "Yes, please.",
+          "final": false
+        }
+      ],
+      "commits": [
+        {
+          "at": 112276.594784375,
+          "text": "Yes, please.",
+          "timing": {
+            "phone_agent": {
+              "speech_epoch": 2,
+              "provider_final": false,
+              "speech_end_monotonic_ns": 112275543043583,
+              "committed_monotonic_ns": 112276594739416,
+              "endpoint_wait_ms": 1040.0,
+              "completion_reason": "smart_turn"
+            }
+          },
+          "after_eof_ms": 1053.0719999951543
+        }
+      ],
+      "wer": 0.0
+    },
+    {
+      "case": "en_short",
+      "language": "en-US",
+      "trial": 1,
+      "expected": "Yes, please.",
+      "audio_ms": 1160.0,
+      "audio_sha256": "f371edfdeb1e4588ba53cd9b48ec0afb652f27bbfea81468cf2415ade99abfee",
+      "mode": "reference_default_backend_ptt",
+      "text": "",
+      "return_after_eof_ms": 324.9627499899361,
+      "hypotheses": [],
+      "wer": 1.0
+    },
+    {
+      "case": "en_offer",
+      "language": "en-US",
+      "trial": 1,
+      "expected": "I would like the six month plan for thirty nine dollars.",
+      "audio_ms": 2900.0,
+      "audio_sha256": "150a5ba74038b2b85179a7ae20e5698070bcf25d097242cfafab0d0cc5c2298c",
+      "mode": "runtime_automatic",
+      "text": "I would like the six month plan for $39.",
+      "return_after_eof_ms": 730.2579999959562,
+      "commit_count": 1,
+      "hypotheses": [
+        {
+          "after_eof_ms": -1886.892208000063,
+          "text": "I would",
+          "final": false
+        },
+        {
+          "after_eof_ms": -1454.11525000236,
+          "text": "I would like the",
+          "final": false
+        },
+        {
+          "after_eof_ms": -889.3755830067676,
+          "text": "I would like the six-month",
+          "final": false
+        },
+        {
+          "after_eof_ms": -474.6974159934325,
+          "text": "I would like the six month plan for",
+          "final": false
+        },
+        {
+          "after_eof_ms": -21.612708005704917,
+          "text": "I would like the six month plan for 39",
+          "final": false
+        },
+        {
+          "after_eof_ms": 547.0292499958305,
+          "text": "I would like the six month plan for $39.",
+          "final": false
+        }
+      ],
+      "commits": [
+        {
+          "at": 112283.749637291,
+          "text": "I would like the six month plan for $39.",
+          "timing": {
+            "phone_agent": {
+              "speech_epoch": 1,
+              "provider_final": false,
+              "speech_end_monotonic_ns": 112283000725875,
+              "committed_monotonic_ns": 112283749606375,
+              "endpoint_wait_ms": 740.0,
+              "completion_reason": "smart_turn"
+            }
+          },
+          "after_eof_ms": 730.2579999959562
+        }
+      ],
+      "wer": 0.2727272727272727
+    },
+    {
+      "case": "en_offer",
+      "language": "en-US",
+      "trial": 1,
+      "expected": "I would like the six month plan for thirty nine dollars.",
+      "audio_ms": 2900.0,
+      "audio_sha256": "150a5ba74038b2b85179a7ae20e5698070bcf25d097242cfafab0d0cc5c2298c",
+      "mode": "reference_default_backend_ptt",
+      "text": "I would like the six month plan for",
+      "return_after_eof_ms": 1566.9720000005327,
+      "hypotheses": [
+        {
+          "after_eof_ms": -1934.5016250008484,
+          "text": "I would",
+          "final": false
+        },
+        {
+          "after_eof_ms": -1444.2429170012474,
+          "text": "I would like the",
+          "final": false
+        },
+        {
+          "after_eof_ms": -936.400082995533,
+          "text": "I would like the six month",
+          "final": false
+        },
+        {
+          "after_eof_ms": 703.7217500037514,
+          "text": "I would like the six month plan for",
+          "final": false
+        }
+      ],
+      "wer": 0.2727272727272727
+    },
+    {
+      "case": "fr_short",
+      "language": "fr-FR",
+      "trial": 1,
+      "expected": "Oui, s'il vous plaît.",
+      "audio_ms": 1380.0,
+      "audio_sha256": "9d6af4d960f2e5bbfb241f20e77bf3cc97edb8f3a9e67ba1c9acdb179eb4106c",
+      "mode": "runtime_automatic",
+      "text": "Oui, s'il vous plaît.",
+      "return_after_eof_ms": 836.2534170009894,
+      "commit_count": 1,
+      "hypotheses": [
+        {
+          "after_eof_ms": -336.78354100266006,
+          "text": "Oui.",
+          "final": false
+        },
+        {
+          "after_eof_ms": 66.69612499536015,
+          "text": "Oui,",
+          "final": false
+        },
+        {
+          "after_eof_ms": 601.8610419996548,
+          "text": "Oui, s'il vous plaît.",
+          "final": false
+        }
+      ],
+      "commits": [
+        {
+          "at": 112292.483082958,
+          "text": "Oui, s'il vous plaît.",
+          "timing": {
+            "phone_agent": {
+              "speech_epoch": 2,
+              "provider_final": false,
+              "speech_end_monotonic_ns": 112291648348291,
+              "committed_monotonic_ns": 112292482841791,
+              "endpoint_wait_ms": 820.0,
+              "completion_reason": "smart_turn"
+            }
+          },
+          "after_eof_ms": 836.2534170009894
+        }
+      ],
+      "wer": 0.0
+    },
+    {
+      "case": "fr_short",
+      "language": "fr-FR",
+      "trial": 1,
+      "expected": "Oui, s'il vous plaît.",
+      "audio_ms": 1380.0,
+      "audio_sha256": "9d6af4d960f2e5bbfb241f20e77bf3cc97edb8f3a9e67ba1c9acdb179eb4106c",
+      "mode": "reference_default_backend_ptt",
+      "text": "Oui,",
+      "return_after_eof_ms": 482.44820900436025,
+      "hypotheses": [
+        {
+          "after_eof_ms": -342.61224999499973,
+          "text": "Oui.",
+          "final": false
+        },
+        {
+          "after_eof_ms": 181.96504200750496,
+          "text": "Oui,",
+          "final": false
+        }
+      ],
+      "wer": 0.75
+    },
+    {
+      "case": "fr_offer",
+      "language": "fr-FR",
+      "trial": 1,
+      "expected": "Je voudrais le forfait de six mois à trente neuf dollars.",
+      "audio_ms": 3240.0,
+      "audio_sha256": "e9a034a8e3e2c88386dce9737d241af92679f915d88433456c86cfaa586ac97e",
+      "mode": "runtime_automatic",
+      "text": "Je voudrais le forfait de 6 mois à 39",
+      "return_after_eof_ms": 580.8055410016095,
+      "commit_count": 1,
+      "hypotheses": [
+        {
+          "after_eof_ms": -2233.4175840078387,
+          "text": "Je vous",
+          "final": false
+        },
+        {
+          "after_eof_ms": -1811.6484170022886,
+          "text": "Je voudrais le",
+          "final": false
+        },
+        {
+          "after_eof_ms": -1222.4296250060434,
+          "text": "Je voudrais le forfait de",
+          "final": false
+        },
+        {
+          "after_eof_ms": -793.9947499980917,
+          "text": "Je voudrais le forfait de 6",
+          "final": false
+        },
+        {
+          "after_eof_ms": -369.7496250097174,
+          "text": "Je voudrais le forfait de 6 mois à",
+          "final": false
+        },
+        {
+          "after_eof_ms": 201.76862498919945,
+          "text": "Je voudrais le forfait de 6 mois à 39",
+          "final": false
+        }
+      ],
+      "commits": [
+        {
+          "at": 112300.177348291,
+          "text": "Je voudrais le forfait de 6 mois à 39",
+          "timing": {
+            "phone_agent": {
+              "speech_epoch": 1,
+              "provider_final": false,
+              "speech_end_monotonic_ns": 112299557501041,
+              "committed_monotonic_ns": 112300177034041,
+              "endpoint_wait_ms": 600.0,
+              "completion_reason": "smart_turn"
+            }
+          },
+          "after_eof_ms": 580.8055410016095
+        }
+      ],
+      "wer": 0.36363636363636365
+    },
+    {
+      "case": "fr_offer",
+      "language": "fr-FR",
+      "trial": 1,
+      "expected": "Je voudrais le forfait de six mois à trente neuf dollars.",
+      "audio_ms": 3240.0,
+      "audio_sha256": "e9a034a8e3e2c88386dce9737d241af92679f915d88433456c86cfaa586ac97e",
+      "mode": "reference_default_backend_ptt",
+      "text": "Je voudrais le forfait de 6 mois à 39",
+      "return_after_eof_ms": 586.1920839961385,
+      "hypotheses": [
+        {
+          "after_eof_ms": -2351.549333005096,
+          "text": "Je vous",
+          "final": false
+        },
+        {
+          "after_eof_ms": -1838.9421250030864,
+          "text": "Je voudrais le",
+          "final": false
+        },
+        {
+          "after_eof_ms": -1296.0761660069693,
+          "text": "Je voudrais le forfait de",
+          "final": false
+        },
+        {
+          "after_eof_ms": -805.9763750061393,
+          "text": "Je voudrais le forfait de 6",
+          "final": false
+        },
+        {
+          "after_eof_ms": -292.0202500099549,
+          "text": "Je voudrais le forfait de 6 mois à",
+          "final": false
+        },
+        {
+          "after_eof_ms": 171.89458399661817,
+          "text": "Je voudrais le forfait de 6 mois à 39",
+          "final": false
+        }
+      ],
+      "wer": 0.36363636363636365
+    }
+  ],
+  "asr_endpoint_selected_independently": true
+}

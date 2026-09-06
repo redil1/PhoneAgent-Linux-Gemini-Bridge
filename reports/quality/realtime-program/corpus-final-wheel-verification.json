@@ -1,0 +1,43 @@
+{
+  "wheel": "/private/tmp/phoneagent-qualified-corpus-dist-final/phone_agent_gateway-0.7.0-py3-none-any.whl",
+  "sha256": "c2cd9a84f539d2a5c8d62bdf09f944bf7904fe815a0b55c7381d64b69f5cbbe4",
+  "audio": [
+    {
+      "id": "clear_en",
+      "hash_match": true
+    },
+    {
+      "id": "clear_fr",
+      "hash_match": true
+    },
+    {
+      "id": "noise_only",
+      "hash_match": true
+    },
+    {
+      "id": "interruption",
+      "hash_match": true
+    },
+    {
+      "id": "silence",
+      "hash_match": true
+    },
+    {
+      "id": "fragment",
+      "hash_match": true
+    },
+    {
+      "id": "tool_call",
+      "hash_match": true
+    },
+    {
+      "id": "long_turn",
+      "hash_match": true
+    },
+    {
+      "id": "call_teardown",
+      "hash_match": true
+    }
+  ],
+  "mac_contract_packaged": true
+}

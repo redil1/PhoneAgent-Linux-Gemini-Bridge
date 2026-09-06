@@ -1,0 +1,33 @@
+{
+  "previous_pid": 10534,
+  "activated": true,
+  "runtime": {
+    "local_corroboration_enabled": false,
+    "source_sha256": {
+      "ai_bridge/antigravity_live_stt.py": "3a602f7102c57f1c7dd789b170e4574437b114601113cbd99090fc31ffdcd4f8",
+      "ai_bridge/streaming_silero_vad.py": "d16b886b71c62670a419b4a64e8d6fec79fb749f6e982d0dfe1a672484cabc6c"
+    },
+    "pid": 15213,
+    "status": "ok",
+    "call_state": "IDLE",
+    "configuration": {
+      "stt_provider": "antigravity_live",
+      "stt_language": "en-US",
+      "llm_provider": "antigravity_gemini",
+      "tts_provider": "edge_tts",
+      "tts_voice_id": "en-US-AvaNeural",
+      "speculative_pipeline_enabled": true,
+      "conversational_reflex_enabled": false,
+      "task_id": "iptv_shopping_prod_v3_3"
+    },
+    "turn_management": {
+      "complete_pause_ms": 600,
+      "partial_transcript_stability_ms": 650,
+      "uncertain_pause_ms": 900,
+      "incomplete_pause_ms": 3000,
+      "speculation_changes_speech_deadline": false,
+      "acoustic_speech_detection": "silero"
+    },
+    "smart_turn_enabled": true
+  }
+}

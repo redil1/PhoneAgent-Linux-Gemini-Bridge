@@ -1,0 +1,323 @@
+{
+  "adapter": "deterministic_contract",
+  "benchmark_id": "cascade-performance-macos-arm64-contract-ci",
+  "checks": {
+    "e2e_ttfa_p95": true,
+    "llm_ttft_p95": true,
+    "long_call_drift": true,
+    "stt_final_p95": true,
+    "stt_wer": true,
+    "tts_ttfa_p95": true
+  },
+  "cold_start_ms": {
+    "total_ms": 0.0
+  },
+  "contains_audio": false,
+  "contains_customer_data": false,
+  "contains_transcripts": false,
+  "correctness": {
+    "llm_complete_speakable_responses": 11,
+    "stt_all_within_wer_threshold": true,
+    "tts_nonempty_phone_pcm_outputs": 11
+  },
+  "created_at": "2026-09-05T05:30:39Z",
+  "environment": {
+    "architecture": "arm64",
+    "cpu": "arm",
+    "gpu": null,
+    "os": "darwin",
+    "python": "3.11.0",
+    "system_memory_mib": 36864
+  },
+  "fixture": {
+    "audio_sha256": "b0e01989b4d35490fe3f6a172cd913076217bea0e36a54850240a613123833bb",
+    "channels": 1,
+    "contains_customer_data": false,
+    "corpus_id": "phoneagent-cascade-baseline-v1",
+    "encoding": "pcm_s16le",
+    "expected_text_sha256": "5b8faed5125b4a0c536fe1a7a4de2feeab9d06fc823bce748cd4becfbe3f05f9",
+    "sample_rate_hz": 16000,
+    "scenario_id": "clear_en"
+  },
+  "iterations": 5,
+  "long_call": {
+    "drift_percent": 0.0,
+    "early_ttft_p50_ms": 1.0,
+    "history_messages_final": 120,
+    "late_ttft_p50_ms": 1.0,
+    "metric": "llm_ttft_ms",
+    "turns": 60
+  },
+  "pipeline": "stt_llm_tts_cascade",
+  "prewarm_ms": {
+    "total_ms": 0.0
+  },
+  "profile_id": "macos-arm64-contract-ci",
+  "providers": {
+    "llm": {
+      "model": "synthetic-v1",
+      "provider": "contract_llm"
+    },
+    "stt": {
+      "model": "synthetic-v1",
+      "provider": "contract_stt"
+    },
+    "tts": {
+      "model": "synthetic-v1",
+      "provider": "contract_tts",
+      "voice": "neutral"
+    }
+  },
+  "samples_ms": {
+    "e2e_total": [
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0
+    ],
+    "e2e_ttfa": [
+      3.0,
+      3.0,
+      3.0,
+      3.0,
+      3.0
+    ],
+    "llm_total": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "llm_ttft": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "long_call_llm_total": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "long_call_llm_ttft": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "stt_final": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "tts_total": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "tts_ttfa": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "schema_version": 1,
+  "stages": {
+    "e2e_total": {
+      "count": 5,
+      "max_ms": 3.0,
+      "mean_ms": 3.0,
+      "min_ms": 3.0,
+      "p50_ms": 3.0,
+      "p95_ms": 3.0
+    },
+    "e2e_ttfa": {
+      "count": 5,
+      "max_ms": 3.0,
+      "mean_ms": 3.0,
+      "min_ms": 3.0,
+      "p50_ms": 3.0,
+      "p95_ms": 3.0
+    },
+    "llm_total": {
+      "count": 5,
+      "max_ms": 1.0,
+      "mean_ms": 1.0,
+      "min_ms": 1.0,
+      "p50_ms": 1.0,
+      "p95_ms": 1.0
+    },
+    "llm_ttft": {
+      "count": 5,
+      "max_ms": 1.0,
+      "mean_ms": 1.0,
+      "min_ms": 1.0,
+      "p50_ms": 1.0,
+      "p95_ms": 1.0
+    },
+    "stt_final": {
+      "count": 5,
+      "max_ms": 1.0,
+      "mean_ms": 1.0,
+      "min_ms": 1.0,
+      "p50_ms": 1.0,
+      "p95_ms": 1.0
+    },
+    "tts_total": {
+      "count": 5,
+      "max_ms": 1.0,
+      "mean_ms": 1.0,
+      "min_ms": 1.0,
+      "p50_ms": 1.0,
+      "p95_ms": 1.0
+    },
+    "tts_ttfa": {
+      "count": 5,
+      "max_ms": 1.0,
+      "mean_ms": 1.0,
+      "min_ms": 1.0,
+      "p50_ms": 1.0,
+      "p95_ms": 1.0
+    }
+  },
+  "status": "pass",
+  "stt_word_error_rate": {
+    "max": 0.0,
+    "mean": 0.0
+  },
+  "thresholds": {
+    "e2e_ttfa_p95_ms": 100.0,
+    "llm_ttft_p95_ms": 50.0,
+    "long_call_drift_max_percent": 15.0,
+    "stt_final_p95_ms": 50.0,
+    "stt_wer_max": 0.0,
+    "tts_ttfa_p95_ms": 50.0
+  },
+  "tts_real_time_factor": {
+    "p50": 0.001,
+    "p95": 0.001
+  },
+  "warmup_iterations": 1
+}

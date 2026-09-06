@@ -1,0 +1,992 @@
+"""Full tool, MCP and business-suite access for the Standard Cascade.
+
+The cascade previously reached the model with no tools at all: it never built a
+catalog, never started the CRM/ERP, WhatsApp, web-research or MCP runtimes, and
+handed Pipecat a bare ``LLMContext``. An agent on a task whose contract allowed
+nineteen tools could therefore offer a customer a WhatsApp message it had no
+mechanism to send.
+
+This module gives the cascade the same surface the Realtime pipelines have,
+without touching them. It owns one call's catalog, keeps it hot-reloaded, and
+exposes a single guarded ``execute`` that applies argument grounding before any
+tool runs.
+
+Two adapters carry a tool call to the model, because the cascade's LLMs do not
+agree on how one is made:
+
+* ``NativeToolBinding`` for models with real function calling (Ollama, OpenAI,
+  OpenRouter, LM Studio, Gemini). Pipecat owns the loop.
+* ``ToolCallProcessor`` for models with none, most importantly the Antigravity
+  bridge, whose RPC accepts only a prompt and a model name. The model emits a
+  delimited block, this processor executes it and feeds the result back.
+
+Both paths run the identical catalog and the identical guards, so a tool behaves
+the same however it was requested.
+"""
+
+from __future__ import annotations
+
+import asyncio
+import contextlib
+import json
+import logging
+import re
+import time
+from collections import deque
+from collections.abc import Awaitable, Callable
+from dataclasses import replace
+from typing import Any
+
+from pipecat.frames.frames import (
+    Frame,
+    FunctionCallResultProperties,
+    InterruptionFrame,
+    LLMFullResponseEndFrame,
+    LLMFullResponseStartFrame,
+    LLMTextFrame,
+    UserStartedSpeakingFrame,
+)
+from pipecat.processors.frame_processor import FrameDirection, FrameProcessor
+
+from .action_receipts import BUSINESS_RECEIPTS, ActionJournal, receipt_from_result
+from .channel_capabilities import builtin_capabilities
+from .consent import proposal_from_speech, resolve_consent
+from .frappe_integration import FrappeConfigStore, FrappeToolRuntime
+from .generation_recovery import GENERATION_ID, GenerationFailureFrame
+from .mcp_broker import McpToolBroker
+from .openwa_integration import OpenWAConfigStore, OpenWAToolRuntime
+from .speech_floor_guard import SPEECH_TURN_EPOCH
+from .tasks.tool_catalog import (
+    END_CALL_TOOL_NAME,
+    RealtimeTool,
+    build_end_call_tool,
+    build_tool_catalog,
+    execute_tool,
+    tool_definitions,
+)
+from .tool_argument_grounding import ground_tool_arguments
+from .tool_control import ManagedToolRuntime, ToolControlStore
+from .web_research import WebResearchConfigStore, WebResearchToolRuntime
+
+logger = logging.getLogger("PhoneAgentCascadeTools")
+
+EventSink = Callable[[dict[str, Any]], Awaitable[None] | None]
+TerminalRequestSink = Callable[[dict[str, Any]], Awaitable[None] | None]
+
+# The emitted protocol's delimiters. They are deliberately not markdown fences:
+# a model that writes code examples uses those, and one confusable token would
+# be spoken at a caller.
+TOOL_OPEN = "<tool_call>"
+TOOL_CLOSE = "</tool_call>"
+WHATSAPP_SEND_TOOL = "whatsapp_send_text_current_customer"
+
+def _caller_authorizes_whatsapp_send(policy: Any) -> bool:
+    """Require direct current-turn consent before messaging the caller.
+
+    Selecting a plan is purchase interest, not permission to contact the caller
+    on WhatsApp. A short affirmative is sufficient only after a send proposal
+    that reached playback.
+    """
+
+    scoped = getattr(policy, 'has_current_consent', None)
+    if callable(scoped):
+        return scoped('whatsapp')
+    # Compatibility for policy adapters without playback identity bookkeeping.
+    # A generated/playing proposal is never equivalent to completed delivery.
+    proposal = None
+    if getattr(policy, '_last_ai_delivery', '') == 'completed':
+        proposal = proposal_from_speech(str(getattr(policy, '_last_ai_response', '')), 'legacy')
+    return 'whatsapp' in resolve_consent(str(getattr(policy, 'last_caller_text', '')),
+                                        proposal, frozenset({'whatsapp'}))
+
+
+def parse_emitted_tool_call(payload: Any, catalog: dict[str, RealtimeTool]) -> tuple[str, dict[str, Any]]:
+    """Normalize canonical or flat model arguments without widening the schema."""
+    if not isinstance(payload, dict) or not isinstance(payload.get("name"), str):
+        raise ValueError("A tool call must be an object with a name")
+    name = payload["name"].strip()
+    if "arguments" in payload:
+        if set(payload) - {"name", "arguments"}:
+            raise ValueError("Do not mix top-level fields with arguments")
+        arguments = payload["arguments"]
+        if isinstance(arguments, str):
+            arguments = json.loads(arguments)
+        if not isinstance(arguments, dict):
+            raise ValueError("Tool arguments must be an object")
+    else:
+        arguments = {key: value for key, value in payload.items() if key != "name"}
+    tool = catalog.get(name)
+    if tool is not None:
+        properties = (tool.definition.get("parameters") or {}).get("properties") or {}
+        if set(arguments) - set(properties):
+            raise ValueError("Tool call contains undeclared arguments")
+    return name, arguments
+_TOOL_BLOCK = re.compile(
+    re.escape(TOOL_OPEN) + r"\s*(\{.*?\})\s*" + re.escape(TOOL_CLOSE), re.DOTALL | re.IGNORECASE
+)
+# Bound the tool loop. Without this a model that keeps requesting tools holds the
+# caller in silence for as long as it likes.
+MAX_TOOL_ITERATIONS = 3
+
+
+def llm_supports_native_tools(llm: Any) -> bool:
+    """Whether this service can carry function definitions to its model.
+
+    Checked by capability rather than class name so a provider added later is
+    picked up without editing this module. The local bridges are excluded by
+    the same test they fail in practice: they declare no tool support at all.
+    """
+
+    if getattr(llm, "supports_native_tools", None) is True:
+        return True
+    if getattr(llm, "supports_native_tools", None) is False:
+        return False
+    return callable(getattr(llm, "register_function", None)) and bool(
+        getattr(llm, "_supports_tools", False)
+    )
+
+
+class CascadeToolRuntime:
+    """One call's complete tool surface, hot-reloadable while it is live."""
+
+    def __init__(
+        self,
+        *,
+        policy: Any,
+        caller_id: str,
+        call_id: str,
+        system_prompt: str = "",
+        event_sink: EventSink | None = None,
+        terminal_request_sink: TerminalRequestSink | None = None,
+        action_journal: ActionJournal | None = None,
+    ) -> None:
+        self.policy = policy
+        self.caller_id = caller_id
+        self.call_id = call_id
+        self.system_prompt = system_prompt
+        self._event_sink = event_sink
+        self._terminal_request_sink = terminal_request_sink
+        self.catalog: dict[str, RealtimeTool] = {}
+        self.action_journal = action_journal or ActionJournal()
+
+        self._contract_allowed_tools: set[str] = set()
+        self._stores = {
+            "managed": ToolControlStore(),
+            "openwa": OpenWAConfigStore(),
+            "web_research": WebResearchConfigStore(),
+            "frappe": FrappeConfigStore(),
+        }
+        self._runtimes: dict[str, Any] = dict.fromkeys(self._stores)
+        self._tool_names: dict[str, set[str]] = {key: set() for key in self._stores}
+        self._fingerprints: dict[str, str] = dict.fromkeys(self._stores, "")
+        self._retired: list[Any] = []
+        self._mcp_broker: McpToolBroker | None = None
+        self._reload_lock = asyncio.Lock()
+        self._watcher: asyncio.Task[None] | None = None
+        self._running = False
+        self._catalog_changed_handler: Callable[[], Awaitable[None]] | None = None
+
+    def set_catalog_changed_handler(self, handler: Callable[[], Awaitable[None]]) -> None:
+        self._catalog_changed_handler = handler
+
+    # ---------------------------------------------------------------- lifecycle
+
+    async def start(self) -> dict[str, RealtimeTool]:
+        """Build the contract catalog, then attach every configured runtime."""
+
+        self.catalog = build_tool_catalog(
+            self.policy.task_contract, self.policy.task, report_unavailable=False,
+        )
+        # Ending the call is a conversational control the model should own
+        # rather than a phrase matcher guessing from the transcript.
+        self.catalog[END_CALL_TOOL_NAME] = build_end_call_tool()
+        contract = self.policy.task_contract
+        contract["allowed_tools"] = sorted(
+            {str(name) for name in contract.get("allowed_tools", []) or []} | {END_CALL_TOOL_NAME}
+        )
+        self._contract_allowed_tools = set(contract["allowed_tools"])
+
+        skill_tool = self.policy.persona_compiler.identity_kernel.realtime_skill_tool(
+            task_id=self.policy.task_id,
+            language=getattr(self.policy, "language", "en-US"),
+            authorized_tools=set(self._contract_allowed_tools),
+        )
+        if skill_tool is not None:
+            self.catalog[skill_tool.name] = skill_tool
+
+        self._running = True
+        for key in ("managed", "openwa", "web_research", "frappe"):
+            # One unreachable backend must not deny the call every other tool.
+            try:
+                await self._reload(key)
+            except Exception as exc:
+                logger.warning("Tool connection %s could not start (%s)", key, type(exc).__name__)
+                await self._emit({
+                    "type": "tool_connection_unavailable", "connection": key,
+                    "error_type": type(exc).__name__,
+                })
+        await self._start_mcp()
+        self._refresh_permissions()
+        unavailable = sorted(self._contract_allowed_tools - set(self.catalog))
+        if unavailable:
+            logger.warning("Task tools unavailable after connection checks: %s", ", ".join(unavailable))
+        self._watcher = asyncio.create_task(self._watch(), name="cascade-tool-watcher")
+        logger.info(
+            "cascade tools ready count=%d tools=%s",
+            len(self.catalog),
+            ",".join(sorted(self.catalog)),
+        )
+        return self.catalog
+
+    async def _start_mcp(self) -> None:
+        try:
+            self._mcp_broker = McpToolBroker.from_environment(
+                task_allowed_tools=set(self._contract_allowed_tools),
+                call_id=self.call_id,
+            )
+            tools = await self._mcp_broker.start()
+        except Exception:
+            logger.warning("MCP broker unavailable for this call", exc_info=True)
+            return
+        collisions = set(self.catalog) & set(tools)
+        if collisions:
+            logger.error("ignoring MCP tools that collide: %s", ",".join(sorted(collisions)))
+            tools = {n: t for n, t in tools.items() if n not in collisions}
+        self.catalog.update(tools)
+
+    async def close(self) -> None:
+        self._running = False
+        watcher = self._watcher
+        self._watcher = None
+        if watcher is not None and not watcher.done():
+            watcher.cancel()
+            await asyncio.gather(watcher, return_exceptions=True)
+        for runtime in list(self._runtimes.values()) + self._retired:
+            if runtime is not None:
+                with contextlib.suppress(Exception):
+                    await runtime.close()
+        self._retired.clear()
+        if self._mcp_broker is not None:
+            with contextlib.suppress(Exception):
+                await self._mcp_broker.close()
+        self.action_journal.close()
+
+    # ------------------------------------------------------------- hot reload
+
+    def _make_runtime(self, key: str, config: Any) -> Any:
+        if key == "managed":
+            return ManagedToolRuntime(
+                config,
+                task_id=self.policy.task_id,
+                call_id=self.call_id,
+                event_sink=self._emit,
+            )
+        if key == "openwa":
+            return OpenWAToolRuntime(
+                config,
+                caller_id=self.caller_id,
+                task_id=self.policy.task_id,
+                call_id=self.call_id,
+                event_sink=self._emit,
+            )
+        if key == "web_research":
+            return WebResearchToolRuntime(
+                config,
+                task_id=self.policy.task_id,
+                event_sink=self._emit,
+            )
+        return FrappeToolRuntime(
+            config,
+            caller_id=self.caller_id,
+            task_id=self.policy.task_id,
+            call_id=self.call_id,
+            call_direction=self.policy.call_context.direction.value,
+            event_sink=self._emit,
+        )
+
+    async def _reload(self, key: str) -> None:
+        """Swap one runtime's tools in, keeping the rest of the catalog intact."""
+
+        async with self._reload_lock:
+            store = self._stores[key]
+            config = await asyncio.to_thread(store.load)
+            fingerprint = await asyncio.to_thread(store.fingerprint)
+            candidate = self._make_runtime(key, config)
+            try:
+                tools = await candidate.start()
+                retained = {
+                    name: tool
+                    for name, tool in self.catalog.items()
+                    if name not in self._tool_names[key]
+                }
+                collisions = set(retained) & set(tools)
+                if collisions:
+                    raise RuntimeError(
+                        f"{key} tool name collides with an existing tool: "
+                        + ", ".join(sorted(collisions))
+                    )
+            except Exception:
+                await candidate.close()
+                raise
+            previous = self._runtimes[key]
+            self._runtimes[key] = candidate
+            allowed = self._contract_allowed_tools
+            active_tools = {k: v for k, v in tools.items() if not allowed or k in allowed}
+            self._tool_names[key] = set(active_tools)
+            self.catalog = {**retained, **active_tools}
+            self._fingerprints[key] = fingerprint
+            if previous is not None:
+                self._retired.append(previous)
+            self._refresh_permissions()
+            await self._emit(
+                {
+                    "type": f"{key}_tools_reloaded",
+                    "active_tools": sorted(self._tool_names[key]),
+                    "pipeline": "cascade",
+                }
+            )
+
+    async def _watch(self) -> None:
+        """Apply operator activation changes to a call that is already running."""
+
+        while self._running:
+            await asyncio.sleep(1.0)
+            for key, store in self._stores.items():
+                if not self._running:
+                    return
+                try:
+                    fingerprint = await asyncio.to_thread(store.fingerprint)
+                except Exception:
+                    continue
+                if fingerprint == self._fingerprints[key]:
+                    continue
+                try:
+                    await self._reload(key)
+                    if self._catalog_changed_handler is not None:
+                        await self._catalog_changed_handler()
+                    logger.info("reloaded %s tools mid-call", key)
+                except Exception:
+                    logger.warning("could not reload %s tools mid-call", key, exc_info=True)
+                    self._fingerprints[key] = fingerprint
+
+    def _refresh_permissions(self) -> None:
+        names: set[str] = set(self._contract_allowed_tools)
+        for tools in self._tool_names.values():
+            names |= tools
+        self.policy.task_contract["allowed_tools"] = sorted(names)
+        self.policy.available_tools = set(self.catalog)
+        self.policy.tool_capabilities = {
+            name: tool.capabilities | builtin_capabilities(name) for name, tool in self.catalog.items()
+        }
+
+    # -------------------------------------------------------------- execution
+
+    @property
+    def definitions(self) -> list[dict[str, Any]]:
+        return tool_definitions(self.catalog)
+
+    def _execution_barrier(self, epoch: int, name: str) -> str | None:
+        if getattr(self.policy, "turn_epoch", 0) != epoch:
+            return json.dumps({"error": "caller_turn_changed", "executed": False,
+                               "guidance": "Wait for the caller's current complete request before using tools."})
+        if getattr(self.policy, "last_caller_transcript_trusted", True) is False:
+            return json.dumps({"error": "uncertain_transcription", "executed": False,
+                               "guidance": "Ask the caller to clarify their latest request before using tools. No action was performed; this is not a service failure."})
+        capabilities = builtin_capabilities(name) | getattr(self.catalog.get(name), 'capabilities', frozenset())
+        consent_check = getattr(self.policy, 'has_current_consent', None)
+        if name == "business_upsert_current_lead" and not (
+            callable(consent_check) and consent_check("registration")
+        ):
+            return json.dumps({"error": "explicit_caller_authorization_required", "executed": False,
+                               "guidance": "Obtain permission to save or update the caller's contact details. General interest or permission to continue is not registration consent."})
+        missing_scope = any(
+            not (consent_check(capability.split('.')[0]) if callable(consent_check)
+                 else _caller_authorizes_whatsapp_send(self.policy) if capability == 'whatsapp.send' else False)
+            for capability in capabilities
+        )
+        if missing_scope:
+            return json.dumps(
+                {
+                    "error": "explicit_caller_authorization_required",
+                    "executed": False,
+                    "guidance": (
+                        "Ask whether the caller wants the details sent through this tool's channel. "
+                        "A plan selection alone is not messaging authorization. "
+                        "Do not describe this as a technical failure."
+                    ),
+                }
+            )
+        return None
+
+    async def execute(self, name: str, raw_arguments: str) -> str:
+        """Run one tool behind the same guards the Realtime path applies.
+
+        Argument grounding matters more here than anywhere: a model that invents
+        a phone number or an order id would otherwise write it into the CRM as
+        though the caller had said it.
+        """
+
+        epoch = getattr(self.policy, "turn_epoch", 0)
+        started = time.perf_counter()
+        await self._emit({"type": "tool_started", "name": name, "turn_epoch": epoch, "monotonic_ns": time.monotonic_ns()})
+        reported_arguments = raw_arguments
+        blocked = self._execution_barrier(epoch, name)
+        if blocked is not None:
+            output = blocked
+        else:
+            grounding = ground_tool_arguments(
+                name,
+                raw_arguments,
+                self.policy.last_caller_text,
+                transcript_trusted=getattr(self.policy, "last_caller_transcript_trusted", True),
+                caller_turns=tuple(getattr(self.policy, "recent_caller_turns", ()) or ()),
+            )
+            reported_arguments = grounding.raw_arguments
+            if grounding.grounded_fields:
+                await self._emit(
+                    {
+                        "type": "tool_arguments_grounded",
+                        "name": name,
+                        "fields": list(grounding.grounded_fields),
+                        "blocked": grounding.blocked,
+                    }
+                )
+            missing = self._missing_required(name, grounding.raw_arguments)
+            blocked = self._execution_barrier(epoch, name)
+            if blocked is not None:
+                output = blocked
+            elif missing:
+                # A raw KeyError told the model nothing it could act on, so it
+                # apologised to the caller for a "technical hiccup" and never
+                # retried. Naming the omission lets it call the tool properly.
+                output = json.dumps(
+                    {
+                        "error": "missing required arguments",
+                        "missing": missing,
+                        "guidance": (
+                            f"Call {name} again and include: {', '.join(missing)}. "
+                            "Do not tell the caller anything failed."
+                        ),
+                    }
+                )
+            elif grounding.blocked:
+                output = grounding.blocked_output()
+            else:
+                tool = self.catalog.get(name)
+                capabilities = builtin_capabilities(name) | getattr(tool, 'capabilities', frozenset())
+                if capabilities or name in BUSINESS_RECEIPTS or (tool is not None and not tool.read_only):
+                    try:
+                        output = await self._execute_effect(name, grounding.raw_arguments, epoch, capabilities)
+                    except asyncio.CancelledError:
+                        raise
+                    except Exception as exc:
+                        logger.error('Action tracking failed tool=%s error_type=%s', name, type(exc).__name__)
+                        output = json.dumps({'error': 'action_tracking_failed', 'state': 'unknown', 'retry_safe': False,
+                                             'guidance': 'The action could not be reliably tracked. Do not claim completion or retry automatically; request reconciliation.'})
+                else:
+                    output = await execute_tool(self.catalog, name, grounding.raw_arguments)
+        record_result = getattr(self.policy, "observe_tool_result", None)
+        if callable(record_result):
+            record_result(name, output, epoch)
+        logger.info(
+            "cascade tool call name=%s argument_chars=%d result_chars=%d",
+            name,
+            len(reported_arguments),
+            len(output),
+        )
+        await self._emit(
+            {
+                "type": "tool_call",
+                "name": name,
+                "arguments": reported_arguments,
+                "result": output,
+                "pipeline": "cascade",
+                "elapsed_ms": round((time.perf_counter() - started) * 1000, 3),
+                "turn_epoch": epoch,
+            }
+        )
+        if name == END_CALL_TOOL_NAME:
+            try:
+                terminal = json.loads(output)
+            except json.JSONDecodeError:
+                terminal = None
+            if (
+                isinstance(terminal, dict)
+                and terminal.get("accepted") is True
+                and self._terminal_request_sink is not None
+            ):
+                result = self._terminal_request_sink(terminal)
+                if asyncio.iscoroutine(result):
+                    await result
+        return output
+
+    async def _execute_effect(self, name: str, raw_arguments: str, epoch: int, capabilities: frozenset[str]) -> str:
+        """Reserve before dispatch; an ambiguous outcome is never an automatic retry."""
+        tool = self.catalog.get(name)
+        if tool is None:
+            return json.dumps({'error': 'tool_unavailable', 'executed': False})
+        channels = {cap.split('.')[0] for cap in capabilities}
+        if len(channels) > 1:
+            return json.dumps({'error': 'ambiguous_tool_channel', 'executed': False,
+                               'guidance': 'Use a tool with one declared delivery channel.'})
+        channel = next(iter(channels)) if channels else ('crm' if name in BUSINESS_RECEIPTS else 'tool')
+        action = 'sent' if channels else BUSINESS_RECEIPTS.get(name, (name, '', ''))[0]
+        # Only a direct, trusted resend request creates a new logical operation.
+        caller_text = str(getattr(self.policy, 'last_caller_text', ''))
+        explicit_repeat = re.match(r'(?:please )?(?:resend\b|renvoyez\b|(?:send|envoyez)\b.*\b(?:again|encore)\b)', caller_text, re.I)
+        repeat = str(epoch) if explicit_repeat else ''
+        key = self.action_journal.key(self.call_id, self.caller_id, name, raw_arguments, repeat)
+        receipt, reserved = await asyncio.to_thread(self.action_journal.reserve, key, name, channel, action, epoch)
+        observe = getattr(self.policy, 'observe_action_receipt', None)
+        if not reserved:
+            if callable(observe):
+                observe(receipt, epoch)
+            await self._emit({'type': 'action_status', **receipt.public(), 'duplicate_prevented': True})
+            return receipt.replay_output()
+        submitted = False
+        try:
+            await self._emit({'type': 'action_status', **receipt.public()})
+            blocked = self._execution_barrier(epoch, name)
+            if blocked or self.catalog.get(name) is not tool:
+                receipt = replace(receipt, state='cancelled')
+                await asyncio.to_thread(self.action_journal.save, key, receipt)
+                await self._emit({'type': 'action_status', **receipt.public()})
+                return blocked or json.dumps({'error': 'tool_binding_changed', 'executed': False})
+            receipt = replace(receipt, state='executing')
+            await asyncio.to_thread(self.action_journal.save, key, receipt)
+            await self._emit({'type': 'action_status', **receipt.public()})
+            blocked = self._execution_barrier(epoch, name)
+            if blocked or self.catalog.get(name) is not tool:
+                receipt = replace(receipt, state='cancelled')
+                await asyncio.to_thread(self.action_journal.save, key, receipt)
+                await self._emit({'type': 'action_status', **receipt.public()})
+                return blocked or json.dumps({'error': 'tool_binding_changed', 'executed': False})
+            submitted = True
+            receipt = replace(receipt, submitted=True)
+            output = await execute_tool({name: tool}, name, raw_arguments)
+            result = json.loads(output)
+            receipt = receipt_from_result(receipt, result)
+            await asyncio.to_thread(self.action_journal.save, key, receipt)
+            if callable(observe):
+                observe(receipt, epoch)
+            await self._emit({'type': 'action_status', **receipt.public()})
+            if isinstance(result, dict):
+                result['action_receipt'] = receipt.public()
+                if receipt.state == 'unknown':
+                    result['guidance'] = 'The action outcome is unknown. Check status before retrying; do not claim completion.'
+                return json.dumps(result, ensure_ascii=False)
+            return receipt.replay_output()
+        except BaseException:
+            if receipt.state not in {'accepted', 'completed', 'delivered', 'read', 'failed'}:
+                receipt = replace(receipt, state='unknown' if submitted else 'cancelled', submitted=submitted)
+            await asyncio.to_thread(self.action_journal.save, key, receipt)
+            if callable(observe):
+                observe(receipt, epoch)
+            raise
+
+    def _missing_required(self, name: str, raw_arguments: str) -> list[str]:
+        """Names of required arguments the model left out, checked before running."""
+
+        tool = self.catalog.get(name)
+        if tool is None:
+            return []
+        parameters = (tool.definition or {}).get("parameters") or {}
+        required = [str(arg) for arg in parameters.get("required") or ()]
+        if not required:
+            return []
+        try:
+            arguments = json.loads(raw_arguments) if raw_arguments else {}
+        except json.JSONDecodeError:
+            return required
+        if not isinstance(arguments, dict):
+            return required
+        return [
+            arg
+            for arg in required
+            if arg not in arguments or arguments[arg] in (None, "")
+        ]
+
+    async def _emit(self, event: dict[str, Any]) -> None:
+        if self._event_sink is None:
+            return
+        try:
+            result = self._event_sink(event)
+            if asyncio.iscoroutine(result):
+                await result
+        except Exception:
+            logger.debug("tool event sink failed", exc_info=True)
+
+
+class NativeToolBinding:
+    """Expose the catalog through the model's own function-calling protocol."""
+
+    def __init__(self, runtime: CascadeToolRuntime, llm: Any, context: Any) -> None:
+        self.runtime = runtime
+        self.llm = llm
+        self.context = context
+
+    def bind(self) -> int:
+        """Publish definitions and register one handler per tool.
+
+        Returns how many tools were bound so the caller can log or fail loudly
+        rather than discovering an empty toolset mid-call.
+        """
+
+        definitions = self.runtime.definitions
+        if not definitions:
+            return 0
+        self.context.set_tools(definitions)
+        for name, tool in self.runtime.catalog.items():
+            self.llm.register_function(
+                name,
+                self._handler_for(name),
+                timeout_secs=tool.timeout_secs,
+            )
+        return len(definitions)
+
+    def _handler_for(self, name: str) -> Callable[[Any], Awaitable[None]]:
+        async def handler(params: Any) -> None:
+            arguments = params.arguments
+            raw = arguments if isinstance(arguments, str) else json.dumps(arguments or {})
+            output = await self.runtime.execute(name, raw)
+            try:
+                result = json.loads(output)
+            except json.JSONDecodeError:
+                result = {"result": output}
+            properties = (
+                FunctionCallResultProperties(run_llm=False)
+                if name == END_CALL_TOOL_NAME and result.get("accepted") is True
+                else None
+            )
+            if properties is None:
+                await params.result_callback(result)
+            else:
+                await params.result_callback(result, properties=properties)
+
+        return handler
+
+
+def _describe_arguments(definition: dict[str, Any]) -> str:
+    """Render one tool's arguments so a model cannot miss the required ones.
+
+    Listing bare names was not enough: a model called the WhatsApp tool with
+    ``{}`` and the send failed on a missing ``text``. Required arguments are now
+    marked and typed.
+    """
+
+    parameters = definition.get("parameters") or {}
+    properties = parameters.get("properties") or {}
+    required = set(parameters.get("required") or ())
+    if not properties:
+        return "no arguments"
+    parts = []
+    for arg in sorted(properties):
+        spec = properties[arg] if isinstance(properties[arg], dict) else {}
+        kind = str(spec.get("type", "string"))
+        parts.append(f"{arg}: {kind}" + (" (REQUIRED)" if arg in required else " (optional)"))
+    return ", ".join(parts)
+
+
+def _example_call(runtime: CascadeToolRuntime) -> str:
+    """A filled example, because an elided one taught the model to send ``{}``."""
+
+    for name in sorted(runtime.catalog):
+        definition = runtime.catalog[name].definition or {}
+        parameters = definition.get("parameters") or {}
+        required = list(parameters.get("required") or ())
+        if required:
+            example = {arg: f"<the {arg} value>" for arg in required}
+            return TOOL_OPEN + json.dumps({"name": name, "arguments": example}) + TOOL_CLOSE
+    first = sorted(runtime.catalog)[0]
+    return TOOL_OPEN + json.dumps({"name": first, "arguments": {}}) + TOOL_CLOSE
+
+
+def emitted_tool_instructions(runtime: CascadeToolRuntime) -> str:
+    """The protocol block appended to the prompt of a model without tool calling."""
+
+    if not runtime.catalog:
+        return ""
+    lines = [
+        "# TOOL EXECUTION PROTOCOL (MANDATORY)",
+        "You have live tools connected. Whenever the caller requests an action (such as sending a WhatsApp message, checking WhatsApp, searching the catalog, or scheduling a callback), you MUST execute the tool call in your response.",
+        "CRITICAL: Do NOT merely reply saying you will do it in words without emitting the tool block! Always emit the tool call block.",
+        "To invoke a tool, output ONLY the tool call block below (it is automatically processed by PhoneAgent and never spoken to the caller):",
+        f'{TOOL_OPEN}{{"name":"<tool_name>","arguments":{{...}}}}{TOOL_CLOSE}',
+        # Restored from the pre-8906c78 block. The hardcoded WhatsApp example
+        # that replaced these left every other tool -- catalog search, callback
+        # scheduling -- with no filled example at all, which is the exact
+        # condition that previously taught a model to emit empty arguments.
+        "You MUST include every argument marked REQUIRED. An empty arguments "
+        "object fails and the caller hears nothing happen.",
+        f"Example: {_example_call(runtime)}",
+        "Available tools:",
+    ]
+    for name, tool in sorted(runtime.catalog.items()):
+        definition = tool.definition or {}
+        description = str(definition.get("description", "")).strip()
+        lines.append(f"- {name}({_describe_arguments(definition)}): {description}")
+    return "\n".join(lines)
+
+
+class ToolCallProcessor(FrameProcessor):
+    """Execute tool blocks from models that cannot call functions natively.
+
+    This sits between the LLM and the response policy on purpose. Anything it
+    fails to parse must never continue downstream, because the next processor
+    releases sentences to speech and a caller would hear raw JSON.
+    """
+
+    def __init__(
+        self,
+        runtime: CascadeToolRuntime,
+        *,
+        context: Any,
+        llm: Any,
+        preamble: Callable[[str], Awaitable[None]] | None = None,
+        progress_delay_secs: float = 0.35,
+    ) -> None:
+        super().__init__()
+        self.runtime = runtime
+        self.context = context
+        self.llm = llm
+        self._preamble = preamble
+        self._progress_delay_secs = progress_delay_secs
+        self._buffer = ""
+        self._collecting = False
+        self._iterations = 0
+        self._suppressed = False
+        self._text_tail = ""
+        self._forwarded_chars = 0
+        self._generation_id: int | None = None
+        self._generation_failed = False
+        self._failed_generations: deque[int] = deque(maxlen=64)
+
+    def _reset(self) -> None:
+        self._buffer = ""
+        self._collecting = False
+        self._iterations = 0
+        self._suppressed = False
+        self._text_tail = ""
+        self._forwarded_chars = 0
+        self._generation_id = None
+        self._generation_failed = False
+
+    @staticmethod
+    def _looks_like_tool_start(text: str) -> bool:
+        """True while the text could still become a tool block.
+
+        Holding a partial ``<tool_call>`` back is what stops the opening angle
+        bracket being spoken before the rest of the block has streamed in.
+        """
+
+        stripped = text.lstrip().casefold()
+        return bool(stripped) and TOOL_OPEN.startswith(stripped[: len(TOOL_OPEN)])
+
+    async def process_frame(self, frame: Frame, direction: FrameDirection) -> None:
+        await super().process_frame(frame, direction)
+
+        if direction is not FrameDirection.DOWNSTREAM:
+            await self.push_frame(frame, direction)
+            return
+
+        if isinstance(frame, UserStartedSpeakingFrame | InterruptionFrame):
+            self._reset()
+            self._collecting = False
+            self._suppressed = False
+            self._buffer = ""
+            await self.push_frame(frame, direction)
+            return
+
+        if isinstance(frame, GenerationFailureFrame):
+            if frame.generation_id != self._generation_id:
+                return
+            self._generation_failed = True
+            self._failed_generations.append(frame.generation_id)
+            self._buffer = self._text_tail = ""
+            await self.push_frame(frame, direction)
+            return
+        if isinstance(frame, LLMTextFrame | LLMFullResponseEndFrame) and GENERATION_ID in frame.metadata:
+            if not self._collecting or frame.metadata[GENERATION_ID] != self._generation_id:
+                return
+        if isinstance(frame, LLMFullResponseStartFrame):
+            generation_id = frame.metadata.get(GENERATION_ID)
+            stale = getattr(self.runtime.policy, "is_stale", None)
+            epoch = frame.metadata.get(SPEECH_TURN_EPOCH)
+            if generation_id in self._failed_generations or (epoch is not None and callable(stale) and stale(epoch)):
+                return
+            self._generation_id = generation_id
+            self._generation_failed = False
+            self._buffer = ""
+            self._collecting = True
+            self._suppressed = False
+            self._text_tail = ""
+            self._forwarded_chars = 0
+            await self.push_frame(frame, direction)
+            return
+
+        if isinstance(frame, LLMTextFrame) and self._collecting:
+            if self._generation_failed:
+                return
+            self._buffer += frame.text
+            if self._suppressed:
+                return
+            self._text_tail += frame.text
+            marker = self._text_tail.casefold().find(TOOL_OPEN)
+            if marker >= 0:
+                spoken = self._text_tail[:marker]
+                self._text_tail = ""
+                self._suppressed = True
+            else:
+                keep = max((n for n in range(1, len(TOOL_OPEN)) if self._text_tail.casefold().endswith(TOOL_OPEN[:n])), default=0)
+                spoken = self._text_tail[:-keep] if keep else self._text_tail
+                self._text_tail = self._text_tail[-keep:] if keep else ""
+            if spoken:
+                self._forwarded_chars += len(spoken)
+                await self.push_frame(LLMTextFrame(spoken), direction)
+            return
+
+        if isinstance(frame, LLMFullResponseEndFrame) and self._collecting:
+            if self._generation_failed:
+                await self._close_response(direction)
+                return
+            # EOF can cut off the opener itself. Held protocol prefixes are
+            # never meaningful speech and must follow the bounded repair path.
+            truncated_protocol = bool(self._text_tail and self._looks_like_tool_start(self._text_tail))
+            if truncated_protocol:
+                self._suppressed = True
+            handled = await self._maybe_run_tool(direction)
+            if handled:
+                return
+            if self._suppressed and self._buffer.strip():
+                if TOOL_OPEN in self._buffer.casefold() or truncated_protocol:
+                    # A tool block that never parsed. Releasing it would read the
+                    # raw JSON to the caller, so it is dropped and the model is
+                    # told to answer in words instead.
+                    logger.warning("discarded an unparseable tool block before speech")
+                    self.context.add_message(
+                        {
+                            "role": "system",
+                            "content": "That tool call was malformed and did not run. "
+                            "Answer the caller in plain words now.",
+                        }
+                    )
+                    self._iterations += 1
+                    self._buffer = ""
+                    self._text_tail = ""
+                    self._suppressed = False
+                    if self._iterations <= MAX_TOOL_ITERATIONS:
+                        await self._close_response(direction)
+                        await self._requeue()
+                        return
+                    french = str(getattr(self.runtime.policy, "reply_language", "en")).startswith("fr")
+                    await self.push_frame(LLMTextFrame(
+                        "Je n'ai pas pu terminer cette étape. Pouvez-vous préciser votre demande ?"
+                        if french else "I couldn't complete that step. Could you clarify what you need?"
+                    ), direction)
+                else:
+                    # It was never a tool block. Release the held text so the
+                    # caller hears the answer rather than silence.
+                    if self._text_tail:
+                        await self.push_frame(LLMTextFrame(self._text_tail), direction)
+            elif self._text_tail:
+                await self.push_frame(LLMTextFrame(self._text_tail), direction)
+            self._collecting = False
+            self._suppressed = False
+            self._buffer = ""
+            await self.push_frame(frame, direction)
+            return
+
+        await self.push_frame(frame, direction)
+
+    async def _close_response(self, direction: FrameDirection) -> None:
+        """Resolve the model response before waiting for side effects/progress."""
+        if self._collecting:
+            self._collecting = False
+            await self.push_frame(LLMFullResponseEndFrame(), direction)
+
+    async def _maybe_run_tool(self, direction: FrameDirection) -> bool:
+        match = _TOOL_BLOCK.search(self._buffer)
+        if match is None:
+            return False
+        if self._iterations >= MAX_TOOL_ITERATIONS:
+            logger.warning("tool loop cap reached; answering without further tools")
+            self.context.add_message(
+                {
+                    "role": "system",
+                    "content": "Tool limit reached for this turn. Answer the caller now "
+                    "using what you already know.",
+                }
+            )
+            self._buffer = ""
+            self._suppressed = False
+            french = str(getattr(self.runtime.policy, "reply_language", "en")).startswith("fr")
+            await self.push_frame(LLMTextFrame(
+                "Je n'ai pas pu terminer cette étape. Pouvez-vous préciser votre demande ?"
+                if french else "I couldn't complete that step. Could you clarify what you need?"
+            ), direction)
+            await self._close_response(direction)
+            return True
+
+        try:
+            payload = json.loads(match.group(1))
+            name, arguments = parse_emitted_tool_call(payload, self.runtime.catalog)
+        except (ValueError, AttributeError):
+            logger.warning("model emitted an unparseable tool block")
+            self.context.add_message(
+                {
+                    "role": "system",
+                    "content": "That tool call was invalid and no action ran. Correct it using "
+                    '<tool_call>{"name":"tool_name","arguments":{"field":"value"}}</tool_call>. '
+                    "Include required fields and only fields declared in the tool schema. "
+                    "Never add a recipient field to a current-caller tool.",
+                }
+            )
+            self._buffer = ""
+            self._suppressed = False
+            self._iterations += 1
+            await self._close_response(direction)
+            await self._requeue()
+            return True
+
+        await self._close_response(direction)
+        if name not in self.runtime.catalog:
+            output = json.dumps({"error": f"unknown tool {name}"})
+        else:
+            execution = asyncio.create_task(self.runtime.execute(name, json.dumps(arguments)))
+            try:
+                if self._preamble is not None and name != END_CALL_TOOL_NAME and self._forwarded_chars < 16:
+                    done, _ = await asyncio.wait({execution}, timeout=self._progress_delay_secs)
+                    if not done:
+                        with contextlib.suppress(Exception):
+                            await self._preamble(name)
+                output = await execution
+            finally:
+                if not execution.done():
+                    execution.cancel()
+                    await asyncio.gather(execution, return_exceptions=True)
+
+        self.context.add_message({"role": "assistant", "content": match.group(0)})
+        self.context.add_message(
+            {"role": "system", "content": f"Result of {name}: {output}"}
+        )
+        self._iterations += 1
+        self._buffer = ""
+        self._suppressed = False
+        try:
+            result = json.loads(output)
+        except json.JSONDecodeError:
+            result = {}
+        if name == END_CALL_TOOL_NAME and result.get("accepted") is True:
+            # Close the empty tool-only response lifecycle. The accepted sink
+            # has queued the exact closing sentence directly to TTS, so a
+            # second LLM inference would duplicate or paraphrase it.
+            return True
+        await self._requeue()
+        return True
+
+    async def _requeue(self) -> None:
+        """Ask the model to continue now that the result is in context."""
+
+        from pipecat.frames.frames import LLMRunFrame
+
+        await self.push_frame(LLMRunFrame(), FrameDirection.UPSTREAM)

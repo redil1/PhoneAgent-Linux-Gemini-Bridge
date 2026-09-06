@@ -1,0 +1,47 @@
+{
+  "date": "2026-09-06",
+  "objective_complete": false,
+  "scope": "First implementation batch of the 40-item conversation quality objective",
+  "baseline_regressions": {"turn_and_action_failures": 14, "normalization_failures": 10},
+  "verification": {
+    "pytest_passed": 1254,
+    "pytest_failed": 1,
+    "pytest_skipped": 39,
+    "pytest_deselected": 1,
+    "remaining_failure": "Existing frozen WhatsApp client source integrity mismatch",
+    "ruff": "pass",
+    "configured_pyright": "0 errors, 0 warnings",
+    "compile": "pass",
+    "studio_javascript_syntax": "pass",
+    "feature_flags": "pass",
+    "migration_inventory": "pass"
+  },
+  "synthetic_bridge_stt_replay": [
+    {"case": "en_negative", "pause_ms": 900, "premature_commit": false, "text": "Yes, yes, it seems very expensive for me.", "commit_after_eof_ms": 1866.66},
+    {"case": "fr_negative", "pause_ms": 1200, "premature_commit": false, "text": "Oui, ça semble vrai. Cher pour moi.", "recognition_error": "très changed to vrai", "commit_after_eof_ms": 1806.60},
+    {"case": "en_positive", "pause_ms": 1500, "premature_commit": false, "text": "That sounds extremely Useful for our team.", "commit_after_eof_ms": 1579.63},
+    {"case": "fr_positive", "pause_ms": 1800, "premature_commit": false, "text": "Cela paraît particulièrement. utile pour notre équipe", "commit_after_eof_ms": 1727.99}
+  ],
+  "activation": {
+    "previous_pid": 19438,
+    "studio_pid": 36766,
+    "status": "ok",
+    "call_state": "IDLE",
+    "voice_host_ready": true,
+    "configuration_current": true,
+    "stt": "antigravity_live",
+    "llm": "antigravity_gemini",
+    "tts": "edge_tts",
+    "task": "adk_commercial_sprint",
+    "source_sha256": {
+      "ai_bridge/turn_continuity.py": "97507f3ee1ed2e12608f536bd9abe3f9a8a48795bdcc6c0485c011b48f50b086",
+      "ai_bridge/agent_policy.py": "e2ef820d9bf094fb98fa283d85f5030edc117c03a8474cd2ea2023d168b9b2f8",
+      "ai_bridge/guardrails/permission_gate.py": "9bfe153df0290700b966089eb511a2551469e85d04b337f286632a8f4cee04b8",
+      "ai_bridge/guardrails/personality_judge.py": "86b7403630bd110c44c24127e719f6110e3d75d0ced97b56334ebee03d61c9a5",
+      "ai_bridge/human_speech.py": "30ac4353fbc109e36c9440f9ada610837ca66b7aba11e4cf48a4a16ba56db8d3",
+      "ai_bridge/speech_identifiers.py": "37d48f4a3b42c1acaec2f96efefb9537c0ec9ddd71a5be647b852ac1434dacf1",
+      "ai_bridge/web_static/index.html": "b85b7b9107ccc83b700b66b304619415cbafc8f400cb501c77b1e09f60ca4290"
+    }
+  },
+  "external_actions": "No real call, email, WhatsApp message or CRM write initiated"
+}

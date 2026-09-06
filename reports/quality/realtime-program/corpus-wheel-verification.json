@@ -1,0 +1,51 @@
+{
+  "wheel": "phone_agent_gateway-0.7.0-py3-none-any.whl",
+  "audio": [
+    {
+      "id": "clear_en",
+      "packaged": true,
+      "hash_match": true
+    },
+    {
+      "id": "clear_fr",
+      "packaged": true,
+      "hash_match": true
+    },
+    {
+      "id": "noise_only",
+      "packaged": true,
+      "hash_match": true
+    },
+    {
+      "id": "interruption",
+      "packaged": true,
+      "hash_match": true
+    },
+    {
+      "id": "silence",
+      "packaged": true,
+      "hash_match": true
+    },
+    {
+      "id": "fragment",
+      "packaged": true,
+      "hash_match": true
+    },
+    {
+      "id": "tool_call",
+      "packaged": true,
+      "hash_match": true
+    },
+    {
+      "id": "long_turn",
+      "packaged": true,
+      "hash_match": true
+    },
+    {
+      "id": "call_teardown",
+      "packaged": true,
+      "hash_match": true
+    }
+  ],
+  "all_match": true
+}
