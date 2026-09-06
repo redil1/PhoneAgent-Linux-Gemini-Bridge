@@ -25,6 +25,8 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from collections.abc import AsyncGenerator, Awaitable, Callable
+
+import aiohttp
 from concurrent.futures import ThreadPoolExecutor
 from typing import Any
 
@@ -254,7 +256,7 @@ class AntigravityLiveSTTService(STTService):
         silence_endpoint_ms: int = 600,
         incomplete_endpoint_ms: int = 3000,
         transcript_stability_ms: int = 100,
-        partial_transcript_stability_ms: int = 650,
+        partial_transcript_stability_ms: int = 200,
         fallback_endpoint_ms: int = 900,
         barge_in_min_ms: int = 220,
         energy_threshold_dbfs: float = -42.0,
@@ -321,6 +323,7 @@ class AntigravityLiveSTTService(STTService):
         self._base_url = base_url
         self._csrf_token = csrf_token
         self._ssl_ctx = self._create_ssl_context()
+        self._http_session: aiohttp.ClientSession | None = None
         self._speaking = False
         self._bot_speaking = False
         self._bot_speaking_since = 0.0
@@ -600,6 +603,9 @@ class AntigravityLiveSTTService(STTService):
 
     async def _start_session(self) -> None:
         self._reset_turn_state()
+        if self._http_session is None or self._http_session.closed:
+            connector = aiohttp.TCPConnector(ssl=self._ssl_ctx, limit=10, keepalive_timeout=60)
+            self._http_session = aiohttp.ClientSession(connector=connector)
         stream, session_id = await self._open_session_transport()
         self._stream, self._session_id = stream, session_id
         self._recognition_unavailable = self._recognition_gap = False
@@ -795,10 +801,23 @@ class AntigravityLiveSTTService(STTService):
         ))
 
     def _partial_is_confirmed(self) -> bool:
-        return not self._partial_needs_confirmation or (
+        if not self._partial_needs_confirmation:
+            return True
+        if (
             self._partial_confirmations >= 2
             and self._partial_confirmation_signature == (self._speech_epoch, self._last_speech_at)
-        )
+        ):
+            return True
+        # A partial transcript that has remained stable through the stability window
+        # while the caller is silent is stable and confirmed.
+        now = time.monotonic()
+        if (
+            self._last_transcript_update_at > 0.0
+            and now - self._last_transcript_update_at >= self._partial_transcript_stability_sec
+            and self._silence_elapsed() >= self._silence_endpoint_sec
+        ):
+            return True
+        return False
 
     async def _handle_provider_transcription(self, text: str, *, is_final: bool) -> str:
         """Accept provider text only for an open, acoustically detected turn."""
@@ -1416,6 +1435,24 @@ class AntigravityLiveSTTService(STTService):
             "sequenceNumber": seq,
         }
 
+        if self._http_session is not None and not self._http_session.closed:
+            url = f"{self._base_url}/{SERVICE}/SendAudioChunk"
+            headers = {
+                "Content-Type": APP_JSON,
+                "Accept": APP_JSON,
+                "x-codeium-csrf-token": self._csrf_token,
+                "Origin": self._base_url,
+            }
+            try:
+                async with self._http_session.post(
+                    url, json=body, headers=headers, timeout=aiohttp.ClientTimeout(total=2.0)
+                ) as resp:
+                    await resp.read()
+                return
+            except Exception:
+                if not self._is_closing:
+                    logger.warning("SendAudioChunk seq=%d via persistent session failed; retrying fallback", seq)
+
         def send_unary() -> None:
             req = urllib.request.Request(
                 f"{self._base_url}/{SERVICE}/SendAudioChunk",
@@ -1555,6 +1592,10 @@ class AntigravityLiveSTTService(STTService):
         if self._stream:
             self._stream.close()
             self._stream = None
+
+        if self._http_session is not None and not self._http_session.closed:
+            await self._http_session.close()
+            self._http_session = None
 
         if self._smart_turn_executor is not None:
             self._smart_turn_executor.shutdown(wait=False)

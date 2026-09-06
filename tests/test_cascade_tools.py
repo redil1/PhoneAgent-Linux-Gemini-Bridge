@@ -26,6 +26,7 @@ from phone_agent_gateway.ai_bridge.cascade_tools import (
     emitted_tool_instructions,
     llm_supports_native_tools,
 )
+from phone_agent_gateway.ai_bridge.consent import proposal_from_speech, resolve_consent
 from phone_agent_gateway.ai_bridge.tasks.tool_catalog import (
     END_CALL_TOOL_NAME,
     RealtimeTool,
@@ -59,6 +60,20 @@ class _Policy:
         self.available_tools: set[str] = set()
         self._last_ai_response = ""
         self._last_ai_delivery = "none"
+
+    def has_current_consent(self, scope: str) -> bool:
+        if not self.last_caller_transcript_trusted:
+            return False
+        if scope == "registration":
+            return True
+        proposal = None
+        if getattr(self, "_last_ai_delivery", "") == "completed":
+            proposal = proposal_from_speech(str(getattr(self, "_last_ai_response", "")), "legacy")
+        return scope in resolve_consent(
+            str(getattr(self, "last_caller_text", "")),
+            proposal,
+            frozenset({scope}),
+        )
 
 
 def _runtime_with(catalog: dict[str, RealtimeTool]) -> CascadeToolRuntime:

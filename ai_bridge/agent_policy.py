@@ -20,6 +20,7 @@ from pipecat.frames.frames import (
     ErrorFrame,
     Frame,
     InterruptionFrame,
+    InterimTranscriptionFrame,
     LLMFullResponseEndFrame,
     LLMFullResponseStartFrame,
     LLMTextFrame,
@@ -898,6 +899,19 @@ class AgentPolicyRuntime:
             event["transcription_low_confidence"] = True
         await self._emit(event)
 
+    async def observe_interim_transcription(self, text: str) -> None:
+        """Stream provisional caller speech downstream to live monitoring interfaces."""
+        cleaned = text.strip()
+        if not cleaned:
+            return
+        event: dict[str, Any] = {
+            "type": "interim_transcript",
+            "role": "user",
+            "text": cleaned,
+            "detected_language": self._caller_language,
+        }
+        await self._emit(event)
+
     async def finalize_response(
         self,
         raw_text: str,
@@ -1629,6 +1643,8 @@ class TranscriptionPolicyProcessor(FrameProcessor):
         await super().process_frame(frame, direction)
         if direction is FrameDirection.DOWNSTREAM and isinstance(frame, UserStartedSpeakingFrame):
             self.runtime.observe_speech_started()
+        if direction is FrameDirection.DOWNSTREAM and isinstance(frame, InterimTranscriptionFrame):
+            await self.runtime.observe_interim_transcription(frame.text)
         if direction is FrameDirection.DOWNSTREAM and isinstance(frame, TranscriptionFrame):
             trusted, confidence, language = transcription_evidence(frame)
             await self.runtime.observe_transcription(

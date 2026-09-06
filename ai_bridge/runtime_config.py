@@ -191,7 +191,7 @@ class ProviderConfig:
     antigravity_live_fallback_endpoint_ms: int = 900
     parakeet_endpoint_ms: int = 600
     parakeet_incomplete_endpoint_ms: int = 3000
-    speculative_pipeline_enabled: bool = False
+    speculative_pipeline_enabled: bool = True
     speculative_prefetch_silence_ms: int = 120
     speculative_prefetch_stability_ms: int = 80
     speculative_fast_endpoint_ms: int = 600
@@ -204,11 +204,9 @@ class ProviderConfig:
     # support a different calibration for the deployment's languages and audio.
     smart_turn_completion_threshold: float = 0.5
     conversation_repair_enabled: bool = True
-    # Generic "I see" audio before every substantial reply sounds scripted and
-    # can contradict the model's real answer. Keep it opt-in for experiments;
-    # natural silence is preferable on the production cascade.
-    conversational_reflex_enabled: bool = False
-    conversational_reflex_cooldown_ms: int = 8000
+    # Fast conversational reactions hide remote provider latency.
+    conversational_reflex_enabled: bool = True
+    conversational_reflex_cooldown_ms: int = 6000
     llm_provider: str = "antigravity_gemini"
     llm_model: str = "gemini-2.5-flash"
     ollama_base_url: str = "http://127.0.0.1:11434"

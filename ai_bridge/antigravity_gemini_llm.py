@@ -61,10 +61,13 @@ MODEL_MAP = {
 
 
 def _format_context_prompt(context: LLMContext, system_instruction: str = "") -> str:
-    """Flatten LLMContext messages into a clean conversational prompt."""
+    """Flatten LLMContext messages into a clean conversational prompt without duplication."""
     parts = []
-    if system_instruction.strip():
-        parts.append(f"System instructions:\n{system_instruction.strip()}\n")
+    has_system = False
+    sys_inst = system_instruction.strip()
+    if sys_inst:
+        parts.append(f"System instructions:\n{sys_inst}\n")
+        has_system = True
 
     for msg in context.get_messages():
         if not isinstance(msg, dict):
@@ -81,7 +84,11 @@ def _format_context_prompt(context: LLMContext, system_instruction: str = "") ->
         if not content_str:
             continue
         if role in {"system", "developer"}:
-            parts.append(f"System instructions: {content_str}")
+            if not has_system:
+                parts.append(f"System instructions:\n{content_str}\n")
+                has_system = True
+            elif content_str != sys_inst and content_str not in sys_inst:
+                parts.append(f"Additional instructions: {content_str}")
         elif role == "assistant":
             parts.append(f"Assistant: {content_str}")
         else:

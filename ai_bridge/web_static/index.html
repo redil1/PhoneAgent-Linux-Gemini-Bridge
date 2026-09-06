@@ -179,6 +179,9 @@
     .chat-stream { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; padding: 10px 4px 10px 0; }
     .msg-bubble { max-width: 85%; padding: 14px 16px; border-radius: 14px; font-size: 14px; line-height: 1.5; }
     .msg-bubble.user { align-self: flex-start; background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255, 255, 255, 0.08); color: #e2e8f0; }
+    .msg-bubble.interim { border: 1px dashed rgba(56, 189, 248, 0.6); background: rgba(15, 23, 42, 0.6); font-style: italic; }
+    .msg-bubble.interim .msg-text::after { content: " ▍"; color: #38bdf8; animation: blink 0.8s infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
     .msg-bubble.ai { align-self: flex-end; background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(139, 92, 246, 0.2)); border: 1px solid rgba(59, 130, 246, 0.35); color: #fff; }
     .msg-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 6px; font-size: 11px; color: var(--text-muted); font-weight: 600; }
     .msg-metrics { display: flex; gap: 8px; margin-top: 8px; font-size: 10px; font-family: var(--font-mono); color: var(--accent); }
@@ -2035,7 +2038,10 @@
         }
       } else if (msg.type === 'gpu_models_released') {
         appendNotice(`Released inactive GPU model(s): ${(msg.models || []).join(', ')}`);
+      } else if (msg.type === 'interim_transcript') {
+        renderInterimTranscript(msg.text, msg.detected_language);
       } else if (msg.type === 'transcript') {
+        removeInterimTranscript();
         const transcriptMetrics = msg.role === 'user'
           ? msg.metrics
           : {...(msg.metrics || {}), ...(pendingLlmLatency || {})};
@@ -2149,6 +2155,7 @@
         dot.className = 'status-dot dialing';
         stateLabel.innerText = 'Dialing cellular baseband...';
       } else {
+        removeInterimTranscript();
         stateLabel.innerText = 'Ready to dial';
         const contextPill = document.getElementById('call-context-pill');
         const contextText = document.getElementById('call-context-text');
@@ -2284,7 +2291,49 @@
       stream.scrollTop = stream.scrollHeight;
     }
 
+    function renderInterimTranscript(text, language) {
+      if (!text || !text.trim()) return;
+      const stream = document.getElementById('chat-stream');
+      if (!stream) return;
+      const empty = document.getElementById('empty-chat');
+      if (empty) empty.style.display = 'none';
+
+      let interimBubble = document.getElementById('interim-user-bubble');
+      if (!interimBubble) {
+        interimBubble = document.createElement('div');
+        interimBubble.id = 'interim-user-bubble';
+        interimBubble.className = 'msg-bubble user interim';
+
+        const header = document.createElement('div');
+        header.className = 'msg-header';
+        const speaker = document.createElement('span');
+        speaker.textContent = 'Caller (speaking…)';
+        const timestamp = document.createElement('span');
+        timestamp.textContent = new Date().toLocaleTimeString();
+        header.append(speaker, timestamp);
+
+        const message = document.createElement('div');
+        message.className = 'msg-text';
+        interimBubble.append(header, message);
+        stream.appendChild(interimBubble);
+      }
+
+      const message = interimBubble.querySelector('.msg-text');
+      if (message) {
+        message.textContent = text.trim();
+      }
+      stream.scrollTop = stream.scrollHeight;
+    }
+
+    function removeInterimTranscript() {
+      const interimBubble = document.getElementById('interim-user-bubble');
+      if (interimBubble && interimBubble.parentNode) {
+        interimBubble.parentNode.removeChild(interimBubble);
+      }
+    }
+
     function clearTranscript() {
+      removeInterimTranscript();
       document.getElementById('chat-stream').innerHTML = '<div class="empty-state" id="empty-chat"><p>Dialogue cleared.</p></div>';
     }
 
